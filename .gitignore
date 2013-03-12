@@ -2,6 +2,7 @@
 *.history
 *.lock
 *.log
+*.metadata
 
 # Package Files #
 *.jar
