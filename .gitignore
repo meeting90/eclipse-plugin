@@ -1,4 +1,7 @@
 *.class
+*.history
+*.lock
+*.log
 
 # Package Files #
 *.jar
