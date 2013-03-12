@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+         <objectContribution
+            id="cn.edu.nju.cs.workflow.ui.objectContribution"
+            nameFilter="*.twf"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="cn.edu.nju.cs.workflow.bpel.generator.BPELGenerator"
+               enablesFor="1"
+               id="cn.edu.nju.cs.workflow.bpel.generator"
+               label="generate bpel"
+               menubarPath="cn.edu.nju.cs.workflow.bpel.generator.menu">
+         </action>
+         <menu
+               id="cn.edu.nju.cs.workflow.ui.menu"
+               label="generate bpel">
+         </menu>
+      </objectContribution>
+   </extension>
+
+</plugin>

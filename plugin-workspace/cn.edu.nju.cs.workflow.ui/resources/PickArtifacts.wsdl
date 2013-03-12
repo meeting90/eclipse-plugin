@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<definitions name="Pick"
+        targetNamespace="http://sample.bpel.org/bpel/sample"
+        xmlns:tns="http://sample.bpel.org/bpel/sample"
+        xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:p="http://www.w3.org/2001/XMLSchema">
+
+    <types>
+        <schema attributeFormDefault="unqualified" elementFormDefault="qualified" 
+                targetNamespace="http://sample.bpel.org/bpel/sample" 
+                xmlns="http://www.w3.org/2001/XMLSchema">
+
+            <element name="PickRequest">
+                <complexType>
+                    <sequence>
+                        <element name="input" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+
+            <element name="PickResponse">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="saygoodbye">
+            	<complexType>
+            		<sequence>
+            			<element name="in" type="string"></element>
+            		</sequence>
+            	</complexType>
+            </element>
+            <element name="saygoodbyeResponse">
+            	<complexType>
+            		<sequence>
+            			<element name="out" type="string"></element>
+            		</sequence>
+            	</complexType>
+            </element>
+        </schema>
+    </types>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     MESSAGE TYPE DEFINITION - Definition of the message types used as 
+     part of the port type defintions
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <message name="PickRequestMessage">
+        <part name="payload" element="tns:PickRequest"/>
+    </message>
+    <message name="PickResponseMessage">
+        <part name="payload" element="tns:PickResponse"/>
+    </message>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PORT TYPE DEFINITION - A port type groups a set of operations into
+     a logical service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+
+    <!-- portType implemented by the Pick BPEL process -->
+    <message name="saygoodbyeRequest">
+    	<part name="parameters" element="tns:saygoodbye"></part>
+    </message>
+    <message name="saygoodbyeResponse">
+    	<part name="parameters" element="tns:saygoodbyeResponse"></part>
+    </message>
+    <portType name="Pick">
+        <operation name="sayhello">
+            <input  message="tns:PickRequestMessage" />
+            <output message="tns:PickResponseMessage"/>
+        </operation>
+        <operation name="saygoodbye">
+        	<input message="tns:saygoodbyeRequest"></input>
+        	<output message="tns:saygoodbyeResponse"></output>
+        </operation>
+    </portType>   
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PARTNER LINK TYPE DEFINITION
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <plnk:partnerLinkType name="Pick">
+        <plnk:role name="PickProvider" portType="tns:Pick"/>
+    </plnk:partnerLinkType>
+    
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     BINDING DEFINITION - Defines the message format and protocol details
+     for a web service.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <binding name="PickBinding" type="tns:Pick">
+    	<soap:binding style="document"
+    		transport="http://schemas.xmlsoap.org/soap/http" />
+    	<operation name="sayhello">
+    		<soap:operation
+    			soapAction="http://sample.bpel.org/bpel/sample/sayhello" />
+    		<input>
+    			<soap:body use="literal" />
+    		</input>
+    		<output>
+    			<soap:body use="literal" />
+    		</output>
+    	</operation>
+    	<operation name="saygoodbye">
+    		<soap:operation
+    			soapAction="http://sample.bpel.org/bpel/sample/saygoodbye" />
+    		<input>
+    			<soap:body use="literal" />
+    		</input>
+    		<output>
+    			<soap:body use="literal" />
+    		</output>
+    	</operation>
+    </binding>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SERVICE DEFINITION - A service groups a set of ports into
+     a service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <service name="PickService">
+    	<port name="PickPort" binding="tns:PickBinding">
+    		<soap:address location="http://localhost:8080/ode/processes/Pick" />
+    	</port>
+    </service>
+</definitions>

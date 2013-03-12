@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.graphiti.ui.imageProviders">
+      <imageProvider
+            class="graphitiexample.diagram.GEImageProvider"
+            id="GraphitiExample.imageProvider">
+      </imageProvider>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            id="GraphitiExample.diagramType"
+            name="GraphitiExample.diagramType"
+            type="GraphitiExample.diagramType">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            class="graphitiexample.diagram.GEDiagramTypeProvider"
+            id="GraphitiExample.GEdiagramTypeProvider"
+            name="GraphitiExample.GEdiagramTypeProvider">
+         <diagramType
+               id="GraphitiExample.diagramType">
+         </diagramType>
+         <imageProvider
+               id="GraphitiExample.imageProvider">
+         </imageProvider>
+      </diagramTypeProvider>
+   </extension>
+  <extension
+    point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor contributorId="mytutorial.PropertyContributor"> 
+        <propertyCategory category="Graphiti"> 
+        </propertyCategory> 
+    </propertyContributor> 
+</extension>
+       
+ <extension
+      point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+    <propertyTabs
+          contributorId="mytutorial.PropertyContributor">
+    <propertyTab
+         category="Graphiti"
+         id="graphiti.main.tab"
+          label="Main">
+    </propertyTab>
+   </propertyTabs>
+</extension>
+     
+ <extension
+      point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections
+          contributorId="mytutorial.PropertyContributor">
+        <propertySection
+              class="graphitiexample.property.GEEclassSection"
+              filter="graphitiexample.property.GEEclassFilter"
+              id="graphiti.main.tab.emfclass"
+              tab="graphiti.main.tab">
+        </propertySection>
+    </propertySections>
+ </extension>
+	 
+
+</plugin>

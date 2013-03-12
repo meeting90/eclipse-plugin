@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            name="Ui Diagram Type"
+            type="workflow"
+            id="cn.edu.nju.cs.workflow.ui.uiDiagramType">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            name="Ui Diagram Type Provider"
+            class="cn.edu.nju.cs.workflow.ui.diagram.WorkflowDiagramTypeProvider"
+            id="cn.edu.nju.cs.workflow.ui.uiDiagramTypeProvider">
+         <diagramType
+               id="cn.edu.nju.cs.workflow.ui.uiDiagramType">
+         </diagramType>
+      </diagramTypeProvider>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.imageProviders">
+      <imageProvider
+            class="cn.edu.nju.cs.workflow.ui.diagram.WorkflowImageProvider"
+            id="cn.edu.nju.cs.workflow.ui.imageProvider">
+      </imageProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            class="cn.edu.nju.cs.workflow.ui.wizard.WorkflowWizard"
+            id="cn.edu.nju.cs.workflow.ui.wizard"
+            name="TWF">
+      </wizard>
+   </extension>
+
+</plugin>

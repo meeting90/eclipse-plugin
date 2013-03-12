@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.graphiti.ui.imageProviders">
+      <imageProvider
+            class="cn.edu.nju.workflow.ui.diagram.WorkflowImageProvider"
+            id="cn.edu.nju.workflow.ui.imageProvider">
+      </imageProvider>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            id="cn.edu.nju.workflow.ui.diagramType"
+            name="cn.edu.nju.workflow.ui.diagramType"
+            type="cn.edu.nju.workflow.ui.diagramType">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            class="cn.edu.nju.workflow.ui.diagram.WorkflowDiagramTypeProvider"
+            id="cn.edu.nju.workflow.ui.diagramTypeProvider"
+            name="cn.edu.nju.workflow.ui.diagramTypeProvider">
+         <imageProvider
+               id="cn.edu.nju.workflow.ui.imageProvider">
+         </imageProvider>
+         <diagramType
+               id="cn.edu.nju.workflow.ui.diagramType">
+         </diagramType>
+      </diagramTypeProvider>
+   </extension>
+
+</plugin>

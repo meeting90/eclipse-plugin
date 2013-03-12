@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            name="GraphitiDemo Diagram Type"
+            type="graphitiDemo"
+            id="graphitiDemo.gDiagramType">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            name="GraphitiDemo Diagram Type Provider"
+            class="graphitidemo.diagram.GDiagramTypeProvider"
+            id="graphitiDemo.gDiagramTypeProvider">
+         <diagramType
+               id="graphitiDemo.gDiagramType">
+         </diagramType>
+      </diagramTypeProvider>
+   </extension>
+
+</plugin>

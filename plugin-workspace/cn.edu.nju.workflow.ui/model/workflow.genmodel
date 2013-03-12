@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/cn.edu.nju.workflow.ui/src"
+    modelPluginID="cn.edu.nju.workflow.ui" modelName="Workflow" importerID="org.eclipse.emf.importer.ecore"
+    copyrightFields="false">
+  <foreignModel>workflow.ecore</foreignModel>
+  <genPackages prefix="Model" disposableProviderFactory="true" ecorePackage="workflow.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="workflow.ecore#//AdviceType">
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//AdviceType/before"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//AdviceType/around_soapmessagein"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//AdviceType/after_soapmessagein"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//AdviceType/around"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//AdviceType/before_soapmessageout"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//AdviceType/around_soapmessageout"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//AdviceType/after"/>
+    </genEnums>
+    <genClasses ecoreClass="workflow.ecore#//WorkflowElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowElement/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowElement/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowElement/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowElement/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowElement/y"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//Workflow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/edges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/comments"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//WorkflowNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowNode/isStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//WorkflowNode/isFinish"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowNode/workflow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowNode/input"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowNode/outputs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowNode/pointCut"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//Task"/>
+    <genClasses ecoreClass="workflow.ecore#//CompoundTask">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//CompoundTask/subworkflow"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//LoopTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//LoopTask/whileCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//Choice"/>
+    <genClasses ecoreClass="workflow.ecore#//Edge">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference workflow.ecore#//Edge/workflow"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//Edge/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//Edge/target"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//Port"/>
+    <genClasses ecoreClass="workflow.ecore#//InputPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//InputPort/edges"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference workflow.ecore#//InputPort/node"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//OutputPort">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference workflow.ecore#//OutputPort/node"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//OutputPort/edges"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//FaultPort"/>
+    <genClasses ecoreClass="workflow.ecore#//ConditionalOutputPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ConditionalOutputPort/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//Comment"/>
+    <genClasses ecoreClass="workflow.ecore#//AdviceTask">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//AdviceTask/joinPoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//AdviceTask/advicetype"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
