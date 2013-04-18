@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:pingpong.bpel.tps="http://pingpong.bpel.tps" xmlns:sample="http://sample.bpel.org/bpel/sample">
+  <process name="sample:Process">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="PingPongPL">
+      <service name="pingpong.bpel.tps:PingPongService" port="PingPong"/>
+    </provide>
+    <provide partnerLink="TryInvokePL">
+      <service name="sample:TryInvokeService" port="TryInvokePort"/>
+    </provide>
+    <invoke partnerLink="PingPongPL">
+      <service name="pingpong.bpel.tps:PingPongService" port="PingPong"/>
+    </invoke>
+    <invoke partnerLink="TryInvokePL">
+      <service name="sample:TryInvokeService" port="TryInvokePort"/>
+    </invoke>
+  </process>
+</deploy>

@@ -1,0 +1,14 @@
+//1.Set PartnerLinkType  IllegalValueException -----ingnore
+//partnerLinkType need to reset when generate bpel process ---done
+
+//2.Palette doesn't update when input files changed ----done
+
+//3.Cannot init Diagram with¡¡inputMessage and outputMessage  ----done
+
+//4.Definitions doesn't match  import files  -----done
+
+5.assign is not expression
+
+6.variables need init
+
+7.

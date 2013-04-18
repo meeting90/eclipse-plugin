@@ -171,13 +171,31 @@ public interface ModelPackage extends EPackage {
 	int WORKFLOW_PROCESS__BPEL_PROCESS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Impl Port Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW_PROCESS__IMPL_PORT_TYPES = 2;
+
+	/**
+	 * The feature id for the '<em><b>To Impl Port Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW_PROCESS__TO_IMPL_PORT_TYPES = 3;
+
+	/**
 	 * The number of structural features of the '<em>Workflow Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORKFLOW_PROCESS_FEATURE_COUNT = 2;
+	int WORKFLOW_PROCESS_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl <em>Workflow</em>}' class.
@@ -280,13 +298,13 @@ public interface ModelPackage extends EPackage {
 	int WORKFLOW__COMMENTS = WORKFLOW_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Port Types</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Activity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORKFLOW__PORT_TYPES = WORKFLOW_ELEMENT_FEATURE_COUNT + 3;
+	int WORKFLOW__ACTIVITY = WORKFLOW_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Workflow</em>' class.
@@ -2334,6 +2352,28 @@ public interface ModelPackage extends EPackage {
 	EReference getWorkflowProcess_BpelProcess();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link cn.edu.nju.cs.workflow.model.WorkflowProcess#getImplPortTypes <em>Impl Port Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Impl Port Types</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.WorkflowProcess#getImplPortTypes()
+	 * @see #getWorkflowProcess()
+	 * @generated
+	 */
+	EReference getWorkflowProcess_ImplPortTypes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link cn.edu.nju.cs.workflow.model.WorkflowProcess#getToImplPortTypes <em>To Impl Port Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>To Impl Port Types</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.WorkflowProcess#getToImplPortTypes()
+	 * @see #getWorkflowProcess()
+	 * @generated
+	 */
+	EReference getWorkflowProcess_ToImplPortTypes();
+
+	/**
 	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.Workflow <em>Workflow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2377,15 +2417,15 @@ public interface ModelPackage extends EPackage {
 	EReference getWorkflow_Comments();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link cn.edu.nju.cs.workflow.model.Workflow#getPortTypes <em>Port Types</em>}'.
+	 * Returns the meta object for the reference '{@link cn.edu.nju.cs.workflow.model.Workflow#getActivity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Port Types</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.Workflow#getPortTypes()
+	 * @return the meta object for the reference '<em>Activity</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.Workflow#getActivity()
 	 * @see #getWorkflow()
 	 * @generated
 	 */
-	EReference getWorkflow_PortTypes();
+	EReference getWorkflow_Activity();
 
 	/**
 	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.WorkflowNode <em>Workflow Node</em>}'.
@@ -2991,6 +3031,22 @@ public interface ModelPackage extends EPackage {
 		EReference WORKFLOW_PROCESS__BPEL_PROCESS = eINSTANCE.getWorkflowProcess_BpelProcess();
 
 		/**
+		 * The meta object literal for the '<em><b>Impl Port Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WORKFLOW_PROCESS__IMPL_PORT_TYPES = eINSTANCE.getWorkflowProcess_ImplPortTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>To Impl Port Types</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WORKFLOW_PROCESS__TO_IMPL_PORT_TYPES = eINSTANCE.getWorkflowProcess_ToImplPortTypes();
+
+		/**
 		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl <em>Workflow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3025,12 +3081,12 @@ public interface ModelPackage extends EPackage {
 		EReference WORKFLOW__COMMENTS = eINSTANCE.getWorkflow_Comments();
 
 		/**
-		 * The meta object literal for the '<em><b>Port Types</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Activity</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WORKFLOW__PORT_TYPES = eINSTANCE.getWorkflow_PortTypes();
+		EReference WORKFLOW__ACTIVITY = eINSTANCE.getWorkflow_Activity();
 
 		/**
 		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.impl.WorkflowNodeImpl <em>Workflow Node</em>}' class.

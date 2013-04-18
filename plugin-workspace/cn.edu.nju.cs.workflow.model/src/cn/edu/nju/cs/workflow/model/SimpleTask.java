@@ -6,6 +6,7 @@
  */
 package cn.edu.nju.cs.workflow.model;
 
+import org.eclipse.bpel.model.BPELExtensibleElement;
 import org.eclipse.bpel.model.PartnerActivity;
 import org.eclipse.bpel.model.PartnerLink;
 
@@ -62,7 +63,7 @@ public interface SimpleTask extends Task {
 	 * Returns the value of the '<em><b>Operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Operation</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Operation</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -93,12 +94,12 @@ public interface SimpleTask extends Task {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Partner Activity</em>' reference.
-	 * @see #setPartnerActivity(PartnerActivity)
+	 * @see #setPartnerActivity(BPELExtensibleElement)
 	 * @see cn.edu.nju.cs.workflow.model.ModelPackage#getSimpleTask_PartnerActivity()
 	 * @model
 	 * @generated
 	 */
-	PartnerActivity getPartnerActivity();
+	BPELExtensibleElement getPartnerActivity();
 
 	/**
 	 * Sets the value of the '{@link cn.edu.nju.cs.workflow.model.SimpleTask#getPartnerActivity <em>Partner Activity</em>}' reference.
@@ -108,7 +109,7 @@ public interface SimpleTask extends Task {
 	 * @see #getPartnerActivity()
 	 * @generated
 	 */
-	void setPartnerActivity(PartnerActivity value);
+	void setPartnerActivity(BPELExtensibleElement value);
 
 	/**
 	 * Returns the value of the '<em><b>Partner Link</b></em>' reference.

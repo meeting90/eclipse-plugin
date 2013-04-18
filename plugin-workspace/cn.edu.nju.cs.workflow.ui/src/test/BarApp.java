@@ -96,7 +96,7 @@ public class BarApp extends BasicApplication {
 
     /** Parse any arguments */
     protected void parseArgs(String[] args) {
-        for (int i = 0; i < args.length; i++) {
+        for (int i = 0; i < args.length; ++i) {
             String arg = args[i];
             if (arg.charAt(0) == '-') {
                 String s = arg.substring(1);

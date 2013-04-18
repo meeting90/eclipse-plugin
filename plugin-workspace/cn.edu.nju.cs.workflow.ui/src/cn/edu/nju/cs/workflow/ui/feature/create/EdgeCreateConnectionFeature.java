@@ -101,8 +101,8 @@ public class EdgeCreateConnectionFeature extends AbstractCreateConnectionFeature
 		edge.setSource((OutputPort)source);
 		edge.setTarget((InputPort)target);
 		
-		((OutputPort)source).getNode().setIsFinishNode(false);
-		((InputPort)target).getNode().setIsStartNode(false);
+		//((OutputPort)source).getNode().setIsFinishNode(false);
+		//((InputPort)target).getNode().setIsStartNode(false);
 		
 		WorkflowFeatureProvider provider=(WorkflowFeatureProvider) getFeatureProvider();
 		provider.getWorkflow().getEdges().add(edge);

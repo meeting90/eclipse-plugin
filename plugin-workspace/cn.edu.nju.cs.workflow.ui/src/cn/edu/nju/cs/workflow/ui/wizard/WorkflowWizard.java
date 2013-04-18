@@ -10,7 +10,6 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.graphiti.examples.common.ExamplesCommonPlugin;
 import org.eclipse.graphiti.examples.common.Messages;
@@ -29,8 +28,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.wizards.newresource.BasicNewResourceWizard;
 
-import cn.edu.nju.cs.workflow.provider.ITextProvider;
-import cn.edu.nju.cs.workflow.ui.wizard.CreateWorkflowFirstPage.WorkflowCreationMode;
 public class WorkflowWizard extends BasicNewResourceWizard   {
 	
 	private static final String WIZARD_WINDOW_TITLE = Messages.CreateDiagramWizard_WizardTitle;
@@ -103,8 +100,9 @@ public class WorkflowWizard extends BasicNewResourceWizard   {
 
 		Diagram diagram = Graphiti.getPeCreateService().createDiagram(diagramTypeId, workflowName, true);
 		diagram.setGridUnit(0);
+		diagram.setActive(false);
 		if (diagramFolder == null) {
-			diagramFolder = project.getFolder("src/"); //$NON-NLS-1$
+			diagramFolder = project.getFolder("src2/"); //$NON-NLS-1$
 		}
 
 		String editorID = DiagramEditor.DIAGRAM_EDITOR_ID;
@@ -136,9 +134,6 @@ public class WorkflowWizard extends BasicNewResourceWizard   {
 		}
 
 		IFile diagramFile = diagramFolder.getFile(workflowName + "." + editorExtension); //$NON-NLS-1$
-		
-
-		//FileService.createEmfFileForRootDiagram(uri, diagram);
 		FileService.createEmfFileForRootDiagramWithWSDL(diagramFile,diagram,wsdlName);
 		
 		String providerId = GraphitiUi.getExtensionManager().getDiagramTypeProviderId(diagram.getDiagramTypeId());

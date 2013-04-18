@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process exitOnStandardFault="yes" name="hello.bpel"
+    targetNamespace="http://sample.bpel.org/bpel/sample"
+    xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:ns="http://sample.bpel.org/bpel/sampleArtifacts" 
+    xmlns:ns0="http://sample.bpel.org/bpel/sample">
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="file:/E:/github/eclipse-plugin/plugin-workspace/cn.edu.nju.cs.workflow.ui/resources/TryInvokeArtifacts.wsdl" namespace="http://sample.bpel.org/bpel/sample"/>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="helloArtifacts.wsdl" namespace="http://sample.bpel.org/bpel/sampleArtifacts"/>
+    <bpel:partnerLinks>
+        <bpel:partnerLink myRole="TryInvokeRole"
+            name="bpelProcessPartner" partnerLinkType="ns:TryInvokePLT"/>
+    </bpel:partnerLinks>
+    <bpel:variables>
+        <bpel:variable element="ns0:TryInvokeRequest" name="processRequest"/>
+        <bpel:variable element="ns0:TryInvokeResponse" name="processResponse"/>
+    </bpel:variables>
+    <bpel:sequence name="MainSequence">
+        <bpel:pick createInstance="yes" name="SwitchInvokedOperation">
+            <bpel:onMessage operation="process"
+                partnerLink="bpelProcessPartner"
+                portType="ns0:TryInvoke" variable="processRequest">
+                <bpel:reply name="ReplyToProcess" operation="process"
+                    partnerLink="bpelProcessPartner"
+                    portType="ns0:TryInvoke" variable="processResponse"/>
+            </bpel:onMessage>
+        </bpel:pick>
+    </bpel:sequence>
+</bpel:process>

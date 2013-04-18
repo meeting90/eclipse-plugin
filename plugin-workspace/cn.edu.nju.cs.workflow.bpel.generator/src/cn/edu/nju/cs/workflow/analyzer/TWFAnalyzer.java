@@ -7,18 +7,28 @@ import java.util.Map;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.bpel.model.Process;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IProgressMonitor;
+
 import cn.edu.nju.cs.workflow.model.Workflow;
 
 public interface TWFAnalyzer{
 	
 	
 	
-	void initFromResource(Resource resource);
+	public void initFromResource(Resource resource);
 	
-	void reorderTasks();
+	public void setTwfFile(IFile twfFile);
 	
-	void completeBpelProcess();
+	public void reorderTasks(final IProgressMonitor monitor);
 	
-	public void generateBpelProcess(URI uri) throws IOException;
+	public void reorderAcitivities(final IProgressMonitor monitor);
+	
+	public void completeBpelProcess(final IProgressMonitor monitor);
+	
+	
+	public void generateBpelProcess(URI uri,final IProgressMonitor monitor) throws IOException;
+
+	
 
 }

@@ -9,11 +9,11 @@ package cn.edu.nju.cs.workflow.model.impl;
 import cn.edu.nju.cs.workflow.model.ModelPackage;
 import cn.edu.nju.cs.workflow.model.SimpleTask;
 
+import org.eclipse.bpel.model.BPELExtensibleElement;
 import org.eclipse.bpel.model.PartnerActivity;
 import org.eclipse.bpel.model.PartnerLink;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -68,7 +68,7 @@ public class SimpleTaskImpl extends TaskImpl implements SimpleTask {
 	 * @generated
 	 * @ordered
 	 */
-	protected PartnerActivity partnerActivity;
+	protected BPELExtensibleElement partnerActivity;
 
 	/**
 	 * The cached value of the '{@link #getPartnerLink() <em>Partner Link</em>}' reference.
@@ -180,10 +180,10 @@ public class SimpleTaskImpl extends TaskImpl implements SimpleTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PartnerActivity getPartnerActivity() {
+	public BPELExtensibleElement getPartnerActivity() {
 		if (partnerActivity != null && partnerActivity.eIsProxy()) {
 			InternalEObject oldPartnerActivity = (InternalEObject)partnerActivity;
-			partnerActivity = (PartnerActivity)eResolveProxy(oldPartnerActivity);
+			partnerActivity = (BPELExtensibleElement)eResolveProxy(oldPartnerActivity);
 			if (partnerActivity != oldPartnerActivity) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.SIMPLE_TASK__PARTNER_ACTIVITY, oldPartnerActivity, partnerActivity));
@@ -197,7 +197,7 @@ public class SimpleTaskImpl extends TaskImpl implements SimpleTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PartnerActivity basicGetPartnerActivity() {
+	public BPELExtensibleElement basicGetPartnerActivity() {
 		return partnerActivity;
 	}
 
@@ -206,8 +206,8 @@ public class SimpleTaskImpl extends TaskImpl implements SimpleTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPartnerActivity(PartnerActivity newPartnerActivity) {
-		PartnerActivity oldPartnerActivity = partnerActivity;
+	public void setPartnerActivity(BPELExtensibleElement newPartnerActivity) {
+		BPELExtensibleElement oldPartnerActivity = partnerActivity;
 		partnerActivity = newPartnerActivity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.SIMPLE_TASK__PARTNER_ACTIVITY, oldPartnerActivity, partnerActivity));
@@ -290,7 +290,7 @@ public class SimpleTaskImpl extends TaskImpl implements SimpleTask {
 				setOperation((Operation)newValue);
 				return;
 			case ModelPackage.SIMPLE_TASK__PARTNER_ACTIVITY:
-				setPartnerActivity((PartnerActivity)newValue);
+				setPartnerActivity((BPELExtensibleElement)newValue);
 				return;
 			case ModelPackage.SIMPLE_TASK__PARTNER_LINK:
 				setPartnerLink((PartnerLink)newValue);
@@ -314,7 +314,7 @@ public class SimpleTaskImpl extends TaskImpl implements SimpleTask {
 				setOperation((Operation)null);
 				return;
 			case ModelPackage.SIMPLE_TASK__PARTNER_ACTIVITY:
-				setPartnerActivity((PartnerActivity)null);
+				setPartnerActivity((BPELExtensibleElement)null);
 				return;
 			case ModelPackage.SIMPLE_TASK__PARTNER_LINK:
 				setPartnerLink((PartnerLink)null);

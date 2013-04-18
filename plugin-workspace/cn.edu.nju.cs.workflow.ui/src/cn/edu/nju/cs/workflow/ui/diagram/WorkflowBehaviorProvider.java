@@ -170,6 +170,7 @@ public class WorkflowBehaviorProvider extends  DefaultToolBehaviorProvider {
 		PaletteCompartmentEntry compartmentEntry3=new PaletteCompartmentEntry("Atomic Task",null);
 		ret.add(compartmentEntry3);
 		ICreateFeature[] createFeatures = featureProvider.getCreateFeatures();
+		
 
 		for (ICreateFeature createFeature : createFeatures) {
 			ObjectCreationToolEntry objectCreationToolEntry = new ObjectCreationToolEntry(
@@ -177,6 +178,7 @@ public class WorkflowBehaviorProvider extends  DefaultToolBehaviorProvider {
 					createFeature.getCreateImageId(), createFeature.getCreateLargeImageId(), createFeature);
 			if(!(createFeature instanceof SimpleTaskCreateFeature)){
 				compartmentEntry2.addToolEntry(objectCreationToolEntry);
+				
 			}else{
 				compartmentEntry3.addToolEntry(objectCreationToolEntry);
 			}

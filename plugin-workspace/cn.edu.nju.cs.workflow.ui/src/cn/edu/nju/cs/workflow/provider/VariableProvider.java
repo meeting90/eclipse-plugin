@@ -25,5 +25,8 @@ public class VariableProvider extends ModelTreeContentProvider{
 		}				
 		return result.toArray();
 	}
+	public Variable getVaraible(){
+		return vars[0];
+	}
 
 }

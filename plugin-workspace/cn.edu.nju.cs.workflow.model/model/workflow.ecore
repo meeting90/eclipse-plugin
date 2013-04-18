@@ -18,6 +18,11 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bpelProcess" lowerBound="1"
         eType="ecore:EClass bpel.ecore#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implPortTypes" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.wst.wsdl/model/WSDL.ecore#//PortType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toImplPortTypes" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.wst.wsdl/model/WSDL.ecore#//PortType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Workflow" eSuperTypes="#//WorkflowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
@@ -26,9 +31,8 @@
         eType="#//Edge" containment="true" eOpposite="#//Edge/workflow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comments" upperBound="-1"
         eType="#//Comment"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portTypes" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.wst.wsdl/model/WSDL.ecore#//PortType"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        eType="ecore:EClass bpel.ecore#//Activity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowNode" eSuperTypes="#//WorkflowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="workflow" lowerBound="1"
@@ -46,7 +50,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SimpleTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="porttype" eType="ecore:EClass platform:/plugin/org.eclipse.wst.wsdl/model/WSDL.ecore#//PortType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="ecore:EClass platform:/plugin/org.eclipse.wst.wsdl/model/WSDL.ecore#//Operation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="partnerActivity" eType="ecore:EClass bpel.ecore#//PartnerActivity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partnerActivity" eType="ecore:EClass bpel.ecore#//BPELExtensibleElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="partnerLink" eType="ecore:EClass bpel.ecore#//PartnerLink"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompoundTask" eSuperTypes="#//Task">

@@ -14,6 +14,9 @@ import cn.edu.nju.cs.workflow.model.WorkflowNode;
 
 import java.util.Collection;
 
+import org.eclipse.bpel.model.Activity;
+
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -21,12 +24,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.wst.wsdl.PortType;
+import org.eclipse.wst.wsdl.Operation;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +42,7 @@ import org.eclipse.wst.wsdl.PortType;
  *   <li>{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl#getEdges <em>Edges</em>}</li>
  *   <li>{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl#getPortTypes <em>Port Types</em>}</li>
+ *   <li>{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl#getActivity <em>Activity</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,14 +80,14 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 	protected EList<Comment> comments;
 
 	/**
-	 * The cached value of the '{@link #getPortTypes() <em>Port Types</em>}' containment reference list.
+	 * The cached value of the '{@link #getActivity() <em>Activity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPortTypes()
+	 * @see #getActivity()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PortType> portTypes;
+	protected Activity activity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,11 +149,37 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PortType> getPortTypes() {
-		if (portTypes == null) {
-			portTypes = new EObjectContainmentEList<PortType>(PortType.class, this, ModelPackage.WORKFLOW__PORT_TYPES);
+	public Activity getActivity() {
+		if (activity != null && activity.eIsProxy()) {
+			InternalEObject oldActivity = (InternalEObject)activity;
+			activity = (Activity)eResolveProxy(oldActivity);
+			if (activity != oldActivity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.WORKFLOW__ACTIVITY, oldActivity, activity));
+			}
 		}
-		return portTypes;
+		return activity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Activity basicGetActivity() {
+		return activity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActivity(Activity newActivity) {
+		Activity oldActivity = activity;
+		activity = newActivity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.WORKFLOW__ACTIVITY, oldActivity, activity));
 	}
 
 	/**
@@ -181,8 +211,6 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 				return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
 			case ModelPackage.WORKFLOW__EDGES:
 				return ((InternalEList<?>)getEdges()).basicRemove(otherEnd, msgs);
-			case ModelPackage.WORKFLOW__PORT_TYPES:
-				return ((InternalEList<?>)getPortTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -201,8 +229,9 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 				return getEdges();
 			case ModelPackage.WORKFLOW__COMMENTS:
 				return getComments();
-			case ModelPackage.WORKFLOW__PORT_TYPES:
-				return getPortTypes();
+			case ModelPackage.WORKFLOW__ACTIVITY:
+				if (resolve) return getActivity();
+				return basicGetActivity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,9 +257,8 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 				getComments().clear();
 				getComments().addAll((Collection<? extends Comment>)newValue);
 				return;
-			case ModelPackage.WORKFLOW__PORT_TYPES:
-				getPortTypes().clear();
-				getPortTypes().addAll((Collection<? extends PortType>)newValue);
+			case ModelPackage.WORKFLOW__ACTIVITY:
+				setActivity((Activity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,8 +281,8 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 			case ModelPackage.WORKFLOW__COMMENTS:
 				getComments().clear();
 				return;
-			case ModelPackage.WORKFLOW__PORT_TYPES:
-				getPortTypes().clear();
+			case ModelPackage.WORKFLOW__ACTIVITY:
+				setActivity((Activity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -274,8 +302,8 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 				return edges != null && !edges.isEmpty();
 			case ModelPackage.WORKFLOW__COMMENTS:
 				return comments != null && !comments.isEmpty();
-			case ModelPackage.WORKFLOW__PORT_TYPES:
-				return portTypes != null && !portTypes.isEmpty();
+			case ModelPackage.WORKFLOW__ACTIVITY:
+				return activity != null;
 		}
 		return super.eIsSet(featureID);
 	}

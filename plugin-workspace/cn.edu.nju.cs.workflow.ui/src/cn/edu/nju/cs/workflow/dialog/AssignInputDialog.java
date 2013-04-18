@@ -9,6 +9,7 @@ import org.eclipse.bpel.model.To;
 import org.eclipse.bpel.model.Variable;
 import org.eclipse.bpel.ui.Messages;
 import org.eclipse.bpel.ui.details.tree.ITreeNode;
+import org.eclipse.bpel.ui.properties.ExpressionSection;
 import org.eclipse.bpel.ui.properties.VariablePartAssignCategory;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.dialogs.Dialog;
@@ -28,8 +29,10 @@ import org.eclipse.jface.viewers.TreeViewerFocusCellManager;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Shell;
 
 
@@ -37,6 +40,7 @@ import cn.edu.nju.cs.workflow.provider.VariableProvider;
 public class AssignInputDialog extends Dialog{
 	TreeViewer fVariableViewer;
 	VariableProvider variableContentProvider;
+	ExpressionUtil expressionUtil;
 	Shell shell;
 	Variable input;
 	Variable []candidateInputs;
@@ -58,6 +62,7 @@ public class AssignInputDialog extends Dialog{
         super.configureShell(shell);
      
     }
+  
     protected Control createDialogArea(Composite parent) {
     	 Composite composite = (Composite)super.createDialogArea(parent);
          initializeDialogUnits(composite);
@@ -69,6 +74,8 @@ public class AssignInputDialog extends Dialog{
 		 fVariableViewer.getTree().setLayoutData(data);
 		 fVariableViewer.getTree().setLinesVisible(true);
 		 fVariableViewer.getTree().setHeaderVisible(true);
+		 
+		 
 		 TreeViewerFocusCellManager focusCellManager = new TreeViewerFocusCellManager(fVariableViewer,new FocusCellOwnerDrawHighlighter(fVariableViewer));
 		 ColumnViewerEditorActivationStrategy actSupport = new ColumnViewerEditorActivationStrategy(fVariableViewer) {
 				protected boolean isEditorActivationEvent(
@@ -85,6 +92,8 @@ public class AssignInputDialog extends Dialog{
 		final TextCellEditor cellEditor=new TextCellEditor(fVariableViewer.getTree());
 		variableContentProvider = new VariableProvider(true,new Variable[]{input});
 		fVariableViewer.setContentProvider(variableContentProvider);
+		fVariableViewer.expandAll();
+		expressionUtil=new ExpressionUtil(variableContentProvider);
 			
 		TreeViewerColumn column = new TreeViewerColumn(fVariableViewer, SWT.NONE);
 		column.getColumn().setWidth( SIZING_SELECTION_WIDGET_WIDTH/2);
@@ -113,99 +122,11 @@ public class AssignInputDialog extends Dialog{
 		column.setLabelProvider(new ColumnLabelProvider() {
 				public String getText(Object node) {
 					if (!(node instanceof ITreeNode)) return null;	
-					Object[] nodes=variableContentProvider.getPathToRoot(node);
-					String queryPath="";
-					for(int i=0;i<nodes.length;i++){
-						ITreeNode treeNode = (ITreeNode)nodes[i];
-						if(i==0)
-							queryPath+="$";
-						else
-							queryPath+=".";
-						queryPath+=treeNode.getLabel();
-					}
-					EList<Copy> copys=assign.getCopy();
-					for(int i=0;i<copys.size();i++){
-						if(queryPath.equals(copys.get(i).getTo().getQuery().getValue()))
-							return copys.get(i).getFrom().getQuery().getValue();
-					}
-					
-					return "";
+					return expressionUtil.getOldExpression(assign, node);
+
 				}
 
 			});
-//		column.setEditingSupport(new EditingSupport(fVariableViewer) {
-//			
-//			@Override
-//			protected void setValue(Object element, Object value) {
-//				// TODO Auto-generated method stub
-//				Object[] nodes=variableContentProvider.getPathToRoot(element);
-//				String queryPath="";
-//				for(int i=0;i<nodes.length;i++){
-//					ITreeNode treeNode = (ITreeNode)nodes[i];
-//					if(i==0)
-//						queryPath+="$";
-//					else
-//						queryPath+=".";
-//					queryPath+=treeNode.getLabel();
-//				}
-//				Query fromQuery=BPELFactory.eINSTANCE.createQuery();
-//				fromQuery.setValue(value.toString());
-//				From from=BPELFactory.eINSTANCE.createFrom();
-//				from.setQuery(fromQuery);
-//				
-//				Query toQuery=BPELFactory.eINSTANCE.createQuery();
-//				toQuery.setValue(queryPath);
-//				To to=BPELFactory.eINSTANCE.createTo();
-//				to.setQuery(toQuery);
-//				
-//				Copy copy=BPELFactory.eINSTANCE.createCopy();
-//				copy.setFrom(from);
-//				copy.setTo(to);
-//				assign.getCopy().add(copy);
-//				getViewer().update(element, null);  
-//				
-//			}
-//			
-//			@Override
-//			protected Object getValue(Object element) {
-//				// TODO Auto-generated method stub
-//				System.out.println("getValue");
-//				//if (!(element instanceof ITreeNode)) return null;		
-//				Object[] nodes=variableContentProvider.getPathToRoot(element);
-//				String queryPath="";
-//				for(int i=0;i<nodes.length;i++){
-//					ITreeNode treeNode = (ITreeNode)nodes[i];
-//					if(i==0)
-//						queryPath+="$";
-//					else
-//						queryPath+=".";
-//					queryPath+=treeNode.getLabel();
-//				}
-//				EList<Copy> copys=assign.getCopy();
-//				
-//				for(int i=0;i<copys.size();i++){
-//					System.out.println(copys.get(i).toString());
-//					if(queryPath.equals(copys.get(i).getTo().getQuery().getValue())){
-//						
-//						return copys.get(i).getFrom().getQuery().getValue();
-//					}
-//				}
-//				
-//				return "";
-//			}
-//			
-//			@Override
-//			protected CellEditor getCellEditor(Object element) {
-//				// TODO Auto-generated method stub
-//				 return cellEditor;
-//			}
-//			
-//			@Override
-//			protected boolean canEdit(Object element) {
-//				// TODO Auto-generated method stub
-//				return true;
-//			}
-//		});
 		column.setEditingSupport(new ComboEditingSupport(fVariableViewer, assign));
 		fVariableViewer.setInput(input);
 		Dialog.applyDialogFont(composite);

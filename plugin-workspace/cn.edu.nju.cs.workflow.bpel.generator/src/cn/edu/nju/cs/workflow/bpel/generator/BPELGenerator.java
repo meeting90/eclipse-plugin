@@ -3,22 +3,20 @@ package cn.edu.nju.cs.workflow.bpel.generator;
 import java.io.File;
 
 
-import java.io.FileOutputStream;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
-import org.eclipse.bpel.model.BPELPackage;
-import org.eclipse.bpel.model.partnerlinktype.PartnerlinktypePackage;
+import java.util.Iterator;
+
+
+
 import org.eclipse.bpel.model.resource.BPELResource;
-import org.eclipse.bpel.model.resource.BPELResourceFactoryImpl;
-import org.eclipse.bpel.model.resource.BPELResourceImpl;
 import org.eclipse.bpel.model.resource.BPELWriter;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRunnable;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -94,20 +92,9 @@ public class BPELGenerator implements IObjectActionDelegate {
 					File file=new File(path);
 					file.createNewFile();
 					URI uri=URI.createFileURI(file.getAbsolutePath());
+					TWFAnalyzer twfResource= new TWFAnalyzerImpl(resource, twfFile);
 					
-					TWFAnalyzer twfResource= new TWFAnalyzerImpl();
-					twfResource.initFromResource(resource);
-					twfResource.generateBpelProcess(uri);
-					
-//					
-//					BPELResource bpelResource=new BPELResourceImpl(uri);
-//					bpelResource.getContents().add(resource.getContents().get(2));
-//					Map<Object,Object> saveOptions = new HashMap<Object,Object> ();
-//					saveOptions.put( BPELWriter.SKIP_AUTO_IMPORT, Boolean.TRUE );
-//					bpelResource.save(saveOptions);
-					//TWFResource twfResource=new TWFResourceImpl(resource,stream);
-					//twfResource.generateBpelProcess();
-
+					twfResource.generateBpelProcess(uri,monitor);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -123,6 +110,12 @@ public class BPELGenerator implements IObjectActionDelegate {
 				throw (RuntimeException) cause;
 			}
 			throw new RuntimeException(e);
+		}finally{
+			try {
+				twfFile.getProject().refreshLocal( IResource.DEPTH_INFINITE, null );
+			} catch( CoreException e ) {
+				e.printStackTrace();
+			}
 		}
 		
 		

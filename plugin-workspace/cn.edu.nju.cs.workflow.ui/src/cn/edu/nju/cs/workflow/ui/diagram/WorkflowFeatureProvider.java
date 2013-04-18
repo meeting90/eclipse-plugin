@@ -1,25 +1,12 @@
 package cn.edu.nju.cs.workflow.ui.diagram;
 
-import java.io.File;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
-import org.eclipse.bpel.common.wsdl.helpers.UriAndUrlHelper;
-import org.eclipse.bpel.common.wsdl.parsers.WsdlParser;
-import org.eclipse.bpel.model.BPELFactory;
-import org.eclipse.bpel.model.Import;
-import org.eclipse.bpel.model.PartnerLink;
-import org.eclipse.bpel.model.PartnerLinks;
-import org.eclipse.bpel.model.Receive;
-import org.eclipse.bpel.model.Reply;
-import org.eclipse.bpel.model.Variable;
-import org.eclipse.bpel.model.Variables;
-import org.eclipse.bpel.model.Sequence;
 
-import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 
 import org.eclipse.graphiti.features.IAddFeature;
@@ -42,24 +29,26 @@ import org.eclipse.graphiti.features.context.IMoveShapeContext;
 import org.eclipse.graphiti.features.context.IRemoveContext;
 import org.eclipse.graphiti.features.context.IResizeShapeContext;
 import org.eclipse.graphiti.features.context.IUpdateContext;
-import org.eclipse.graphiti.features.context.impl.AddContext;
-import org.eclipse.graphiti.features.context.impl.CreateContext;
+
 import org.eclipse.graphiti.features.custom.ICustomFeature;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.ui.features.DefaultFeatureProvider;
-import org.eclipse.wst.wsdl.Definition;
-import org.eclipse.wst.wsdl.Operation;
+import org.eclipse.wst.wsdl.Message;
 import org.eclipse.wst.wsdl.PortType;
 
+import cn.edu.nju.cs.workflow.bpel.BPELComponentGenerator;
 import cn.edu.nju.cs.workflow.model.AdviceEdge;
 import cn.edu.nju.cs.workflow.model.AdviceTask;
 import cn.edu.nju.cs.workflow.model.Choice;
 import cn.edu.nju.cs.workflow.model.CompoundTask;
 import cn.edu.nju.cs.workflow.model.Edge;
 import cn.edu.nju.cs.workflow.model.InputPort;
-import cn.edu.nju.cs.workflow.model.LoopTask;
 import cn.edu.nju.cs.workflow.model.OutputPort;
+import cn.edu.nju.cs.workflow.model.WorkflowNode;
+
+import cn.edu.nju.cs.workflow.model.LoopTask;
+
 import cn.edu.nju.cs.workflow.model.Port;
 import cn.edu.nju.cs.workflow.model.SimpleTask;
 
@@ -80,6 +69,7 @@ import cn.edu.nju.cs.workflow.ui.feature.add.CompoundTaskAddFeature;
 import cn.edu.nju.cs.workflow.ui.feature.add.EdgeAddConnectionFeature;
 import cn.edu.nju.cs.workflow.ui.feature.add.LoopTaskAddFeature;
 import cn.edu.nju.cs.workflow.ui.feature.add.SimpleTaskAddFeature;
+import cn.edu.nju.cs.workflow.ui.feature.add.SpecificNodeAddFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.AdviceEdgeCreateConnectionFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.AdviceTaskCreateFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.ChoiceTaskCreateFeature;
@@ -89,64 +79,31 @@ import cn.edu.nju.cs.workflow.ui.feature.create.LoopTaskCreateFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.SimpleTaskCreateFeature;
 
 public class WorkflowFeatureProvider extends DefaultFeatureProvider {
-	private static Workflow rootWorkflow=null;
-	private static WorkflowProcess workflowProcess=null;
+	private BPELComponentGenerator bpelGenerator=null;
 	public WorkflowFeatureProvider(IDiagramTypeProvider dtp) {
 		super(dtp);
 	}
 	
     private Collection<PortType> getImplementedPortTypes(){
-    	Set<PortType> porttypes = new HashSet<PortType> ();
+    	return getWorkflowProcess().getImplPortTypes();
     	
-    	Object[] imports=getWorkflowProcess().getBpelProcess().getImports().toArray();
-    	for(Object ob: imports){
-    		Import importWsdl=(Import)ob;
-    		String location=importWsdl.getLocation();
-    		if(location==null)
-    			continue;
-    		java.net.URI uri = UriAndUrlHelper.urlToUri( location );
-    		File f = new File( uri );
-    		URI emfUri=URI.createFileURI(f.getAbsolutePath());
-    	
-    		Definition rootDef=WsdlParser.loadWsdlDefinition(emfUri, WsdlParser.createBasicResourceSetForWsdl());
-    	    Collection<Definition> definitions=WsdlParser.findAllWsdlDefinitions(rootDef);
-    		for(Definition def: definitions){		
-    			if(def==rootDef)
-    				continue;
-    			for(Object obj :def.getPortTypes().values())	
-    				porttypes.add((PortType)obj);
-    		}
-    	}
-    	return porttypes;
     }
     public Collection<PortType> getNewPortTypes(){
-    	Set<PortType> porttypes = new HashSet<PortType> ();
-    	Object[] imports=getWorkflowProcess().getBpelProcess().getImports().toArray();
-    	for(Object ob: imports){
-    		Import importWsdl=(Import)ob;
-    		String location=importWsdl.getLocation();
-    		java.net.URI uri = UriAndUrlHelper.urlToUri( location );
-    		File f = new File( uri );
-    		URI emfUri=URI.createFileURI(f.getAbsolutePath());
-    	
-    		Definition rootDef=WsdlParser.loadWsdlDefinition(emfUri, WsdlParser.createBasicResourceSetForWsdl());
-    		for(Object obj :rootDef.getPortTypes().values())	
-				porttypes.add((PortType)obj);
-    	}
-    	return porttypes;
+    	return getWorkflowProcess().getToImplPortTypes();
     	
     }
-    
+    public BPELComponentGenerator getBpelGenerator(){
+    	
+    	bpelGenerator =new BPELComponentGenerator(getWorkflowProcess().getBpelProcess());
+    	return bpelGenerator;
+    }
     public  WorkflowProcess getWorkflowProcess(){
-		if(workflowProcess==null)
-			workflowProcess=(WorkflowProcess) getDiagramTypeProvider().getDiagram().getLink().getBusinessObjects().get(0);
-		return workflowProcess;
+    	return (WorkflowProcess) getDiagramTypeProvider().getDiagram().getLink().getBusinessObjects().get(0);
+		
 	}
 	public  Workflow getWorkflow(){
-		if(rootWorkflow==null){
-			rootWorkflow=getWorkflowProcess().getRootWorkflow();
-		}
-		return rootWorkflow;
+		return getWorkflowProcess().getRootWorkflow();
+		
 	}
 	@Override
 	public ICreateFeature[] getCreateFeatures() {
@@ -156,20 +113,11 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 	for(PortType porttype: porttypes){
 		features.add(new SimpleTaskCreateFeature(this, porttype));	
 	}
-	
-	
-	
 		features.add(new ChoiceTaskCreateFeature(this));
 		features.add(new CompoundTaskCreateTask(this));
 		features.add(new LoopTaskCreateFeature(this));
 		features.add(new AdviceTaskCreateFeature(this));
 		return features.toArray(new ICreateFeature[features.size()]);
-//		return new ICreateFeature[] 
-//				{new SimpleTaskCreateFeature(this,"SimpleTask","Create Simple Task"),
-//				new ChoiceTaskCreateFeature(this),
-//				new CompoundTaskCreateTask(this),
-//				new LoopTaskCreateFeature(this),
-//				new AdviceTaskCreateFeature(this)};
 	}
 	
 	@Override
@@ -189,16 +137,18 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 			return new LoopTaskAddFeature(this);
 		}else if(context instanceof IAddContext && context.getNewObject() instanceof AdviceTask){
 			return new AdviceTaskAddFeature(this);
-		}
-		else if(context instanceof IAddContext && context.getNewObject() instanceof CompoundTask){
+		}else if(context instanceof IAddContext && context.getNewObject() instanceof CompoundTask){
 			return new CompoundTaskAddFeature(this);
 		}else if (context instanceof IAddContext  && context.getNewObject() instanceof  SimpleTask) {
-			return new SimpleTaskAddFeature(this);
+			SimpleTask task=(SimpleTask) context.getNewObject();
+			if(task.isIsFinishNode()||task.isIsStartNode())
+				return new SpecificNodeAddFeature(this);
+			else
+				return new SimpleTaskAddFeature(this);
 		}else if(context instanceof IAddContext  && context.getNewObject() instanceof  Choice){
 			return new ChoiceTaskAddFeature(this);
-		}
+		}//start node end node
 		
-
 		return super.getAddFeature(context);
 	}
 	
@@ -301,7 +251,17 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 		if(bo==null)
 			return null;
 		if (bo instanceof Port) {
-			return null;
+		    if(bo instanceof OutputPort){
+		    	if( ((OutputPort)bo).getNode().isIsStartNode())
+		    		return super.getMoveShapeFeature(context);
+		    	else
+		    		return null;
+		    }else if(bo instanceof InputPort){
+		    	if(((InputPort)bo).getNode().isIsFinishNode())
+		    		return super.getMoveShapeFeature(context);
+		    	else 
+		    		return null;
+		    }
 		} else if (bo instanceof WhileCondition) {
 			return null;
 		}
@@ -320,7 +280,11 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 	            { new CreateSubworkflowFeature(this)};
 	}
 	
-	
+	@Override
+	public PictogramElement addIfPossible(IAddContext context) {
+		// TODO Auto-generated method stub
+		return super.addIfPossible(context);
+	}
 
 
 }

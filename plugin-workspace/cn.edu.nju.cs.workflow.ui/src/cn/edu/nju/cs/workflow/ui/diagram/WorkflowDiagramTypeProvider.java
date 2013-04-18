@@ -1,37 +1,75 @@
 package cn.edu.nju.cs.workflow.ui.diagram;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.eclipse.graphiti.dt.AbstractDiagramTypeProvider;
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
+import org.eclipse.graphiti.features.context.IAddContext;
+import org.eclipse.graphiti.features.context.impl.AddContext;
+import org.eclipse.graphiti.features.context.impl.CreateContext;
 import org.eclipse.graphiti.tb.IToolBehaviorProvider;
+import org.eclipse.wst.wsdl.Definition;
+import org.eclipse.wst.wsdl.Operation;
+import org.eclipse.wst.wsdl.PortType;
+
+import cn.edu.nju.cs.workflow.ui.feature.add.SpecificNodeAddFeature;
+import cn.edu.nju.cs.workflow.ui.feature.create.EndTaskCreateFeature;
+import cn.edu.nju.cs.workflow.ui.feature.create.SimpleTaskCreateFeature;
+import cn.edu.nju.cs.workflow.ui.feature.create.StartTaskCreateFeature;
 
 
 public class WorkflowDiagramTypeProvider extends AbstractDiagramTypeProvider
 		implements IDiagramTypeProvider {
   
-    private IToolBehaviorProvider[] toolBehaviorProviders;
 	public WorkflowDiagramTypeProvider() {
 		// TODO Auto-generated constructor stub
 		super();
 		setFeatureProvider(new WorkflowFeatureProvider(this));
-		
-		
 	}
-
 	@Override
-	 public IToolBehaviorProvider[] getAvailableToolBehaviorProviders() {
-	        if (toolBehaviorProviders == null) {
-	            toolBehaviorProviders =
-	                new IToolBehaviorProvider[] { new WorkflowBehaviorProvider(this) };
-	        }
-	        return toolBehaviorProviders;
-	  }
+	public boolean isAutoUpdateAtStartup() {
+	// TODO Auto-generated method stub
+		return  true;
+	}
+	
+	@Override
+	public IToolBehaviorProvider getCurrentToolBehaviorProvider() {	
+		// TODO Auto-generated method stub
+		return new WorkflowBehaviorProvider(this);
+	}
 	@Override
 	public void postInit() {
-		// TODO Auto-generated method stub
-		//((WorkflowFeatureProvider)getFeatureProvider()).initWorkflowProcess();
-		//((WorkflowFeatureProvider)getFeatureProvider()).initDiagram();
-		//((WorkflowFeatureProvider)getFeatureProvider()).initDiagram();
+		//init diagram with start Node and end Node
+		if(getDiagram().isActive()==false){
+			WorkflowFeatureProvider provider=(WorkflowFeatureProvider) getFeatureProvider();
+			
+			Collection<PortType> porttypes=provider.getNewPortTypes();
+			for(PortType porttype: porttypes){
+				if(porttype.getOperations().size()==1){
+					for(Object ob : porttype.getOperations()){
+						Operation operation=(Operation)ob;
+						StartTaskCreateFeature startFeature=new StartTaskCreateFeature(getFeatureProvider(),porttype,operation);
+						EndTaskCreateFeature endFeature=new EndTaskCreateFeature(getFeatureProvider(),porttype,operation);
+						CreateContext context=new CreateContext();
+						context.setTargetContainer(getDiagram());
+						context.setLocation(0, 200);
+						getDiagramEditor().executeFeature(startFeature, context);
+						context.setLocation(500, 200);
+						getDiagramEditor().executeFeature(endFeature, context);
+						getDiagramEditor().refresh();
+					}
+				}
+				
+			}
+			
+			
+			
+		}
+			
 	}
+	
 
 	
 	

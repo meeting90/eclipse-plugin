@@ -28,12 +28,14 @@
     <genClasses ecoreClass="workflow.ecore#//WorkflowProcess">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowProcess/rootWorkflow"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowProcess/bpelProcess"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowProcess/implPortTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowProcess/toImplPortTypes"/>
     </genClasses>
     <genClasses ecoreClass="workflow.ecore#//Workflow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/nodes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/edges"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/comments"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/portTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/activity"/>
     </genClasses>
     <genClasses ecoreClass="workflow.ecore#//WorkflowNode">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference workflow.ecore#//WorkflowNode/workflow"/>

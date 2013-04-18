@@ -1,15 +1,13 @@
 package cn.edu.nju.cs.workflow.ui.feature.add;
 
-import org.eclipse.core.internal.localstore.IsSynchronizedVisitor;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.IAddContext;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
-import org.eclipse.graphiti.mm.pictograms.Shape;
 
 import cn.edu.nju.cs.workflow.model.AdviceType;
 import cn.edu.nju.cs.workflow.model.SimpleTask;
-import cn.edu.nju.cs.workflow.model.Task;
+
 
 public class SimpleTaskAddFeature extends BaseAddFeature{
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:tns="http://sample.bpel.org/bpel/sample" targetNamespace="http://sample.bpel.org/bpel/sampleArtifacts" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <partnerLinkType name="TryInvokePLT" xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <role name="TryInvokeRole" portType="tns:TryInvoke"/>
+  </partnerLinkType>
+  <import location="file:/E:/github/eclipse-plugin/plugin-workspace/cn.edu.nju.cs.workflow.ui/resources/TryInvokeArtifacts.wsdl" namespace="http://sample.bpel.org/bpel/sample"/>
+</definitions>

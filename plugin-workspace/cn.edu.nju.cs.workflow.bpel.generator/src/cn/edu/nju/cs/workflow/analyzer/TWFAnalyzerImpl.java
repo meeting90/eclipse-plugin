@@ -1,29 +1,31 @@
 package cn.edu.nju.cs.workflow.analyzer;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.bpel.common.wsdl.parsers.WsdlParser;
+import org.eclipse.bpel.model.Import;
 import org.eclipse.bpel.model.Process;
 import org.eclipse.bpel.model.resource.BPELResource;
-import org.eclipse.bpel.model.resource.BPELResourceImpl;
 import org.eclipse.bpel.model.resource.BPELWriter;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
+import org.eclipse.wst.wsdl.Definition;
 
 
-import cn.edu.nju.cs.workflow.model.Workflow;
 import cn.edu.nju.cs.workflow.model.WorkflowProcess;
 public class TWFAnalyzerImpl  implements TWFAnalyzer{
 	//private BPELProcessWriter writer=null;
 	private BPELResource bpelResource=null;
 	private Process bpelProcess=null;
 	private WorkflowProcess workflowProcess=null;
+	private IFile twfFile=null;
 	
 	public TWFAnalyzerImpl(){
 		super();
@@ -32,7 +34,14 @@ public class TWFAnalyzerImpl  implements TWFAnalyzer{
 		this();
 		initFromResource(resource);
 	}
+	public TWFAnalyzerImpl(Resource resource,IFile twfFile){
+		this(resource);
+		this.twfFile=twfFile;
+	}
 	
+	public void setTwfFile(IFile twfFile) {
+		this.twfFile = twfFile;
+	}
 	public void initFromResource(Resource resource){
 		EList<EObject> contents=resource.getContents();
 		for(EObject ob: contents){
@@ -44,35 +53,50 @@ public class TWFAnalyzerImpl  implements TWFAnalyzer{
 			}
 		}
 	}
-	
-
-
 	@Override
-	public void generateBpelProcess(URI uri) throws IOException {
-		System.out.println("bpelProcess:"+bpelProcess.getVariables().getChildren().get(0).getMessageType());
-		// TODO Auto-generated method stub
+	public void generateBpelProcess(URI uri,IProgressMonitor monitor) throws IOException {
+		reorderTasks(monitor);
+		reorderAcitivities(monitor);
+		completeBpelProcess(monitor);
 		bpelResource=new BPELProcessResourceImpl(uri,bpelProcess);
-		//bpelResource.getContents().add(bpelProcess);
-		//bpelResource.
-		
 		Map<Object,Object> saveOptions = new HashMap<Object,Object> ();
 		saveOptions.put( BPELWriter.SKIP_AUTO_IMPORT, Boolean.TRUE );
-//		BPELWriter writer=new BPELWriter();
-//		writer.write(bpelResource, System.out, saveOptions);
-//		//System.out.println(writer.getResource().getProcess().getVariables().getChildren().get(0).getMessageType());
 		bpelResource.save(saveOptions);
+	}
+	@Override
+	public void reorderTasks(final IProgressMonitor monitor) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void completeBpelProcess(final IProgressMonitor monitor) {
+		// TODO Auto-generated method stub
+		IFile wsdlFile = twfFile.getParent().getFile( new Path( computeWsdlArtifactsName()));
+		URI wsdlEmfUri = URI.createPlatformResourceURI( wsdlFile.getFullPath().toString(), true );
+		Definition artifactsDefinition=WsdlParser.loadWsdlDefinition(wsdlEmfUri, WsdlParser.createBasicResourceSetForWsdl());
+		BpelHelper bpelHelper=new BpelHelper(bpelProcess, artifactsDefinition);
+		bpelHelper.addPartnerLinks();
+		
+	}
+	@Override
+	public void reorderAcitivities(IProgressMonitor monitor) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	private  String computeWsdlArtifactsName() {
+		IPath path = new Path( this.twfFile.getName());
+		return path.removeFileExtension().toString() + "Artifacts.wsdl";
+	}
 
-	}
-	@Override
-	public void reorderTasks() {
-		// TODO Auto-generated method stub
+			
+					
+				
+					
 		
-	}
-	@Override
-	public void completeBpelProcess() {
-		// TODO Auto-generated method stub
-		
-	}
+
+	
 
 	
 

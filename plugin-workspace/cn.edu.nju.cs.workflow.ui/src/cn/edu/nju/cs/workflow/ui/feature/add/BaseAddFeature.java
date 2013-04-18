@@ -157,11 +157,9 @@ public class BaseAddFeature extends AbstractAddFeature {
 		final Diagram targetDiagram = (Diagram) context.getTargetContainer();
 		final IPeCreateService peCreateService = Graphiti.getPeCreateService();
 		final ContainerShape containerShape = peCreateService.createContainerShape(targetDiagram, true);
-		final int width = context.getWidth() <= 0 ? totalWidth : context.getWidth();
-		final int height = context.getHeight() <= 0 ? totalHeight : context.getHeight();
 		final IGaService gaService = Graphiti.getGaService();
 		final Rectangle invisibleRectangle = gaService.createInvisibleRectangle(containerShape);
-		gaService.setLocationAndSize(invisibleRectangle, context.getX(), context.getY(), width, height);
+		gaService.setLocationAndSize(invisibleRectangle, context.getX(), context.getY(), totalWidth, totalHeight);
         if (element.eResource() == null) {
 				getDiagram().eResource().getContents().add(element);
 	    }
@@ -190,10 +188,6 @@ public class BaseAddFeature extends AbstractAddFeature {
 		final IPeCreateService peCreateService = Graphiti.getPeCreateService();
     	final IGaService gaService = Graphiti.getGaService();
     	ContainerShape shape = peCreateService.createContainerShape(containerShape, true);
-//    	RoundedRectangle portRectangle=gaService.createPlainRoundedRectangle(shape, 0, 0);
-//		portRectangle.setStyle(StyleUtil.getStyleForPort(getDiagram()));
-		//gaService.setLocationAndSize(portRectangle,getBodyX()+getNodeMarkMargin() ,getBodyY()+getBodyWidth()-getNodeMarkMargin()-getPortWidth() ,getPortWidth(), getPortWidth());
-		
 		int[] xy={0,0,0,getPortWidth(),getPortWidth(),getPortWidth()/2};
 		Polygon polygon=gaService.createPlainPolygon(shape, xy);
 		polygon.setStyle(StyleUtil.getStyleForStartNodeMark(getDiagram()));

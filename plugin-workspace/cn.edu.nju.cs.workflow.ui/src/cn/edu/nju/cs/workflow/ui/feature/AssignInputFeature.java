@@ -44,8 +44,9 @@ public class AssignInputFeature  extends AbstractCustomFeature{
 	 	 AssignInputDialog dialog = new AssignInputDialog (
 	        		shell, input,null,port.getAssign()
 	        		);
-	        
+	 	
 	        dialog.open();
+	 	
 	      
 	
 	    

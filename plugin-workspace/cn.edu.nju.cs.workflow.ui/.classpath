@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="model"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="D:/eclipse/plugins/org.eclipse.graphiti.examples.chess_0.9.1.v20120919-0732.jar" sourcepath="D:/eclipse/plugins/org.eclipse.graphiti.examples.chess.source_0.9.1.v20120919-0732.jar"/>
-	<classpathentry kind="lib" path="D:/eclipse/plugins/org.eclipse.graphiti.examples.tutorial_0.9.1.v20120919-0732.jar" sourcepath="D:/eclipse/plugins/org.eclipse.graphiti.examples.tutorial.source_0.9.1.v20120919-0732.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

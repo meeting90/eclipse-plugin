@@ -363,6 +363,24 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getWorkflowProcess_ImplPortTypes() {
+		return (EReference)workflowProcessEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWorkflowProcess_ToImplPortTypes() {
+		return (EReference)workflowProcessEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getWorkflow() {
 		return workflowEClass;
 	}
@@ -399,7 +417,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWorkflow_PortTypes() {
+	public EReference getWorkflow_Activity() {
 		return (EReference)workflowEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -857,12 +875,14 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		workflowProcessEClass = createEClass(WORKFLOW_PROCESS);
 		createEReference(workflowProcessEClass, WORKFLOW_PROCESS__ROOT_WORKFLOW);
 		createEReference(workflowProcessEClass, WORKFLOW_PROCESS__BPEL_PROCESS);
+		createEReference(workflowProcessEClass, WORKFLOW_PROCESS__IMPL_PORT_TYPES);
+		createEReference(workflowProcessEClass, WORKFLOW_PROCESS__TO_IMPL_PORT_TYPES);
 
 		workflowEClass = createEClass(WORKFLOW);
 		createEReference(workflowEClass, WORKFLOW__NODES);
 		createEReference(workflowEClass, WORKFLOW__EDGES);
 		createEReference(workflowEClass, WORKFLOW__COMMENTS);
-		createEReference(workflowEClass, WORKFLOW__PORT_TYPES);
+		createEReference(workflowEClass, WORKFLOW__ACTIVITY);
 
 		workflowNodeEClass = createEClass(WORKFLOW_NODE);
 		createEReference(workflowNodeEClass, WORKFLOW_NODE__WORKFLOW);
@@ -992,12 +1012,14 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEClass(workflowProcessEClass, WorkflowProcess.class, "WorkflowProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkflowProcess_RootWorkflow(), this.getWorkflow(), null, "rootWorkflow", null, 0, 1, WorkflowProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkflowProcess_BpelProcess(), theBPELPackage.getProcess(), null, "bpelProcess", null, 1, 1, WorkflowProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkflowProcess_ImplPortTypes(), theWSDLPackage.getPortType(), null, "implPortTypes", null, 0, -1, WorkflowProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkflowProcess_ToImplPortTypes(), theWSDLPackage.getPortType(), null, "toImplPortTypes", null, 0, -1, WorkflowProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workflowEClass, Workflow.class, "Workflow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkflow_Nodes(), this.getWorkflowNode(), this.getWorkflowNode_Workflow(), "nodes", null, 0, -1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkflow_Edges(), this.getEdge(), this.getEdge_Workflow(), "edges", null, 0, -1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkflow_Comments(), this.getComment(), null, "comments", null, 0, -1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWorkflow_PortTypes(), theWSDLPackage.getPortType(), null, "portTypes", null, 0, -1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkflow_Activity(), theBPELPackage.getActivity(), null, "activity", null, 1, 1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workflowNodeEClass, WorkflowNode.class, "WorkflowNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkflowNode_Workflow(), this.getWorkflow(), this.getWorkflow_Nodes(), "workflow", null, 1, 1, WorkflowNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1012,7 +1034,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEClass(simpleTaskEClass, SimpleTask.class, "SimpleTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSimpleTask_Porttype(), theWSDLPackage.getPortType(), null, "porttype", null, 0, 1, SimpleTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSimpleTask_Operation(), theWSDLPackage.getOperation(), null, "operation", null, 0, 1, SimpleTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSimpleTask_PartnerActivity(), theBPELPackage.getPartnerActivity(), null, "partnerActivity", null, 0, 1, SimpleTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimpleTask_PartnerActivity(), theBPELPackage.getBPELExtensibleElement(), null, "partnerActivity", null, 0, 1, SimpleTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSimpleTask_PartnerLink(), theBPELPackage.getPartnerLink(), null, "partnerLink", null, 0, 1, SimpleTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compoundTaskEClass, CompoundTask.class, "CompoundTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
