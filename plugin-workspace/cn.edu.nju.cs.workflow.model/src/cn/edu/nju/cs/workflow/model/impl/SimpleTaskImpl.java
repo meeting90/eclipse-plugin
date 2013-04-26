@@ -10,7 +10,6 @@ import cn.edu.nju.cs.workflow.model.ModelPackage;
 import cn.edu.nju.cs.workflow.model.SimpleTask;
 
 import org.eclipse.bpel.model.BPELExtensibleElement;
-import org.eclipse.bpel.model.PartnerActivity;
 import org.eclipse.bpel.model.PartnerLink;
 
 import org.eclipse.emf.common.notify.Notification;

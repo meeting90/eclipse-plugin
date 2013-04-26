@@ -1,14 +1,8 @@
 package cn.edu.nju.cs.workflow.ui.feature.create;
 
-import org.eclipse.bpel.model.Assign;
 import org.eclipse.bpel.model.OnMessage;
 import org.eclipse.bpel.model.Pick;
-import org.eclipse.bpel.model.Reply;
-import org.eclipse.bpel.model.Sequence;
 import org.eclipse.graphiti.features.IFeatureProvider;
-import org.eclipse.graphiti.features.context.ICreateContext;
-import org.eclipse.graphiti.features.impl.AbstractCreateFeature;
-import org.eclipse.graphiti.mm.pictograms.Diagram;
 import org.eclipse.wst.wsdl.Operation;
 import org.eclipse.wst.wsdl.PortType;
 
@@ -16,9 +10,7 @@ import cn.edu.nju.cs.workflow.bpel.BPELComponentGenerator;
 import cn.edu.nju.cs.workflow.model.ModelFactory;
 import cn.edu.nju.cs.workflow.model.OutputPort;
 import cn.edu.nju.cs.workflow.model.SimpleTask;
-import cn.edu.nju.cs.workflow.model.WorkflowNode;
 import cn.edu.nju.cs.workflow.ui.diagram.WorkflowFeatureProvider;
-import cn.edu.nju.cs.workflow.ui.util.ConfigureUtil;
 
 public class StartTaskCreateFeature  extends  SimpleTaskCreateFeature{
 	protected Operation operation;

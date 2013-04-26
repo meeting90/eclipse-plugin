@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:cn.edu.nju.cs="cs.nju.edu.cn" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms">
-  <pi:Diagram visible="true" active="true" diagramTypeId="workflow" name="hello" snapToGrid="true" pictogramLinks="/0/@children.0/@link /0/@children.1/@link /0/@children.2/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@children.2/@children.2/@link /0/@children.2/@children.3/@link /0/@children.2/@children.6/@link /0/@children.2/@children.7/@link /0/@children.2/@children.8/@link /0/@children.2/@children.9/@link /0/@children.2/@children.10/@link /0/@children.2/@children.11/@link /0/@children.2/@children.12/@link /0/@connections.0/@link /0/@children.3/@link /0/@children.3/@children.0/@link /0/@children.3/@children.1/@link /0/@children.3/@children.2/@link /0/@children.3/@children.3/@link /0/@children.3/@children.6/@link /0/@children.3/@children.7/@link /0/@children.3/@children.8/@link /0/@children.3/@children.9/@link /0/@children.3/@children.10/@link /0/@children.3/@children.11/@link /0/@children.3/@children.12/@link /0/@connections.1/@link /0/@connections.2/@link" version="0.9.1">
+  <pi:Diagram visible="true" active="true" diagramTypeId="workflow" name="hello" snapToGrid="true" pictogramLinks="/0/@children.0/@link /0/@children.1/@link /0/@children.2/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@children.2/@children.2/@link /0/@children.2/@children.3/@link /0/@children.2/@children.6/@link /0/@children.2/@children.7/@link /0/@children.2/@children.8/@link /0/@children.2/@children.9/@link /0/@children.2/@children.10/@link /0/@children.2/@children.11/@link /0/@children.2/@children.12/@link /0/@children.3/@link /0/@children.3/@children.0/@link /0/@children.3/@children.1/@link /0/@children.3/@children.2/@link /0/@children.3/@children.3/@link /0/@children.3/@children.6/@link /0/@children.3/@children.7/@link /0/@children.3/@children.8/@link /0/@children.3/@children.9/@link /0/@children.3/@children.10/@link /0/@children.3/@children.11/@link /0/@children.3/@children.12/@link /0/@children.4/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@children.4/@children.2/@link /0/@children.4/@children.3/@link /0/@children.4/@children.6/@link /0/@children.4/@children.7/@link /0/@children.4/@children.8/@link /0/@children.4/@children.9/@link /0/@children.4/@children.10/@link /0/@children.4/@children.11/@link /0/@children.4/@children.12/@link /0/@children.5/@link /0/@children.5/@children.0/@link /0/@children.5/@children.1/@link /0/@children.5/@children.2/@link /0/@children.5/@children.3/@link /0/@children.5/@children.6/@link /0/@children.5/@children.7/@link /0/@children.5/@children.8/@link /0/@children.5/@children.9/@link /0/@children.5/@children.10/@link /0/@children.5/@children.11/@link /0/@children.5/@children.12/@link /0/@children.6/@link /0/@children.6/@children.0/@link /0/@children.6/@children.1/@link /0/@children.6/@children.2/@link /0/@children.6/@children.3/@link /0/@children.6/@children.6/@link /0/@children.6/@children.7/@link /0/@children.6/@children.8/@link /0/@children.6/@children.9/@link /0/@children.6/@children.10/@link /0/@children.6/@children.11/@link /0/@children.6/@children.12/@link /0/@children.7/@link /0/@children.7/@children.0/@link /0/@children.7/@children.1/@link /0/@children.7/@children.2/@link /0/@children.7/@children.3/@link /0/@children.7/@children.6/@link /0/@children.7/@children.7/@link /0/@children.7/@children.8/@link /0/@children.7/@children.9/@link /0/@children.7/@children.10/@link /0/@children.7/@children.11/@link /0/@children.7/@children.12/@link /0/@connections.0/@link /0/@connections.1/@link /0/@connections.2/@link /0/@connections.3/@link /0/@connections.4/@link /0/@connections.5/@link /0/@connections.6/@link /0/@connections.7/@link /0/@children.8/@link /0/@children.8/@children.0/@link /0/@children.8/@children.1/@link /0/@children.8/@children.2/@link /0/@children.8/@children.3/@link /0/@children.8/@children.6/@link /0/@children.8/@children.7/@link /0/@children.8/@children.8/@link /0/@children.8/@children.9/@link /0/@children.8/@children.10/@link /0/@children.8/@children.11/@link /0/@children.8/@children.12/@link /0/@connections.8/@link /0/@children.9/@link /0/@children.9/@children.0/@link /0/@children.9/@children.1/@link /0/@children.9/@children.2/@link /0/@children.9/@children.3/@link /0/@children.9/@children.6/@link /0/@children.9/@children.7/@link /0/@children.9/@children.8/@link /0/@children.9/@children.9/@link /0/@children.9/@children.10/@link /0/@children.9/@children.11/@link /0/@children.9/@children.12/@link /0/@connections.9/@link /0/@connections.10/@link /0/@connections.11/@link /0/@connections.12/@link" version="0.9.1">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="40" height="40" x="-12" y="271" style="/0/@styles.0/@styles.0">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="40" height="40" x="-12" y="120" style="/0/@styles.0/@styles.0">
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1">
           <points/>
           <points x="20" y="20"/>
@@ -12,13 +12,13 @@
         </graphicsAlgorithmChildren>
       </graphicsAlgorithm>
       <link businessObjects="/1/@rootWorkflow/@nodes.0/@outputs.0"/>
-      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.2"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.0 /0/@connections.1 /0/@connections.2 /0/@connections.9"/>
       <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.0/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
         <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
       </anchors>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="40" height="40" x="552" y="132" style="/0/@styles.0/@styles.0">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="40" height="40" x="1128" y="127" style="/0/@styles.0/@styles.0">
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1">
           <points/>
           <points x="20" y="20"/>
@@ -26,16 +26,16 @@
         </graphicsAlgorithmChildren>
       </graphicsAlgorithm>
       <link businessObjects="/1/@rootWorkflow/@nodes.1/@input"/>
-      <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.0"/>
+      <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.10 /0/@connections.11 /0/@connections.12"/>
       <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.1/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
         <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
       </anchors>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="243" y="78">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="123" y="-39">
         <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
       </graphicsAlgorithm>
-      <link businessObjects="18"/>
+      <link businessObjects="3"/>
       <anchors xsi:type="pi:ChopboxAnchor"/>
       <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@graphicsAlgorithm/@graphicsAlgorithmChildren.0" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
         <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -48,8 +48,8 @@
             <points x="20" y="10"/>
           </graphicsAlgorithmChildren>
         </graphicsAlgorithm>
-        <link businessObjects="19"/>
-        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.1"/>
+        <link businessObjects="4"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.0"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.0/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
         </anchors>
@@ -62,8 +62,8 @@
             <points x="20" y="10"/>
           </graphicsAlgorithmChildren>
         </graphicsAlgorithm>
-        <link businessObjects="20"/>
-        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.0"/>
+        <link businessObjects="5"/>
+        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.3"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.1/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
         </anchors>
@@ -76,17 +76,17 @@
             <points x="20" y="10"/>
           </graphicsAlgorithmChildren>
         </graphicsAlgorithm>
-        <link businessObjects="21"/>
+        <link businessObjects="6"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.2/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
         </anchors>
       </children>
       <children visible="true">
-        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong2"/>
-        <link businessObjects="18"/>
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong1"/>
+        <link businessObjects="3"/>
       </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <children xsi:type="pi:ContainerShape" active="true">
         <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="20" height="20" x="40" y="120" style="/0/@styles.0/@styles.7">
           <points/>
           <points y="20"/>
@@ -98,7 +98,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="50" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="22"/>
+        <link businessObjects="7"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.6/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -106,7 +106,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="190" y="50" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="23"/>
+        <link businessObjects="8"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.7/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -114,7 +114,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="95" y="150" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="24"/>
+        <link businessObjects="9"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.8/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -122,7 +122,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="30" y="50" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="25"/>
+        <link businessObjects="10"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.9/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -130,7 +130,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="15" y="65" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="26"/>
+        <link businessObjects="11"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.10/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -138,7 +138,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="160" y="50" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="27"/>
+        <link businessObjects="12"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.11/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -146,7 +146,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="175" y="65" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="28"/>
+        <link businessObjects="13"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.2/@children.12/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -154,10 +154,10 @@
       </children>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="39" y="96">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="123" y="120">
         <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
       </graphicsAlgorithm>
-      <link businessObjects="1"/>
+      <link businessObjects="14"/>
       <anchors xsi:type="pi:ChopboxAnchor"/>
       <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@graphicsAlgorithm/@graphicsAlgorithmChildren.0" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
         <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -170,8 +170,8 @@
             <points x="20" y="10"/>
           </graphicsAlgorithmChildren>
         </graphicsAlgorithm>
-        <link businessObjects="2"/>
-        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.2"/>
+        <link businessObjects="15"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.1"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.0/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
         </anchors>
@@ -184,8 +184,8 @@
             <points x="20" y="10"/>
           </graphicsAlgorithmChildren>
         </graphicsAlgorithm>
-        <link businessObjects="3"/>
-        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.1"/>
+        <link businessObjects="16"/>
+        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.4"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.1/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
         </anchors>
@@ -198,15 +198,15 @@
             <points x="20" y="10"/>
           </graphicsAlgorithmChildren>
         </graphicsAlgorithm>
-        <link businessObjects="4"/>
+        <link businessObjects="17"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.2/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
         </anchors>
       </children>
       <children visible="true">
-        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong1"/>
-        <link businessObjects="1"/>
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong2"/>
+        <link businessObjects="14"/>
       </children>
       <children xsi:type="pi:ContainerShape" active="true">
         <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="20" height="20" x="40" y="120" style="/0/@styles.0/@styles.7">
@@ -220,7 +220,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="50" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="5"/>
+        <link businessObjects="18"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.6/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -228,7 +228,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="190" y="50" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="6"/>
+        <link businessObjects="19"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.7/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -236,7 +236,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="95" y="150" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="7"/>
+        <link businessObjects="20"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.8/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -244,7 +244,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="30" y="50" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="8"/>
+        <link businessObjects="21"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.9/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -252,7 +252,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="15" y="65" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="9"/>
+        <link businessObjects="22"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.10/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -260,7 +260,7 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="160" y="50" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="10"/>
+        <link businessObjects="23"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.11/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
@@ -268,9 +268,741 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="175" y="65" style="/0/@styles.0/@styles.0"/>
-        <link businessObjects="11"/>
+        <link businessObjects="24"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.3/@children.12/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="123" y="279">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="25"/>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+      <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@graphicsAlgorithm/@graphicsAlgorithmChildren.0" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+        <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+      </anchors>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="10" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.3">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="26"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.2"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.0/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.4">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="27"/>
+        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.6"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.1/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="105" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.5">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="28"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.2/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong3"/>
+        <link businessObjects="25"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="20" height="20" x="40" y="120" style="/0/@styles.0/@styles.7">
+          <points/>
+          <points y="20"/>
+          <points x="20" y="10"/>
+        </graphicsAlgorithm>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="140" y="120" style="/0/@styles.0/@styles.8"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="29"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.6/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="190" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="30"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.7/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="95" y="150" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="31"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.8/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="30" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="32"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.9/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="15" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="33"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.10/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="160" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="34"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.11/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="175" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="35"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.4/@children.12/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="385" y="14">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="36"/>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+      <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@graphicsAlgorithm/@graphicsAlgorithmChildren.0" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+        <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+      </anchors>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="10" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.3">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="37"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.3 /0/@connections.4"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.0/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.4">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="38"/>
+        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.5"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.1/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="105" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.5">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="39"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.2/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong4"/>
+        <link businessObjects="36"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="20" height="20" x="40" y="120" style="/0/@styles.0/@styles.7">
+          <points/>
+          <points y="20"/>
+          <points x="20" y="10"/>
+        </graphicsAlgorithm>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="140" y="120" style="/0/@styles.0/@styles.8"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="40"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.6/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="190" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="41"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.7/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="95" y="150" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="42"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.8/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="30" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="43"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.9/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="15" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="44"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.10/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="160" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="45"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.11/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="175" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="46"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.5/@children.12/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="600" y="183">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="47"/>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+      <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@graphicsAlgorithm/@graphicsAlgorithmChildren.0" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+        <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+      </anchors>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="10" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.3">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="48"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.5 /0/@connections.6"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.0/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.4">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="49"/>
+        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.7 /0/@connections.8"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.1/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="105" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.5">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="50"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.2/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong5"/>
+        <link businessObjects="47"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="20" height="20" x="40" y="120" style="/0/@styles.0/@styles.7">
+          <points/>
+          <points y="20"/>
+          <points x="20" y="10"/>
+        </graphicsAlgorithm>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="140" y="120" style="/0/@styles.0/@styles.8"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="51"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.6/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="190" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="52"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.7/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="95" y="150" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="53"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.8/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="30" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="54"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.9/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="15" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="55"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.10/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="160" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="56"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.11/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="175" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="57"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.6/@children.12/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="840" y="166">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="58"/>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+      <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@graphicsAlgorithm/@graphicsAlgorithmChildren.0" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+        <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+      </anchors>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="10" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.3">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="59"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.7"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.0/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.4">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="60"/>
+        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.11"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.1/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="105" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.5">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="61"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.2/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong6"/>
+        <link businessObjects="58"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="20" height="20" x="40" y="120" style="/0/@styles.0/@styles.7">
+          <points/>
+          <points y="20"/>
+          <points x="20" y="10"/>
+        </graphicsAlgorithm>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="140" y="120" style="/0/@styles.0/@styles.8"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="62"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.6/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="190" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="63"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.7/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="95" y="150" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="64"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.8/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="30" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="65"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.9/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="15" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="66"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.10/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="160" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="67"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.11/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="175" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="68"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.7/@children.12/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="840" y="-19">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="77"/>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+      <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@graphicsAlgorithm/@graphicsAlgorithmChildren.0" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+        <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+      </anchors>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="10" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.3">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="78"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.8"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.0/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.4">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="79"/>
+        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.10"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.1/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="105" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.5">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="80"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.2/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong7"/>
+        <link businessObjects="77"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="20" height="20" x="40" y="120" style="/0/@styles.0/@styles.7">
+          <points/>
+          <points y="20"/>
+          <points x="20" y="10"/>
+        </graphicsAlgorithm>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="140" y="120" style="/0/@styles.0/@styles.8"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="81"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.6/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="190" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="82"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.7/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="95" y="150" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="83"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.8/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="30" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="84"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.9/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="15" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="85"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.10/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="160" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="86"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.11/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="175" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="87"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.8/@children.12/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="487" y="468">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="89"/>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+      <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@graphicsAlgorithm/@graphicsAlgorithmChildren.0" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+        <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+      </anchors>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="10" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.3">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="90"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.9"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.0/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="45" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.4">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="91"/>
+        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.12"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.1/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="170" y="105" style="/0/@styles.0/@styles.2">
+          <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.5">
+            <points/>
+            <points y="20"/>
+            <points x="20" y="10"/>
+          </graphicsAlgorithmChildren>
+        </graphicsAlgorithm>
+        <link businessObjects="92"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.2/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="1.0" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="20" x="30" y="10" style="/0/@styles.0/@styles.6" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="PingPong8"/>
+        <link businessObjects="89"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="20" height="20" x="40" y="120" style="/0/@styles.0/@styles.7">
+          <points/>
+          <points y="20"/>
+          <points x="20" y="10"/>
+        </graphicsAlgorithm>
+      </children>
+      <children xsi:type="pi:ContainerShape" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="20" height="20" x="140" y="120" style="/0/@styles.0/@styles.8"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="93"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.6/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="190" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="94"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.7/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="95" y="150" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="95"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.8/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="30" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="96"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.9/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="15" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="97"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.10/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="160" y="50" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="98"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.11/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
+          <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
+        </anchors>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="175" y="65" style="/0/@styles.0/@styles.0"/>
+        <link businessObjects="99"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <anchors xsi:type="pi:BoxRelativeAnchor" visible="true" active="true" referencedGraphicsAlgorithm="/0/@children.9/@children.12/@graphicsAlgorithm" useAnchorLocationAsConnectionEndpoint="true" relativeWidth="0.5" relativeHeight="0.5">
           <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0"/>
         </anchors>
       </children>
@@ -473,23 +1205,9 @@
       <styles background="/0/@colors.7" foreground="/0/@colors.7" lineStyle="UNSPECIFIED" filled="true" id="END-NODE-MARK" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
       <styles foreground="/0/@colors.8" lineStyle="UNSPECIFIED" filled="false" id="TEXT-DECORATOR-TEXT" font="/0/@fonts.1" angle="0"/>
     </styles>
-    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.2/@children.1/@anchors.0" end="/0/@children.1/@anchors.0">
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.0/@anchors.0" end="/0/@children.2/@children.0/@anchors.0">
       <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
-      <link businessObjects="30"/>
-      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
-        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge4"/>
-      </connectionDecorators>
-      <connectionDecorators visible="true" locationRelative="true" location="1.0">
-        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
-          <points x="-15" y="10"/>
-          <points/>
-          <points x="-15" y="-10"/>
-        </graphicsAlgorithm>
-      </connectionDecorators>
-    </connections>
-    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.3/@children.1/@anchors.0" end="/0/@children.2/@children.0/@anchors.0">
-      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
-      <link businessObjects="12"/>
+      <link businessObjects="69"/>
       <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
         <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge1"/>
       </connectionDecorators>
@@ -503,7 +1221,7 @@
     </connections>
     <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.0/@anchors.0" end="/0/@children.3/@children.0/@anchors.0">
       <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
-      <link businessObjects="13"/>
+      <link businessObjects="70"/>
       <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
         <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge2"/>
       </connectionDecorators>
@@ -514,6 +1232,162 @@
           <points x="-15" y="-10"/>
         </graphicsAlgorithm>
       </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.0/@anchors.0" end="/0/@children.4/@children.0/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="71"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge3"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.2/@children.1/@anchors.0" end="/0/@children.5/@children.0/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="72"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge4"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.3/@children.1/@anchors.0" end="/0/@children.5/@children.0/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="73"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge5"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.5/@children.1/@anchors.0" end="/0/@children.6/@children.0/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="74"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge6"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.4/@children.1/@anchors.0" end="/0/@children.6/@children.0/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="75"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge7"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.6/@children.1/@anchors.0" end="/0/@children.7/@children.0/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="76"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge8"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.6/@children.1/@anchors.0" end="/0/@children.8/@children.0/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="88"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge9"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.0/@anchors.0" end="/0/@children.9/@children.0/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="100"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge10"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+      <bendpoints x="102" y="580"/>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.8/@children.1/@anchors.0" end="/0/@children.1/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="101"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge11"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.7/@children.1/@anchors.0" end="/0/@children.1/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="102"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge12"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.9/@children.1/@anchors.0" end="/0/@children.1/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0"/>
+      <link businessObjects="103"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="10" style="/0/@styles.0/@styles.9" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="edge13"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.0">
+          <points x="-15" y="10"/>
+          <points/>
+          <points x="-15" y="-10"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+      <bendpoints x="1124" y="497"/>
     </connections>
     <colors red="227" green="238" blue="249"/>
     <colors red="255" green="255" blue="255"/>
@@ -529,43 +1403,125 @@
   </pi:Diagram>
   <cn.edu.nju.cs:WorkflowProcess bpelProcess="/2">
     <rootWorkflow activity="/2/@activity/@activities.0/@messages.0/@activity">
-      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="16" name="TryInvoke3" isStartNode="true" isFinishNode="true" partnerActivity="/2/@activity/@activities.0/@messages.0">
-        <outputs node="16" edges="13" outputValue="/2/@variables/@children.0"/>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="1" name="TryInvoke1" isStartNode="true" partnerActivity="/2/@activity/@activities.0/@messages.0">
+        <outputs node="1" edges="69 70 71 100" outputValue="/2/@variables/@children.0"/>
         <porttype href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/TryInvokeArtifacts.wsdl#//@ePortTypes.0"/>
         <operation href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/TryInvokeArtifacts.wsdl#//@ePortTypes.0/@eOperations.0"/>
       </nodes>
-      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="17" name="TryInvoke4" isFinishNode="true" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.5">
-        <input node="17" edges="30" inputValue="/2/@variables/@children.1" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.4"/>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="2" name="TryInvoke2" isFinishNode="true" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.17">
+        <input node="2" edges="101 102 103" inputValue="/2/@variables/@children.1" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.16"/>
         <porttype href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/TryInvokeArtifacts.wsdl#//@ePortTypes.0"/>
         <operation href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/TryInvokeArtifacts.wsdl#//@ePortTypes.0/@eOperations.0"/>
       </nodes>
-      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="18" name="PingPong2" isStartNode="true" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.3">
-        <input id="19" node="18" edges="12" inputValue="/2/@variables/@children.2" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.2"/>
-        <outputs id="20" node="18" edges="30" outputValue="/2/@variables/@children.3"/>
-        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="21" node="18"/>
-        <adviceEdges id="22"/>
-        <adviceEdges id="23" advicetype="after"/>
-        <adviceEdges id="24" advicetype="around"/>
-        <adviceEdges id="25" advicetype="after_soapmessagein"/>
-        <adviceEdges id="26" advicetype="around_soapmessagein"/>
-        <adviceEdges id="27" advicetype="before_soapmessageout"/>
-        <adviceEdges id="28" advicetype="around_soapmessageout"/>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="3" name="PingPong1" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.15">
+        <input id="4" node="3" edges="69" inputValue="/2/@variables/@children.2" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.14"/>
+        <outputs id="5" node="3" edges="72" outputValue="/2/@variables/@children.3"/>
+        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="6" node="3"/>
+        <adviceEdges id="7"/>
+        <adviceEdges id="8" advicetype="after"/>
+        <adviceEdges id="9" advicetype="around"/>
+        <adviceEdges id="10" advicetype="after_soapmessagein"/>
+        <adviceEdges id="11" advicetype="around_soapmessagein"/>
+        <adviceEdges id="12" advicetype="before_soapmessageout"/>
+        <adviceEdges id="13" advicetype="around_soapmessageout"/>
       </nodes>
-      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="1" name="PingPong1" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.1">
-        <input id="2" node="1" edges="13" inputValue="/2/@variables/@children.4" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.0"/>
-        <outputs id="3" node="1" edges="12" outputValue="/2/@variables/@children.5"/>
-        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="4" node="1"/>
-        <adviceEdges id="5"/>
-        <adviceEdges id="6" advicetype="after"/>
-        <adviceEdges id="7" advicetype="around"/>
-        <adviceEdges id="8" advicetype="after_soapmessagein"/>
-        <adviceEdges id="9" advicetype="around_soapmessagein"/>
-        <adviceEdges id="10" advicetype="before_soapmessageout"/>
-        <adviceEdges id="11" advicetype="around_soapmessageout"/>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="14" name="PingPong2" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.13">
+        <input id="15" node="14" edges="70" inputValue="/2/@variables/@children.4" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.12"/>
+        <outputs id="16" node="14" edges="73" outputValue="/2/@variables/@children.5"/>
+        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="17" node="14"/>
+        <adviceEdges id="18"/>
+        <adviceEdges id="19" advicetype="after"/>
+        <adviceEdges id="20" advicetype="around"/>
+        <adviceEdges id="21" advicetype="after_soapmessagein"/>
+        <adviceEdges id="22" advicetype="around_soapmessagein"/>
+        <adviceEdges id="23" advicetype="before_soapmessageout"/>
+        <adviceEdges id="24" advicetype="around_soapmessageout"/>
       </nodes>
-      <edges id="30" name="edge4" source="20" target="/1/@rootWorkflow/@nodes.1/@input"/>
-      <edges id="12" name="edge1" source="3" target="19"/>
-      <edges id="13" name="edge2" source="/1/@rootWorkflow/@nodes.0/@outputs.0" target="2"/>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="25" name="PingPong3" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.11">
+        <input id="26" node="25" edges="71" inputValue="/2/@variables/@children.6" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.10"/>
+        <outputs id="27" node="25" edges="75" outputValue="/2/@variables/@children.7"/>
+        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="28" node="25"/>
+        <adviceEdges id="29"/>
+        <adviceEdges id="30" advicetype="after"/>
+        <adviceEdges id="31" advicetype="around"/>
+        <adviceEdges id="32" advicetype="after_soapmessagein"/>
+        <adviceEdges id="33" advicetype="around_soapmessagein"/>
+        <adviceEdges id="34" advicetype="before_soapmessageout"/>
+        <adviceEdges id="35" advicetype="around_soapmessageout"/>
+      </nodes>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="36" name="PingPong4" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.7">
+        <input id="37" node="36" edges="72 73" inputValue="/2/@variables/@children.10" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.6"/>
+        <outputs id="38" node="36" edges="74" outputValue="/2/@variables/@children.11"/>
+        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="39" node="36"/>
+        <adviceEdges id="40"/>
+        <adviceEdges id="41" advicetype="after"/>
+        <adviceEdges id="42" advicetype="around"/>
+        <adviceEdges id="43" advicetype="after_soapmessagein"/>
+        <adviceEdges id="44" advicetype="around_soapmessagein"/>
+        <adviceEdges id="45" advicetype="before_soapmessageout"/>
+        <adviceEdges id="46" advicetype="around_soapmessageout"/>
+      </nodes>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="47" name="PingPong5" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.5">
+        <input id="48" node="47" edges="74 75" inputValue="/2/@variables/@children.12" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.4"/>
+        <outputs id="49" node="47" edges="76 88" outputValue="/2/@variables/@children.13"/>
+        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="50" node="47"/>
+        <adviceEdges id="51"/>
+        <adviceEdges id="52" advicetype="after"/>
+        <adviceEdges id="53" advicetype="around"/>
+        <adviceEdges id="54" advicetype="after_soapmessagein"/>
+        <adviceEdges id="55" advicetype="around_soapmessagein"/>
+        <adviceEdges id="56" advicetype="before_soapmessageout"/>
+        <adviceEdges id="57" advicetype="around_soapmessageout"/>
+      </nodes>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="58" name="PingPong6" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.1">
+        <input id="59" node="58" edges="76" inputValue="/2/@variables/@children.16" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.0"/>
+        <outputs id="60" node="58" edges="102" outputValue="/2/@variables/@children.17"/>
+        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="61" node="58"/>
+        <adviceEdges id="62"/>
+        <adviceEdges id="63" advicetype="after"/>
+        <adviceEdges id="64" advicetype="around"/>
+        <adviceEdges id="65" advicetype="after_soapmessagein"/>
+        <adviceEdges id="66" advicetype="around_soapmessagein"/>
+        <adviceEdges id="67" advicetype="before_soapmessageout"/>
+        <adviceEdges id="68" advicetype="around_soapmessageout"/>
+      </nodes>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="77" name="PingPong7" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.3">
+        <input id="78" node="77" edges="88" inputValue="/2/@variables/@children.14" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.2"/>
+        <outputs id="79" node="77" edges="101" outputValue="/2/@variables/@children.15"/>
+        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="80" node="77"/>
+        <adviceEdges id="81"/>
+        <adviceEdges id="82" advicetype="after"/>
+        <adviceEdges id="83" advicetype="around"/>
+        <adviceEdges id="84" advicetype="after_soapmessagein"/>
+        <adviceEdges id="85" advicetype="around_soapmessagein"/>
+        <adviceEdges id="86" advicetype="before_soapmessageout"/>
+        <adviceEdges id="87" advicetype="around_soapmessageout"/>
+      </nodes>
+      <nodes xsi:type="cn.edu.nju.cs:SimpleTask" id="89" name="PingPong8" porttype="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" partnerActivity="/2/@activity/@activities.0/@messages.0/@activity/@activities.9">
+        <input id="90" node="89" edges="100" inputValue="/2/@variables/@children.8" assign="/2/@activity/@activities.0/@messages.0/@activity/@activities.8"/>
+        <outputs id="91" node="89" edges="103" outputValue="/2/@variables/@children.9"/>
+        <outputs xsi:type="cn.edu.nju.cs:FaultPort" id="92" node="89"/>
+        <adviceEdges id="93"/>
+        <adviceEdges id="94" advicetype="after"/>
+        <adviceEdges id="95" advicetype="around"/>
+        <adviceEdges id="96" advicetype="after_soapmessagein"/>
+        <adviceEdges id="97" advicetype="around_soapmessagein"/>
+        <adviceEdges id="98" advicetype="before_soapmessageout"/>
+        <adviceEdges id="99" advicetype="around_soapmessageout"/>
+      </nodes>
+      <edges id="69" name="edge1" source="/1/@rootWorkflow/@nodes.0/@outputs.0" target="4"/>
+      <edges id="70" name="edge2" source="/1/@rootWorkflow/@nodes.0/@outputs.0" target="15"/>
+      <edges id="71" name="edge3" source="/1/@rootWorkflow/@nodes.0/@outputs.0" target="26"/>
+      <edges id="72" name="edge4" source="5" target="37"/>
+      <edges id="73" name="edge5" source="16" target="37"/>
+      <edges id="74" name="edge6" source="38" target="48"/>
+      <edges id="75" name="edge7" source="27" target="48"/>
+      <edges id="76" name="edge8" source="49" target="59"/>
+      <edges id="88" name="edge9" source="49" target="78"/>
+      <edges id="100" name="edge10" source="/1/@rootWorkflow/@nodes.0/@outputs.0" target="90"/>
+      <edges id="101" name="edge11" source="79" target="/1/@rootWorkflow/@nodes.1/@input"/>
+      <edges id="102" name="edge12" source="60" target="/1/@rootWorkflow/@nodes.1/@input"/>
+      <edges id="103" name="edge13" source="91" target="/1/@rootWorkflow/@nodes.1/@input"/>
     </rootWorkflow>
     <implPortTypes qName="{http://pingpong.bpel.tps}PingPong">
       <eOperations style="REQUEST_RESPONSE" name="echoInput">
@@ -600,6 +1556,42 @@
       <children name="echoInputResponse">
         <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.0"/>
       </children>
+      <children name="echoInputRequest">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.1"/>
+      </children>
+      <children name="echoInputResponse">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.0"/>
+      </children>
+      <children name="echoInputRequest">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.1"/>
+      </children>
+      <children name="echoInputResponse">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.0"/>
+      </children>
+      <children name="echoInputRequest">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.1"/>
+      </children>
+      <children name="echoInputResponse">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.0"/>
+      </children>
+      <children name="echoInputRequest">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.1"/>
+      </children>
+      <children name="echoInputResponse">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.0"/>
+      </children>
+      <children name="echoInputRequest">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.1"/>
+      </children>
+      <children name="echoInputResponse">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.0"/>
+      </children>
+      <children name="echoInputRequest">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.1"/>
+      </children>
+      <children name="echoInputResponse">
+        <messageType href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src2/PingPong.wsdl#//@eMessages.0"/>
+      </children>
     </variables>
     <activity xsi:type="bpws:Sequence" name="MainSequence">
       <activities xsi:type="bpws:Pick" name="SwitchInvokedOperation" createInstance="true">
@@ -611,7 +1603,73 @@
                   <expression body="ACED0005740026246563686F496E707574526571756573742E706172616D65746572732F6E73303A696E707574"/>
                 </to>
                 <from>
-                  <expression body="ACED00057400072268656C6C6F22"/>
+                  <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
+                </from>
+              </copy>
+            </activities>
+            <activities xsi:type="bpws:Invoke" name="echoInput" portType="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" outputVariable="/2/@variables/@children.17" inputVariable="/2/@variables/@children.16"/>
+            <activities xsi:type="bpws:Assign" name="AssignechoInputRequest">
+              <copy>
+                <to>
+                  <expression body="ACED0005740026246563686F496E707574526571756573742E706172616D65746572732F6E73303A696E707574"/>
+                </to>
+                <from>
+                  <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
+                </from>
+              </copy>
+            </activities>
+            <activities xsi:type="bpws:Invoke" name="echoInput" portType="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" outputVariable="/2/@variables/@children.15" inputVariable="/2/@variables/@children.14"/>
+            <activities xsi:type="bpws:Assign" name="AssignechoInputRequest">
+              <copy>
+                <to>
+                  <expression body="ACED0005740026246563686F496E707574526571756573742E706172616D65746572732F6E73303A696E707574"/>
+                </to>
+                <from>
+                  <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
+                </from>
+              </copy>
+            </activities>
+            <activities xsi:type="bpws:Invoke" name="echoInput" portType="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" outputVariable="/2/@variables/@children.13" inputVariable="/2/@variables/@children.12"/>
+            <activities xsi:type="bpws:Assign" name="AssignechoInputRequest">
+              <copy>
+                <to>
+                  <expression body="ACED0005740026246563686F496E707574526571756573742E706172616D65746572732F6E73303A696E707574"/>
+                </to>
+                <from>
+                  <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
+                </from>
+              </copy>
+            </activities>
+            <activities xsi:type="bpws:Invoke" name="echoInput" portType="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" outputVariable="/2/@variables/@children.11" inputVariable="/2/@variables/@children.10"/>
+            <activities xsi:type="bpws:Assign" name="AssignechoInputRequest">
+              <copy>
+                <to>
+                  <expression body="ACED0005740026246563686F496E707574526571756573742E706172616D65746572732F6E73303A696E707574"/>
+                </to>
+                <from>
+                  <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
+                </from>
+              </copy>
+            </activities>
+            <activities xsi:type="bpws:Invoke" name="echoInput" portType="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" outputVariable="/2/@variables/@children.9" inputVariable="/2/@variables/@children.8"/>
+            <activities xsi:type="bpws:Assign" name="AssignechoInputRequest">
+              <copy>
+                <to>
+                  <expression body="ACED0005740026246563686F496E707574526571756573742E706172616D65746572732F6E73303A696E707574"/>
+                </to>
+                <from>
+                  <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
+                </from>
+              </copy>
+            </activities>
+            <activities xsi:type="bpws:Invoke" name="echoInput" portType="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" outputVariable="/2/@variables/@children.7" inputVariable="/2/@variables/@children.6"/>
+            <activities xsi:type="bpws:Assign" name="AssignechoInputRequest">
+              <copy>
+                <to>
+                  <expression body="ACED0005740026246563686F496E707574526571756573742E706172616D65746572732F6E73303A696E707574"/>
+                </to>
+                <from>
+                  <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
                 </from>
               </copy>
             </activities>
@@ -619,10 +1677,10 @@
             <activities xsi:type="bpws:Assign" name="AssignechoInputRequest">
               <copy>
                 <to>
-                  <expression body="ACED0005740026246563686F496E707574526571756573742E706172616D65746572732F6E73313A696E707574"/>
+                  <expression body="ACED0005740026246563686F496E707574526571756573742E706172616D65746572732F6E73303A696E707574"/>
                 </to>
                 <from>
-                  <expression body="ACED00057400072268656C6C6F22"/>
+                  <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
                 </from>
               </copy>
             </activities>
@@ -630,10 +1688,10 @@
             <activities xsi:type="bpws:Assign" name="AssignprocessResponse">
               <copy>
                 <to>
-                  <expression body="ACED00057400232470726F63657373526573706F6E73652E7061796C6F61642F6E73303A726573756C74"/>
+                  <expression body="ACED00057400232470726F63657373526573706F6E73652E7061796C6F61642F6E73313A726573756C74"/>
                 </to>
                 <from>
-                  <expression body="ACED00057400072268656C6C6F22"/>
+                  <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
                 </from>
               </copy>
             </activities>

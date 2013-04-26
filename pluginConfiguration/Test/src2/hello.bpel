@@ -11,8 +11,6 @@
     <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
         location="helloArtifacts.wsdl" namespace="http://sample.bpel.org/bpel/sampleArtifacts"/>
     <bpel:partnerLinks>
-        <bpel:partnerLink myRole="PingPongRole" name="PingPongPL"
-            partnerLinkType="ns:PingPongPLT" partnerRole="PingPongRole"/>
         <bpel:partnerLink myRole="TryInvokeRole" name="TryInvokePL"
             partnerLinkType="ns:TryInvokePLT" partnerRole="TryInvokeRole"/>
     </bpel:partnerLinks>
@@ -23,36 +21,340 @@
         <bpel:variable messageType="ns1:echoInputResponse" name="echoInputResponse"/>
         <bpel:variable messageType="ns1:echoInputRequest" name="echoInputRequest"/>
         <bpel:variable messageType="ns1:echoInputResponse" name="echoInputResponse"/>
+        <bpel:variable messageType="ns1:echoInputRequest" name="echoInputRequest"/>
+        <bpel:variable messageType="ns1:echoInputResponse" name="echoInputResponse"/>
+        <bpel:variable messageType="ns1:echoInputRequest" name="echoInputRequest"/>
+        <bpel:variable messageType="ns1:echoInputResponse" name="echoInputResponse"/>
+        <bpel:variable messageType="ns1:echoInputRequest" name="echoInputRequest"/>
+        <bpel:variable messageType="ns1:echoInputResponse" name="echoInputResponse"/>
+        <bpel:variable messageType="ns1:echoInputRequest" name="echoInputRequest"/>
+        <bpel:variable messageType="ns1:echoInputResponse" name="echoInputResponse"/>
+        <bpel:variable messageType="ns1:echoInputRequest" name="echoInputRequest"/>
+        <bpel:variable messageType="ns1:echoInputResponse" name="echoInputResponse"/>
+        <bpel:variable messageType="ns1:echoInputRequest" name="echoInputRequest"/>
+        <bpel:variable messageType="ns1:echoInputResponse" name="echoInputResponse"/>
     </bpel:variables>
     <bpel:sequence name="MainSequence">
+        <bpel:assign name="initVariables" validate="no">
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <tns:TryInvokeRequest
+                            xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <tns:input>tns:input</tns:input>
+                        </tns:TryInvokeRequest>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="processRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <tns:TryInvokeResponse
+                            xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <tns:result>tns:result</tns:result>
+                        </tns:TryInvokeResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="processResponse"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInput
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:input>impl:input</impl:input>
+                        </impl:echoInput>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInputResponse
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:echoInputReturn>impl:echoInputReturn</impl:echoInputReturn>
+                        </impl:echoInputResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputResponse"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInput
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:input>impl:input</impl:input>
+                        </impl:echoInput>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInputResponse
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:echoInputReturn>impl:echoInputReturn</impl:echoInputReturn>
+                        </impl:echoInputResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputResponse"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInput
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:input>impl:input</impl:input>
+                        </impl:echoInput>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInputResponse
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:echoInputReturn>impl:echoInputReturn</impl:echoInputReturn>
+                        </impl:echoInputResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputResponse"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInput
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:input>impl:input</impl:input>
+                        </impl:echoInput>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInputResponse
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:echoInputReturn>impl:echoInputReturn</impl:echoInputReturn>
+                        </impl:echoInputResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputResponse"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInput
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:input>impl:input</impl:input>
+                        </impl:echoInput>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInputResponse
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:echoInputReturn>impl:echoInputReturn</impl:echoInputReturn>
+                        </impl:echoInputResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputResponse"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInput
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:input>impl:input</impl:input>
+                        </impl:echoInput>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInputResponse
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:echoInputReturn>impl:echoInputReturn</impl:echoInputReturn>
+                        </impl:echoInputResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputResponse"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInput
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:input>impl:input</impl:input>
+                        </impl:echoInput>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInputResponse
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:echoInputReturn>impl:echoInputReturn</impl:echoInputReturn>
+                        </impl:echoInputResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputResponse"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInput
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:input>impl:input</impl:input>
+                        </impl:echoInput>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInputResponse
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:echoInputReturn>impl:echoInputReturn</impl:echoInputReturn>
+                        </impl:echoInputResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputResponse"/>
+            </bpel:copy>
+        </bpel:assign>
         <bpel:pick createInstance="yes" name="SwitchInvokedOperation">
             <bpel:onMessage operation="process"
                 partnerLink="TryInvokePL" portType="ns0:TryInvoke" variable="processRequest">
                 <bpel:sequence name="implprocess">
-                    <bpel:assign name="AssignechoInputRequest" validate="no">
+                    <bpel:flow>
+                        <bpel:sequence>
+                            <bpel:assign name="PingPong8" validate="no">
+                                <bpel:copy>
+                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                </bpel:copy>
+                            </bpel:assign>
+                            <bpel:invoke
+                                inputVariable="echoInputRequest"
+                                name="echoInput" operation="echoInput"
+                                outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
+                        </bpel:sequence>
+                        <bpel:sequence>
+                            <bpel:flow>
+                                <bpel:sequence>
+                                    <bpel:assign name="PingPong3" validate="no">
+                                    <bpel:copy>
+                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                    </bpel:copy>
+                                    </bpel:assign>
+                                    <bpel:invoke
+                                    inputVariable="echoInputRequest"
+                                    name="echoInput"
+                                    operation="echoInput"
+                                    outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
+                                </bpel:sequence>
+                                <bpel:sequence>
+                                    <bpel:flow>
+                                    <bpel:sequence>
+                                    <bpel:assign
+                                    name="PingPong1" validate="no">
+                                    <bpel:copy>
+                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                    </bpel:copy>
+                                    </bpel:assign>
+                                    <bpel:invoke
+                                    inputVariable="echoInputRequest"
+                                    name="echoInput"
+                                    operation="echoInput"
+                                    outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
+                                    </bpel:sequence>
+                                    <bpel:sequence>
+                                    <bpel:assign
+                                    name="PingPong2" validate="no">
+                                    <bpel:copy>
+                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                    </bpel:copy>
+                                    </bpel:assign>
+                                    <bpel:invoke
+                                    inputVariable="echoInputRequest"
+                                    name="echoInput"
+                                    operation="echoInput"
+                                    outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
+                                    </bpel:sequence>
+                                    </bpel:flow>
+                                    <bpel:assign name="PingPong4" validate="no">
+                                    <bpel:copy>
+                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                    </bpel:copy>
+                                    </bpel:assign>
+                                    <bpel:invoke
+                                    inputVariable="echoInputRequest"
+                                    name="echoInput"
+                                    operation="echoInput"
+                                    outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
+                                </bpel:sequence>
+                            </bpel:flow>
+                            <bpel:assign name="PingPong5" validate="no">
+                                <bpel:copy>
+                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                </bpel:copy>
+                            </bpel:assign>
+                            <bpel:invoke
+                                inputVariable="echoInputRequest"
+                                name="echoInput" operation="echoInput"
+                                outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
+                            <bpel:flow>
+                                <bpel:sequence>
+                                    <bpel:assign name="PingPong6" validate="no">
+                                    <bpel:copy>
+                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                    </bpel:copy>
+                                    </bpel:assign>
+                                    <bpel:invoke
+                                    inputVariable="echoInputRequest"
+                                    name="echoInput"
+                                    operation="echoInput"
+                                    outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
+                                </bpel:sequence>
+                                <bpel:sequence>
+                                    <bpel:assign name="PingPong7" validate="no">
+                                    <bpel:copy>
+                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                    </bpel:copy>
+                                    </bpel:assign>
+                                    <bpel:invoke
+                                    inputVariable="echoInputRequest"
+                                    name="echoInput"
+                                    operation="echoInput"
+                                    outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
+                                </bpel:sequence>
+                            </bpel:flow>
+                        </bpel:sequence>
+                    </bpel:flow>
+                    <bpel:assign name="TryInvoke2" validate="no">
                         <bpel:copy>
-                            <bpel:from><![CDATA["hello"]]></bpel:from>
-                            <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
-                        </bpel:copy>
-                    </bpel:assign>
-                    <bpel:invoke inputVariable="echoInputRequest"
-                        name="echoInput" operation="echoInput"
-                        outputVariable="echoInputResponse"
-                        partnerLink="PingPongPL" portType="ns1:PingPong"/>
-                    <bpel:assign name="AssignechoInputRequest" validate="no">
-                        <bpel:copy>
-                            <bpel:from><![CDATA["hello"]]></bpel:from>
-                            <bpel:to><![CDATA[$echoInputRequest.parameters/ns1:input]]></bpel:to>
-                        </bpel:copy>
-                    </bpel:assign>
-                    <bpel:invoke inputVariable="echoInputRequest"
-                        name="echoInput" operation="echoInput"
-                        outputVariable="echoInputResponse"
-                        partnerLink="PingPongPL" portType="ns1:PingPong"/>
-                    <bpel:assign name="AssignprocessResponse" validate="no">
-                        <bpel:copy>
-                            <bpel:from><![CDATA["hello"]]></bpel:from>
-                            <bpel:to><![CDATA[$processResponse.payload/ns0:result]]></bpel:to>
+                            <bpel:from><![CDATA[“hello”]]></bpel:from>
+                            <bpel:to><![CDATA[$processResponse.payload/ns1:result]]></bpel:to>
                         </bpel:copy>
                     </bpel:assign>
                     <bpel:reply name="ReplyToProcess"

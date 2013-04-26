@@ -10,7 +10,6 @@ import org.eclipse.bpel.model.Activity;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.wst.wsdl.Operation;
 
 /**
  * <!-- begin-user-doc -->

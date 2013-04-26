@@ -4,7 +4,6 @@ package cn.edu.nju.cs.workflow.ui.wizard;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.lang.reflect.InvocationTargetException;
 
 
 
@@ -16,19 +15,14 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
-import org.eclipse.bpel.model.BPELPackage;
+
 import org.eclipse.bpel.model.Pick;
 import org.eclipse.bpel.model.Sequence;
-import org.eclipse.bpel.model.partnerlinktype.PartnerlinktypePackage;
-import org.eclipse.bpel.model.resource.BPELResourceFactoryImpl;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRunnable;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Platform;
 
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.util.EList;
@@ -42,23 +36,15 @@ import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.graphiti.examples.common.Messages;
-import org.eclipse.graphiti.features.context.impl.CreateContext;
 import org.eclipse.graphiti.mm.pictograms.Diagram;
 import org.eclipse.graphiti.mm.pictograms.PictogramLink;
 import org.eclipse.graphiti.mm.pictograms.PictogramsFactory;
 import org.eclipse.graphiti.ui.services.GraphitiUi;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.eclipse.wst.wsdl.Operation;
-import org.eclipse.wst.wsdl.WSDLPackage;
-import org.eclipse.wst.wsdl.internal.util.WSDLResourceFactoryImpl;
 
 import cn.edu.nju.cs.workflow.bpel.BPELSkeletonGenerator;
 import cn.edu.nju.cs.workflow.model.ModelFactory;
 import cn.edu.nju.cs.workflow.model.Workflow;
 import cn.edu.nju.cs.workflow.model.WorkflowProcess;
-import cn.edu.nju.cs.workflow.ui.feature.create.EndTaskCreateFeature;
-import cn.edu.nju.cs.workflow.ui.feature.create.StartTaskCreateFeature;
 
 
 

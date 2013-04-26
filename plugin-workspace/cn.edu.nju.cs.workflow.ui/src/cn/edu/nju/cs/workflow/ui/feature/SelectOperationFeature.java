@@ -5,19 +5,12 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-import javax.xml.namespace.QName;
 
 
 
 import org.eclipse.bpel.model.Assign;
-import org.eclipse.bpel.model.BPELFactory;
 
 import org.eclipse.bpel.model.Invoke;
-import org.eclipse.bpel.model.PartnerLink;
-import org.eclipse.bpel.model.PartnerLinks;
-import org.eclipse.bpel.model.Variable;
-import org.eclipse.bpel.model.Process;
-import org.eclipse.bpel.model.Variables;
 
 import org.eclipse.bpel.model.Sequence;
 
@@ -32,8 +25,6 @@ import org.eclipse.ui.PlatformUI;
 
 
 
-
-import org.eclipse.wst.wsdl.Message;
 import org.eclipse.wst.wsdl.Operation;
 
 import org.eclipse.wst.wsdl.PortType;
@@ -50,7 +41,6 @@ import cn.edu.nju.cs.workflow.ui.diagram.WorkflowFeatureProvider;
 
 
 public class SelectOperationFeature  extends AbstractCustomFeature{
-	private PartnerLink partnerLink;
 	public SelectOperationFeature(IFeatureProvider fp) {
 		super(fp);
 		// TODO Auto-generated constructor stub
@@ -86,12 +76,15 @@ public class SelectOperationFeature  extends AbstractCustomFeature{
 				Invoke invoke;
 				Assign assign;
 				if(task.getPartnerActivity()==null){
-					invoke=bpelGen.createInvokeActivity(operation, (Sequence)task.getWorkflow().getActivity());
-					assign=bpelGen.createAssignAcitvity(invoke.getInputVariable(), (Sequence)task.getWorkflow().getActivity());
+					invoke=bpelGen.createInvokeNode(operation, (Sequence)task.getWorkflow().getActivity());
+					assign=bpelGen.createAssignNode(invoke.getInputVariable(), (Sequence)task.getWorkflow().getActivity());
 				}else{
-					invoke=bpelGen.replaceInvokeAcitivity(operation, (Invoke) task.getPartnerActivity());
-					assign=bpelGen.replaceAssignActivity(invoke.getInputVariable(), task.getInput().getAssign());
+					invoke=bpelGen.replaceInvokeNode(operation, (Invoke) task.getPartnerActivity());
+					assign=bpelGen.replaceAssignNode(invoke.getInputVariable(), task.getInput().getAssign());
 				}
+				//assign.getCopy().add(bpelGen.initVariable(invoke.getInputVariable()));
+				//assign.getCopy().add(bpelGen.initVariable(invoke.getOutputVariable()));
+				
 				task.getInput().setInputValue(invoke.getInputVariable());
 				task.getOutputs().get(0).setOutputValue(invoke.getOutputVariable());
 				task.getInput().setAssign(assign);
@@ -103,16 +96,7 @@ public class SelectOperationFeature  extends AbstractCustomFeature{
 			}
 
 	}
-	private PartnerLink findPartnerLink(Process bpelProcess,QName qname){
-		PartnerLinks partnerLinks=bpelProcess.getPartnerLinks();
-		for(PartnerLink pl : partnerLinks.getChildren()){
-			QName plqName=((PortType)(pl.getPartnerRole().getPortType())).getQName();
-			if(qname.toString().equals(plqName.toString()))
-				return pl;
-		}
-		return null;
-		
-	}
+
 	@Override
 	public boolean canExecute(ICustomContext context) {
 		// TODO Auto-generated method stub

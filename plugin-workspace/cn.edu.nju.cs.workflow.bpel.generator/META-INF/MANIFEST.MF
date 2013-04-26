@@ -17,6 +17,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources;bundle-version="3.7.101",
  org.eclipse.bpel.ui;bundle-version="1.0.1",
  org.eclipse.bpel.common.ui;bundle-version="1.0.1",
- org.eclipse.gef;bundle-version="3.7.2"
+ org.eclipse.gef;bundle-version="3.7.2",
+ org.eclipse.xsd;bundle-version="2.7.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

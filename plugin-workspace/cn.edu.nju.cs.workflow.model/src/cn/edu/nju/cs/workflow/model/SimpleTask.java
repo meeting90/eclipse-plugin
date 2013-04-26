@@ -7,7 +7,6 @@
 package cn.edu.nju.cs.workflow.model;
 
 import org.eclipse.bpel.model.BPELExtensibleElement;
-import org.eclipse.bpel.model.PartnerActivity;
 import org.eclipse.bpel.model.PartnerLink;
 
 import org.eclipse.wst.wsdl.Operation;

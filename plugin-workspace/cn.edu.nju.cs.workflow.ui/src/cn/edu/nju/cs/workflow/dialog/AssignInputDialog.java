@@ -1,27 +1,15 @@
 package cn.edu.nju.cs.workflow.dialog;
 
 import org.eclipse.bpel.model.Assign;
-import org.eclipse.bpel.model.BPELFactory;
-import org.eclipse.bpel.model.Copy;
-import org.eclipse.bpel.model.From;
-import org.eclipse.bpel.model.Query;
-import org.eclipse.bpel.model.To;
 import org.eclipse.bpel.model.Variable;
 import org.eclipse.bpel.ui.Messages;
 import org.eclipse.bpel.ui.details.tree.ITreeNode;
-import org.eclipse.bpel.ui.properties.ExpressionSection;
-import org.eclipse.bpel.ui.properties.VariablePartAssignCategory;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ColumnViewerEditor;
 import org.eclipse.jface.viewers.ColumnViewerEditorActivationEvent;
 import org.eclipse.jface.viewers.ColumnViewerEditorActivationStrategy;
-import org.eclipse.jface.viewers.ComboBoxViewerCellEditor;
-import org.eclipse.jface.viewers.EditingSupport;
 import org.eclipse.jface.viewers.FocusCellOwnerDrawHighlighter;
-import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.TreeViewerColumn;
 import org.eclipse.jface.viewers.TreeViewerEditor;
@@ -29,13 +17,12 @@ import org.eclipse.jface.viewers.TreeViewerFocusCellManager;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Shell;
 
 
+import cn.edu.nju.cs.workflow.bpel.BPELComponentGenerator;
 import cn.edu.nju.cs.workflow.provider.VariableProvider;
 public class AssignInputDialog extends Dialog{
 	TreeViewer fVariableViewer;
@@ -45,15 +32,25 @@ public class AssignInputDialog extends Dialog{
 	Variable input;
 	Variable []candidateInputs;
 	Assign assign;
+	
+	BPELComponentGenerator bpelGen;
+	
+	
     private final static int SIZING_SELECTION_WIDGET_HEIGHT = 250;
     private final static int SIZING_SELECTION_WIDGET_WIDTH = 500;
-    public AssignInputDialog(Shell parentShell, Variable input,Variable[] candidateInputs, Assign assign) {
+    public AssignInputDialog(Shell parentShell, Variable input,Variable[] candidateInputs, BPELComponentGenerator bpelGen,Assign assign) {
         super(parentShell);
         this.input=input;
         this.candidateInputs=candidateInputs;
         this.assign=assign;
+        this.bpelGen=bpelGen;
+        
+        
+        
+        
     }
-    private void checkInitialSelections() {
+    @SuppressWarnings("unused")
+	private void checkInitialSelections() {
    //
     }
 
@@ -89,7 +86,6 @@ public class AssignInputDialog extends Dialog{
 		 TreeViewerEditor.create(fVariableViewer, focusCellManager, actSupport, ColumnViewerEditor.TABBING_HORIZONTAL
 					| ColumnViewerEditor.TABBING_MOVE_TO_ROW_NEIGHBOR
 					| ColumnViewerEditor.TABBING_VERTICAL | ColumnViewerEditor.KEYBOARD_ACTIVATION);
-		final TextCellEditor cellEditor=new TextCellEditor(fVariableViewer.getTree());
 		variableContentProvider = new VariableProvider(true,new Variable[]{input});
 		fVariableViewer.setContentProvider(variableContentProvider);
 		fVariableViewer.expandAll();
@@ -127,7 +123,7 @@ public class AssignInputDialog extends Dialog{
 				}
 
 			});
-		column.setEditingSupport(new ComboEditingSupport(fVariableViewer, assign));
+		column.setEditingSupport(new ComboEditingSupport(fVariableViewer,bpelGen,assign));
 		fVariableViewer.setInput(input);
 		Dialog.applyDialogFont(composite);
 	    return composite;
@@ -136,4 +132,6 @@ public class AssignInputDialog extends Dialog{
     protected void okPressed() {
       super.okPressed();
     }
+    
+
 }

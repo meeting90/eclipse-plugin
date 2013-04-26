@@ -7,17 +7,23 @@ import org.eclipse.bpel.model.Assign;
 import org.eclipse.bpel.model.BPELExtensibleElement;
 import org.eclipse.bpel.model.BPELFactory;
 import org.eclipse.bpel.model.Copy;
+import org.eclipse.bpel.model.From;
 import org.eclipse.bpel.model.OnMessage;
 import org.eclipse.bpel.model.PartnerActivity;
 import org.eclipse.bpel.model.PartnerLink;
 import org.eclipse.bpel.model.Pick;
 import org.eclipse.bpel.model.Process;
 import org.eclipse.bpel.model.Sequence;
+import org.eclipse.bpel.model.To;
+import org.eclipse.bpel.model.Variable;
 import org.eclipse.bpel.model.partnerlinktype.PartnerLinkType;
+import org.eclipse.bpel.model.util.XSD2XMLGenerator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.wst.wsdl.Definition;
+import org.eclipse.wst.wsdl.Message;
+import org.eclipse.wst.wsdl.Part;
 import org.eclipse.wst.wsdl.PortType;
-import org.eclipse.wst.wsdl.util.WSDLConstants;
+import org.eclipse.xsd.XSDElementDeclaration;
 
 public class BpelHelper {
 	Process bpelProcess;
@@ -39,10 +45,59 @@ public class BpelHelper {
 			pl.setMyRole(((PartnerLinkType)elt).getRole().get(0));
 			pl.setPartnerRole(((PartnerLinkType)elt).getRole().get(0));
 			PortType portType=(PortType) pl.getMyRole().getPortType();
-			portType.getQName();
 			boolean matched=setPartnerLinkIfPosible(portType.getQName(), pl);
-			this.bpelProcess.getPartnerLinks().getChildren().add( pl );
+			if(matched){
+				this.bpelProcess.getPartnerLinks().getChildren().add( pl );
+			}
+		}
+	}
+	public void initVariables(){
+		Assign assign=BPELFactory.eINSTANCE.createAssign();
+		assign.setName("initVariables");
+		for(Variable var : this.bpelProcess.getVariables().getChildren()){
+			assign.getCopy().add(initVariable(var));
+		}
+		((Sequence)(this.bpelProcess.getActivity())).getActivities().add(0,assign);
 		
+	}
+	private Copy initVariable(Variable variable){
+		String rootElement = null;
+		String uriWSDL = null;
+
+		// Variable is defined using "messageType"
+		Message msg = variable.getMessageType();
+		if (msg != null) {
+			for(Object part:msg.getEParts()){
+				XSDElementDeclaration declaration=((Part)part).getElementDeclaration();
+				if (declaration != null) {
+					uriWSDL = declaration.getSchema().getSchemaLocation();
+					rootElement = declaration.getName();
+					break;
+				}
+				
+			}
+		}
+		if (rootElement == null || uriWSDL == null) {
+			return null;
+		}
+		XSD2XMLGenerator generator = new XSD2XMLGenerator(uriWSDL, rootElement);
+
+		try {
+			String literal = generator.createXML();
+			Copy copy = BPELFactory.eINSTANCE.createCopy();
+			
+			To to = BPELFactory.eINSTANCE.createTo();
+			From from = BPELFactory.eINSTANCE.createFrom();
+			from.setLiteral(literal);
+			copy.setFrom(from);
+			to.setVariable(variable);
+			copy.setTo(to);
+			return copy;
+			
+			
+		} catch (Exception e) {
+			throw new IllegalStateException(
+					"Can't generate initializer, check WSDL file");
 		}
 	}
 

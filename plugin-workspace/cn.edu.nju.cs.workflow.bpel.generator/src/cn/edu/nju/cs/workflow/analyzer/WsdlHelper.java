@@ -8,19 +8,14 @@ import java.util.Set;
 
 import javax.xml.namespace.QName;
 
-import org.eclipse.bpel.common.ui.editmodel.EditModelCommandStack;
+
 import org.eclipse.bpel.common.wsdl.parsers.WsdlParser;
-import org.eclipse.bpel.model.BPELFactory;
 import org.eclipse.bpel.model.BPELPackage;
-import org.eclipse.bpel.model.PartnerLink;
 import org.eclipse.bpel.model.partnerlinktype.PartnerLinkType;
 import org.eclipse.bpel.model.partnerlinktype.PartnerlinktypeFactory;
 import org.eclipse.bpel.model.partnerlinktype.PartnerlinktypePackage;
 import org.eclipse.bpel.model.partnerlinktype.Role;
 import org.eclipse.bpel.model.resource.BPELResourceFactoryImpl;
-import org.eclipse.bpel.ui.commands.CompoundCommand;
-import org.eclipse.bpel.ui.commands.CreatePartnerLinkTypeCommand;
-import org.eclipse.bpel.ui.util.BPELUtil;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -29,7 +24,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.gef.commands.CommandStack;
 import org.eclipse.wst.wsdl.Definition;
 import org.eclipse.wst.wsdl.Import;
 import org.eclipse.wst.wsdl.PortType;
@@ -147,6 +141,7 @@ public class WsdlHelper {
 		}
 		return ptls;
 	}
+	@SuppressWarnings("unused")
 	private boolean hasPartenerLinkType(PortType portType,Collection<PartnerLinkType> ptls){
 		for(PartnerLinkType ptl: ptls){
 			if(((PortType)ptl.getRole().get(0).getPortType()).getQName().toString().equals(portType.getQName().toString()))

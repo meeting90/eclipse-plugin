@@ -34,7 +34,6 @@ import org.eclipse.graphiti.features.custom.ICustomFeature;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.ui.features.DefaultFeatureProvider;
-import org.eclipse.wst.wsdl.Message;
 import org.eclipse.wst.wsdl.PortType;
 
 import cn.edu.nju.cs.workflow.bpel.BPELComponentGenerator;
@@ -45,7 +44,6 @@ import cn.edu.nju.cs.workflow.model.CompoundTask;
 import cn.edu.nju.cs.workflow.model.Edge;
 import cn.edu.nju.cs.workflow.model.InputPort;
 import cn.edu.nju.cs.workflow.model.OutputPort;
-import cn.edu.nju.cs.workflow.model.WorkflowNode;
 
 import cn.edu.nju.cs.workflow.model.LoopTask;
 

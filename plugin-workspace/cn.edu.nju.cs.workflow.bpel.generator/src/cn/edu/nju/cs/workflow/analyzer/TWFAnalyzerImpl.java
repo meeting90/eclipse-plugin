@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.bpel.common.wsdl.parsers.WsdlParser;
-import org.eclipse.bpel.model.Import;
 import org.eclipse.bpel.model.Process;
 import org.eclipse.bpel.model.resource.BPELResource;
 import org.eclipse.bpel.model.resource.BPELWriter;
@@ -55,7 +54,7 @@ public class TWFAnalyzerImpl  implements TWFAnalyzer{
 	}
 	@Override
 	public void generateBpelProcess(URI uri,IProgressMonitor monitor) throws IOException {
-		reorderTasks(monitor);
+		
 		reorderAcitivities(monitor);
 		completeBpelProcess(monitor);
 		bpelResource=new BPELProcessResourceImpl(uri,bpelProcess);
@@ -63,25 +62,26 @@ public class TWFAnalyzerImpl  implements TWFAnalyzer{
 		saveOptions.put( BPELWriter.SKIP_AUTO_IMPORT, Boolean.TRUE );
 		bpelResource.save(saveOptions);
 	}
-	@Override
-	public void reorderTasks(final IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	@Override
 	public void completeBpelProcess(final IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
 		IFile wsdlFile = twfFile.getParent().getFile( new Path( computeWsdlArtifactsName()));
 		URI wsdlEmfUri = URI.createPlatformResourceURI( wsdlFile.getFullPath().toString(), true );
 		Definition artifactsDefinition=WsdlParser.loadWsdlDefinition(wsdlEmfUri, WsdlParser.createBasicResourceSetForWsdl());
 		BpelHelper bpelHelper=new BpelHelper(bpelProcess, artifactsDefinition);
 		bpelHelper.addPartnerLinks();
+		bpelHelper.initVariables();
 		
 	}
 	@Override
 	public void reorderAcitivities(IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
-		
+		TaskHelper helper=new TaskHelper(this.workflowProcess);
+		try {
+			helper.orderActivities();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

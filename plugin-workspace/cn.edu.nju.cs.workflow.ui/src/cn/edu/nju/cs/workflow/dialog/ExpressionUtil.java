@@ -1,16 +1,12 @@
 package cn.edu.nju.cs.workflow.dialog;
 
-import java.util.List;
 
 import org.eclipse.bpel.model.Assign;
 import org.eclipse.bpel.model.Copy;
-import org.eclipse.bpel.model.Expression;
 import org.eclipse.bpel.model.Variable;
-import org.eclipse.bpel.model.adapters.INamespaceMap;
 import org.eclipse.bpel.model.util.BPELUtils;
 import org.eclipse.bpel.ui.details.tree.ITreeNode;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 import cn.edu.nju.cs.workflow.provider.VariableProvider;
 
@@ -35,22 +31,33 @@ public class ExpressionUtil {
 				expression+="$";
 			else if(i==1)
 				expression+=".";
-			else if(i==2)
+			else if(i>=2)
 				expression+="/"+prefix+":";
 			expression+=treeNode.getLabel();
 		}
 		return expression;
 	}
 	public  String getOldExpression(Assign assign, Object element){
+		Copy copy=getOldCopyExpression(assign, element);
+		if(copy==null)
+			return "";
+		else 
+			return (String) copy.getFrom().getExpression().getBody();
+		
+	}
+	public Copy getOldCopyExpression(Assign assign ,Object element){
 		String expression=element2XpathExpression(element);
 		EList<Copy> copys=assign.getCopy();
-		for(Copy copy: copys){
-			String body=(String) copy.getTo().getExpression().getBody();
-			if(body.equals(expression))
-				return (String) copy.getFrom().getExpression().getBody();
+		for(int i=copys.size()-1;i>=0;i--){
+			Copy copy=copys.get(i);
+			if(copy!=null && copy.getTo().getExpression()!=null){
+				String body=(String) copy.getTo().getExpression().getBody();
+				if(body.equals(expression))
+					return copy;
+			}
 		}
 		
-		return "";
+		return null;
 	}
 	
 	public  String addNameSpacePrefix ( Variable variable, String namespace ,String prefixRoot) {

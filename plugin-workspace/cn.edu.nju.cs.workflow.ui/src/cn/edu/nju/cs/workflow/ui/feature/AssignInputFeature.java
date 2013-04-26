@@ -15,6 +15,7 @@ import org.eclipse.ui.PlatformUI;
 
 import cn.edu.nju.cs.workflow.dialog.AssignInputDialog;
 import cn.edu.nju.cs.workflow.model.InputPort;
+import cn.edu.nju.cs.workflow.ui.diagram.WorkflowFeatureProvider;
 
 
 public class AssignInputFeature  extends AbstractCustomFeature{
@@ -28,21 +29,20 @@ public class AssignInputFeature  extends AbstractCustomFeature{
 	public void execute(ICustomContext context) {
 		// TODO Auto-generated method stub
 
-//	     WorkflowFeatureProvider provider=(WorkflowFeatureProvider) this.getFeatureProvider();
-//	     WorkflowProcess process=provider.getWorkflowProcess();
-//	     Variable[] vars=process.getVariables().getChildren().toArray(new Variable[ process.getVariables().getChildren().size()]);
+         WorkflowFeatureProvider provider=(WorkflowFeatureProvider) this.getFeatureProvider();
 		 PictogramElement[] pes = context.getPictogramElements();
 		 Object bo = getBusinessObjectForPictogramElement(pes[0]);
 		 InputPort port=(InputPort)bo;
 		 
 	     Variable input=port.getInputValue();
 	     
-		
+	     
+	
 	    
 	 	 Shell shell=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		
 	 	 AssignInputDialog dialog = new AssignInputDialog (
-	        		shell, input,null,port.getAssign()
+	        		shell, input,null, provider.getBpelGenerator(),port.getAssign()
 	        		);
 	 	
 	        dialog.open();

@@ -1,12 +1,9 @@
 package cn.edu.nju.cs.workflow.dialog;
 import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.ArrayContentProvider;
-import org.eclipse.jface.viewers.CheckboxTableViewer;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
@@ -34,7 +31,8 @@ public class SelectOperationDialog extends SelectionDialog{
         setTitle(" Opeartion selection");
 		setMessage("Select an Opeartion Of this Service");
     }
-    private void checkInitialSelections() {
+    @SuppressWarnings("unused")
+	private void checkInitialSelections() {
    
     }
 
@@ -46,9 +44,7 @@ public class SelectOperationDialog extends SelectionDialog{
     protected Control createDialogArea(Composite parent) {
     	 Composite composite = (Composite)super.createDialogArea(parent);
          initializeDialogUnits(composite);
-       
-         operationViewer=new TableViewer(composite, SWT.BORDER|SWT.SINGLE);
-		 
+         operationViewer=new TableViewer(composite, SWT.BORDER|SWT.SINGLE); 
 		 GridData data = new GridData(GridData.FILL_BOTH);
 		 data.heightHint = SIZING_SELECTION_WIDGET_HEIGHT;
 		 data.widthHint = SIZING_SELECTION_WIDGET_WIDTH;

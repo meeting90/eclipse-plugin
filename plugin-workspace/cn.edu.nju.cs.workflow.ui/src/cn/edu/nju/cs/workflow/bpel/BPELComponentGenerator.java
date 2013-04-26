@@ -2,12 +2,10 @@ package cn.edu.nju.cs.workflow.bpel;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.xml.namespace.QName;
-
 import org.eclipse.bpel.model.Assign;
 import org.eclipse.bpel.model.BPELFactory;
 import org.eclipse.bpel.model.Copy;
+import org.eclipse.bpel.model.Expression;
 import org.eclipse.bpel.model.From;
 import org.eclipse.bpel.model.Invoke;
 import org.eclipse.bpel.model.OnMessage;
@@ -18,11 +16,11 @@ import org.eclipse.bpel.model.Reply;
 import org.eclipse.bpel.model.Sequence;
 import org.eclipse.bpel.model.To;
 import org.eclipse.bpel.model.Variable;
-import org.eclipse.bpel.model.util.XSD2XMLGenerator;
 import org.eclipse.bpel.ui.util.BPELUtil;
 import org.eclipse.wst.wsdl.Message;
 import org.eclipse.wst.wsdl.Operation;
 import org.eclipse.wst.wsdl.PortType;
+
 
 public class BPELComponentGenerator {
 	Process bpelProcess=null;
@@ -52,7 +50,7 @@ public class BPELComponentGenerator {
 		return onMessage;
 	}
 	
-	public Reply createReplyAcitvity(Operation operation, Sequence sequence){
+	public Reply createReplyNode(Operation operation, Sequence sequence){
 		String opName = org.eclipse.bpel.ui.util.BPELUtil.lowerCaseFirstLetter( operation.getName());
 		//PartnerLink partnerLink=findPartnerLink(((PortType)operation.eContainer()).getQName());
 		if( operation.getOutput() != null ) {
@@ -69,8 +67,6 @@ public class BPELComponentGenerator {
 			reply.setVariable( var );
 			reply.setOperation( operation );
 			reply.setPortType((PortType) operation.eContainer());
-			//reply.setPartnerLink( partnerLink );
-			
 			sequence.getActivities().add(0,reply);
 			return reply;
 			
@@ -78,7 +74,7 @@ public class BPELComponentGenerator {
 		return null;
 		
 	}
-	public Invoke createInvokeActivity(Operation operation, Sequence sequence){
+	public Invoke createInvokeNode(Operation operation, Sequence sequence){
 		
 		Variable input=BPELFactory.eINSTANCE.createVariable();
 		String name=operation.getName()+"Request";
@@ -108,7 +104,7 @@ public class BPELComponentGenerator {
 		sequence.getActivities().add(0, invoke);
 		return invoke;
 	}
-	public Invoke replaceInvokeAcitivity(Operation operation, Invoke invoke){
+	public Invoke replaceInvokeNode(Operation operation, Invoke invoke){
 		Variable input=invoke.getInputVariable();
 		String name=operation.getName()+"Request";
 		input.setName(BPELUtil.generateUniqueModelName(operation, name, input));
@@ -121,8 +117,9 @@ public class BPELComponentGenerator {
 		output.setName(BPELUtil.generateUniqueModelName(operation, name, input));
 		messageType=(Message)operation.getInput().getMessage();
 		output.setMessageType(messageType);
-		bpelProcess.getVariables().getChildren().add(input);
-		bpelProcess.getVariables().getChildren().add(output);
+		
+		//bpelProcess.getVariables().getChildren().set(findVariableIndex(input), input);
+		//bpelProcess.getVariables().getChildren().add(findVariableIndex(output),output);
 		
 		
 		invoke.setName(BPELUtil.generateUniqueModelName(operation, operation.getName(), input));
@@ -134,59 +131,47 @@ public class BPELComponentGenerator {
 		return invoke;
 	}
 	
-	public Assign createAssignAcitvity(Variable variable, Sequence sequence){
+	public Assign createAssignNode(Variable variable, Sequence sequence){
 		Assign assign = BPELFactory.eINSTANCE.createAssign();
 		String name= "Assign" + variable.getName();
 		assign.setName(BPELUtil.generateUniqueModelName(variable, name, assign));
-		//assign.getCopy().add(initVariable(variable));
+		
 		sequence.getActivities().add(0,assign);
 		return assign;
 	}
-	public Copy initVariable(Variable variable){
-		String rootElement = null;
-		String uriWSDL = null;
-
-		// Variable is defined using "messageType"
-		Message msg = variable.getMessageType();
-		if (msg != null) {
-			QName qname=QName.valueOf(msg.getQName().toString());
-			rootElement = qname.getLocalPart();
-			uriWSDL = msg.eResource().getURI().toString();
-		}
-		if (rootElement == null || uriWSDL == null) {
-			return null;
-		}
-		XSD2XMLGenerator generator = new XSD2XMLGenerator(uriWSDL, rootElement);
-
-		try {
-			String literal = generator.createXML();
-			Copy copy = BPELFactory.eINSTANCE.createCopy();
-			
-			To to = BPELFactory.eINSTANCE.createTo();
-			From from = BPELFactory.eINSTANCE.createFrom();
-			from.setLiteral(literal);
-			copy.setFrom(from);
-			to.setVariable(variable);
-			copy.setTo(to);
-			copy.setTo(to);
-			
-		} catch (Exception e) {
-			throw new IllegalStateException(
-					"Can't generate initializer, check WSDL file");
-		}
+	
+    public Copy createCopyNode(Assign assign,String fromStr, String toStr){
+    	From from=BPELFactory.eINSTANCE.createFrom();
+		Expression expression=BPELFactory.eINSTANCE.createExpression();
 		
-		return null;
-	}
-//	public Copy assignVariable(){
-//		
-//	}
-	public Assign replaceAssignActivity(Variable variable, Assign assign){
+		expression.setBody(fromStr);
+		from.setExpression(expression);
+
+		expression=BPELFactory.eINSTANCE.createExpression();
+		expression.setBody(toStr);
+		To to=BPELFactory.eINSTANCE.createTo();
+		to.setExpression(expression);
+
+		
+		Copy copy=BPELFactory.eINSTANCE.createCopy();
+		copy.setFrom(from);
+		copy.setTo(to);
+		assign.getCopy().add(copy);
+		
+		return copy;
+	
+    }
+    public Copy replaceCopyNode(Copy copy, String fromStr,String toStr){
+    	copy.getFrom().getExpression().setBody(fromStr);
+    	copy.getTo().getExpression().setBody(toStr);
+    	return copy;
+    }
+	public Assign replaceAssignNode(Variable variable, Assign assign){
 		
 		String name= "Assign" + variable.getName();
 		assign.setName(BPELUtil.generateUniqueModelName(variable, name, assign));
 		
 		return assign;
 	}
-	
 
 }

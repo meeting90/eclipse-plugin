@@ -1,22 +1,18 @@
 package cn.edu.nju.cs.workflow.ui.diagram;
 
-import java.util.ArrayList;
+
 import java.util.Collection;
-import java.util.List;
+
 
 import org.eclipse.graphiti.dt.AbstractDiagramTypeProvider;
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
-import org.eclipse.graphiti.features.context.IAddContext;
-import org.eclipse.graphiti.features.context.impl.AddContext;
 import org.eclipse.graphiti.features.context.impl.CreateContext;
 import org.eclipse.graphiti.tb.IToolBehaviorProvider;
-import org.eclipse.wst.wsdl.Definition;
+
 import org.eclipse.wst.wsdl.Operation;
 import org.eclipse.wst.wsdl.PortType;
 
-import cn.edu.nju.cs.workflow.ui.feature.add.SpecificNodeAddFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.EndTaskCreateFeature;
-import cn.edu.nju.cs.workflow.ui.feature.create.SimpleTaskCreateFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.StartTaskCreateFeature;
 
 

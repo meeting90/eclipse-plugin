@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.wst.wsdl.Operation;
 
 /**
  * <!-- begin-user-doc -->

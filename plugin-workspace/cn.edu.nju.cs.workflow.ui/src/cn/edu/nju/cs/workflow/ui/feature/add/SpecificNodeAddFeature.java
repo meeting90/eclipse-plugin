@@ -15,7 +15,6 @@ import org.eclipse.graphiti.services.IGaService;
 import org.eclipse.graphiti.services.IPeCreateService;
 
 import cn.edu.nju.cs.workflow.model.SimpleTask;
-import cn.edu.nju.cs.workflow.model.WorkflowNode;
 import cn.edu.nju.cs.workflow.ui.util.StyleUtil;
 public class SpecificNodeAddFeature extends AbstractAddFeature {
 	int messageWidth=40;

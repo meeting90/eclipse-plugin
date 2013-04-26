@@ -3,7 +3,6 @@ package cn.edu.nju.cs.workflow.bpel;
 import java.io.File;
 import java.io.IOException;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
@@ -25,8 +24,6 @@ import org.eclipse.bpel.model.partnerlinktype.PartnerlinktypeFactory;
 import org.eclipse.bpel.model.partnerlinktype.PartnerlinktypePackage;
 import org.eclipse.bpel.model.partnerlinktype.Role;
 import org.eclipse.bpel.model.resource.BPELResourceFactoryImpl;
-import org.eclipse.bpel.model.util.BPELUtils;
-import org.eclipse.bpel.ui.util.BPELUtil;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
