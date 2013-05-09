@@ -71,6 +71,7 @@ public class TWFAnalyzerImpl  implements TWFAnalyzer{
 		BpelHelper bpelHelper=new BpelHelper(bpelProcess, artifactsDefinition);
 		bpelHelper.addPartnerLinks();
 		bpelHelper.initVariables();
+		bpelHelper.formatExpression();
 		
 	}
 	@Override

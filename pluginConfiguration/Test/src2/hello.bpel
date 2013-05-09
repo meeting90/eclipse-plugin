@@ -241,24 +241,16 @@
                 <bpel:sequence name="implprocess">
                     <bpel:flow>
                         <bpel:sequence>
-                            <bpel:assign name="PingPong8" validate="no">
-                                <bpel:copy>
-                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
-                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
-                                </bpel:copy>
-                            </bpel:assign>
-                            <bpel:invoke
-                                inputVariable="echoInputRequest"
-                                name="echoInput" operation="echoInput"
-                                outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
-                        </bpel:sequence>
-                        <bpel:sequence>
                             <bpel:flow>
                                 <bpel:sequence>
                                     <bpel:assign name="PingPong3" validate="no">
                                     <bpel:copy>
                                     <bpel:from><![CDATA[“hello”]]></bpel:from>
                                     <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                    </bpel:copy>
+                                    <bpel:copy>
+                                    <bpel:from><![CDATA["hello"]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/njus0:input]]></bpel:to>
                                     </bpel:copy>
                                     </bpel:assign>
                                     <bpel:invoke
@@ -349,6 +341,18 @@
                                     outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
                                 </bpel:sequence>
                             </bpel:flow>
+                        </bpel:sequence>
+                        <bpel:sequence>
+                            <bpel:assign name="PingPong8" validate="no">
+                                <bpel:copy>
+                                    <bpel:from><![CDATA[“hello”]]></bpel:from>
+                                    <bpel:to><![CDATA[$echoInputRequest.parameters/ns0:input]]></bpel:to>
+                                </bpel:copy>
+                            </bpel:assign>
+                            <bpel:invoke
+                                inputVariable="echoInputRequest"
+                                name="echoInput" operation="echoInput"
+                                outputVariable="echoInputResponse" portType="{http://pingpong.bpel.tps}PingPong"/>
                         </bpel:sequence>
                     </bpel:flow>
                     <bpel:assign name="TryInvoke2" validate="no">

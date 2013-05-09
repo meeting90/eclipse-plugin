@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process exitOnStandardFault="yes" name="Process"
+    targetNamespace="http://sample.bpel.org/bpel/sample"
+    xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:n_s0="http://pingpong.bpel.tps"
+    xmlns:n_s1="http://sample.bpel.org/bpel/sample" xmlns:ns="http://sample.bpel.org/bpel/sampleArtifacts">
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="TryInvokeArtifacts.wsdl" namespace="http://sample.bpel.org/bpel/sample"/>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="PingPong.wsdl" namespace="http://pingpong.bpel.tps"/>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="helloArtifacts.wsdl" namespace="http://sample.bpel.org/bpel/sampleArtifacts"/>
+    <bpel:partnerLinks>
+        <bpel:partnerLink myRole="PingPongRole" name="PingPongPL"
+            partnerLinkType="ns:PingPongPLT" partnerRole="PingPongRole"/>
+        <bpel:partnerLink myRole="TryInvokeRole" name="TryInvokePL"
+            partnerLinkType="ns:TryInvokePLT" partnerRole="TryInvokeRole"/>
+    </bpel:partnerLinks>
+    <bpel:variables>
+        <bpel:variable messageType="n_s1:TryInvokeRequestMessage" name="processRequest"/>
+        <bpel:variable messageType="n_s1:TryInvokeResponseMessage" name="processResponse"/>
+        <bpel:variable messageType="n_s0:echoInputRequest" name="echoInputRequest"/>
+        <bpel:variable messageType="n_s0:echoInputResponse" name="echoInputResponse"/>
+    </bpel:variables>
+    <bpel:sequence name="MainSequence">
+        <bpel:assign name="initVariables" validate="no">
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <tns:TryInvokeRequest
+                            xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <tns:input>tns:input</tns:input>
+                        </tns:TryInvokeRequest>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="processRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <tns:TryInvokeResponse
+                            xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <tns:result>tns:result</tns:result>
+                        </tns:TryInvokeResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="processResponse"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInput
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:input>impl:input</impl:input>
+                        </impl:echoInput>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputRequest"/>
+            </bpel:copy>
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal>
+                        <impl:echoInputResponse
+                            xmlns:impl="http://pingpong.bpel.tps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <impl:echoInputReturn>impl:echoInputReturn</impl:echoInputReturn>
+                        </impl:echoInputResponse>
+                    </bpel:literal>
+                </bpel:from>
+                <bpel:to variable="echoInputResponse"/>
+            </bpel:copy>
+        </bpel:assign>
+        <bpel:pick createInstance="yes" name="SwitchInvokedOperation">
+            <bpel:onMessage operation="process"
+                partnerLink="TryInvokePL" portType="n_s1:TryInvoke" variable="processRequest">
+                <bpel:sequence name="implprocess">
+                    <bpel:assign name="PingPong1" validate="no">
+                        <bpel:copy>
+                            <bpel:from><![CDATA["hello2"]]></bpel:from>
+                            <bpel:to><![CDATA[$echoInputRequest.parameters/input]]></bpel:to>
+                        </bpel:copy>
+                    </bpel:assign>
+                    <bpel:invoke inputVariable="echoInputRequest"
+                        name="echoInput" operation="echoInput"
+                        outputVariable="echoInputResponse"
+                        partnerLink="PingPongPL" portType="n_s0:PingPong"/>
+                    <bpel:assign name="TryInvoke2" validate="no">
+                        <bpel:copy>
+                            <bpel:from><![CDATA[]]></bpel:from>
+                            <bpel:to><![CDATA[$processResponse.payload/result]]></bpel:to>
+                        </bpel:copy>
+                    </bpel:assign>
+                    <bpel:reply name="ReplyToProcess"
+                        operation="process" partnerLink="TryInvokePL"
+                        portType="n_s1:TryInvoke" variable="processResponse"/>
+                </bpel:sequence>
+            </bpel:onMessage>
+        </bpel:pick>
+    </bpel:sequence>
+</bpel:process>

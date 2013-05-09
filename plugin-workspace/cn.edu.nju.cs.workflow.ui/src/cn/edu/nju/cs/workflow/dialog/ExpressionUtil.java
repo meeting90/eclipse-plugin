@@ -4,6 +4,7 @@ package cn.edu.nju.cs.workflow.dialog;
 import org.eclipse.bpel.model.Assign;
 import org.eclipse.bpel.model.Copy;
 import org.eclipse.bpel.model.Variable;
+import org.eclipse.bpel.model.Process;
 import org.eclipse.bpel.model.util.BPELUtils;
 import org.eclipse.bpel.ui.details.tree.ITreeNode;
 import org.eclipse.emf.common.util.EList;
@@ -23,7 +24,7 @@ public class ExpressionUtil {
 		Variable variable = variableProvider.getVaraible();
 		
 		String namespace=variable.getMessageType().getQName().getNamespaceURI();
-		String prefix=addNameSpacePrefix(variable, namespace, "ns");
+		//String prefix=addNameSpacePrefix(variable, namespace, "n_s");
 		String expression="";
 		for(int i=0;i<nodes.length;i++){
 			ITreeNode treeNode = (ITreeNode)nodes[nodes.length-i-1];
@@ -32,7 +33,7 @@ public class ExpressionUtil {
 			else if(i==1)
 				expression+=".";
 			else if(i>=2)
-				expression+="/"+prefix+":";
+				expression+="/";
 			expression+=treeNode.getLabel();
 		}
 		return expression;
@@ -63,7 +64,7 @@ public class ExpressionUtil {
 	public  String addNameSpacePrefix ( Variable variable, String namespace ,String prefixRoot) {
 
 		
-		String nsPrefix = BPELUtils.getNamespacePrefix(variable.eContainer().eContainer(), namespace);
+		String nsPrefix = BPELUtils.getNamespacePrefix(variable, namespace);
 		if (nsPrefix != null && nsPrefix.length() > 0) {
 			return nsPrefix;
 		}
@@ -74,8 +75,8 @@ public class ExpressionUtil {
 		int idx = 0;
 		nsPrefix = prefixRoot+idx;
 		do {
-			if (BPELUtils.getNamespace(variable.eContainer().eContainer(), nsPrefix) == null) {
-				BPELUtils.setNamespacePrefix(variable.eContainer().eContainer(), namespace, nsPrefix);
+			if (BPELUtils.getNamespace(variable, nsPrefix) == null) {
+				BPELUtils.setNamespacePrefix(variable, namespace, nsPrefix);
 				return nsPrefix;
 			}
 			nsPrefix = prefixRoot + idx;

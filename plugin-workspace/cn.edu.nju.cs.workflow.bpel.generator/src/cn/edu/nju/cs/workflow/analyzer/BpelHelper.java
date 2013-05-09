@@ -17,6 +17,7 @@ import org.eclipse.bpel.model.Sequence;
 import org.eclipse.bpel.model.To;
 import org.eclipse.bpel.model.Variable;
 import org.eclipse.bpel.model.partnerlinktype.PartnerLinkType;
+import org.eclipse.bpel.model.util.BPELUtils;
 import org.eclipse.bpel.model.util.XSD2XMLGenerator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.wst.wsdl.Definition;
@@ -101,26 +102,92 @@ public class BpelHelper {
 		}
 	}
 
-	public void formatExpression(BPELExtensibleElement element){
+	public void formatExpression(){
+		formatExpIter(bpelProcess.getActivity());
+	}
+	private void formatExpIter(BPELExtensibleElement element){
+		
 		if(element instanceof OnMessage){
-			formatExpression(((OnMessage)element).getActivity());
+			formatExpIter(((OnMessage)element).getActivity());
+		}
+		if(element instanceof Pick){
+			for(OnMessage onMessage:((Pick)element).getMessages()){
+				formatExpIter(onMessage);
+			}
 			
-		}else if (element instanceof Sequence){
+		}
+		if (element instanceof Sequence){
 			
 			EList<Activity> activities=((Sequence)element).getActivities();
 			for(Activity activity : activities){
-				formatExpression(activity);
+				formatExpIter(activity);
 			}	
-		}else if(element instanceof Assign){
+		}
+		if(element instanceof Assign){
 			Assign assign=(Assign)element;
 			EList<Copy> copys=assign.getCopy();
 			for(Copy copy: copys){
-				String expression=(String) copy.getFrom().getExpression().getBody();
-				expression.startsWith("$");		
+				if(copy.getFrom().getExpression()!=null){
+					String expression=(String) copy.getFrom().getExpression().getBody();
+					addPrefix2Exp(expression);
+				}
+				if(copy.getTo().getExpression()!=null){
+					String expression=(String) copy.getTo().getExpression().getBody();
+					
+					addPrefix2Exp(expression);
+				}
 			}
-		}
+				
+			}
+		
+		
 		
 	}
+	public Variable findVariable(String name){
+		
+		for(Variable variable: this.bpelProcess.getVariables().getChildren()){
+			if(variable.getName().equals(name)){
+				return variable;
+			}
+		}
+		return null;
+	}
+	private  void addPrefix2Exp(String expression){
+	
+		if(expression.startsWith("$")){
+			
+			String valName=expression.split("\\.")[0].substring(1);
+			Variable variable=findVariable(valName);
+			if(variable!=null){
+				String namespace=variable.getMessageType().getQName().getNamespaceURI();
+				String prefix=addNameSpacePrefix(variable, namespace, "ns");
+				expression.replaceAll("/", "/"+prefix+":");
+				
+			}
+		}
+	}
+private  String addNameSpacePrefix ( Variable variable, String namespace ,String prefixRoot) {
+
+		
+		String nsPrefix = BPELUtils.getNamespacePrefix(variable, namespace);
+		System.out.println(nsPrefix);
+		if (nsPrefix != null && nsPrefix.length() > 0) {
+			return nsPrefix;
+		}
+		// Find a suitable prefix
+		
+		int idx = 0;
+		nsPrefix = prefixRoot+idx;
+		do {
+			if (BPELUtils.getNamespace(variable, nsPrefix) == null) {
+				BPELUtils.setNamespacePrefix(variable, namespace, nsPrefix);
+				return nsPrefix;
+			}
+			nsPrefix = prefixRoot + idx;
+			idx += 1;
+		} while (true);
+	}
+
 	
 	private boolean setPartnerLinkIfPosible(QName qname, PartnerLink pl){
 		Activity activity=bpelProcess.getActivity();

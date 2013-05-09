@@ -1661,6 +1661,14 @@
                   <expression body="ACED000574000BE2809C68656C6C6FE2809D"/>
                 </from>
               </copy>
+              <copy>
+                <to>
+                  <expression body="ACED0005740028246563686F496E707574526571756573742E706172616D65746572732F6E6A7573303A696E707574"/>
+                </to>
+                <from>
+                  <expression body="ACED00057400072268656C6C6F22"/>
+                </from>
+              </copy>
             </activities>
             <activities xsi:type="bpws:Invoke" name="echoInput" portType="/1/@implPortTypes.0" operation="/1/@implPortTypes.0/@eOperations.0" outputVariable="/2/@variables/@children.7" inputVariable="/2/@variables/@children.6"/>
             <activities xsi:type="bpws:Assign" name="AssignechoInputRequest">

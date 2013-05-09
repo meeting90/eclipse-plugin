@@ -17,5 +17,6 @@ public class BPELProcessResourceImpl extends BPELResourceImpl{
 		// TODO Auto-generated method stub
 		return bpelProcess;
 	}
+	
 
 }

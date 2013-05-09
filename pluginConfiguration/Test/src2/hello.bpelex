@@ -193,111 +193,47 @@
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" x="8" y="125"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.0/@activities.1"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" x="198" y="8"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0/@activities.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" x="8" y="8"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0/@activities.0/@activities.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0/@activities.0/@activities.0/@copy.0"/>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@copy.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0/@activities.0/@activities.1"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0/@activities.1"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" x="198" y="8"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0/@copy.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.0/@activities.1/@activities.1"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.1"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.1/@copy.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.0/@activities.1/@activities.2"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
     <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.1/@copy.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
-  </extensions>
-  <extensions>
     <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.2"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.3"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.3/@activities.0"/>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.2/@activities.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" x="8" y="8"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.3/@activities.0/@activities.0"/>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.2/@activities.0/@activities.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.3/@activities.0/@activities.0/@copy.0"/>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.2/@activities.0/@activities.0/@copy.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.3/@activities.0/@activities.1"/>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.2/@activities.0/@activities.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.3/@activities.1"/>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.2/@activities.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" x="198" y="8"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.3/@activities.1/@activities.0"/>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.2/@activities.1/@activities.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.3/@activities.1/@activities.0/@copy.0"/>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.2/@activities.1/@activities.0/@copy.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.3/@activities.1/@activities.1"/>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.1/@activities.2/@activities.1/@activities.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
@@ -314,6 +250,10 @@
   </extensions>
   <extensions>
     <extendedObject href="hello.bpel#/"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1366955169611"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1366958937510"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="hello.bpel#//@activity/@activities.1/@messages.0/@activity/@activities.0/@activities.0/@activities.2"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
 </extensionmodel:ExtensionMap>
