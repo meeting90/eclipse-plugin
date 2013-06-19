@@ -13,7 +13,8 @@ import cn.edu.nju.cs.workflow.model.SimpleTask;
 import cn.edu.nju.cs.workflow.ui.diagram.WorkflowFeatureProvider;
 
 public class StartTaskCreateFeature  extends  SimpleTaskCreateFeature{
-	protected Operation operation;
+	protected Operation operation; 
+	protected OnMessage onMsg;
 	public StartTaskCreateFeature(IFeatureProvider fp, PortType portType,Operation operation) {
 		super(fp, portType);
 		this.operation=operation;
@@ -32,14 +33,19 @@ public class StartTaskCreateFeature  extends  SimpleTaskCreateFeature{
 		WorkflowFeatureProvider provider=(WorkflowFeatureProvider) getFeatureProvider();
 		BPELComponentGenerator bpelGen=new BPELComponentGenerator(provider.getWorkflowProcess().getBpelProcess());	
 		
-		Pick pick=(Pick) provider.getWorkflow().getActivity();
+		Pick pick=(Pick) provider.getRootWorkflow().getRootActivity();
+		
 		Operation operation=task.getOperation();
-		OnMessage onMsg=bpelGen.createOnMessageActivity(operation, pick);
+		onMsg=bpelGen.createOnMessageActivity(operation, pick);
+		
+		
 		provider.getWorkflow().setActivity(onMsg.getActivity());
+		
 		port.setOutputValue(onMsg.getVariable());
 		task.setPartnerActivity(onMsg);
 		provider.getWorkflow().getNodes().add(task);
 		return task;
 	}
+	
 
 }

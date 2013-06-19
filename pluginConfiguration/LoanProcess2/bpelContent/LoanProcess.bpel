@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process exitOnStandardFault="yes" name="LoanProcess.bpel"
+    targetNamespace="http://wso2.org/bps/samples/LoanProcess"
+    xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:ns="http://wso2.org/bps/samples/LoanProcessArtifacts"
+    xmlns:ns0="http://wso2.org/bps/samples/loan_process/schema" xmlns:ns1="http://wso2.org/bps/samples/LoanProcess">
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="LoanProcess.wsdl" namespace="http://wso2.org/bps/samples/LoanProcess"/>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="LoanProcessArtifacts.wsdl" namespace="http://wso2.org/bps/samples/LoanProcessArtifacts"/>
+    <bpel:partnerLinks>
+        <bpel:partnerLink myRole="LoanProcessPortTypeRole"
+            name="bpelProcessPartner" partnerLinkType="ns:LoanProcessPortTypePLT"/>
+    </bpel:partnerLinks>
+    <bpel:variables>
+        <bpel:variable element="ns0:LoanRequest" name="laonRequestRequest"/>
+        <bpel:variable element="ns0:LoanOffer" name="laonRequestResponse"/>
+    </bpel:variables>
+    <bpel:sequence name="MainSequence">
+        <bpel:pick createInstance="yes" name="SwitchInvokedOperation">
+            <bpel:onMessage operation="laonRequest"
+                partnerLink="bpelProcessPartner"
+                portType="ns1:LoanProcessPortType" variable="laonRequestRequest">
+                <bpel:reply name="ReplyToLaonRequest"
+                    operation="laonRequest"
+                    partnerLink="bpelProcessPartner"
+                    portType="ns1:LoanProcessPortType" variable="laonRequestResponse"/>
+            </bpel:onMessage>
+        </bpel:pick>
+    </bpel:sequence>
+</bpel:process>

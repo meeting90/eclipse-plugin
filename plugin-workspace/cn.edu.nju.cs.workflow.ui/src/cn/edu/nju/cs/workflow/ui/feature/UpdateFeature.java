@@ -14,8 +14,6 @@ import org.eclipse.graphiti.mm.pictograms.Shape;
 
 import cn.edu.nju.cs.workflow.model.ConditionalOutputPort;
 import cn.edu.nju.cs.workflow.model.WorkflowElement;
-import cn.edu.nju.cs.workflow.model.WorkflowNode;
-import cn.edu.nju.cs.workflow.ui.util.StyleUtil;
 
 public class UpdateFeature extends AbstractUpdateFeature {
 
@@ -101,6 +99,18 @@ public class UpdateFeature extends AbstractUpdateFeature {
 //	        }
 //        
 // 
+//	}
+//	private void updateEdgeName(IUpdateContext context){
+//		String edgeName="";
+//        PictogramElement pictogramElement = context.getPictogramElement();
+//        Object bo = getBusinessObjectForPictogramElement(pictogramElement);
+//        if (bo instanceof Task) {
+//        	Task element = (Task) bo;
+//        	edgeName=element.getOutputs().get(0).getOutputValue().getName();
+//        	
+//        }
+//        if(pictogramElement instanceof ContainerShape)
+//        
 //	}
 	private void updateText(IUpdateContext context){
 		String businessName = null;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:CreditRating="http://wso2.org/bps/samples/CreditRating" xmlns:CustomerInfo="http://wso2.org/bps/samples/CustomerInfo" xmlns:LoanProcess="http://wso2.org/bps/samples/LoanProcess" xmlns:LoanService="http://wso2.org/bps/samples/LoanService">
+  <process name="LoanProcess:Process">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all">
+      <scope-events name="scope_laonRequest">
+        <enable-event>instanceLifecycle</enable-event>
+        <enable-event>activityLifecycle</enable-event>
+        <enable-event>dataHandling</enable-event>
+        <enable-event>scopeHandling</enable-event>
+        <enable-event>correlation</enable-event>
+      </scope-events>
+    </process-events>
+    <provide partnerLink="LoanServicePortTypePL">
+      <service name="LoanService:LoanServiceCallback" port="LoanServiceCallbackPort"/>
+    </provide>
+    <provide partnerLink="LoanProcessPortTypePL">
+      <service name="LoanProcess:LoanProcessService" port="LoanProcessPort"/>
+    </provide>
+    <invoke partnerLink="LoanServicePortTypePL">
+      <service name="LoanService:DILoanService" port="LoanServicePort"/>
+    </invoke>
+    <invoke partnerLink="CreditRatingPortTypePL">
+      <service name="CreditRating:CreditRatingService" port="CreditRatingPort"/>
+    </invoke>
+    <invoke partnerLink="CustomerInfoPortTypePL">
+      <service name="CustomerInfo:CustomerInfoService" port="CustomerInfoPort"/>
+    </invoke>
+  </process>
+</deploy>

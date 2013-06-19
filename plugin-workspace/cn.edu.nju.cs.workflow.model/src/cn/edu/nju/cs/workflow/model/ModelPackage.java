@@ -307,13 +307,22 @@ public interface ModelPackage extends EPackage {
 	int WORKFLOW__ACTIVITY = WORKFLOW_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Root Activity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKFLOW__ROOT_ACTIVITY = WORKFLOW_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Workflow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORKFLOW_FEATURE_COUNT = WORKFLOW_ELEMENT_FEATURE_COUNT + 4;
+	int WORKFLOW_FEATURE_COUNT = WORKFLOW_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link cn.edu.nju.cs.workflow.model.impl.WorkflowNodeImpl <em>Workflow Node</em>}' class.
@@ -2428,6 +2437,17 @@ public interface ModelPackage extends EPackage {
 	EReference getWorkflow_Activity();
 
 	/**
+	 * Returns the meta object for the reference '{@link cn.edu.nju.cs.workflow.model.Workflow#getRootActivity <em>Root Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Root Activity</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.Workflow#getRootActivity()
+	 * @see #getWorkflow()
+	 * @generated
+	 */
+	EReference getWorkflow_RootActivity();
+
+	/**
 	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.WorkflowNode <em>Workflow Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3087,6 +3107,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference WORKFLOW__ACTIVITY = eINSTANCE.getWorkflow_Activity();
+
+		/**
+		 * The meta object literal for the '<em><b>Root Activity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WORKFLOW__ROOT_ACTIVITY = eINSTANCE.getWorkflow_RootActivity();
 
 		/**
 		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.impl.WorkflowNodeImpl <em>Workflow Node</em>}' class.

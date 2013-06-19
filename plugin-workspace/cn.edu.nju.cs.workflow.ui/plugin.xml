@@ -36,5 +36,17 @@
             name="TWF">
       </wizard>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.eclipse.graphiti.ui.editor.DiagramEditor"
+            contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+            default="false"
+            extensions="twf"
+            id="cn.edu.nju.cs.workflow.ui.twfEditor"
+            matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorMatchingStrategy"
+            name="TWF editor">
+      </editor>
+   </extension>
 
 </plugin>

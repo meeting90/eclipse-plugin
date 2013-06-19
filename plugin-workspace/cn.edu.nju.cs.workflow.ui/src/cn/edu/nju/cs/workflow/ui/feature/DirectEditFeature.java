@@ -36,7 +36,7 @@ public class DirectEditFeature extends AbstractDirectEditingFeature {
 	        // direct editing not supported in all other cases
 	        return false;
 	    }
-	 
+	 	@Override
 	    public String getInitialValue(IDirectEditingContext context) {
 	        // return the current name of the EClass
 	        PictogramElement pe = context.getPictogramElement();
@@ -52,7 +52,7 @@ public class DirectEditFeature extends AbstractDirectEditingFeature {
 	       
 	        return null;
 	    }
-	 
+	    @Override
 	    public void setValue(String value, IDirectEditingContext context) {
 	        // set the new name for the EClass
 	        PictogramElement pe = context.getPictogramElement();

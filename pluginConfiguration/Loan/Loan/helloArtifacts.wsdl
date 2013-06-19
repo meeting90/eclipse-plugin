@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:ns0="http://wso2.org/bps/samples/LoanService" xmlns:ns1="http://wso2.org/bps/samples/CustomerInfo" xmlns:ns2="http://wso2.org/bps/samples/CreditRating" xmlns:tns="http://wso2.org/bps/samples/LoanProcess" xmlns:tns0="http://wso2.org/bps/samples/LoanProcess" targetNamespace="http://wso2.org/bps/samples/LoanProcessArtifacts" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <partnerLinkType name="LoanServiceCallbackPortTypePLT" xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <role name="LoanServiceCallbackPortTypeRole" portType="ns0:LoanServiceCallbackPortType"/>
+  </partnerLinkType>
+  <partnerLinkType name="LoanServicePortTypePLT" xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <role name="LoanServicePortTypeRole" portType="ns0:LoanServicePortType"/>
+  </partnerLinkType>
+  <partnerLinkType name="CreditRatingPortTypePLT" xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <role name="CreditRatingPortTypeRole" portType="ns2:CreditRatingPortType"/>
+  </partnerLinkType>
+  <partnerLinkType name="CustomerInfoPortTypePLT" xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <role name="CustomerInfoPortTypeRole" portType="ns1:CustomerInfoPortType"/>
+  </partnerLinkType>
+  <partnerLinkType name="LoanProcessPortTypePLT" xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <role name="LoanProcessPortTypeRole" portType="tns:LoanProcessPortType"/>
+  </partnerLinkType>
+  <import location="LoanService.wsdl" namespace="http://wso2.org/bps/samples/LoanService"/>
+  <import location="LoanService.wsdl" namespace="http://wso2.org/bps/samples/LoanService"/>
+  <import location="CustomerInfo.wsdl" namespace="http://wso2.org/bps/samples/CustomerInfo"/>
+  <import location="CreditRating.wsdl" namespace="http://wso2.org/bps/samples/CreditRating"/>
+  <import location="LoanProcess.wsdl" namespace="http://wso2.org/bps/samples/LoanProcess"/>
+</definitions>

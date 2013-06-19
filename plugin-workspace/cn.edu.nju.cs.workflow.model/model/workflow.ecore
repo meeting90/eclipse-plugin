@@ -33,6 +33,7 @@
         eType="#//Comment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
         eType="ecore:EClass bpel.ecore#//Activity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootActivity" eType="ecore:EClass bpel.ecore#//Activity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowNode" eSuperTypes="#//WorkflowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="workflow" lowerBound="1"

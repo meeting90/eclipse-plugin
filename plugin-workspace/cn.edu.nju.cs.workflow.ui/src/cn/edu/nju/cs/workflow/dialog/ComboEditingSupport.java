@@ -1,6 +1,10 @@
 package cn.edu.nju.cs.workflow.dialog;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import org.eclipse.bpel.model.Assign;
 import org.eclipse.bpel.model.Copy;
 import org.eclipse.bpel.model.Variables;
@@ -25,22 +29,34 @@ public class ComboEditingSupport extends EditingSupport{
 	Assign assign;
 	ExpressionUtil expressionUtil;
 	BPELComponentGenerator bpelGen;
+	Map<String,ArrayList<String>> candidateMap;
 	
 	@SuppressWarnings("deprecation")
-	public ComboEditingSupport(TreeViewer viewer,BPELComponentGenerator bpelGen,Assign assign) {
+	public ComboEditingSupport(TreeViewer viewer,BPELComponentGenerator bpelGen,Assign assign, Map<String, ArrayList<String>> map) {
 		super(viewer);
         cellEditor = new ComboBoxViewerCellEditor(viewer.getTree());
-        cellEditor.setLabelProvider( new LabelProvider() );
+        cellEditor.setLabelProvider( new LabelProvider());
         cellEditor.setContenProvider( new ArrayContentProvider() );
         this.variableProvider=(VariableProvider) viewer.getContentProvider();
         this.assign=assign;
         this.bpelGen=bpelGen;
+        this.candidateMap=map;
         expressionUtil=new ExpressionUtil(variableProvider);
 	}
 
 	@Override
 	protected CellEditor getCellEditor(Object element) {
 		// TODO Auto-generated method stub
+		((CCombo)cellEditor.getControl()).setText(getValue(element).toString());
+		 ArrayList<String> expr=candidateMap.get(expressionUtil.element2XpathExpression(element));
+		 
+		 if(expr!=null &&!expr.isEmpty()){
+		
+			 cellEditor.setInput(expr.toArray(new String[expr.size()]));
+		 }else{
+			 cellEditor.setInput(null);
+		 }
+		 
 		 return cellEditor;
 	}
 
@@ -52,21 +68,27 @@ public class ComboEditingSupport extends EditingSupport{
 
 	@Override
 	protected Object getValue(Object element) {
-		
-		if (!(element instanceof ITreeNode)) return null;		
-			return expressionUtil.getOldExpression(assign, element);
+		if (!(element instanceof ITreeNode)) return "";
+		return expressionUtil.getOldExpression(assign, element);
 	}
 
 	@Override
 	protected void setValue(Object element, Object value) {
-		if (value == null)
+	
+		if (value == null){	
 			value = ((CCombo)cellEditor.getControl()).getText();
-		Copy copy=expressionUtil.getOldCopyExpression(assign, element);
-		if(copy==null)
+		}
+		if(value.equals(""))
+			return;
+	
+		List<Copy> copys=expressionUtil.getRelatedCopyExpressions(assign, element);
+		if(copys.isEmpty())
 			bpelGen.createCopyNode(assign, value.toString(), expressionUtil.element2XpathExpression(element));
 		else
-			bpelGen.replaceCopyNode(copy, value.toString(), expressionUtil.element2XpathExpression(element));		
+			bpelGen.replaceCopyNode(copys, value.toString(), expressionUtil.element2XpathExpression(element));	
+		
 		getViewer().update(element, null);  
+		getViewer().refresh();
 		
 	}
 

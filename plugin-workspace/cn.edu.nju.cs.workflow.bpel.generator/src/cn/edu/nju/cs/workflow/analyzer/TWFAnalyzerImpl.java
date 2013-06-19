@@ -68,7 +68,7 @@ public class TWFAnalyzerImpl  implements TWFAnalyzer{
 		IFile wsdlFile = twfFile.getParent().getFile( new Path( computeWsdlArtifactsName()));
 		URI wsdlEmfUri = URI.createPlatformResourceURI( wsdlFile.getFullPath().toString(), true );
 		Definition artifactsDefinition=WsdlParser.loadWsdlDefinition(wsdlEmfUri, WsdlParser.createBasicResourceSetForWsdl());
-		BpelHelper bpelHelper=new BpelHelper(bpelProcess, artifactsDefinition);
+		BpelHelper bpelHelper=new BpelHelper(bpelProcess, workflowProcess,artifactsDefinition);
 		bpelHelper.addPartnerLinks();
 		bpelHelper.initVariables();
 		bpelHelper.formatExpression();

@@ -5,7 +5,6 @@ import org.eclipse.graphiti.features.context.IAddContext;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 
-import cn.edu.nju.cs.workflow.model.AdviceType;
 import cn.edu.nju.cs.workflow.model.Choice;
 
 
@@ -35,18 +34,18 @@ public class ChoiceTaskAddFeature extends BaseAddFeature{
 		addConditionalOutputPort(choice, containerShape, branchNum);
 		addFaultPort(choice, containerShape);
 		addElementName(choice, containerShape);
-		int beforeX=0;
-		int beforeY=getBodyY()+getPortMargin()+getPortWidth()/2-getPointCutR();
-		int afterX=getTotalWidth()-getPointCutR()*2;
-		int afterY=beforeY;
-		int aroundX=getTotalWidth()/2-getPointCutR();
-		int aroundY=getTotalHeight()-getPointCutR()*2;
-		addPointCut(choice, containerShape, beforeX, beforeY,AdviceType.BEFORE);
-		for(int i=0;i<branchNum;i++){
-			addPointCut(choice, containerShape, afterX, afterY+getPortMargin()*i,AdviceType.AFTER);
-			
-		}
-		addPointCut(choice, containerShape, aroundX,aroundY,AdviceType.AROUND);
+//		int beforeX=0;
+//		int beforeY=getBodyY()+getPortMargin()+getPortWidth()/2-getPointCutR();
+//		int afterX=getTotalWidth()-getPointCutR()*2;
+//		int afterY=beforeY;
+//		int aroundX=getTotalWidth()/2-getPointCutR();
+//		int aroundY=getTotalHeight()-getPointCutR()*2;
+//		addPointCut(choice, containerShape, beforeX, beforeY,AdviceType.BEFORE);
+//		for(int i=1;i<=branchNum;i++){
+//			addPointCut(choice, containerShape, afterX, afterY+getPortMargin()*i,AdviceType.AFTER);
+//			
+//		}
+//		addPointCut(choice, containerShape, aroundX,aroundY,AdviceType.AROUND);
 		return containerShape;
 	}
 

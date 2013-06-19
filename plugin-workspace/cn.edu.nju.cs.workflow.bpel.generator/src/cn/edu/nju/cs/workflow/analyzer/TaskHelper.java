@@ -12,6 +12,7 @@ import org.eclipse.bpel.model.Assign;
 import org.eclipse.bpel.model.BPELFactory;
 import org.eclipse.bpel.model.Flow;
 import org.eclipse.bpel.model.Sequence;
+import org.eclipse.bpel.model.Scope;
 import org.eclipse.emf.common.util.EList;
 
 import cn.edu.nju.cs.workflow.model.Edge;
@@ -24,7 +25,7 @@ public class TaskHelper {
 	Sequence orginalSequence;
 	public TaskHelper(WorkflowProcess wp){
 		this.workflowProcess=wp;
-		this.orginalSequence=(Sequence) wp.getRootWorkflow().getActivity();
+		this.orginalSequence=(Sequence)((Scope)wp.getRootWorkflow().getActivity()).getActivity();
 	}
 	public void orderActivities() throws Exception{
 		Sequence sequence=BPELFactory.eINSTANCE.createSequence();
@@ -36,9 +37,11 @@ public class TaskHelper {
 				System.out.println(((SimpleTask)node).getName());
 				if(((SimpleTask)node).getInput()!=null){
 					Assign assign=((SimpleTask)node).getInput().getAssign();
-					orginalSequence.getActivities().remove(assign);
-					assign.setName(((SimpleTask)node).getName());
-					sequence.getActivities().add(assign);
+					if(assign!=null){
+						orginalSequence.getActivities().remove(assign);
+						assign.setName(((SimpleTask)node).getName());
+						sequence.getActivities().add(assign);
+					}
 				}if(((SimpleTask)node).getPartnerActivity() instanceof Activity){
 					Activity activity=(Activity) ((SimpleTask)node).getPartnerActivity();
 					orginalSequence.getActivities().remove(activity);

@@ -13,6 +13,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 
 
+import cn.edu.nju.cs.workflow.bpel.VariableTypeResolver;
 import cn.edu.nju.cs.workflow.dialog.AssignInputDialog;
 import cn.edu.nju.cs.workflow.model.InputPort;
 import cn.edu.nju.cs.workflow.ui.diagram.WorkflowFeatureProvider;
@@ -36,16 +37,18 @@ public class AssignInputFeature  extends AbstractCustomFeature{
 		 
 	     Variable input=port.getInputValue();
 	     
-	     
-	
 	    
 	 	 Shell shell=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+	 	 VariableTypeResolver resolver=new VariableTypeResolver(input, port.getNode());
+	 	 resolver.execute();
 		
-	 	 AssignInputDialog dialog = new AssignInputDialog (
-	        		shell, input,null, provider.getBpelGenerator(),port.getAssign()
-	        		);
+			 AssignInputDialog dialog = new AssignInputDialog (
+		        		shell, input,resolver.getExprMap(), provider.getBpelGenerator(),port.getAssign()
+		        		);
+		 	
+		       dialog.open();
+		 
 	 	
-	        dialog.open();
 	 	
 	      
 	
@@ -58,7 +61,8 @@ public class AssignInputFeature  extends AbstractCustomFeature{
 	        if (pes != null && pes.length == 1) {
 	            Object bo = getBusinessObjectForPictogramElement(pes[0]);
 	            if (bo instanceof InputPort) {
-	            	return true;	              
+	            	 InputPort port=(InputPort)bo;
+	        	     return (port.getAssign()!=null);
 	            }
 	        }
 	        return false;

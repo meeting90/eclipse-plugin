@@ -75,20 +75,31 @@ public class FileService {
 				createdResource.getContents().add(diagram);		
 				PictogramLink link = PictogramsFactory.eINSTANCE.createPictogramLink();
 				diagram.setLink(link);
+				
 				WorkflowProcess workflowProcess=ModelFactory.eINSTANCE.createWorkflowProcess();
 				createdResource.getContents().add(workflowProcess);	
-				link.getBusinessObjects().add(workflowProcess);	
+				
+				
+				
 				bpelGenerator.loadDependencies();
 				bpelGenerator.createWsdlFile();
 				bpelGenerator.createBpelSkeleton();
+				
 				
 				workflowProcess.setRootWorkflow(ModelFactory.eINSTANCE.createWorkflow());
 				workflowProcess.setBpelProcess(bpelGenerator.getBpelProcess());
 				workflowProcess.getImplPortTypes().addAll(bpelGenerator.getImplementedPortTypes());
 				workflowProcess.getToImplPortTypes().addAll(bpelGenerator.getToImplPortTypes());
+				
+				//createdResource.getContents().add(workflowProcess.getRootWorkflow());
 				createdResource.getContents().add(workflowProcess.getBpelProcess());
+				
+				link.getBusinessObjects().add(workflowProcess);
+				link.getBusinessObjects().add(workflowProcess.getRootWorkflow());	
+				
 				Pick mainPick=(Pick) ((Sequence)workflowProcess.getBpelProcess().getActivity()).getActivities().get(0);
-				workflowProcess.getRootWorkflow().setActivity(mainPick);
+				workflowProcess.getRootWorkflow().setRootActivity(mainPick);
+				
 				
 				 
 			}
@@ -103,7 +114,7 @@ public class FileService {
 
 	
 	
-	public static void createEmfFileForSubDiagram(URI diagramResourceUri, final Diagram diagram,final Workflow subworkflow){
+	public static void createEmfFileForSubDiagram(URI diagramResourceUri, final Diagram diagram,final Workflow subworkflow,final WorkflowProcess wfprocess){
 		// Create a resource set and EditingDomain
 				final TransactionalEditingDomain editingDomain = GraphitiUi.getEmfService()
 						.createResourceSetAndEditingDomain();
@@ -116,7 +127,11 @@ public class FileService {
 					protected void doExecute() {
 						resource.setTrackingModification(true);
 						resource.getContents().add(diagram);
-						resource.getContents().add(subworkflow);
+						//resource.getContents().add(subworkflow);
+						PictogramLink link = PictogramsFactory.eINSTANCE.createPictogramLink();
+						diagram.setLink(link);
+						link.getBusinessObjects().add(wfprocess);
+						link.getBusinessObjects().add(subworkflow);	
 					}
 				});
 				save(editingDomain, Collections.<Resource, Map<?, ?>> emptyMap());

@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link cn.edu.nju.cs.workflow.model.Workflow#getEdges <em>Edges</em>}</li>
  *   <li>{@link cn.edu.nju.cs.workflow.model.Workflow#getComments <em>Comments</em>}</li>
  *   <li>{@link cn.edu.nju.cs.workflow.model.Workflow#getActivity <em>Activity</em>}</li>
+ *   <li>{@link cn.edu.nju.cs.workflow.model.Workflow#getRootActivity <em>Root Activity</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,5 +109,31 @@ public interface Workflow extends WorkflowElement {
 	 * @generated
 	 */
 	void setActivity(Activity value);
+
+	/**
+	 * Returns the value of the '<em><b>Root Activity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Root Activity</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Root Activity</em>' reference.
+	 * @see #setRootActivity(Activity)
+	 * @see cn.edu.nju.cs.workflow.model.ModelPackage#getWorkflow_RootActivity()
+	 * @model
+	 * @generated
+	 */
+	Activity getRootActivity();
+
+	/**
+	 * Sets the value of the '{@link cn.edu.nju.cs.workflow.model.Workflow#getRootActivity <em>Root Activity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Root Activity</em>' reference.
+	 * @see #getRootActivity()
+	 * @generated
+	 */
+	void setRootActivity(Activity value);
 
 } // Workflow

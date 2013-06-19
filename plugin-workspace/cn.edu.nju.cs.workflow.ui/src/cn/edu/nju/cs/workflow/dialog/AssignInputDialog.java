@@ -1,5 +1,8 @@
 package cn.edu.nju.cs.workflow.dialog;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import org.eclipse.bpel.model.Assign;
 import org.eclipse.bpel.model.Variable;
 import org.eclipse.bpel.ui.Messages;
@@ -30,7 +33,7 @@ public class AssignInputDialog extends Dialog{
 	ExpressionUtil expressionUtil;
 	Shell shell;
 	Variable input;
-	Variable []candidateInputs;
+	Map<String,ArrayList<String>> candidateMap;
 	Assign assign;
 	
 	BPELComponentGenerator bpelGen;
@@ -38,10 +41,10 @@ public class AssignInputDialog extends Dialog{
 	
     private final static int SIZING_SELECTION_WIDGET_HEIGHT = 250;
     private final static int SIZING_SELECTION_WIDGET_WIDTH = 500;
-    public AssignInputDialog(Shell parentShell, Variable input,Variable[] candidateInputs, BPELComponentGenerator bpelGen,Assign assign) {
+    public AssignInputDialog(Shell parentShell, Variable input,Map<String,ArrayList<String>> map, BPELComponentGenerator bpelGen,Assign assign) {
         super(parentShell);
         this.input=input;
-        this.candidateInputs=candidateInputs;
+        this.candidateMap=map;
         this.assign=assign;
         this.bpelGen=bpelGen;
         
@@ -68,6 +71,7 @@ public class AssignInputDialog extends Dialog{
 		 GridData data = new GridData(GridData.FILL_VERTICAL);
 		 data.heightHint = SIZING_SELECTION_WIDGET_HEIGHT;
 		 data.widthHint = SIZING_SELECTION_WIDGET_WIDTH;
+		 
 		 fVariableViewer.getTree().setLayoutData(data);
 		 fVariableViewer.getTree().setLinesVisible(true);
 		 fVariableViewer.getTree().setHeaderVisible(true);
@@ -93,7 +97,7 @@ public class AssignInputDialog extends Dialog{
 			
 		TreeViewerColumn column = new TreeViewerColumn(fVariableViewer, SWT.NONE);
 		column.getColumn().setWidth( SIZING_SELECTION_WIDGET_WIDTH/2);
-		column.getColumn().setMoveable(true);
+		column.getColumn().setMoveable(false);
 		column.getColumn().setText("Input");
 		column.setLabelProvider(new ColumnLabelProvider() {
 
@@ -112,7 +116,7 @@ public class AssignInputDialog extends Dialog{
 			
 		column = new TreeViewerColumn(fVariableViewer, SWT.NONE);
 		column.getColumn().setWidth(SIZING_SELECTION_WIDGET_WIDTH/2);
-		column.getColumn().setMoveable(true);
+		column.getColumn().setMoveable(false);
 		column.getColumn().setText("Value");
 			
 		column.setLabelProvider(new ColumnLabelProvider() {
@@ -123,8 +127,25 @@ public class AssignInputDialog extends Dialog{
 				}
 
 			});
-		column.setEditingSupport(new ComboEditingSupport(fVariableViewer,bpelGen,assign));
+		column.setEditingSupport(new ComboEditingSupport(fVariableViewer,bpelGen,assign,candidateMap));
+//		column= new TreeViewerColumn(fVariableViewer, SWT.NONE);
+//		column.getColumn().setWidth(SIZING_SELECTION_WIDGET_WIDTH/3);
+//		column.getColumn().setMoveable(false);
+//		column.getColumn().setText("order");
+//		column.setLabelProvider(new ColumnLabelProvider(){
+//			@Override
+//			public String getText(Object node) {
+//				// TODO Auto-generated method stub
+//				if(!(node instanceof ITreeNode)) return null;
+//				return expressionUtil.getCopyOrder(assign, node)+"";
+//			}
+//			
+//		});
+//		
+//		column.setEditingSupport(new OrderEditSupport(fVariableViewer,bpelGen,assign));
+//		
 		fVariableViewer.setInput(input);
+		fVariableViewer.expandAll();
 		Dialog.applyDialogFont(composite);
 	    return composite;
     }

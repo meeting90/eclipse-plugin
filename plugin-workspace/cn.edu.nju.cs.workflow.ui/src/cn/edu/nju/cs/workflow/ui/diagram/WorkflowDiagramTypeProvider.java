@@ -6,7 +6,9 @@ import java.util.Collection;
 
 import org.eclipse.graphiti.dt.AbstractDiagramTypeProvider;
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
+
 import org.eclipse.graphiti.features.context.impl.CreateContext;
+
 import org.eclipse.graphiti.tb.IToolBehaviorProvider;
 
 import org.eclipse.wst.wsdl.Operation;
@@ -39,37 +41,54 @@ public class WorkflowDiagramTypeProvider extends AbstractDiagramTypeProvider
 	public void postInit() {
 		//init diagram with start Node and end Node
 		if(getDiagram().isActive()==false){
-			WorkflowFeatureProvider provider=(WorkflowFeatureProvider) getFeatureProvider();
 			
+			WorkflowFeatureProvider provider=(WorkflowFeatureProvider) getFeatureProvider();
 			Collection<PortType> porttypes=provider.getNewPortTypes();
-			for(PortType porttype: porttypes){
-				if(porttype.getOperations().size()==1){
+			if(porttypes.size()==1){
+				for(PortType porttype: porttypes){
+					int i=0;
+					
 					for(Object ob : porttype.getOperations()){
+						i++;
 						Operation operation=(Operation)ob;
 						StartTaskCreateFeature startFeature=new StartTaskCreateFeature(getFeatureProvider(),porttype,operation);
 						EndTaskCreateFeature endFeature=new EndTaskCreateFeature(getFeatureProvider(),porttype,operation);
+						//CompoundTaskCreateFeature compoundFeature=new CompoundTaskCreateFeature(getFeatureProvider());
+						
 						CreateContext context=new CreateContext();
 						context.setTargetContainer(getDiagram());
-						context.setLocation(0, 200);
-						getDiagramEditor().executeFeature(startFeature, context);
-						context.setLocation(500, 200);
-						getDiagramEditor().executeFeature(endFeature, context);
+						context.setLocation(0, 200*i);
+					    getDiagramEditor().executeFeature(startFeature, context);
+						
+						context.setLocation(500, 200*i);
+						getDiagramEditor().executeFeature(endFeature, context);	
+					//	getDiagramEditor().refresh();
+						context.setLocation(300, 200*i);
+						//getDiagramEditor().executeFeature(compoundFeature, context);
 						getDiagramEditor().refresh();
 					}
-				}
+			
+					
 				
+				}
 			}
-			
-			
-			
-		}
-			
+		}	
 	}
 	
-
+/*
+private Anchor getAnchor(PictogramElement pe){
 	
-	
-
+		Anchor ret = null;
+		if (pe instanceof Anchor) {
+			ret = (Anchor) pe;
+		} else if (pe instanceof AnchorContainer) {
+			ret = Graphiti.getPeService().getChopboxAnchor((AnchorContainer) pe);
+		}
+		return ret;
+		
+			
+}
+*/
 
 
 

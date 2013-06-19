@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl#getEdges <em>Edges</em>}</li>
  *   <li>{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl#getActivity <em>Activity</em>}</li>
+ *   <li>{@link cn.edu.nju.cs.workflow.model.impl.WorkflowImpl#getRootActivity <em>Root Activity</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,6 +88,16 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 	 * @ordered
 	 */
 	protected Activity activity;
+
+	/**
+	 * The cached value of the '{@link #getRootActivity() <em>Root Activity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRootActivity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Activity rootActivity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,6 +197,44 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Activity getRootActivity() {
+		if (rootActivity != null && rootActivity.eIsProxy()) {
+			InternalEObject oldRootActivity = (InternalEObject)rootActivity;
+			rootActivity = (Activity)eResolveProxy(oldRootActivity);
+			if (rootActivity != oldRootActivity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.WORKFLOW__ROOT_ACTIVITY, oldRootActivity, rootActivity));
+			}
+		}
+		return rootActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Activity basicGetRootActivity() {
+		return rootActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRootActivity(Activity newRootActivity) {
+		Activity oldRootActivity = rootActivity;
+		rootActivity = newRootActivity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.WORKFLOW__ROOT_ACTIVITY, oldRootActivity, rootActivity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -231,6 +280,9 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 			case ModelPackage.WORKFLOW__ACTIVITY:
 				if (resolve) return getActivity();
 				return basicGetActivity();
+			case ModelPackage.WORKFLOW__ROOT_ACTIVITY:
+				if (resolve) return getRootActivity();
+				return basicGetRootActivity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,6 +311,9 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 			case ModelPackage.WORKFLOW__ACTIVITY:
 				setActivity((Activity)newValue);
 				return;
+			case ModelPackage.WORKFLOW__ROOT_ACTIVITY:
+				setRootActivity((Activity)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -283,6 +338,9 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 			case ModelPackage.WORKFLOW__ACTIVITY:
 				setActivity((Activity)null);
 				return;
+			case ModelPackage.WORKFLOW__ROOT_ACTIVITY:
+				setRootActivity((Activity)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -303,6 +361,8 @@ public class WorkflowImpl extends WorkflowElementImpl implements Workflow {
 				return comments != null && !comments.isEmpty();
 			case ModelPackage.WORKFLOW__ACTIVITY:
 				return activity != null;
+			case ModelPackage.WORKFLOW__ROOT_ACTIVITY:
+				return rootActivity != null;
 		}
 		return super.eIsSet(featureID);
 	}

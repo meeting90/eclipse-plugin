@@ -7,12 +7,14 @@ import org.eclipse.bpel.model.Assign;
 import org.eclipse.bpel.model.BPELExtensibleElement;
 import org.eclipse.bpel.model.BPELFactory;
 import org.eclipse.bpel.model.Copy;
+import org.eclipse.bpel.model.Expression;
 import org.eclipse.bpel.model.From;
 import org.eclipse.bpel.model.OnMessage;
 import org.eclipse.bpel.model.PartnerActivity;
 import org.eclipse.bpel.model.PartnerLink;
 import org.eclipse.bpel.model.Pick;
 import org.eclipse.bpel.model.Process;
+import org.eclipse.bpel.model.Scope;
 import org.eclipse.bpel.model.Sequence;
 import org.eclipse.bpel.model.To;
 import org.eclipse.bpel.model.Variable;
@@ -26,14 +28,19 @@ import org.eclipse.wst.wsdl.Part;
 import org.eclipse.wst.wsdl.PortType;
 import org.eclipse.xsd.XSDElementDeclaration;
 
+import cn.edu.nju.cs.workflow.model.WorkflowProcess;
+
 public class BpelHelper {
 	Process bpelProcess;
 	Definition artifactsDefinition;
+	WorkflowProcess wfprocess;
+	
 	//WsdlHelper helper;
 
-	public BpelHelper(Process bpelProcess, Definition artifactsDefinition){
+	public BpelHelper(Process bpelProcess, WorkflowProcess wfProcess, Definition artifactsDefinition){
 		this.bpelProcess=bpelProcess;
 		this.artifactsDefinition=artifactsDefinition;
+		this.wfprocess=wfProcess;
 	}
 	public void addPartnerLinks(){
 
@@ -46,6 +53,7 @@ public class BpelHelper {
 			pl.setMyRole(((PartnerLinkType)elt).getRole().get(0));
 			pl.setPartnerRole(((PartnerLinkType)elt).getRole().get(0));
 			PortType portType=(PortType) pl.getMyRole().getPortType();
+			
 			boolean matched=setPartnerLinkIfPosible(portType.getQName(), pl);
 			if(matched){
 				this.bpelProcess.getPartnerLinks().getChildren().add( pl );
@@ -55,10 +63,16 @@ public class BpelHelper {
 	public void initVariables(){
 		Assign assign=BPELFactory.eINSTANCE.createAssign();
 		assign.setName("initVariables");
-		for(Variable var : this.bpelProcess.getVariables().getChildren()){
-			assign.getCopy().add(initVariable(var));
+		
+		Pick pick=(Pick) this.wfprocess.getRootWorkflow().getRootActivity();
+		for (OnMessage msg:pick.getMessages()){
+		  Scope scope=	(Scope) msg.getActivity();
+		  for(Variable var: scope.getVariables().getChildren()){
+				assign.getCopy().add(initVariable(var));
+			}
+			((Sequence)scope.getActivity()).getActivities().add(0, assign);
 		}
-		((Sequence)(this.bpelProcess.getActivity())).getActivities().add(0,assign);
+		
 		
 	}
 	private Copy initVariable(Variable variable){
@@ -91,7 +105,9 @@ public class BpelHelper {
 			From from = BPELFactory.eINSTANCE.createFrom();
 			from.setLiteral(literal);
 			copy.setFrom(from);
-			to.setVariable(variable);
+			Expression expression=BPELFactory.eINSTANCE.createExpression();
+			expression.setBody("$"+variable.getName()+"."+((Part)msg.getEParts().get(0)).getName());
+			to.setExpression(expression);
 			copy.setTo(to);
 			return copy;
 			
@@ -103,24 +119,20 @@ public class BpelHelper {
 	}
 
 	public void formatExpression(){
-		formatExpIter(bpelProcess.getActivity());
-	}
-	private void formatExpIter(BPELExtensibleElement element){
+		Pick pick=(Pick) this.wfprocess.getRootWorkflow().getRootActivity();
+		for(OnMessage msg: pick.getMessages()){
+			Scope scope= (Scope) msg.getActivity();
+			formatExpIter(scope.getActivity(),scope);
+		}
 		
-		if(element instanceof OnMessage){
-			formatExpIter(((OnMessage)element).getActivity());
-		}
-		if(element instanceof Pick){
-			for(OnMessage onMessage:((Pick)element).getMessages()){
-				formatExpIter(onMessage);
-			}
-			
-		}
+	}
+	private void formatExpIter(BPELExtensibleElement element,Scope scope){
+		
 		if (element instanceof Sequence){
 			
 			EList<Activity> activities=((Sequence)element).getActivities();
 			for(Activity activity : activities){
-				formatExpIter(activity);
+				formatExpIter(activity,scope);
 			}	
 		}
 		if(element instanceof Assign){
@@ -129,12 +141,14 @@ public class BpelHelper {
 			for(Copy copy: copys){
 				if(copy.getFrom().getExpression()!=null){
 					String expression=(String) copy.getFrom().getExpression().getBody();
-					addPrefix2Exp(expression);
+					copy.getFrom().getExpression().setBody(addPrefix2Exp(expression,scope));
+					
 				}
 				if(copy.getTo().getExpression()!=null){
 					String expression=(String) copy.getTo().getExpression().getBody();
 					
-					addPrefix2Exp(expression);
+					copy.getTo().getExpression().setBody(addPrefix2Exp(expression,scope));
+					
 				}
 			}
 				
@@ -143,34 +157,52 @@ public class BpelHelper {
 		
 		
 	}
-	public Variable findVariable(String name){
-		
+	public Variable findVariable(String name,Scope scope){
 		for(Variable variable: this.bpelProcess.getVariables().getChildren()){
 			if(variable.getName().equals(name)){
 				return variable;
 			}
 		}
+		for(Variable variable: scope.getVariables().getChildren()){
+			if(variable.getName().equals(name)){
+				return variable;
+			}
+		}
+		
 		return null;
 	}
-	private  void addPrefix2Exp(String expression){
+	private  String addPrefix2Exp(String expression,Scope scope){
 	
 		if(expression.startsWith("$")){
 			
 			String valName=expression.split("\\.")[0].substring(1);
-			Variable variable=findVariable(valName);
+			//String []xsdElement=expression.split("/");//without 0
+			
+			Variable variable=findVariable(valName,scope);
+			
 			if(variable!=null){
 				String namespace=variable.getMessageType().getQName().getNamespaceURI();
-				String prefix=addNameSpacePrefix(variable, namespace, "ns");
-				expression.replaceAll("/", "/"+prefix+":");
+				String prefix=addNameSpacePrefix(variable, namespace, "twf");
+				for(Object obj:variable.getMessageType().getParts().values()){
+					Part part=(Part)obj;
+					
+					namespace=part.getElementDeclaration().getSchema().getTargetNamespace();
+					prefix=addNameSpacePrefix(variable, namespace, "xsd");
+					expression=expression.replaceAll("/", "/"+prefix+":");
+					
+				}
+				
+				
+				
 				
 			}
 		}
+		return expression;
 	}
 private  String addNameSpacePrefix ( Variable variable, String namespace ,String prefixRoot) {
 
 		
 		String nsPrefix = BPELUtils.getNamespacePrefix(variable, namespace);
-		System.out.println(nsPrefix);
 		if (nsPrefix != null && nsPrefix.length() > 0) {
 			return nsPrefix;
 		}
@@ -200,6 +232,7 @@ private  String addNameSpacePrefix ( Variable variable, String namespace ,String
 			((OnMessage)element).getPortType().getQName().toString();
 			boolean seted=setPartnerLink(((OnMessage)element).getActivity(), qname, partnerLink);
 			if(((OnMessage) element).getPortType().getQName().toString().equals(qname.toString())){
+				partnerLink.setPartnerRole(null);
 				((OnMessage) element).setPartnerLink(partnerLink);
 				
 				return true;
@@ -229,6 +262,9 @@ private  String addNameSpacePrefix ( Variable variable, String namespace ,String
 					seted=true;
 			}
 			return seted;
+		}else if(element instanceof Scope){
+			return setPartnerLink(((Scope)element).getActivity(), qname, partnerLink);
+			
 		}
 		return false;
 	}

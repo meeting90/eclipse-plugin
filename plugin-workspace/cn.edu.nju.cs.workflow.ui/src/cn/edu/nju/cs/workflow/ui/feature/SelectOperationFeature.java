@@ -8,7 +8,10 @@ import java.util.List;
 
 
 
+import org.eclipse.bpel.model.Activity;
 import org.eclipse.bpel.model.Assign;
+import org.eclipse.bpel.model.Receive;
+import org.eclipse.bpel.model.Scope;
 
 import org.eclipse.bpel.model.Invoke;
 
@@ -62,11 +65,13 @@ public class SelectOperationFeature  extends AbstractCustomFeature{
 			System.out.println("Operation.size:"+operations.size());
 			operationList.addAll(operations);			
 			Shell shell=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+			
 			SelectOperationDialog dialog=new SelectOperationDialog(shell, operationList.toArray(new Operation[operationList.size()]), new OperationLabelProvider());
 		
 			
 			dialog.open();	
 			Operation result=dialog.getOperation();
+			boolean isInvoke=dialog.getIsInvoke();
 			if(result!=null){
 				
 				Operation operation=result;
@@ -75,21 +80,38 @@ public class SelectOperationFeature  extends AbstractCustomFeature{
 				BPELComponentGenerator bpelGen=provider.getBpelGenerator();
 				Invoke invoke;
 				Assign assign;
-				if(task.getPartnerActivity()==null){
-					invoke=bpelGen.createInvokeNode(operation, (Sequence)task.getWorkflow().getActivity());
-					assign=bpelGen.createAssignNode(invoke.getInputVariable(), (Sequence)task.getWorkflow().getActivity());
+				Scope scope=(Scope) task.getWorkflow().getActivity();
+				if(isInvoke){
+					if(task.getPartnerActivity()==null){
+						
+						invoke=bpelGen.createInvokeNode(operation, scope,(Sequence)scope.getActivity());
+						assign=bpelGen.createAssignNode(invoke.getInputVariable(), (Sequence)scope.getActivity());
+					}else{
+						invoke=bpelGen.replaceInvokeNode(operation,scope,(Invoke) task.getPartnerActivity());
+						assign=bpelGen.replaceAssignNode(invoke.getInputVariable(), task.getInput().getAssign());
+					}		
+					task.getInput().setInputValue(invoke.getInputVariable());
+					task.getOutputs().get(0).setOutputValue(invoke.getOutputVariable());
+					task.getInput().setAssign(assign);
+					task.setPartnerActivity(invoke);
 				}else{
-					invoke=bpelGen.replaceInvokeNode(operation, (Invoke) task.getPartnerActivity());
-					assign=bpelGen.replaceAssignNode(invoke.getInputVariable(), task.getInput().getAssign());
+					Receive receive;
+					if(task.getPartnerActivity()==null){
+						
+						receive=bpelGen.createReceiveNode(operation, scope,(Sequence)scope.getActivity());
+						
+					}else{
+						receive=bpelGen.replaceReceiveNode(operation, scope, (Activity) task.getPartnerActivity());
+						
+					}
+					task.getInput().setInputValue(receive.getVariable());
+					task.getOutputs().get(0).setOutputValue(null);
+					task.getInput().setAssign(null);
+					task.setPartnerActivity(receive);
 				}
-				//assign.getCopy().add(bpelGen.initVariable(invoke.getInputVariable()));
-				//assign.getCopy().add(bpelGen.initVariable(invoke.getOutputVariable()));
 				
-				task.getInput().setInputValue(invoke.getInputVariable());
-				task.getOutputs().get(0).setOutputValue(invoke.getOutputVariable());
-				task.getInput().setAssign(assign);
-				task.setPartnerActivity(invoke);
 				
+			
 			
 				
 
@@ -109,12 +131,4 @@ public class SelectOperationFeature  extends AbstractCustomFeature{
 	        }
 	        return false;
 	}
-	
-	
-	
-
-	
-
-
-
 }

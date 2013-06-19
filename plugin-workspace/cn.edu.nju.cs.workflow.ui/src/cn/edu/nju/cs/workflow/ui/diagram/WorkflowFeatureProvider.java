@@ -71,7 +71,7 @@ import cn.edu.nju.cs.workflow.ui.feature.add.SpecificNodeAddFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.AdviceEdgeCreateConnectionFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.AdviceTaskCreateFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.ChoiceTaskCreateFeature;
-import cn.edu.nju.cs.workflow.ui.feature.create.CompoundTaskCreateTask;
+import cn.edu.nju.cs.workflow.ui.feature.create.CompoundTaskCreateFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.EdgeCreateConnectionFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.LoopTaskCreateFeature;
 import cn.edu.nju.cs.workflow.ui.feature.create.SimpleTaskCreateFeature;
@@ -99,9 +99,12 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
     	return (WorkflowProcess) getDiagramTypeProvider().getDiagram().getLink().getBusinessObjects().get(0);
 		
 	}
-	public  Workflow getWorkflow(){
+	public  Workflow getRootWorkflow(){
 		return getWorkflowProcess().getRootWorkflow();
 		
+	}
+	public Workflow getWorkflow(){
+		return (Workflow) getDiagramTypeProvider().getDiagram().getLink().getBusinessObjects().get(1);
 	}
 	@Override
 	public ICreateFeature[] getCreateFeatures() {
@@ -112,7 +115,7 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 		features.add(new SimpleTaskCreateFeature(this, porttype));	
 	}
 		features.add(new ChoiceTaskCreateFeature(this));
-		features.add(new CompoundTaskCreateTask(this));
+		features.add(new CompoundTaskCreateFeature(this));
 		features.add(new LoopTaskCreateFeature(this));
 		features.add(new AdviceTaskCreateFeature(this));
 		return features.toArray(new ICreateFeature[features.size()]);

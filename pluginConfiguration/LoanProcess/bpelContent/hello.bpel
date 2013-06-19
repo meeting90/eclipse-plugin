@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process exitOnStandardFault="yes" name="Process"
+    targetNamespace="http://wso2.org/bps/samples/LoanProcess"
+    xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:ns="http://wso2.org/bps/samples/LoanProcessArtifacts"
+    xmlns:twf0="http://wso2.org/bps/samples/LoanProcess" xmlns:xsd0="http://wso2.org/bps/samples/loan_process/schema">
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="LoanService.wsdl" namespace="http://wso2.org/bps/samples/LoanService"/>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="CustomerInfo.wsdl" namespace="http://wso2.org/bps/samples/CustomerInfo"/>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="CreditRating.wsdl" namespace="http://wso2.org/bps/samples/CreditRating"/>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="LoanProcess.wsdl" namespace="http://wso2.org/bps/samples/LoanProcess"/>
+    <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+        location="helloArtifacts.wsdl" namespace="http://wso2.org/bps/samples/LoanProcessArtifacts"/>
+    <bpel:partnerLinks>
+        <bpel:partnerLink 
+            name="LoanServicePortTypePL" myRole="LoanServiceCallbackPortTypeRole"
+            partnerLinkType="ns:LoanServicePortTypePLT" partnerRole="LoanServicePortTypeRole"/>
+        <bpel:partnerLink 
+            name="CreditRatingPortTypePL"
+            partnerLinkType="ns:CreditRatingPortTypePLT" partnerRole="CreditRatingPortTypeRole"/>
+        <bpel:partnerLink 
+            name="CustomerInfoPortTypePL"
+            partnerLinkType="ns:CustomerInfoPortTypePLT" partnerRole="CustomerInfoPortTypeRole"/>
+        <bpel:partnerLink 
+            name="LoanProcessPortTypePL"
+            partnerLinkType="ns:LoanProcessPortTypePLT" myRole="LoanProcessPortTypeRole"/>
+    </bpel:partnerLinks>
+    <bpel:variables>
+        <bpel:variable messageType="twf0:laonRequestRequest" name="laonRequestRequest"/>
+    </bpel:variables>
+    <bpel:sequence name="MainSequence">
+        <bpel:pick createInstance="yes" name="SwitchInvokedOperation">
+            <bpel:onMessage operation="laonRequest"
+                partnerLink="LoanProcessPortTypePL"
+                portType="twf0:LoanProcessPortType" variable="laonRequestRequest">
+                <bpel:scope name="scope_laonRequest"
+                    xmlns:twf0="http://wso2.org/bps/samples/LoanProcess"
+                    xmlns:twf1="http://wso2.org/bps/samples/CustomerInfo"
+                    xmlns:twf2="http://wso2.org/bps/samples/CreditRating"
+                    xmlns:twf3="http://wso2.org/bps/samples/LoanService" xmlns:xsd0="http://wso2.org/bps/samples/loan_process/schema">
+                    <bpel:variables>
+                        <bpel:variable
+                            messageType="twf0:laonRequestResponse" name="laonRequestResponse"/>
+                        <bpel:variable
+                            messageType="twf1:getCustomerSSNRequest" name="getCustomerSSNRequest"/>
+                        <bpel:variable
+                            messageType="twf1:getCustomerSSNResponse" name="getCustomerSSNResponse"/>
+                        <bpel:variable
+                            messageType="twf2:getCreditRatingRequest" name="getCreditRatingRequest"/>
+                        <bpel:variable
+                            messageType="twf2:getCreditRatingResponse" name="getCreditRatingResponse"/>
+                        <bpel:variable
+                            messageType="twf3:getLoanOfferRequest" name="getLoanOfferRequest"/>
+                        <bpel:variable
+                            messageType="twf3:getLoanOfferResponse" name="onLoanOfferResponse"/>
+                    </bpel:variables>
+                    <bpel:sequence>
+                        <bpel:assign name="initVariables" validate="no">
+                            <bpel:copy>
+                                <bpel:from>
+                                    <bpel:literal>
+                                    <tns:LoanOffer
+                                    xmlns:tns="http://wso2.org/bps/samples/loan_process/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <tns:ProviderName>tns:ProviderName</tns:ProviderName>
+                                    <tns:selected>true</tns:selected>
+                                    <tns:approved>true</tns:approved>
+                                    <tns:AnualInterestRate>0.0</tns:AnualInterestRate>
+                                    <tns:CustomerInfo>
+                                    <tns:Name>tns:Name</tns:Name>
+                                    <tns:Email>tns:Email</tns:Email>
+                                    <tns:CustomerID>tns:CustomerID</tns:CustomerID>
+                                    <tns:CreditRating>0</tns:CreditRating>
+                                    </tns:CustomerInfo>
+                                    </tns:LoanOffer>
+                                    </bpel:literal>
+                                </bpel:from>
+                                <bpel:to><![CDATA[$laonRequestResponse.part]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>
+                                    <bpel:literal>
+                                    <tns:CustomerInfo
+                                    xmlns:tns="http://wso2.org/bps/samples/loan_process/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <tns:Name>tns:Name</tns:Name>
+                                    <tns:Email>tns:Email</tns:Email>
+                                    <tns:CustomerID>tns:CustomerID</tns:CustomerID>
+                                    <tns:CreditRating>0</tns:CreditRating>
+                                    </tns:CustomerInfo>
+                                    </bpel:literal>
+                                </bpel:from>
+                                <bpel:to><![CDATA[$getCustomerSSNRequest.part]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>
+                                    <bpel:literal>
+                                    <tns:CustomerSSN
+                                    xmlns:tns="http://wso2.org/bps/samples/loan_process/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <tns:SSN>tns:SSN</tns:SSN>
+                                    </tns:CustomerSSN>
+                                    </bpel:literal>
+                                </bpel:from>
+                                <bpel:to><![CDATA[$getCustomerSSNResponse.part]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>
+                                    <bpel:literal>
+                                    <tns:CustomerSSN
+                                    xmlns:tns="http://wso2.org/bps/samples/loan_process/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <tns:SSN>tns:SSN</tns:SSN>
+                                    </tns:CustomerSSN>
+                                    </bpel:literal>
+                                </bpel:from>
+                                <bpel:to><![CDATA[$getCreditRatingRequest.part]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>
+                                    <bpel:literal>
+                                    <tns:CreditRating
+                                    xmlns:tns="http://wso2.org/bps/samples/loan_process/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <tns:SSN>tns:SSN</tns:SSN>
+                                    <tns:rating>0</tns:rating>
+                                    </tns:CreditRating>
+                                    </bpel:literal>
+                                </bpel:from>
+                                <bpel:to><![CDATA[$getCreditRatingResponse.part]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>
+                                    <bpel:literal>
+                                    <tns:LoanRequest
+                                    xmlns:tns="http://wso2.org/bps/samples/loan_process/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <tns:CustomerInfo>
+                                    <tns:Name>tns:Name</tns:Name>
+                                    <tns:Email>tns:Email</tns:Email>
+                                    <tns:CustomerID>tns:CustomerID</tns:CustomerID>
+                                    <tns:CreditRating>0</tns:CreditRating>
+                                    </tns:CustomerInfo>
+                                    <tns:LoanInfo>
+                                    <tns:Amount>0.0</tns:Amount>
+                                    <tns:Years>0</tns:Years>
+                                    </tns:LoanInfo>
+                                    </tns:LoanRequest>
+                                    </bpel:literal>
+                                </bpel:from>
+                                <bpel:to><![CDATA[$getLoanOfferRequest.part]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>
+                                    <bpel:literal>
+                                    <tns:LoanOffer
+                                    xmlns:tns="http://wso2.org/bps/samples/loan_process/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <tns:ProviderName>tns:ProviderName</tns:ProviderName>
+                                    <tns:selected>true</tns:selected>
+                                    <tns:approved>true</tns:approved>
+                                    <tns:AnualInterestRate>0.0</tns:AnualInterestRate>
+                                    <tns:CustomerInfo>
+                                    <tns:Name>tns:Name</tns:Name>
+                                    <tns:Email>tns:Email</tns:Email>
+                                    <tns:CustomerID>tns:CustomerID</tns:CustomerID>
+                                    <tns:CreditRating>0</tns:CreditRating>
+                                    </tns:CustomerInfo>
+                                    </tns:LoanOffer>
+                                    </bpel:literal>
+                                </bpel:from>
+                                <bpel:to><![CDATA[$onLoanOfferResponse.part]]></bpel:to>
+                            </bpel:copy>
+                        </bpel:assign>
+                        <bpel:assign name="CustomerInfoPortType1" validate="no">
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$laonRequestRequest.part/xsd0:CustomerInfo/xsd0:Name]]></bpel:from>
+                                <bpel:to><![CDATA[$getCustomerSSNRequest.part/xsd0:Name]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$laonRequestRequest.part/xsd0:CustomerInfo/xsd0:Email]]></bpel:from>
+                                <bpel:to><![CDATA[$getCustomerSSNRequest.part/xsd0:Email]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$laonRequestRequest.part/xsd0:CustomerInfo/xsd0:CustomerID]]></bpel:from>
+                                <bpel:to><![CDATA[$getCustomerSSNRequest.part/xsd0:CustomerID]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$laonRequestRequest.part/xsd0:CustomerInfo/xsd0:CreditRating]]></bpel:from>
+                                <bpel:to><![CDATA[$getCustomerSSNRequest.part/xsd0:CreditRating]]></bpel:to>
+                            </bpel:copy>
+                        </bpel:assign>
+                        <bpel:invoke
+                            inputVariable="getCustomerSSNRequest"
+                            name="getCustomerSSN"
+                            operation="getCustomerSSN"
+                            outputVariable="getCustomerSSNResponse"
+                            partnerLink="CustomerInfoPortTypePL" portType="twf1:CustomerInfoPortType"/>
+                        <bpel:assign name="CreditRatingPortType1" validate="no">
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$getCustomerSSNResponse.part/xsd0:SSN]]></bpel:from>
+                                <bpel:to><![CDATA[$getCreditRatingRequest.part/xsd0:SSN]]></bpel:to>
+                            </bpel:copy>
+                        </bpel:assign>
+                        <bpel:invoke
+                            inputVariable="getCreditRatingRequest"
+                            name="getCreditRating"
+                            operation="getCreditRating"
+                            outputVariable="getCreditRatingResponse"
+                            partnerLink="CreditRatingPortTypePL" portType="twf2:CreditRatingPortType"/>
+                        <bpel:assign name="LoanServicePortType1" validate="no">
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$getCustomerSSNRequest.part/xsd0:Name]]></bpel:from>
+                                <bpel:to><![CDATA[$getLoanOfferRequest.part/xsd0:CustomerInfo/xsd0:Name]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$laonRequestRequest.part/xsd0:LoanInfo/xsd0:Amount]]></bpel:from>
+                                <bpel:to><![CDATA[$getLoanOfferRequest.part/xsd0:LoanInfo/xsd0:Amount]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$getCustomerSSNRequest.part/xsd0:Email]]></bpel:from>
+                                <bpel:to><![CDATA[$getLoanOfferRequest.part/xsd0:CustomerInfo/xsd0:Email]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$getCustomerSSNRequest.part/xsd0:CustomerID]]></bpel:from>
+                                <bpel:to><![CDATA[$getLoanOfferRequest.part/xsd0:CustomerInfo/xsd0:CustomerID]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$getCustomerSSNRequest.part/xsd0:CreditRating]]></bpel:from>
+                                <bpel:to><![CDATA[$getLoanOfferRequest.part/xsd0:CustomerInfo/xsd0:CreditRating]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$laonRequestRequest.part/xsd0:LoanInfo/xsd0:Years]]></bpel:from>
+                                <bpel:to><![CDATA[$getLoanOfferRequest.part/xsd0:LoanInfo/xsd0:Years]]></bpel:to>
+                            </bpel:copy>
+                        </bpel:assign>
+                        <bpel:invoke inputVariable="getLoanOfferRequest" name="getLoanOffer" operation="getLoanOffer" partnerLink="LoanServicePortTypePL" />
+                        <bpel:receive name="onLoanOffer" operation="onLoanOffer" partnerLink="LoanServicePortTypePL" variable="onLoanOfferResponse" />
+                        
+                        
+                        
+                        <bpel:assign name="LoanProcessPortType2" validate="no">
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$onLoanOfferResponse.part/xsd0:ProviderName]]></bpel:from>
+                                <bpel:to><![CDATA[$laonRequestResponse.part/xsd0:ProviderName]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$onLoanOfferResponse.part/xsd0:selected]]></bpel:from>
+                                <bpel:to><![CDATA[$laonRequestResponse.part/xsd0:selected]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$onLoanOfferResponse.part/xsd0:approved]]></bpel:from>
+                                <bpel:to><![CDATA[$laonRequestResponse.part/xsd0:approved]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$onLoanOfferResponse.part/xsd0:AnualInterestRate]]></bpel:from>
+                                <bpel:to><![CDATA[$laonRequestResponse.part/xsd0:AnualInterestRate]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$onLoanOfferResponse.part/xsd0:CustomerInfo/xsd0:Name]]></bpel:from>
+                                <bpel:to><![CDATA[$laonRequestResponse.part/xsd0:CustomerInfo/xsd0:Name]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$onLoanOfferResponse.part/xsd0:CustomerInfo/xsd0:Email]]></bpel:from>
+                                <bpel:to><![CDATA[$laonRequestResponse.part/xsd0:CustomerInfo/xsd0:Email]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$onLoanOfferResponse.part/xsd0:CustomerInfo/xsd0:CustomerID]]></bpel:from>
+                                <bpel:to><![CDATA[$laonRequestResponse.part/xsd0:CustomerInfo/xsd0:CustomerID]]></bpel:to>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from><![CDATA[$onLoanOfferResponse.part/xsd0:CustomerInfo/xsd0:CreditRating]]></bpel:from>
+                                <bpel:to><![CDATA[$laonRequestResponse.part/xsd0:CustomerInfo/xsd0:CreditRating]]></bpel:to>
+                            </bpel:copy>
+                        </bpel:assign>
+                        <bpel:reply name="ReplyToLaonRequest"
+                            operation="laonRequest"
+                            partnerLink="LoanProcessPortTypePL"
+                            portType="twf0:LoanProcessPortType" variable="laonRequestResponse"/>
+                    </bpel:sequence>
+                </bpel:scope>
+            </bpel:onMessage>
+        </bpel:pick>
+    </bpel:sequence>
+</bpel:process>

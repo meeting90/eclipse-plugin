@@ -21,6 +21,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 
 import cn.edu.nju.cs.workflow.model.Workflow;
+import cn.edu.nju.cs.workflow.ui.diagram.WorkflowFeatureProvider;
 import cn.edu.nju.cs.workflow.ui.wizard.FileService;
 
 
@@ -55,7 +56,7 @@ public class CreateSubworkflowFeature extends AbstractCustomFeature {
 	            	if(list.size()==1){
 	            	//create 	
 	            		String subworkflowName=workflow.getName();
-	            		final String extension=".diagram";
+	            		final String extension=".twf";
 	            		Resource resource = getDiagram().eResource();
 	            		URI uriOrigal = resource.getURI();
 	            		
@@ -63,8 +64,11 @@ public class CreateSubworkflowFeature extends AbstractCustomFeature {
 	        		
 	            		final String diagramTypeId="workflow";
 	            		diagram = Graphiti.getPeCreateService().createDiagram(diagramTypeId,subworkflowName, true);
+	            		diagram.setActive(true);
+	            		diagram.setSnapToGrid(false);
 	            		URI uri = URI.createPlatformResourceURI(fileName, true);
-	            		FileService.createEmfFileForSubDiagram(uri, diagram, workflow);
+	            		WorkflowFeatureProvider provider=(WorkflowFeatureProvider) getFeatureProvider();
+	            		FileService.createEmfFileForSubDiagram(uri, diagram, workflow,provider.getWorkflowProcess());
 	            	}else{
 	            	  diagram=(Diagram) list.get(1);
 	            	}

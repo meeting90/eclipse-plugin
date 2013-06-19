@@ -426,6 +426,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getWorkflow_RootActivity() {
+		return (EReference)workflowEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getWorkflowNode() {
 		return workflowNodeEClass;
 	}
@@ -883,6 +892,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(workflowEClass, WORKFLOW__EDGES);
 		createEReference(workflowEClass, WORKFLOW__COMMENTS);
 		createEReference(workflowEClass, WORKFLOW__ACTIVITY);
+		createEReference(workflowEClass, WORKFLOW__ROOT_ACTIVITY);
 
 		workflowNodeEClass = createEClass(WORKFLOW_NODE);
 		createEReference(workflowNodeEClass, WORKFLOW_NODE__WORKFLOW);
@@ -1020,6 +1030,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getWorkflow_Edges(), this.getEdge(), this.getEdge_Workflow(), "edges", null, 0, -1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkflow_Comments(), this.getComment(), null, "comments", null, 0, -1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkflow_Activity(), theBPELPackage.getActivity(), null, "activity", null, 1, 1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkflow_RootActivity(), theBPELPackage.getActivity(), null, "rootActivity", null, 0, 1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workflowNodeEClass, WorkflowNode.class, "WorkflowNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkflowNode_Workflow(), this.getWorkflow(), this.getWorkflow_Nodes(), "workflow", null, 1, 1, WorkflowNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

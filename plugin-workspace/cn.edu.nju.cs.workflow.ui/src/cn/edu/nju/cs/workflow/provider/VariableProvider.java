@@ -15,7 +15,7 @@ public class VariableProvider extends ModelTreeContentProvider{
 		// TODO Auto-generated constructor stub
 	}
 	@Override
-	protected Object[] primGetElements(Object node) {
+	public Object[] primGetElements(Object node) {
 		// TODO Auto-generated method stub
 	
 		// TODO: can this code be moved to a filter?
@@ -25,8 +25,8 @@ public class VariableProvider extends ModelTreeContentProvider{
 		}				
 		return result.toArray();
 	}
-	public Variable getVaraible(){
-		return vars[0];
-	}
+	
+	
+	
 
 }

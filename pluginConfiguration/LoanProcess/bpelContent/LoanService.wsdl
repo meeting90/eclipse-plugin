@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ ~ Copyright (c) 2005-2010, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://wso2.org/bps/samples/loan_process/schema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wso2.org/bps/samples/LoanService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LoanService" targetNamespace="http://wso2.org/bps/samples/LoanService">
+    <types>
+        <xsd:schema targetNamespace="http://wso2.org/bps/samples/LoanService">
+            <xsd:import namespace="http://wso2.org/bps/samples/loan_process/schema" schemaLocation="loan.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="getLoanOfferRequest">
+        <part element="ns:LoanRequest" name="part"/>
+    </message>
+    <message name="getLoanOfferResponse">
+        <part element="ns:LoanOffer" name="part"/>
+    </message>
+    <portType name="LoanServicePortType">
+        <operation name="getLoanOffer">
+            <input message="tns:getLoanOfferRequest" name="input"/>
+        </operation>
+    </portType>
+    <portType name="LoanServiceCallbackPortType">
+        <operation name="onLoanOffer">
+            <input message="tns:getLoanOfferResponse" name="input"/>
+        </operation>
+    </portType>
+    <binding name="LoanServiceBinding" type="tns:LoanServicePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getLoanOffer">
+            <soap:operation soapAction="http://wso2.org/bps/samples/LoanService/getLoanOffer"/>
+            <input name="input">
+                <soap:body use="literal"/>
+            </input>
+        </operation>
+    </binding>
+    <binding name="LoanServiceCallbackBinding" type="tns:LoanServiceCallbackPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="onLoanOffer">
+            <soap:operation soapAction="http://wso2.org/bps/samples/LoanService/onLoanOffer"/>
+            <input name="input">
+                <soap:body use="literal"/>
+            </input>
+        </operation>
+    </binding>
+    <service name="DILoanService">
+        <port binding="tns:LoanServiceBinding" name="LoanServicePort">
+            <soap:address location="http://localhost:8080/ode/processes/DILoanService"/>
+        </port>
+    </service>
+    <service name="XKLoanService">
+        <port binding="tns:LoanServiceBinding" name="LoanServicePort">
+            <soap:address location="http://localhost:8080/ode/processes/XKLoanService"/>
+        </port>
+    </service>
+    <service name="LoanServiceCallback">
+        <port binding="tns:LoanServiceCallbackBinding" name="LoanServiceCallbackPort">
+            <soap:address location="http://localhost:8080/ode/processes/LoanServiceCallback"/>
+        </port>
+    </service>
+    <plnk:partnerLinkType name="LoanServicePT">
+        <plnk:role name="LoanServiceRole" portType="tns:LoanServicePortType"/>
+        <plnk:role name="LoanServiceClientRole" portType="tns:LoanServiceCallbackPortType"/>
+    </plnk:partnerLinkType>
+</definitions>
