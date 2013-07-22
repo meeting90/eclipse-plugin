@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:cn.edu.nju.cs="cs.nju.edu.cn" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms">
+  <pi:Diagram visible="true" diagramTypeId="workflow" name="test" snapToGrid="true" version="0.9.1">
+    <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
+    <link businessObjects="/1 /1/@rootWorkflow"/>
+    <colors red="227" green="238" blue="249"/>
+    <colors red="255" green="255" blue="255"/>
+  </pi:Diagram>
+  <cn.edu.nju.cs:WorkflowProcess bpelProcess="/2">
+    <rootWorkflow rootActivity="/2/@activity/@activities.0"/>
+    <implPortTypes qName="{http://pingpong.bpel.tps}PingPong">
+      <eOperations style="REQUEST_RESPONSE" name="echoInput">
+        <eInput name="echoInputRequest">
+          <eMessage href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src3/PingPong.wsdl#//@eMessages.1"/>
+        </eInput>
+        <eOutput name="echoInputResponse">
+          <eMessage href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src3/PingPong.wsdl#//@eMessages.0"/>
+        </eOutput>
+      </eOperations>
+    </implPortTypes>
+    <toImplPortTypes href="file:/E:/github/eclipse-plugin/pluginConfiguration/Test/src3/TryInvokeArtifacts.wsdl#//@ePortTypes.0"/>
+  </cn.edu.nju.cs:WorkflowProcess>
+  <bpws:Process name="Process" targetNamespace="http://sample.bpel.org/bpel/sample">
+    <partnerLinks/>
+    <variables/>
+    <activity xsi:type="bpws:Sequence" name="MainSequence">
+      <activities xsi:type="bpws:Pick" name="SwitchInvokedOperation" createInstance="true"/>
+    </activity>
+    <imports namespace="http://sample.bpel.org/bpel/sample" location="TryInvokeArtifacts.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <imports namespace="http://pingpong.bpel.tps" location="PingPong.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <imports namespace="http://sample.bpel.org/bpel/sampleArtifacts" location="testArtifacts.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  </bpws:Process>
+</xmi:XMI>

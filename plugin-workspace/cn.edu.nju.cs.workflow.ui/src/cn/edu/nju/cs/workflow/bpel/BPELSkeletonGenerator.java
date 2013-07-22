@@ -62,7 +62,10 @@ public  void loadDependencies() {
 	
 		
 		URI emfUri = URI.createURI( this.wsdlUrl );
+		System.out.println(emfUri.toString());
+		
 		this.businessDefinition=WsdlParser.loadWsdlDefinition(emfUri,  WsdlParser.createBasicResourceSetForWsdl());
+		System.out.println(this.businessDefinition);
 		this.implementedPortTypes=new HashSet<PortType>();
 		this.toImplPortTypes=new HashSet<PortType>();
 		this.bpelProcess = BPELFactory.eINSTANCE.createProcess();

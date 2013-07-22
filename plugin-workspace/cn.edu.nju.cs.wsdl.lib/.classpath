@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/javax.wsdl_1.5.1.v201012040544.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.bpel.model_1.0.1.v20120619-1916-H189-CI.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.wst.wsdl_1.2.202.v201108230355.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.common_2.7.0.v20120127-1122.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.bpel.common.wsdl_1.0.1.v20120619-1916-H189-CI.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.wst.xml.core_1.1.602.v201201091944.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
