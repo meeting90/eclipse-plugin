@@ -1,0 +1,1 @@
+Module("EntityWithAspects-Folding",Imports([Import("EntityWithAspects-Folding.generated")]),[Folding("",[])])

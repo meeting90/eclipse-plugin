@@ -1,0 +1,16 @@
+module CSharpPartialClassses.main
+
+imports CSharpPartialClassses-Builders CSharpPartialClassses-Colorer CSharpPartialClassses-Completions CSharpPartialClassses-Folding CSharpPartialClassses-Outliner CSharpPartialClassses-References CSharpPartialClassses-Syntax
+
+language General properties
+                  
+  name          : CSharpPartialClassses
+  id            : csharppartialclassses
+  extends       : Root
+                  
+  description   : "Spoofax/IMP-generated editor for the CSharpPartialClassses language"
+  url           : http://strategoxt.org
+                  
+  extensions    : csh
+  table         : include/CSharpPartialClassses.tbl
+  start symbols : Start

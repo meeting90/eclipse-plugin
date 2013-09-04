@@ -1,0 +1,12 @@
+module Test
+
+entity Ent2
+{
+	mEnt : Ent1 
+	
+	Print() {
+		var tst : String = mEnt.mValue
+
+		print tst
+	}
+}

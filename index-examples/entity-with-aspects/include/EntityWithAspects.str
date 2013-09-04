@@ -1,0 +1,47 @@
+module EntityWithAspects
+
+signature
+  constructors
+    IntType        : Type
+    StringType     : Type
+    Type           : ID -> Type
+    IntLit         : INT -> Exp
+    StringLit      : STRING -> Exp
+    PropAccess     : Exp * ID -> Exp
+    Var            : ID -> Exp
+    Call           : ID * List(Exp) -> Exp
+    Print          : Exp -> Stm
+    Block          : List(Stm) -> Stm
+    Assign         : Exp * Exp -> Stm
+    VarDeclInit    : ID * Type * Exp -> Stm
+    VarDecl        : ID * Type -> Stm
+    Param          : ID * Type -> Param
+    Function       : ID * List(Param) * Stm -> Member
+    Property       : ID * Type -> Member
+    Assigned       : Type -> JoinPoint
+    After          : AdviceType
+    Before         : AdviceType
+    Advice         : ID * AdviceType * List(Param) * ID * List(Exp) * Stm -> AspectMember
+    Pointcut       : ID * List(Param) * List(JoinPoint) -> AspectMember
+    EntityImport   : ID * ID -> ImportPart
+    WildcardImport : ID -> ImportPart
+    Import         : ImportPart -> Import
+    Aspect         : ID * List(AspectMember) -> Definition
+    Entity         : ID * List(Member) -> Definition
+    Module         : ID * List(Import) * List(Definition) -> Start
+                   : String -> STRING
+                   : String -> INT
+                   : String -> ID
+
+
+signature
+  constructors
+    Some : a -> Option(a)
+    None : Option(a)
+
+
+signature
+  constructors
+    Cons : a * List(a) -> List(a)
+    Nil  : List(a)
+    Conc : List(a) * List(a) -> List(a)

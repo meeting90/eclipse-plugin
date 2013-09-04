@@ -1,0 +1,369 @@
+module names
+
+imports
+
+
+imports
+  lib/analysis-library
+  lib/analysis-library-internal
+  lib/index-library
+  include/EntityWithAspects
+
+
+signature
+  constructors
+    Type        : DefDataKind
+    Import      : DefDataKind
+    Transitive  : ImportAnno
+    CurrentFile : ImportAnno
+
+  constructors
+    Module   : Namespace
+    Import   : Namespace
+    Aspect   : Namespace
+    Pointcut : Namespace
+    Advice   : Namespace
+    Entity   : Namespace
+    Property : Namespace
+    Function : Namespace
+    Variable : Namespace
+
+
+rules
+
+  nam-get-scope-types :
+    Module(x, _, _) -> [Entity(), Aspect()]
+
+  nam-get-definition-keys :
+    Module(x, _, _) -> [x]
+
+  nam-get-definitions :
+    Module(x, _, _) -> [(Module(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Module(x, _, _) -> <Module(nam-annotate-def(|path__), id, id)>
+
+
+rules
+
+  nam-get-uses-keys :
+    EntityImport(m, e) -> [m, e]
+
+  nam-get-uses :
+    EntityImport(m, e) -> [ (Module(), [m])
+                          , (Entity(), [e])
+                          ]
+
+  nam-annotate-names(|paths__, path__):
+    EntityImport(m, e) -> <EntityImport(
+                             nam-annotate-use(|paths__, Module())
+                           , nam-annotate-use(|paths__, Entity())
+                           )>
+
+  adjust-index-lookup(target__|namespace__, path__, prefix__):
+    EntityImport(m, e) -> [ [Module()|path__]
+                          , [Entity()|path__]
+                          ]
+    where <target__> m
+
+
+rules
+
+  nam-get-definition-keys :
+    WildcardImport(m) -> [m]
+
+  nam-get-definitions :
+    WildcardImport(m) -> [(Import(), [m])]
+
+  nam-get-uses-keys :
+    WildcardImport(m) -> [m]
+
+  nam-get-uses :
+    WildcardImport(m) -> [(Module(), [m])]
+
+  nam-annotate-names(|paths__, path__):
+    WildcardImport(m) -> <WildcardImport(nam-annotate-def(|path__))>
+
+  nam-unique :
+    WildcardImport(m) -> <id>
+
+  adjust-index-def-data(store__|namespace__, path__):
+    WildcardImport(m) -> <store__> DefData(
+                                     [Entity()|[<index-file-to-string> <index-get-current-file>]]
+                                   , Import()
+                                   , (m, [CurrentFile()])
+                                   )
+
+
+rules
+
+  nam-get-scope-types :
+    Aspect(x, _) -> [Pointcut(), Advice()]
+
+  nam-get-definition-keys :
+    Aspect(x, _) -> [x]
+
+  nam-get-definitions :
+    Aspect(x, _) -> [(Aspect(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Aspect(x, _) -> <Aspect(nam-annotate-def(|path__), id)>
+
+
+rules
+
+  nam-get-scope-types :
+    Pointcut(x, _, _) -> [Variable()]
+
+  nam-get-definition-keys :
+    Pointcut(x, _, _) -> [x]
+
+  nam-get-definitions :
+    Pointcut(x, _, _) -> [(Pointcut(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Pointcut(x, _, _) -> <Pointcut(nam-annotate-def(|path__), id, id)>
+
+
+rules
+
+  nam-get-scope-types :
+    Advice(x, _, _, p, _, _) -> [Variable()]
+
+  nam-get-definition-keys :
+    Advice(x, _, _, p, _, _) -> [x]
+
+  nam-get-definitions :
+    Advice(x, _, _, p, _, _) -> [(Advice(), [x])]
+
+  nam-get-uses-keys :
+    Advice(x, _, _, p, _, _) -> [p]
+
+  nam-get-uses :
+    Advice(x, _, _, p, _, _) -> [(Pointcut(), [p])]
+
+  nam-annotate-names(|paths__, path__):
+    Advice(x, _, _, p, _, _) -> <Advice(
+                                   nam-annotate-def(|path__)
+                                 , id
+                                 , id
+                                 , nam-annotate-use(|paths__, Pointcut())
+                                 , id
+                                 , id
+                                 )>
+
+
+rules
+
+  nam-get-scope-types :
+    Entity(x, _) -> [Property(), Function()]
+
+  nam-get-definition-keys :
+    Entity(x, _) -> [x]
+
+  nam-get-definitions :
+    Entity(x, _) -> [(Entity(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Entity(x, _) -> <Entity(nam-annotate-def(|path__), id)>
+
+  adjust-index-def-data(store__|namespace__, path__):
+    Entity(x, _) -> <store__> DefData(
+                                [namespace__|path__]
+                              , Type()
+                              , Type(x)
+                              )
+
+  type-of :
+    Entity(x, _) -> Type(x)
+
+
+rules
+
+  nam-get-uses-keys :
+    Type(x) -> [x, "Int", "String"]
+
+  nam-get-uses :
+    Type(x) -> [ (Entity(), [x])
+               , (Entity(), ["Int"])
+               , (Entity(), ["String"])
+               ]
+
+  nam-annotate-names(|paths__, path__):
+    Type(x) -> <Type(nam-annotate-use(|paths__, Entity()))>
+
+  adjust-index-lookup(target__|namespace__, path__, prefix__):
+    Type(x) -> <concat> [ [[Entity()|path__]]
+                        , [Def([Entity(), "Int"])]
+                        , [Def([Entity(), "String"])]
+                        ]
+    where <target__> x
+
+
+rules
+
+  nam-get-definition-keys :
+    Property(x, t) -> [x]
+
+  nam-get-definitions :
+    Property(x, t) -> [(Property(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Property(x, t) -> <Property(nam-annotate-def(|path__), id)>
+
+  adjust-index-def-data(store__|namespace__, path__):
+    Property(x, t) -> <store__> DefData(
+                                  [namespace__|path__]
+                                , Type()
+                                , t
+                                )
+
+  type-of :
+    Property(x, t) -> t
+
+
+rules
+
+  nam-get-uses-keys :
+    PropAccess(e, x) -> [x]
+    where Type(t) := <type-of> e
+
+  nam-get-uses :
+    PropAccess(e, x) -> [(Property(), [x])]
+    where Type(t) := <type-of> e
+
+  nam-annotate-names(|paths__, path__):
+    PropAccess(e, x) -> <PropAccess(id, nam-annotate-use(|paths__, Property()))>
+
+  adjust-index-lookup(target__|namespace__, path__, prefix__):
+    PropAccess(e, x) -> <index-lookup-children(|Property(), prefix__)> t
+    where <target__> x
+    where Type(t) := <type-of> e
+
+
+rules
+
+  nam-get-scope-types :
+    Function(x, _, _) -> [Variable(), Property()]
+
+  nam-get-definition-keys :
+    Function(x, _, _) -> [x]
+
+  nam-get-definitions :
+    Function(x, _, _) -> [(Function(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Function(x, _, _) -> <Function(nam-annotate-def(|path__), id, id)>
+
+
+rules
+
+  nam-get-uses-keys :
+    Call(x, _) -> [x]
+
+  nam-get-uses :
+    Call(x, _) -> [(Function(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Call(x, _) -> <Call(nam-annotate-use(|paths__, Function()), id)>
+
+
+rules
+
+  nam-get-definition-keys :
+    VarDecl(x, t) -> [x]
+
+  nam-get-definitions :
+    VarDecl(x, t) -> [(Variable(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    VarDecl(x, t) -> <VarDecl(nam-annotate-def(|path__), id)>
+
+  adjust-index-def-data(store__|namespace__, path__):
+    VarDecl(x, t) -> <store__> DefData(
+                                 [namespace__|path__]
+                               , Type()
+                               , t
+                               )
+
+  type-of :
+    VarDecl(x, t) -> t
+
+  nam-unique :
+    VarDecl(x, t) -> <id>
+
+
+rules
+
+  nam-get-definition-keys :
+    VarDeclInit(x, t, _) -> [x]
+
+  nam-get-definitions :
+    VarDeclInit(x, t, _) -> [(Variable(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    VarDeclInit(x, t, _) -> <VarDeclInit(nam-annotate-def(|path__), id, id)>
+
+  adjust-index-def-data(store__|namespace__, path__):
+    VarDeclInit(x, t, _) -> <store__> DefData(
+                                        [namespace__|path__]
+                                      , Type()
+                                      , t
+                                      )
+
+  type-of :
+    VarDeclInit(x, t, _) -> t
+
+  nam-unique :
+    VarDeclInit(x, t, _) -> <id>
+
+
+rules
+
+  nam-get-definition-keys :
+    Param(x, t) -> [x]
+
+  nam-get-definitions :
+    Param(x, t) -> [(Variable(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Param(x, t) -> <Param(nam-annotate-def(|path__), id)>
+
+  adjust-index-def-data(store__|namespace__, path__):
+    Param(x, t) -> <store__> DefData(
+                               [namespace__|path__]
+                             , Type()
+                             , t
+                             )
+
+  type-of :
+    Param(x, t) -> t
+
+  nam-unique :
+    Param(x, t) -> <id>
+
+
+rules
+
+  nam-get-uses-keys :
+    Var(x) -> [x]
+
+  nam-get-uses :
+    Var(x) -> [ (Variable(), [x])
+              , (Property(), [x])
+              ]
+
+  nam-annotate-names(|paths__, path__):
+    Var(x) -> <Var(nam-annotate-use(|paths__, Variable()))>
+
+  adjust-index-lookup(target__|namespace__, path__, prefix__):
+    Var(x) -> [ [Variable()|path__]
+              , [Property()|path__]
+              ]
+    where <target__> x
+
+
+rules
+
+  nam-get-scope-types :
+    Block(_) -> [Variable(), Property()]

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?eclipse version="3.0"?>
+
+<plugin>
+       <extension point="org.eclipse.imp.runtime.languageDescription">
+          <language extensions="cwi" description="C-without-macros" language="C-without-macros" derivedFrom="DynamicRoot" validator="cwithoutmacros.CwithoutmacrosValidator" validatorClass="cwithoutmacros.CwithoutmacrosValidator"></language>
+       </extension>
+       <extension id="cwithoutmacros.parser" name="C-without-macros Parser" point="org.eclipse.imp.runtime.parser">
+          <parser class="cwithoutmacros.CwithoutmacrosParseController" language="C-without-macros">
+          </parser>
+       </extension>    
+    </plugin>

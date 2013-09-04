@@ -1,0 +1,188 @@
+module generate
+
+imports
+    
+  libstratego-lib
+  include/EntityWithAspects
+  lib/editor-common.generated
+  lib/index-library
+  lib/analysis-library
+  lib/compilation-library
+  types
+  names
+
+signature constructors
+
+  Pointcut  : Uri * Type -> Pointcut
+
+  ADVICE    : BeforeAfter * Params * Pointcut * Statement -> AdviceData
+  Advice    : Uri * AdviceData -> Advice
+    
+rules // Store advices and pointcuts for code generation
+    
+  adjust-index-def-data(store-results |namespace, path):
+    Pointcut(_, _, type) -> <store-results> Pointcut([namespace | path], type)
+      
+  adjust-index-def-data(store-results |namespace, path):
+    Advice(_, beforeafter, params, pointcut, _, statement) -> <store-results> Advice([namespace | path], data)
+    where
+      data := ADVICE(beforeafter, params, pointcut, statement)
+
+rules // Incremental code generation of project
+  		
+  index-compile-ast(|file, subfile):
+    ast -> None()
+    with
+      if name := <index-uri-name> subfile then
+	      java := <to-java> ast;
+	      full-path := <dirname> file;
+	      filename := <guarantee-extension(|"java")> name;
+	      writePath := $[[full-path]/java/];
+	      writeFile :=  $[[writePath][filename]];
+	      try(<mkdir> writePath);
+	      <fclose> <fputs> (java, <fopen> (writeFile, "w"))
+      end
+
+rules // Code generation to java strings
+	
+	to-java:
+	  [_] -> <concat-strings> <map(to-java)>
+	
+  // Constructs
+  to-java: 
+    Module(name, imports, entities) ->
+    $[package [name];
+      [imports']
+      [entities']]
+		where 
+			entities' := <map(to-java)> entities;
+			imports' := <map(to-java)> imports
+			
+	to-java: Aspect(_, _) -> "" // Aspects are ignored in simple code generation, they should already be handled.
+	
+	to-java: 
+	  Import(type) -> $[import [type'];
+	  ]
+	  where
+	    type' := <to-java> type
+	    
+	to-java:
+	  EntityImport(mod, entity) -> $[[mod].[entity]]
+	 
+	to-java:
+	  WildcardImport(mod) -> $[[mod].*]
+	
+  to-java: 
+    Entity(name, members) ->
+    $[class [name] 
+      {
+          [<map(to-java)> members]
+      }
+      
+      ]
+      
+  to-java: 
+    Property(name, type) -> 
+    $[private [typename] [name];
+    
+    public [typename] get_[name] 
+    {
+        return [name];
+    }
+    
+    public void set_[name]([typename] [name]) 
+    {
+        this.[name] = [name];    
+    }
+    
+    ]
+    where 
+      typename := <to-java> type
+    
+    to-java: Function(name, params, statement) ->
+      $[public void [name]([<params-to-java> params])
+        [<to-java> statement]    
+      ]
+      
+    to-java: Param(name, type) -> $[[<to-java> type] [name]]
+    params-to-java: [] -> ""
+    params-to-java: [Param(name, type)|rest] -> $[[<to-java> type] [name][<params-to-java2> rest]]
+    params-to-java: [Param(name, type)|[]] -> $[[<to-java> type] [name]]
+    params-to-java2: [Param(name, type)|rest] -> $[, [<to-java> type] [name][<params-to-java2> rest]]
+    params-to-java2: [Param(name, type)|[]] -> $[, [<to-java> type] [name]]
+        
+    // Statements
+    to-java: 
+      Block(statements) ->
+      $[{
+            [<map(to-java)> statements]
+        }
+      ]
+        
+    to-java: 
+      Assign(lhs, rhs) -> $[[before]
+      [<to-java> lhs] = [<to-java> rhs];
+    
+      [after]]
+	    with
+	      _{uri}     := <index-find-key> lhs;
+	      modName    := <last> uri;
+	      aspects    := <index-get-children(|Aspect())> [Module(), modName];
+	      adviceDefs := <mapconcat(index-get-children(|Advice()))> aspects;
+	      adviceData := <mapconcat(index-uri; \uri -> Advice(uri, ())\; index-get-all-values)> adviceDefs;
+				advices    := <map(to-java-fixadvice(|rhs))> adviceData;
+				type       := <to-java-aspect-type> <type-of> lhs;
+				before     := <filter(?(Before(), Assigned(type), <to-java>))> advices;
+				after      := <filter(?(After(), Assigned(type), <to-java>))> advices
+    
+    to-java-fixadvice(|exp):
+    	ADVICE(beforeafter, params, pointcut, statement) -> (beforeafter, type, statement')
+    	with 
+  		  Pointcut(_, types) := <index-get> Pointcut(<index-uri> pointcut, ());
+  		  [type|_] := types;
+        [Param(paramName, _)|_] := params;
+        var := Var(paramName);
+        statement' := <try(sometd(to-java-aspect-replace-var(|var, exp)))> statement
+        
+    // Replace a certain variable with given expression.
+    to-java-aspect-replace-var(|var, exp):
+    	x -> exp
+    	where 
+    		<eq>(<strip-annos> x, <strip-annos> var)
+    		
+    // Fix type to be compatible with Assigned(Type)
+    to-java-aspect-type = 
+    	switch id
+    		case ?Type("String") : !StringType()
+    		case ?Type("Int") : !IntType()
+    		otherwise : id
+  		end
+    
+    to-java: 
+      VarDeclInit(name, type, exp) -> $[[<to-java> type] [name] = [<to-java> exp];
+      ]
+    to-java: 
+      Print(exp) -> $[System.out.println([<to-java> exp]);
+      ]
+    
+    // Expressions
+    to-java: 
+      Var(name) -> name
+    to-java: 
+      PropAccess(exp, name) -> $[[<to-java> exp].[name]]
+    to-java: 
+      Call(name, args) -> $[[name]([<map(to-java)> args])]
+      
+    // Literals
+    to-java:
+      StringLit(str) -> str
+    to-java:
+      IntLit(int) -> int
+    
+    // Types
+    to-java: 
+      Type(type) -> type
+    to-java: 
+      StringType() -> "String"
+    to-java: 
+      IntType() -> "int"

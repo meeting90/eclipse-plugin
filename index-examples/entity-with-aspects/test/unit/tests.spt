@@ -1,0 +1,129 @@
+module Tests
+
+language EntityWithAspects
+
+setup Header [[
+  module Tests
+    
+  entity A {
+    x : B
+  }
+]]
+
+test Resolve property access [[
+  entity B {
+    y : A
+    f(a : A) {
+      var v : A = a.x.y.x.y
+      print f(v)
+    }
+  }
+]]
+
+test Resolve function call [[
+  entity B {
+    f(a : A) {
+      var v : A = f(a)
+      print f(v)
+    }
+  }
+]]
+
+test Resolve type fails [[
+  entity B {
+    q : Q
+  }
+]] 1 error
+
+test Unexpected vardef type [[
+  entity B {
+    a : A
+    f() {
+      var v : Int = a.x
+    }
+  }
+]] 1 error
+
+test Unexpected vardef types [[
+  entity B {
+    a : A
+    f() {
+      var v1 : Int = a.x
+      var v2 : String = a.x
+      var v3 : B = a
+    }
+  }
+]] 3 errors
+
+test Unexpected assignment type [[
+  entity B {
+    a : A
+    s : String
+    
+    f() {
+      a = s
+    }
+  }
+]] 1 error
+
+test Unexpected assignment types [[
+  entity B {
+    a : A
+    s : String
+    i : Int
+    
+    f() {
+      a = a.x
+      a = s
+      a = i
+    }
+  }
+]] 3 errors
+
+test Duplicate entity fails [[
+  entity B {}
+  entity B {}
+]] 2 errors
+
+test Duplicate property fails [[
+  entity B {
+    a : Int
+    a : String
+  }
+]] 2 errors
+
+test Duplicate local variable fails [[
+  entity B {
+    f() {
+    	var a : Int
+    	var a : Int
+    }
+  }
+]] 2 errors
+
+test Duplicate function fails [[
+  entity B {
+    a : String
+    
+    f() print a
+    f() print a
+  }
+]] 2 errors
+
+test Shadowing of property allowed [[
+  entity B {
+    a : A
+    f() {
+      var a : A
+      print f()
+      print a.x
+    }
+  }
+]]
+
+test Use before def allowed [[
+  entity B {
+    c : C
+  }
+  entity C {}
+]]

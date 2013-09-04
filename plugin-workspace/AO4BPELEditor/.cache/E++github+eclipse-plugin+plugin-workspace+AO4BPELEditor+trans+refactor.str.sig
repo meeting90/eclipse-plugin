@@ -1,0 +1,1 @@
+Module("refactor",[Imports([(),(),()]),Rules([SDefT("rename-refactoring",[],[],[]),SDefT("rename-all",[],[VarDec("newname",ConstType(SortNoArgs("ATerm"))),VarDec("oldname",ConstType(SortNoArgs("ATerm")))],[])])])

@@ -80,6 +80,7 @@ public class WorkflowBehaviorProvider extends  DefaultToolBehaviorProvider {
 	    
 	    return data;
 	}
+/*
 //	//menu
 //	@Override
 //	public IContextMenuEntry[] getContextMenu(ICustomContext context) {
@@ -103,7 +104,7 @@ public class WorkflowBehaviorProvider extends  DefaultToolBehaviorProvider {
 //	     IContextMenuEntry ret[] = new IContextMenuEntry[] { subMenu };
 //	     return ret;
 //	} 
-	
+	*/
 	@Override
 	public ICustomFeature getDoubleClickFeature(IDoubleClickContext context) {
 	    ICustomFeature customFeature =
@@ -123,8 +124,6 @@ public class WorkflowBehaviorProvider extends  DefaultToolBehaviorProvider {
 	 
 	    return super.getDoubleClickFeature(context);
 	 }
-	
-	
 	@Override
 	public String getToolTip(GraphicsAlgorithm ga) {
 	    PictogramElement pe = ga.getPictogramElement();
@@ -137,11 +136,6 @@ public class WorkflowBehaviorProvider extends  DefaultToolBehaviorProvider {
 	    }
 	    return super.getToolTip(ga);
 	}
-//	@Override
-//	public String getContributorId() {
-//		// TODO Auto-generated method stub
-//		return "mytutorial.PropertyContributor";
-//	}
 	@Override
 	public IPaletteCompartmentEntry[] getPalette() {
 		// TODO Auto-generated method stub

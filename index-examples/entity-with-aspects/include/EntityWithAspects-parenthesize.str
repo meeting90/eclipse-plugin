@@ -1,0 +1,10 @@
+module include/EntityWithAspects-parenthesize
+
+imports
+  libstratego-lib
+
+
+strategies
+  io-EntityWithAspects-parenthesize =
+    io-wrap(id)
+

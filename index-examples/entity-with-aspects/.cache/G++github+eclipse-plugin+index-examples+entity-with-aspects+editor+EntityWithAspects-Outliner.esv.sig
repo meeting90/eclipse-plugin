@@ -1,0 +1,1 @@
+Module("EntityWithAspects-Outliner",Imports([Import("EntityWithAspects-Outliner.generated")]),[Outliner("",[])])

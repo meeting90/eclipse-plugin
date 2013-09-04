@@ -27,12 +27,6 @@ public class WorkflowDiagramTypeProvider extends AbstractDiagramTypeProvider
 		setFeatureProvider(new WorkflowFeatureProvider(this));
 	}
 	@Override
-	public boolean isAutoUpdateAtStartup() {
-	// TODO Auto-generated method stub
-		return  true;
-	}
-	
-	@Override
 	public IToolBehaviorProvider getCurrentToolBehaviorProvider() {	
 		// TODO Auto-generated method stub
 		return new WorkflowBehaviorProvider(this);
@@ -74,7 +68,11 @@ public class WorkflowDiagramTypeProvider extends AbstractDiagramTypeProvider
 			}
 		}	
 	}
-	
+	@Override
+	public boolean isAutoUpdateAtStartup() {
+	// TODO Auto-generated method stub
+		return  true;
+	}
 /*
 private Anchor getAnchor(PictogramElement pe){
 	

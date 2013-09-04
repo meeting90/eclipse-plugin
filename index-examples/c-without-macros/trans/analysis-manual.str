@@ -1,0 +1,23 @@
+module analysis-manual
+
+imports
+  libstratego-lib
+  include/C-without-macros
+  lib/editor-common.generated
+  lib/index-library
+  lib/analysis-library
+  names
+  types
+  
+rules // Adjust lookup
+  
+  // Return a list of fields in the struct on the left hand side.
+  adjust-index-lookup(target |namespace, path, prefix):
+    Access(e, <target>) -> p*
+    where
+      if Type(t) := <type-of> e then
+        Def(uri) := <index-lookup> t;
+	      p* := <index-lookup-children(|Field(), prefix)> <lookup-struct> uri
+	    else
+	      p* := StopLookup()
+	    end

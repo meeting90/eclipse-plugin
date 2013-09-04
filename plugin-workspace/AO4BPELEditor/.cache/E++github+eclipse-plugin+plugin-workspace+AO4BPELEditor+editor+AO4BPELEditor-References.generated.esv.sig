@@ -1,0 +1,1 @@
+Module("AO4BPELEditor-References.generated",NoImports,[References("",[])])

@@ -1,0 +1,16 @@
+module AO4BPELEditor.main
+
+imports AO4BPELEditor-Builders AO4BPELEditor-Refactorings AO4BPELEditor-Colorer AO4BPELEditor-Completions AO4BPELEditor-Folding AO4BPELEditor-Outliner AO4BPELEditor-References AO4BPELEditor-Syntax
+
+language General properties
+                  
+  name          : AO4BPELEditor
+  id            : AO4BPELEditor
+  extends       : Root
+                  
+  description   : "Spoofax/IMP-generated editor for the AO4BPELEditor language"
+  url           : http://strategoxt.org
+                  
+  extensions    : aspect
+  table         : include/AO4BPELEditor.tbl
+  start symbols : Start

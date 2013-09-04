@@ -1,0 +1,5 @@
+module CSharpPartialClassses-Folding
+
+imports CSharpPartialClassses-Folding.generated
+
+folding

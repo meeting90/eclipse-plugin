@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?eclipse version="3.0"?>
+
+<plugin>
+       <extension point="org.eclipse.imp.runtime.languageDescription">
+          <language extensions="nam" description="EntityWithAspects" language="EntityWithAspects" derivedFrom="DynamicRoot" validator="EntityWithAspectsEntityWithAspectsValidator" validatorClass="EntityWithAspects.EntityWithAspectsValidator"></language>
+       </extension>
+       <extension id="EntityWithAspects.parser" name="EntityWithAspects Parser" point="org.eclipse.imp.runtime.parser">
+          <parser class="EntityWithAspects.EntityWithAspectsParseController" language="EntityWithAspects">
+          </parser>
+       </extension>    
+    </plugin>

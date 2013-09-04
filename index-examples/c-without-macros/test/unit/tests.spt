@@ -1,0 +1,235 @@
+module Tests
+
+language C-without-macros
+
+setup Header [[ 
+  typedef struct A {
+    char* s;
+    int i;
+    struct A* a;
+  } A_t;
+  
+	void* malloc(int size) {
+	  void* ptr;
+	  // TODO: allocate memory
+	  return ptr;
+	}
+]]
+
+test Resolve var 1 [[
+	char* b(A_t* a) { 
+	  return a->s;
+	}
+]]
+
+test Resolve var 2 fails [[
+	char* b(A_t* a) { 
+	  return a.s;
+	}
+]] 1 error
+
+test Resolve var 3 [[
+	char* b(struct A* a) {
+	  return a->s;
+	}
+]]
+
+test Resolve var 4 fails [[
+	char* b(struct A* a) {
+	  return a.s;
+	}
+]] 1 error
+
+test Resolve var 5 [[
+  typedef A_t A_t_1;
+  
+	char* b(A_t_1* a) {
+	  return a->s;
+	}
+]]
+
+test Resolve var 6 fails [[
+  typedef A_t A_t_1;
+  
+	char* b(A_t_1* a) {
+	  return a.s;
+	}
+]] 1 error
+
+test Resolve var and type 1 fails [[
+	char* b(foo_t_2* a) {
+	  return a->s;
+	}
+]] 2 errors
+
+test Resolve var and type 2 fails [[
+	char* b(foo_t_2* a) {
+	  return a.s;
+	}
+]] 2 errors
+
+test Resolve function call 1 [[
+	void* c(A_t* a) {
+	  return malloc(a->i);
+	}
+]]
+
+test Resolve function call 3 [[
+	void* c(struct A* a) {
+	  return malloc(a->i);
+	}
+]]
+
+test Resolve function call and type fails [[
+	void* c(foo_t_2* a) {
+	  return malloc(a);
+	} 
+]] 1 error
+
+test Resolve function call [[
+  A_t* f() {
+    A_t* a;
+    a = (A_t*)malloc(sizeof(A_t));
+    return a;
+  }
+]]
+
+test Resolve function call fails [[
+  void f() {
+    A_t* a;
+    free(a);
+  }
+]] 1 error
+
+test Resolve type fails [[
+  B f() { }
+]] 2 errors
+
+test Resolve typedeffed type [[
+  typedef A_t A_t_1;
+  typedef A_t_1 A_t_2;
+  typedef A_t_2 A_t_3;
+  
+  char* f() {
+    A_t_3* a;
+    a = (A_t_3*)malloc(sizeof(A_t_3));
+    a->s="test";
+    return a->s;
+  }
+]]
+
+test Resolve typedeffed type fail (cyclic typedef) [[
+  typedef A_t A_t_1;
+  typedef A_t_1 A_t_2;
+  typedef A_t_2 A_t_1;
+  
+  char* f() {
+    A_t_2* a;
+    a = (A_t_2*)malloc(sizeof(A_t_2));
+    a->s="test";
+    return a->s;
+  }
+]] 4 errors
+
+test Assignment [[
+  void f() {
+    int i;
+    i = 0;
+  }
+]]
+
+test Unexpected assignment type [[
+  void f() {
+    int i;
+    i = "fail";
+  }
+]] 1 error
+
+test Assignments [[
+  void f() {
+    int i;
+    char* s;
+    A_t* a;
+    
+    i = 0;
+    s = "ok";
+    a = (A_t*)malloc(sizeof(A_t));
+  }
+]]
+
+test Unexpected assignment types [[
+  void f() {
+    int i;
+    char* s;
+    A_t* a;
+    
+    i = "fail";
+    s = 1;
+    a = (void*)0;
+  }
+]] 3 errors
+
+test Return [[
+  int f() {
+  	int i;
+  	i = 1;
+  	return i;
+  }
+]]
+
+test Unexpected return type [[
+  char* f() {
+    int i;
+    i = 1;
+    return i;
+  }
+]] 1 error
+
+test Unexpected return types [[
+  A_t* f() {
+    A_t* a;
+    return 1;
+    return a->i;
+    return a->s;
+  }
+]] 3 errors
+
+test No return in void method [[
+  void sideEffect() {}
+]]
+
+test No return in non-void method fails [[
+  A_t* f() {
+
+  }
+]] 1 error
+
+test Duplicate struct fails [[
+  struct B {};
+  struct B {};
+]] 2 errors
+
+test Duplicate type fails [[
+  typedef struct B {} D_t;
+  typedef struct C {} D_t;
+]] 2 errors
+
+test Duplicate field fails [[
+  struct B {
+    int a;
+    int a;
+  };
+]] 2 errors
+
+test Duplicate function fails [[
+  void f() {}
+  void f() {}
+]] 2 errors
+
+// TODO: Should fail but 'in subsequent scope' doesn't work yet.
+test Use local variable before def fails [[
+  void f() {
+    a = 1;
+    int a;
+  }
+]] 1 error

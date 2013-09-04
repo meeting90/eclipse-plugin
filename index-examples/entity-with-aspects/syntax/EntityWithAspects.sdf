@@ -1,0 +1,55 @@
+module EntityWithAspects
+
+imports Common
+
+exports
+
+  context-free start-symbols
+  
+    Start
+
+  context-free syntax
+
+    %% Constructs
+    "module" ID Import* Definition* -> Start {"Module"}
+    "entity" ID "{" Member* "}"     -> Definition {"Entity"}
+    "import" ImportPart             -> Import {"Import"}
+    
+    ID "." "*" -> ImportPart {"WildcardImport"}
+    ID "." ID  -> ImportPart {"EntityImport"} 
+    
+    %% Aspect weaving
+    "aspect" ID "{" AspectMember* "}"                                           -> Definition {"Aspect"}
+    "pointcut" ID "(" { Param "," }* ")" ":" { JoinPoint "," }+                 -> AspectMember {"Pointcut"}
+    "advice" ID AdviceType "(" { Param "," }* ")" ":" ID "(" {Exp ","}* ")" Stm -> AspectMember {"Advice"}
+    
+    "before" -> AdviceType {"Before"}
+    "after"  -> AdviceType {"After"}
+    
+    "assigned" "(" Type ")" -> JoinPoint {"Assigned"}
+    
+    %% Properties
+    ID ":" Type -> Member {"Property"}
+    
+    %% Functions
+    ID "(" { Param "," }* ")" Stm -> Member {"Function"}
+    ID ":" Type                   -> Param {"Param"}
+    
+    %% Statements
+    "var" ID ":" Type         -> Stm {"VarDecl"}
+    "var" ID ":" Type "=" Exp -> Stm {"VarDeclInit"}
+    Exp "=" Exp               -> Stm {"Assign"}
+    "{" Stm* "}"              -> Stm {"Block"}
+    "print" Exp               -> Stm {"Print"}
+    
+    %% Expressions
+    ID "(" {Exp ","}* ")" -> Exp {"Call"}
+    ID                    -> Exp {"Var"}
+    Exp "." ID            -> Exp {"PropAccess"}
+    STRING                -> Exp {"StringLit"}
+    INT                   -> Exp {"IntLit"}
+    
+    %% Types
+    ID       -> Type {"Type"}
+    "String" -> Type {"StringType", prefer}
+    "Int"    -> Type {"IntType", prefer}

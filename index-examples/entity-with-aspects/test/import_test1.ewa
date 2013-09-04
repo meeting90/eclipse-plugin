@@ -1,0 +1,9 @@
+module ImportTest1
+
+//import Test.Ent1
+import Test.*
+
+entity TestEntity
+{
+	mValue : Ent1
+}

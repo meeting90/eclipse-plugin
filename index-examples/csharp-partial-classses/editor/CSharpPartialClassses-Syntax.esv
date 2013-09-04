@@ -1,0 +1,5 @@
+module CSharpPartialClassses-Syntax
+
+imports CSharpPartialClassses-Syntax.generated
+
+language

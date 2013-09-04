@@ -7,8 +7,14 @@
 
 //4.Definitions doesn't match  import files  -----done
 
-5.assign is not expression
+//5.assign is not expression ------done
 
-6.variables need init
+//6.variables need init ----done
 
-7.
+7.bind callback partenerLinkType 
+
+8.choice task
+
+9.while task
+
+10.advice task 

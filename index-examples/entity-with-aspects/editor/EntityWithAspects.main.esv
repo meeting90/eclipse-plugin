@@ -1,0 +1,17 @@
+
+module EntityWithAspects.main
+
+imports EntityWithAspects-Builders EntityWithAspects-Colorer EntityWithAspects-Completions EntityWithAspects-Folding EntityWithAspects-Outliner EntityWithAspects-References EntityWithAspects-Syntax
+
+language General properties
+                  
+  name          : EntityWithAspects
+  id            : entitywithaspects
+  extends       : Root
+                  
+  description   : "Spoofax/IMP-generated editor for the EntityWithAspects language"
+  url           : http://strategoxt.org
+                  
+  extensions    : ewa
+  table         : include/EntityWithAspects.tbl
+  start symbols : Start

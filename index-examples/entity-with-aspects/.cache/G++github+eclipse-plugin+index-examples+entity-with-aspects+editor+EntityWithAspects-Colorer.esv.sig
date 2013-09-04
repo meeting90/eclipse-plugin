@@ -1,0 +1,1 @@
+Module("EntityWithAspects-Colorer",Imports([Import("EntityWithAspects-Colorer.generated")]),[Colorer("",[])])

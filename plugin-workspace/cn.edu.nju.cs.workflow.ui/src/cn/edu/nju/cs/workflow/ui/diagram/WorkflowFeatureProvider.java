@@ -120,12 +120,10 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 		features.add(new AdviceTaskCreateFeature(this));
 		return features.toArray(new ICreateFeature[features.size()]);
 	}
-	
 	@Override
 	public ICreateConnectionFeature[] getCreateConnectionFeatures() {
 		return new ICreateConnectionFeature[] {new EdgeCreateConnectionFeature(this),new AdviceEdgeCreateConnectionFeature(this)};
-	}
-	
+	}	
 	@Override
 	public IAddFeature getAddFeature(IAddContext context) {
 		// TODO: check for right domain object instances below
@@ -151,8 +149,7 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 		}//start node end node
 		
 		return super.getAddFeature(context);
-	}
-	
+	}	
 	@Override
 	public ILayoutFeature getLayoutFeature(ILayoutContext context) {
 		// TODO: check for right domain object instances below
@@ -204,7 +201,6 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 
 		return new RemoveFeature(this);
 	}
-
 	@Override
 	public IDeleteFeature getDeleteFeature(IDeleteContext context) {
 		Object bo = getBusinessObjectForPictogramElement(context.getPictogramElement());
@@ -228,7 +224,6 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 
 		return super.getDeleteFeature(context);
 	}
-
 	@Override
 	public IResizeShapeFeature getResizeShapeFeature(IResizeShapeContext context) {
 		Object bo = getBusinessObjectForPictogramElement(context.getPictogramElement());
@@ -245,7 +240,6 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 		}
 		return super.getResizeShapeFeature(context);
 	}
-
 	@Override
 	public IMoveShapeFeature getMoveShapeFeature(IMoveShapeContext context) {
 		Object bo = getBusinessObjectForPictogramElement(context.getPictogramElement());
@@ -280,7 +274,6 @@ public class WorkflowFeatureProvider extends DefaultFeatureProvider {
 		return  new ICustomFeature[] 
 	            { new CreateSubworkflowFeature(this)};
 	}
-	
 	@Override
 	public PictogramElement addIfPossible(IAddContext context) {
 		// TODO Auto-generated method stub

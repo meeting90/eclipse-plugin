@@ -1,0 +1,25 @@
+include "/test/blog.cwi"
+
+void test(blog_t* blogptr) {
+  blog_t b;
+  b = *blogptr;
+  
+  blog_t* bp;
+  bp = &b;
+}
+
+int main() {
+  struct blog* blogptr;
+  blogptr->posterName = "asd";
+  
+  blog_t_2* b2;
+  b2 = (blog_t*)malloc(sizeof(blog_t)); 
+  b2->posterName = "Frodo";
+  b2->postCount = sizeof(blog_t_2);
+  foo(b2);
+  foo(blogptr);
+  
+  test(b2);
+  
+  return 0;
+}

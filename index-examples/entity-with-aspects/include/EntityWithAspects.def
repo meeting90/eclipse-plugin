@@ -1,0 +1,103 @@
+definition
+module Common
+
+exports
+
+  lexical syntax
+  
+    [a-zA-Z][a-zA-Z0-9]* -> ID
+    "-"? [0-9]+          -> INT
+    
+    "\"" StringChar* "\"" -> STRING
+    ~[\"\n]               -> StringChar
+    "\\\""                -> StringChar
+    BackSlashChar         -> StringChar
+    "\\"                  -> BackSlashChar
+    
+    [\ \t\n\r] -> LAYOUT
+    
+    [\*]                             -> CommentChar
+    "/*" (~[\*] | CommentChar)* "*/" -> LAYOUT
+    "//" ~[\n\r]* ([\n\r] | EOF)     -> LAYOUT
+    
+    -> EOF
+  
+  lexical restrictions
+  
+    %% Ensure greedy matching for lexicals
+  
+    CommentChar   -/- [\/]
+    INT           -/- [0-9]
+    ID            -/- [a-zA-Z0-9\_]
+    
+    %% EOF may not be followed by any char
+    
+    EOF           -/- ~[]
+
+    %% Backslash chars in strings may not be followed by " 
+    
+    BackSlashChar -/- [\"]
+
+  context-free restrictions
+  
+    %% Ensure greedy matching for comments
+
+    LAYOUT? -/- [\ \t\n\r]
+    LAYOUT? -/- [\/].[\/]
+    LAYOUT? -/- [\/].[\*]
+
+module EntityWithAspects
+
+imports Common
+
+exports
+
+  context-free start-symbols
+  
+    Start
+
+  context-free syntax
+
+    %% Constructs
+    "module" ID Import* Definition* -> Start {cons("Module")}
+    "entity" ID "{" Member* "}"     -> Definition {cons("Entity")}
+    "import" ImportPart             -> Import {cons("Import")}
+    
+    ID "." "*" -> ImportPart {cons("WildcardImport")}
+    ID "." ID  -> ImportPart {cons("EntityImport")} 
+    
+    %% Aspect weaving
+    "aspect" ID "{" AspectMember* "}"                                           -> Definition {cons("Aspect")}
+    "pointcut" ID "(" { Param "," }* ")" ":" { JoinPoint "," }+                 -> AspectMember {cons("Pointcut")}
+    "advice" ID AdviceType "(" { Param "," }* ")" ":" ID "(" {Exp ","}* ")" Stm -> AspectMember {cons("Advice")}
+    
+    "before" -> AdviceType {cons("Before")}
+    "after"  -> AdviceType {cons("After")}
+    
+    "assigned" "(" Type ")" -> JoinPoint {cons("Assigned")}
+    
+    %% Properties
+    ID ":" Type -> Member {cons("Property")}
+    
+    %% Functions
+    ID "(" { Param "," }* ")" Stm -> Member {cons("Function")}
+    ID ":" Type                   -> Param {cons("Param")}
+    
+    %% Statements
+    "var" ID ":" Type         -> Stm {cons("VarDecl")}
+    "var" ID ":" Type "=" Exp -> Stm {cons("VarDeclInit")}
+    Exp "=" Exp               -> Stm {cons("Assign")}
+    "{" Stm* "}"              -> Stm {cons("Block")}
+    "print" Exp               -> Stm {cons("Print")}
+    
+    %% Expressions
+    ID "(" {Exp ","}* ")" -> Exp {cons("Call")}
+    ID                    -> Exp {cons("Var")}
+    Exp "." ID            -> Exp {cons("PropAccess")}
+    STRING                -> Exp {cons("StringLit")}
+    INT                   -> Exp {cons("IntLit")}
+    
+    %% Types
+    ID       -> Type {cons("Type")}
+    "String" -> Type {cons("StringType"), prefer}
+    "Int"    -> Type {cons("IntType"), prefer}

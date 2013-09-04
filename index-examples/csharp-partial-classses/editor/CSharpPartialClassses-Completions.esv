@@ -1,0 +1,9 @@
+module CSharpPartialClassses-Completions
+
+imports CSharpPartialClassses-Completions.generated
+
+completions
+
+  completion proposer                  : editor-complete
+
+  completion trigger                   : "."

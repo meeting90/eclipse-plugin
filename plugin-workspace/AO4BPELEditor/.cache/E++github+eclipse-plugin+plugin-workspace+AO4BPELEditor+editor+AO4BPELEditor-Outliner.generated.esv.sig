@@ -1,0 +1,1 @@
+Module("AO4BPELEditor-Outliner.generated",NoImports,[Outliner(" Default outliner        ",[OutlineRule(SortAndConstructor(Sort("Start"),Constructor("Module"))),OutlineRule(SortAndConstructor(Sort("Definition"),Constructor("Entity")))])])

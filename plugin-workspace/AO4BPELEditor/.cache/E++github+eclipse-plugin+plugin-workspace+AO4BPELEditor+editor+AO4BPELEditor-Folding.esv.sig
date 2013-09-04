@@ -1,0 +1,1 @@
+Module("AO4BPELEditor-Folding",Imports([Import("AO4BPELEditor-Folding.generated")]),[Folding("",[])])

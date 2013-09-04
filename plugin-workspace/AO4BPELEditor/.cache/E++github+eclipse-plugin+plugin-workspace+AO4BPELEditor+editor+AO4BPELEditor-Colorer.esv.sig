@@ -1,0 +1,1 @@
+Module("AO4BPELEditor-Colorer",Imports([Import("AO4BPELEditor-Colorer.generated")]),[Colorer("",[])])

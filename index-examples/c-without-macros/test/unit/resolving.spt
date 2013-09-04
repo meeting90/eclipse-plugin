@@ -1,0 +1,106 @@
+module Tests-Resolving
+
+language C-without-macros
+
+setup Header [[ 
+
+]]
+
+test Resolve struct reference 1 [[
+  struct [[B]] {
+    struct [[B]] b;
+  };
+]] resolve #2 to #1
+
+test Resolve struct reference 2 [[
+  struct [[B]] {
+  };
+  
+  struct B* f() {
+    return (struct [[B]]*)0;
+  }
+]] resolve #2 to #1
+
+test Resolve typedeffed struct reference [[
+  typedef struct B {
+  } [[B_t]];
+  
+  [[B_t]]* f() {
+    B_t* b;
+    return b;
+  }
+]] resolve #2 to #1
+
+test Resolve typedeffed struct reference [[
+  typedef struct B {
+  } B_t;
+  
+  typedef B_t [[B_t_1]];
+  
+  [[B_t_1]] f() {
+    B_t_1 b;
+    return b;
+  }
+]] resolve #2 to #1
+
+test Resolve property access 1 [[
+  struct B {
+    int [[i]];
+  };
+  
+  int f() {
+    struct B* b;
+    return b->[[i]];
+  }
+]] resolve #2 to #1
+
+test Resolve property access 2 [[
+  struct B {
+    int [[i]];
+  };
+  
+  int f() {
+    struct B b;
+    return b.[[i]];
+  }
+]] resolve #2 to #1
+
+test Resolve typedeffed property access [[
+  struct B {
+    int [[i]];
+  };
+  
+  typedef struct B B_t;
+  typedef B_t B_t_1;
+  typedef B_t_1 B_t_2;
+  
+  int f() {
+    B_t_2* b; 
+    return b->[[i]]; 
+  } 
+]] resolve #2 to #1 
+
+test Resolve local variable reference [[
+  int f() {
+    int [[i]];
+    return [[i]];
+  }
+]] resolve #2 to #1
+
+test Resolve parameter reference [[
+  char* f(char* [[s]]) {
+    return [[s]];
+  }
+]] resolve #2 to #1
+
+test Resolve function call [[
+  void* [[malloc]](int size) {
+    void* ptr;
+    // TODO: allocate memory
+    return ptr;
+  }
+  
+  char* f() {
+    return (char*)[[malloc]](0);
+  }
+]] resolve #2 to #1

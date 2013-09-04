@@ -1,0 +1,10 @@
+module include/AO4BPELEditor-parenthesize
+
+imports
+  libstratego-lib
+
+
+strategies
+  io-AO4BPELEditor-parenthesize =
+    io-wrap(id)
+
