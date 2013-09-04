@@ -23,63 +23,63 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("index_uri_path_0_0");
-    Fail2201:
+    Fail5103:
     { 
-      IStrategoTerm term1352 = term;
-      Success1320:
+      IStrategoTerm term2908 = term;
+      Success2876:
       { 
-        Fail2202:
+        Fail5104:
         { 
-          IStrategoTerm o_2132 = null;
-          IStrategoTerm p_2132 = null;
-          IStrategoTerm q_2132 = null;
-          IStrategoList annos88 = term.getAnnotations();
-          if(annos88.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos88).isEmpty())
-            break Fail2202;
-          IStrategoTerm arg754 = ((IStrategoList)annos88).head();
-          if(arg754.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg754).isEmpty())
-            break Fail2202;
-          o_2132 = ((IStrategoList)arg754).head();
-          p_2132 = ((IStrategoList)arg754).tail();
-          IStrategoTerm arg755 = ((IStrategoList)annos88).tail();
-          if(arg755.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg755).isEmpty())
-            break Fail2202;
-          Success1321:
+          IStrategoTerm j_11995 = null;
+          IStrategoTerm k_11995 = null;
+          IStrategoTerm l_11995 = null;
+          IStrategoList annos226 = term.getAnnotations();
+          if(annos226.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos226).isEmpty())
+            break Fail5104;
+          IStrategoTerm arg1608 = ((IStrategoList)annos226).head();
+          if(arg1608.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1608).isEmpty())
+            break Fail5104;
+          j_11995 = ((IStrategoList)arg1608).head();
+          k_11995 = ((IStrategoList)arg1608).tail();
+          IStrategoTerm arg1609 = ((IStrategoList)annos226).tail();
+          if(arg1609.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg1609).isEmpty())
+            break Fail5104;
+          Success2877:
           { 
-            Fail2203:
+            Fail5105:
             { 
-              IStrategoTerm r_2132 = null;
-              r_2132 = term;
-              term = o_2132;
+              IStrategoTerm m_11995 = null;
+              m_11995 = term;
+              term = j_11995;
               if(term.getTermType() != IStrategoTerm.APPL || Main._consUnresolved_1 != ((IStrategoAppl)term).getConstructor())
-                break Fail2203;
-              if(term.getSubterm(0) != o_2132 && !o_2132.match(term.getSubterm(0)))
-                break Fail2203;
-              term = r_2132;
+                break Fail5105;
+              if(term.getSubterm(0) != j_11995 && !j_11995.match(term.getSubterm(0)))
+                break Fail5105;
+              term = m_11995;
               { 
                 term = index_lookup_0_0.instance.invoke(context, term);
                 if(term == null)
-                  break Fail2202;
+                  break Fail5104;
                 if(term.getTermType() != IStrategoTerm.APPL || Main._consDef_1 != ((IStrategoAppl)term).getConstructor())
-                  break Fail2202;
-                q_2132 = term.getSubterm(0);
+                  break Fail5104;
+                l_11995 = term.getSubterm(0);
                 if(true)
-                  break Success1321;
+                  break Success2877;
               }
             }
-            term = p_2132;
-            q_2132 = p_2132;
+            term = k_11995;
+            l_11995 = k_11995;
           }
-          term = q_2132;
+          term = l_11995;
           if(true)
-            break Success1320;
+            break Success2876;
         }
-        term = term1352;
-        IStrategoTerm m_2132 = null;
+        term = term2908;
+        IStrategoTerm h_11995 = null;
         if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-          break Fail2201;
-        m_2132 = ((IStrategoList)term).tail();
-        term = m_2132;
+          break Fail5103;
+        h_11995 = ((IStrategoList)term).tail();
+        term = h_11995;
       }
       context.popOnSuccess();
       if(true)

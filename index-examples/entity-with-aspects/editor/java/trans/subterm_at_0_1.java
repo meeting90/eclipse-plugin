@@ -20,20 +20,20 @@ import java.lang.ref.WeakReference;
 { 
   public static subterm_at_0_1 instance = new subterm_at_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm i_2154)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm d_12017)
   { 
     context.push("subterm_at_0_1");
-    Fail2354:
+    Fail5256:
     { 
-      IStrategoTerm l_2154 = null;
-      IStrategoTerm args19 = context.invokePrimitive("SSL_get_arguments", term, NO_STRATEGIES, new IStrategoTerm[]{term});
-      l_2154 = args19;
-      term = inc_0_0.instance.invoke(context, i_2154);
+      IStrategoTerm g_12017 = null;
+      IStrategoTerm args41 = context.invokePrimitive("SSL_get_arguments", term, NO_STRATEGIES, new IStrategoTerm[]{term});
+      g_12017 = args41;
+      term = inc_0_0.instance.invoke(context, d_12017);
       if(term == null)
-        break Fail2354;
-      term = index_0_1.instance.invoke(context, l_2154, term);
+        break Fail5256;
+      term = index_0_1.instance.invoke(context, g_12017, term);
       if(term == null)
-        break Fail2354;
+        break Fail5256;
       context.popOnSuccess();
       if(true)
         return term;

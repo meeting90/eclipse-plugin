@@ -24,21 +24,21 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("pp_entitywithaspects_string_0_0");
-    Fail2293:
+    Fail5195:
     { 
-      IStrategoTerm o_2144 = null;
-      IStrategoTerm p_2144 = null;
-      IStrategoTerm u_2144 = null;
-      o_2144 = term;
-      p_2144 = trans.constEntityWithAspectsGeneratedPpAf;
-      term = (IStrategoTerm)termFactory.makeListCons(p_2144, termFactory.makeListCons(trans.constEntityWithAspectsPpAf, (IStrategoList)trans.constNil1));
-      term = ast2abox_0_1.instance.invoke(context, o_2144, term);
+      IStrategoTerm j_12007 = null;
+      IStrategoTerm k_12007 = null;
+      IStrategoTerm p_12007 = null;
+      j_12007 = term;
+      k_12007 = trans.constEntityWithAspectsGeneratedPpAf;
+      term = (IStrategoTerm)termFactory.makeListCons(k_12007, termFactory.makeListCons(trans.constEntityWithAspectsPpAf, (IStrategoList)trans.constNil3));
+      term = ast2abox_0_1.instance.invoke(context, j_12007, term);
       if(term == null)
-        break Fail2293;
-      u_2144 = term;
-      term = box2text_string_0_1.instance.invoke(context, u_2144, trans.const305);
+        break Fail5195;
+      p_12007 = term;
+      term = box2text_string_0_1.instance.invoke(context, p_12007, trans.const825);
       if(term == null)
-        break Fail2293;
+        break Fail5195;
       context.popOnSuccess();
       if(true)
         return term;

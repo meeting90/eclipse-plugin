@@ -1,0 +1,248 @@
+module TestGen
+
+entity j12887 {
+  k12887 : Int
+  l12887 : Int
+  m12887 : String
+  n12887 : String
+  o12887 : String
+  p12887 : String
+  q12887 : Int
+  r12887 : String
+  s12887 : b12876
+  t12887 : Int
+  u12887 : String
+  v12887 : b12876
+  w12887 : String
+  x12887 : String
+  y12887 : Int
+  z12887 : Int
+  a12888 : b12876
+  b12888 : String
+  c12888 : Int
+  d12888 : String
+  e12888 : b12876
+  f12888 : Int
+  g12888 : Int
+  h12888 : b12876
+  i12888 : String
+  j12888 : Int
+  k12888 : String
+  l12888 : Int
+  m12888 : Int
+  n12888 : String
+  o12888 : String
+  p12888 : String
+  q12888 : String
+  r12888 : Int
+  s12888 : Int
+  t12888 : Int
+  u12888 : String
+  v12888 : Int
+  w12888 : String
+  x12888 : String
+  y12888 : String
+  z12888 : String
+  a12889 : Int
+  b12889 : String
+  c12889 : Int
+  d12889 : String
+  e12889 : String
+  f12889 : String
+  g12889 : Int
+  h12889 : String
+  i12889 : String
+  j12889 : Int
+  k12889 : Int
+  l12889 : String
+  m12889 : String
+  n12889 : String
+  o12889 : String
+  p12889 : b12876
+  q12889 : Int
+  r12889 : Int
+  s12889 : Int
+  t12889 : String
+  u12889 : String
+  v12889 : String
+  w12889 : Int
+  x12889 : Int
+  y12889 : String
+  z12889()
+  {
+    print "a_12890"
+    print "b_12890"
+    print "c_12890"
+    print "d_12890"
+    print "e_12890"
+    print "f_12890"
+    print "g_12890"
+  }
+  h12890()
+  {
+    print "i_12890"
+    print "j_12890"
+    print "k_12890"
+  }
+  l12890()
+  {
+    print "m_12890"
+    print "n_12890"
+    print "o_12890"
+    print "p_12890"
+    print "q_12890"
+    print "r_12890"
+    print "s_12890"
+    print "t_12890"
+    print "u_12890"
+  }
+
+}
+
+entity v12890 {
+  w12890 : Int
+  x12890 : Int
+  y12890 : String
+  z12890 : b12876
+  a12891 : String
+  b12891 : String
+  c12891 : String
+  d12891 : Int
+  e12891 : String
+  f12891 : String
+  g12891 : String
+  h12891 : b12876
+  i12891 : Int
+  j12891 : Int
+  k12891 : String
+  l12891 : Int
+  m12891 : Int
+  n12891 : String
+  o12891 : String
+  p12891 : Int
+  q12891 : Int
+  r12891 : Int
+  s12891 : Int
+  t12891 : Int
+  u12891 : String
+  v12891 : Int
+  w12891 : Int
+  x12891 : b12876
+  y12891 : Int
+  z12891 : String
+  a12892 : Int
+  b12892 : Int
+  c12892 : Int
+  d12892 : Int
+  e12892()
+  {
+    print "f_12892"
+    print "g_12892"
+    print "h_12892"
+    print "i_12892"
+    print "j_12892"
+  }
+  k12892()
+  {
+    print "l_12892"
+    print "m_12892"
+    print "n_12892"
+    print "o_12892"
+    print "p_12892"
+    print "q_12892"
+    print "r_12892"
+    print "s_12892"
+    print "t_12892"
+  }
+
+}
+
+entity u12892 {
+  v12892 : String
+  w12892 : b12876
+  x12892 : Int
+  y12892 : b12876
+  z12892 : String
+  a12893 : Int
+  b12893 : Int
+  c12893 : String
+  d12893 : String
+  e12893 : String
+  f12893 : Int
+  g12893 : String
+  h12893 : Int
+  i12893 : Int
+  j12893 : Int
+  k12893 : String
+  l12893 : Int
+  m12893 : String
+  n12893 : Int
+  o12893 : String
+  p12893 : Int
+  q12893 : Int
+  r12893 : String
+  s12893 : String
+  t12893 : String
+  u12893 : Int
+  v12893 : String
+  w12893 : Int
+  x12893 : String
+  y12893 : String
+  z12893 : Int
+  a12894 : Int
+  b12894 : String
+  c12894 : Int
+  d12894 : String
+  e12894 : Int
+  f12894 : String
+  g12894 : Int
+  h12894 : String
+  i12894 : Int
+  j12894 : Int
+  k12894 : Int
+  l12894 : String
+  m12894 : String
+  n12894 : Int
+  o12894 : String
+  p12894 : String
+  q12894 : String
+  r12894 : b12876
+  s12894 : Int
+  t12894 : Int
+  u12894 : String
+  v12894()
+  {
+    print "w_12894"
+    print "x_12894"
+    print "y_12894"
+    print "z_12894"
+    print "a_12895"
+    print "b_12895"
+  }
+  c12895()
+  {
+    print "d_12895"
+    print "e_12895"
+    print "f_12895"
+    print "g_12895"
+    print "h_12895"
+    print "i_12895"
+  }
+
+}
+
+aspect j12895 {
+  pointcut k12895(n12895 : Int):
+    assigned (Int)
+  advice l12895 after(m12895 : Int): k12895(m12895)
+    print m12895
+
+}
+
+aspect o12895 {
+  pointcut p12895(s12895 : Int):
+    assigned (Int)
+  advice q12895 after(r12895 : Int): p12895(r12895)
+    print r12895
+
+}

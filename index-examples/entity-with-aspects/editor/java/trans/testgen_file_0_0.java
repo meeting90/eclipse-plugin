@@ -23,44 +23,44 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("testgen_file_0_0");
-    Fail1604:
+    Fail4506:
     { 
-      IStrategoTerm x_2042 = null;
-      IStrategoTerm y_2042 = null;
-      y_2042 = term;
-      IStrategoTerm term905 = term;
-      Success885:
+      IStrategoTerm s_11905 = null;
+      IStrategoTerm t_11905 = null;
+      t_11905 = term;
+      IStrategoTerm term2461 = term;
+      Success2441:
       { 
-        Fail1605:
+        Fail4507:
         { 
-          IStrategoTerm c_2043 = null;
+          IStrategoTerm x_11905 = null;
           term = testgen_module_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1605;
-          c_2043 = term;
-          x_2042 = term;
-          term = testgen_add_ast_0_1.instance.invoke(context, c_2043, y_2042);
+            break Fail4507;
+          x_11905 = term;
+          s_11905 = term;
+          term = testgen_add_ast_0_1.instance.invoke(context, x_11905, t_11905);
           if(term == null)
-            break Fail1605;
-          term = testgen_write_file_0_1.instance.invoke(context, x_2042, y_2042);
+            break Fail4507;
+          term = testgen_write_file_0_1.instance.invoke(context, s_11905, t_11905);
           if(term == null)
-            break Fail1605;
+            break Fail4507;
           if(true)
-            break Success885;
+            break Success2441;
         }
-        term = term905;
-        IStrategoTerm z_2042 = null;
-        IStrategoTerm a_2043 = null;
-        IStrategoTerm f_2043 = null;
-        z_2042 = term;
+        term = term2461;
+        IStrategoTerm u_11905 = null;
+        IStrategoTerm v_11905 = null;
+        IStrategoTerm a_11906 = null;
+        u_11905 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail1604;
-        a_2043 = term;
-        f_2043 = z_2042;
-        term = report_with_failure_0_2.instance.invoke(context, f_2043, trans.const321, a_2043);
+          break Fail4506;
+        v_11905 = term;
+        a_11906 = u_11905;
+        term = report_with_failure_0_2.instance.invoke(context, a_11906, trans.const841, v_11905);
         if(term == null)
-          break Fail1604;
+          break Fail4506;
       }
       term = trans.constNone0;
       context.popOnSuccess();

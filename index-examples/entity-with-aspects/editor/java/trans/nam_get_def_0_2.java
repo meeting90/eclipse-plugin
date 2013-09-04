@@ -20,41 +20,41 @@ import java.lang.ref.WeakReference;
 { 
   public static nam_get_def_0_2 instance = new nam_get_def_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm h_2121, IStrategoTerm i_2121)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm c_11984, IStrategoTerm d_11984)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("nam_get_def_0_2");
-    Fail2131:
+    Fail5033:
     { 
-      IStrategoTerm j_2121 = null;
-      IStrategoTerm k_2121 = null;
-      IStrategoTerm l_2121 = null;
-      j_2121 = term;
-      l_2121 = term;
-      term = termFactory.makeTuple(i_2121, h_2121);
-      Success1292:
+      IStrategoTerm e_11984 = null;
+      IStrategoTerm f_11984 = null;
+      IStrategoTerm g_11984 = null;
+      e_11984 = term;
+      g_11984 = term;
+      term = termFactory.makeTuple(d_11984, c_11984);
+      Success2848:
       { 
-        Fail2132:
+        Fail5034:
         { 
           term = lookup_p__0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail2132;
+            break Fail5034;
           if(true)
-            break Success1292;
+            break Success2848;
         }
-        term = trans.constNil1;
+        term = trans.constNil3;
       }
-      term = termFactory.makeTuple(j_2121, term);
+      term = termFactory.makeTuple(e_11984, term);
       term = make$Conc_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2131;
-      k_2121 = term;
-      term = l_2121;
-      IStrategoList list67;
-      list67 = checkListTail(k_2121);
-      if(list67 == null)
-        break Fail2131;
-      term = termFactory.makeAppl(Main._consDef_1, new IStrategoTerm[]{(IStrategoTerm)termFactory.makeListCons(i_2121, list67)});
+        break Fail5033;
+      f_11984 = term;
+      term = g_11984;
+      IStrategoList list143;
+      list143 = checkListTail(f_11984);
+      if(list143 == null)
+        break Fail5033;
+      term = termFactory.makeAppl(Main._consDef_1, new IStrategoTerm[]{(IStrategoTerm)termFactory.makeListCons(d_11984, list143)});
       context.popOnSuccess();
       if(true)
         return term;

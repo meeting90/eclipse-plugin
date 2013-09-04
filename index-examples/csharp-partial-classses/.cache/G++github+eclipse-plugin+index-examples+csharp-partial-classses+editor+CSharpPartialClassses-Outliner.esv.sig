@@ -1,0 +1,1 @@
+Module("CSharpPartialClassses-Outliner",Imports([Import("CSharpPartialClassses-Outliner.generated")]),[Outliner("",[])])

@@ -24,59 +24,59 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_compilation_filter_file_0_0");
-    Fail1951:
+    Fail4853:
     { 
-      IStrategoTerm g_2089 = null;
-      IStrategoTerm h_2089 = null;
+      IStrategoTerm b_11952 = null;
+      IStrategoTerm c_11952 = null;
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-        break Fail1951;
-      h_2089 = term.getSubterm(0);
-      g_2089 = term.getSubterm(1);
-      term = h_2089;
-      IStrategoTerm term1206 = term;
-      Success1184:
+        break Fail4853;
+      c_11952 = term.getSubterm(0);
+      b_11952 = term.getSubterm(1);
+      term = c_11952;
+      IStrategoTerm term2762 = term;
+      Success2740:
       { 
-        Fail1952:
+        Fail4854:
         { 
           term = is_test_file_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1952;
+            break Fail4854;
           if(true)
-            break Success1184;
+            break Success2740;
         }
-        term = term1206;
-        IStrategoTerm term1207 = term;
-        Success1185:
+        term = term2762;
+        IStrategoTerm term2763 = term;
+        Success2741:
         { 
-          Fail1953:
+          Fail4855:
           { 
             term = index_is_fake_file_0_0.instance.invoke(context, term);
             if(term == null)
-              break Fail1953;
+              break Fail4855;
             if(true)
-              break Success1185;
+              break Success2741;
           }
-          term = term1207;
-          IStrategoTerm term1208 = term;
-          Success1186:
+          term = term2763;
+          IStrategoTerm term2764 = term;
+          Success2742:
           { 
-            Fail1954:
+            Fail4856:
             { 
               term = file_exists_0_0.instance.invoke(context, term);
               if(term == null)
-                break Fail1954;
+                break Fail4856;
               { 
                 if(true)
-                  break Fail1951;
+                  break Fail4853;
                 if(true)
-                  break Success1186;
+                  break Success2742;
               }
             }
-            term = term1208;
+            term = term2764;
           }
         }
       }
-      term = termFactory.makeTuple(h_2089, g_2089);
+      term = termFactory.makeTuple(c_11952, b_11952);
       context.popOnSuccess();
       if(true)
         return term;

@@ -24,14 +24,14 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("nbl_get_type_0_0");
-    Fail1932:
+    Fail4834:
     { 
-      IStrategoTerm z_2084 = null;
+      IStrategoTerm u_11947 = null;
       term = termFactory.makeAppl(Main._consDef_1, new IStrategoTerm[]{term});
-      z_2084 = term;
-      term = index_get_data_0_1.instance.invoke(context, z_2084, trans.constType0);
+      u_11947 = term;
+      term = index_get_data_0_1.instance.invoke(context, u_11947, trans.constType0);
       if(term == null)
-        break Fail1932;
+        break Fail4834;
       context.popOnSuccess();
       if(true)
         return term;

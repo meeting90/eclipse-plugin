@@ -1,0 +1,23 @@
+module eval 
+
+language Calculang
+
+test Constant [[
+  1
+]] run calc to "1"
+
+test Add [[
+  1 + 1
+]] run calc to "25"
+
+test Multiply [[
+  2 * 2
+]] run calc to "4"
+
+test Multiply and add [[
+  2 * 2 + 1
+]] run calc to "5"
+
+test Factorial [[
+	5! 
+]] run calc to "120"

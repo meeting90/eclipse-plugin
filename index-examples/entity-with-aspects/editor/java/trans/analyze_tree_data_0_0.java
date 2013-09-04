@@ -23,30 +23,30 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("analyze_tree_data_0_0");
-    Fail2022:
+    Fail4924:
     { 
-      IStrategoTerm y_2104 = null;
-      TermReference z_2104 = new TermReference();
-      y_2104 = term;
+      IStrategoTerm t_11967 = null;
+      TermReference u_11967 = new TermReference();
+      t_11967 = term;
       term = new_iset_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2022;
-      if(z_2104.value == null)
-        z_2104.value = term;
+        break Fail4924;
+      if(u_11967.value == null)
+        u_11967.value = term;
       else
-        if(z_2104.value != term && !z_2104.value.match(term))
-          break Fail2022;
-      term = y_2104;
-      lifted415 lifted4150 = new lifted415();
-      lifted4150.z_2104 = z_2104;
-      term = topdown_1_0.instance.invoke(context, term, lifted4150);
+        if(u_11967.value != term && !u_11967.value.match(term))
+          break Fail4924;
+      term = t_11967;
+      lifted1015 lifted10150 = new lifted1015();
+      lifted10150.u_11967 = u_11967;
+      term = topdown_1_0.instance.invoke(context, term, lifted10150);
       if(term == null)
-        break Fail2022;
-      if(z_2104.value == null)
-        break Fail2022;
-      term = iset_elements_0_0.instance.invoke(context, z_2104.value);
+        break Fail4924;
+      if(u_11967.value == null)
+        break Fail4924;
+      term = iset_elements_0_0.instance.invoke(context, u_11967.value);
       if(term == null)
-        break Fail2022;
+        break Fail4924;
       context.popOnSuccess();
       if(true)
         return term;

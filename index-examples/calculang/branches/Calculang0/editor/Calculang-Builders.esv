@@ -1,0 +1,16 @@
+module Calculang-Builders
+
+imports Calculang-Builders.generated
+
+builders
+                                                                      
+  // This file can be used for custom analysis and builder rules.     
+  //                                                                  
+  // See the imported file for a brief introduction and examples.     
+
+builders
+                                                                                                                               
+  provider: include/calculang.ctree                                                                                         
+                                                                                                                               
+  builder: "Show abstract syntax (for selection)" =
+  	generate-aterm (openeditor) (realtime) (meta) (source)

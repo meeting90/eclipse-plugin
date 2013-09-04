@@ -23,33 +23,33 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("editor_queue_analysis_0_0");
-    Fail2469:
+    Fail5371:
     { 
-      IStrategoTerm q_2173 = null;
-      IStrategoTerm s_2173 = null;
-      IStrategoTerm t_2173 = null;
-      IStrategoTerm term1521 = term;
-      Success1471:
+      IStrategoTerm l_12036 = null;
+      IStrategoTerm n_12036 = null;
+      IStrategoTerm o_12036 = null;
+      IStrategoTerm term3077 = term;
+      Success3027:
       { 
-        Fail2470:
+        Fail5372:
         { 
           if(term.getTermType() != IStrategoTerm.LIST || !((IStrategoList)term).isEmpty())
-            break Fail2470;
+            break Fail5372;
           { 
             if(true)
-              break Fail2469;
+              break Fail5371;
             if(true)
-              break Success1471;
+              break Success3027;
           }
         }
-        term = term1521;
+        term = term3077;
       }
-      s_2173 = term;
-      q_2173 = trans.const516;
-      t_2173 = s_2173;
-      term = queue_strategy_0_2.instance.invoke(context, t_2173, q_2173, trans.const517);
+      n_12036 = term;
+      l_12036 = trans.const1036;
+      o_12036 = n_12036;
+      term = queue_strategy_0_2.instance.invoke(context, o_12036, l_12036, trans.const1037);
       if(term == null)
-        break Fail2469;
+        break Fail5371;
       context.popOnSuccess();
       if(true)
         return term;

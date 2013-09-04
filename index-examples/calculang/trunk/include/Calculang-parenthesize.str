@@ -1,0 +1,62 @@
+module include/Calculang-parenthesize
+
+imports
+  libstratego-lib
+  include/Calculang
+
+
+strategies
+  io-Calculang-parenthesize =
+    io-wrap(parenthesize-Calculang)
+
+  parenthesize-Calculang =
+    innermost(CalculangParenthesize)
+
+
+rules
+
+  CalculangParenthesize :
+    Div(t_0, t_1) -> Div(Parenthetical(t_0), t_1)
+    where <(?Minus(_, _)
+            + ?Plus(_, _)
+            + fail)> t_0
+
+  CalculangParenthesize :
+    Div(t_0, t_1) -> Div(t_0, Parenthetical(t_1))
+    where <(?Minus(_, _)
+            + ?Plus(_, _)
+            + ?Div(_, _)
+            + ?Mul(_, _)
+            + fail)> t_1
+
+  CalculangParenthesize :
+    Mul(t_0, t_1) -> Mul(Parenthetical(t_0), t_1)
+    where <(?Minus(_, _)
+            + ?Plus(_, _)
+            + fail)> t_0
+
+  CalculangParenthesize :
+    Mul(t_0, t_1) -> Mul(t_0, Parenthetical(t_1))
+    where <(?Minus(_, _)
+            + ?Plus(_, _)
+            + ?Mul(_, _)
+            + ?Div(_, _)
+            + fail)> t_1
+
+  CalculangParenthesize :
+    Minus(t_0, t_1) -> Minus(t_0, Parenthetical(t_1))
+    where <(?Minus(_, _)
+            + ?Plus(_, _)
+            + fail)> t_1
+
+  CalculangParenthesize :
+    Plus(t_0, t_1) -> Plus(t_0, Parenthetical(t_1))
+    where <(?Plus(_, _)
+            + ?Minus(_, _)
+            + fail)> t_1
+
+
+signature
+  constructors
+    Parenthetical : Unknown -> Unknown
+

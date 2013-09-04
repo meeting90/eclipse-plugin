@@ -1,0 +1,38 @@
+module Calculang
+
+imports Common
+
+exports
+
+  context-free start-symbols
+    Start
+
+  context-free syntax
+    
+    Exp -> Start {cons("Expr")}
+    
+    INT -> Exp {cons("Int")}
+    
+    Exp "*" Exp -> Exp {cons("Mul"), left}
+    Exp "/" Exp -> Exp {cons("Div"), left}
+    Exp "+" Exp -> Exp {cons("Plus"), left}
+    Exp "-" Exp -> Exp {cons("Minus"), left}
+
+    "(" Exp ")" -> Exp {bracket}
+
+  context-free priorities
+    
+    { left:
+      Exp "*" Exp -> Exp
+      Exp "/" Exp -> Exp
+    } >
+    { left:  
+      Exp "+" Exp -> Exp
+      Exp "-" Exp -> Exp
+    }
+ 
+  context-free syntax
+  
+    Stm*        -> Start {cons("Stm")} 
+    ID "=" Exp  -> Stm {cons("Assign")}
+    ID          -> Exp {cons("Var")}

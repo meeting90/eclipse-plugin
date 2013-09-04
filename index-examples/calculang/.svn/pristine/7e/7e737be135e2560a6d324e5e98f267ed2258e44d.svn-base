@@ -1,0 +1,28 @@
+module refactoring 
+
+language Calculang
+
+test Basic rename [[
+  a = 1
+  [[a]]
+]] refactor rename-var("b") to [[
+  b = 1
+  b
+]]
+
+test Another rename [[
+  a = 1
+  b = 2
+  [[a]]
+]] refactor rename-var("c") to [[
+  c = 1
+  b = 2
+  c
+]]
+
+test Rename collission [[
+  a = 1
+  b = 1
+  [[a]]
+]] refactor rename-var("b") to _
+   1 error

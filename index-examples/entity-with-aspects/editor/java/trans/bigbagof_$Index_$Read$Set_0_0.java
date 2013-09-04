@@ -23,37 +23,37 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("bigbagof_Index_ReadSet_0_0");
-    Fail2572:
+    Fail5474:
     { 
-      TermReference o_2181 = new TermReference();
-      if(o_2181.value == null)
-        o_2181.value = term;
+      TermReference j_12044 = new TermReference();
+      if(j_12044.value == null)
+        j_12044.value = term;
       else
-        if(o_2181.value != term && !o_2181.value.match(term))
-          break Fail2572;
-      Success1482:
+        if(j_12044.value != term && !j_12044.value.match(term))
+          break Fail5474;
+      Success3038:
       { 
-        Fail2573:
+        Fail5475:
         { 
-          IStrategoTerm r_2181 = null;
-          IStrategoTerm t_2181 = null;
-          IStrategoTerm u_2181 = null;
-          t_2181 = term;
-          r_2181 = trans.const402;
-          u_2181 = t_2181;
-          term = dr_lookup_all_rules_0_2.instance.invoke(context, u_2181, r_2181, trans.constCons118);
+          IStrategoTerm m_12044 = null;
+          IStrategoTerm o_12044 = null;
+          IStrategoTerm p_12044 = null;
+          o_12044 = term;
+          m_12044 = trans.const922;
+          p_12044 = o_12044;
+          term = dr_lookup_all_rules_0_2.instance.invoke(context, p_12044, m_12044, trans.constCons250);
           if(term == null)
-            break Fail2573;
+            break Fail5475;
           if(true)
-            break Success1482;
+            break Success3038;
         }
-        term = trans.constNil1;
+        term = trans.constNil3;
       }
-      lifted569 lifted5690 = new lifted569();
-      lifted5690.o_2181 = o_2181;
-      term = filter_1_0.instance.invoke(context, term, lifted5690);
+      lifted1169 lifted11690 = new lifted1169();
+      lifted11690.j_12044 = j_12044;
+      term = filter_1_0.instance.invoke(context, term, lifted11690);
       if(term == null)
-        break Fail2572;
+        break Fail5474;
       context.popOnSuccess();
       if(true)
         return term;

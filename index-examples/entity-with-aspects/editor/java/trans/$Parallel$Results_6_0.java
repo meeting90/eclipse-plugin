@@ -20,58 +20,58 @@ import java.lang.ref.WeakReference;
 { 
   public static $Parallel$Results_6_0 instance = new $Parallel$Results_6_0();
 
-  public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy t_2175, Strategy u_2175, Strategy v_2175, Strategy w_2175, Strategy x_2175, Strategy y_2175)
+  public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy o_12038, Strategy p_12038, Strategy q_12038, Strategy r_12038, Strategy s_12038, Strategy t_12038)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("ParallelResults_6_0");
-    Fail2493:
+    Fail5395:
     { 
-      IStrategoTerm s_2284 = null;
-      IStrategoTerm m_2284 = null;
-      IStrategoTerm n_2284 = null;
-      IStrategoTerm o_2284 = null;
-      IStrategoTerm p_2284 = null;
-      IStrategoTerm q_2284 = null;
-      IStrategoTerm r_2284 = null;
-      IStrategoTerm t_2284 = null;
-      IStrategoTerm u_2284 = null;
-      IStrategoTerm v_2284 = null;
-      IStrategoTerm w_2284 = null;
-      IStrategoTerm x_2284 = null;
+      IStrategoTerm n_12147 = null;
+      IStrategoTerm h_12147 = null;
+      IStrategoTerm i_12147 = null;
+      IStrategoTerm j_12147 = null;
+      IStrategoTerm k_12147 = null;
+      IStrategoTerm l_12147 = null;
+      IStrategoTerm m_12147 = null;
+      IStrategoTerm o_12147 = null;
+      IStrategoTerm p_12147 = null;
+      IStrategoTerm q_12147 = null;
+      IStrategoTerm r_12147 = null;
+      IStrategoTerm s_12147 = null;
       if(term.getTermType() != IStrategoTerm.APPL || Main._consParallelResults_6 != ((IStrategoAppl)term).getConstructor())
-        break Fail2493;
-      m_2284 = term.getSubterm(0);
-      n_2284 = term.getSubterm(1);
-      o_2284 = term.getSubterm(2);
-      p_2284 = term.getSubterm(3);
-      q_2284 = term.getSubterm(4);
-      r_2284 = term.getSubterm(5);
-      IStrategoList annos98 = term.getAnnotations();
-      s_2284 = annos98;
-      term = t_2175.invoke(context, m_2284);
+        break Fail5395;
+      h_12147 = term.getSubterm(0);
+      i_12147 = term.getSubterm(1);
+      j_12147 = term.getSubterm(2);
+      k_12147 = term.getSubterm(3);
+      l_12147 = term.getSubterm(4);
+      m_12147 = term.getSubterm(5);
+      IStrategoList annos236 = term.getAnnotations();
+      n_12147 = annos236;
+      term = o_12038.invoke(context, h_12147);
       if(term == null)
-        break Fail2493;
-      t_2284 = term;
-      term = u_2175.invoke(context, n_2284);
+        break Fail5395;
+      o_12147 = term;
+      term = p_12038.invoke(context, i_12147);
       if(term == null)
-        break Fail2493;
-      u_2284 = term;
-      term = v_2175.invoke(context, o_2284);
+        break Fail5395;
+      p_12147 = term;
+      term = q_12038.invoke(context, j_12147);
       if(term == null)
-        break Fail2493;
-      v_2284 = term;
-      term = w_2175.invoke(context, p_2284);
+        break Fail5395;
+      q_12147 = term;
+      term = r_12038.invoke(context, k_12147);
       if(term == null)
-        break Fail2493;
-      w_2284 = term;
-      term = x_2175.invoke(context, q_2284);
+        break Fail5395;
+      r_12147 = term;
+      term = s_12038.invoke(context, l_12147);
       if(term == null)
-        break Fail2493;
-      x_2284 = term;
-      term = y_2175.invoke(context, r_2284);
+        break Fail5395;
+      s_12147 = term;
+      term = t_12038.invoke(context, m_12147);
       if(term == null)
-        break Fail2493;
-      term = termFactory.annotateTerm(termFactory.makeAppl(Main._consParallelResults_6, new IStrategoTerm[]{t_2284, u_2284, v_2284, w_2284, x_2284, term}), checkListAnnos(termFactory, s_2284));
+        break Fail5395;
+      term = termFactory.annotateTerm(termFactory.makeAppl(Main._consParallelResults_6, new IStrategoTerm[]{o_12147, p_12147, q_12147, r_12147, s_12147, term}), checkListAnnos(termFactory, n_12147));
       context.popOnSuccess();
       if(true)
         return term;

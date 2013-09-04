@@ -22,10 +22,10 @@ import java.lang.ref.WeakReference;
 
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
-    Fail2109:
+    Fail5011:
     { 
       if(term.getTermType() != IStrategoTerm.STRING || !"Spoofax-Testing".equals(((IStrategoString)term).stringValue()))
-        break Fail2109;
+        break Fail5011;
       if(true)
         return term;
     }

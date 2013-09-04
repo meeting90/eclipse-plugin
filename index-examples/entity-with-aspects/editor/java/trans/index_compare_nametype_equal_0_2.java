@@ -20,33 +20,33 @@ import java.lang.ref.WeakReference;
 { 
   public static index_compare_nametype_equal_0_2 instance = new index_compare_nametype_equal_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm j_2084, IStrategoTerm k_2084)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm e_11947, IStrategoTerm f_11947)
   { 
     context.push("index_compare_nametype_equal_0_2");
-    Fail1930:
+    Fail4832:
     { 
-      IStrategoTerm l_2084 = null;
-      IStrategoTerm m_2084 = null;
-      IStrategoTerm n_2084 = null;
-      l_2084 = term;
-      n_2084 = term;
-      term = index_uri_0_0.instance.invoke(context, l_2084);
+      IStrategoTerm g_11947 = null;
+      IStrategoTerm h_11947 = null;
+      IStrategoTerm i_11947 = null;
+      g_11947 = term;
+      i_11947 = term;
+      term = index_uri_0_0.instance.invoke(context, g_11947);
       if(term == null)
-        break Fail1930;
-      m_2084 = term;
+        break Fail4832;
+      h_11947 = term;
       term = index_uri_name_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1930;
-      term = SRTS_EXT_eq_ignore_annos_0_1.instance.invoke(context, term, j_2084);
+        break Fail4832;
+      term = SRTS_EXT_eq_ignore_annos_0_1.instance.invoke(context, term, e_11947);
       if(term == null)
-        break Fail1930;
-      term = nbl_get_type_0_0.instance.invoke(context, m_2084);
+        break Fail4832;
+      term = nbl_get_type_0_0.instance.invoke(context, h_11947);
       if(term == null)
-        break Fail1930;
-      term = nbl_type_eq_0_1.instance.invoke(context, term, k_2084);
+        break Fail4832;
+      term = nbl_type_eq_0_1.instance.invoke(context, term, f_11947);
       if(term == null)
-        break Fail1930;
-      term = n_2084;
+        break Fail4832;
+      term = i_11947;
       context.popOnSuccess();
       if(true)
         return term;

@@ -20,95 +20,95 @@ import java.lang.ref.WeakReference;
 { 
   public static adjust_index_import_0_2 instance = new adjust_index_import_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_b_2196, IStrategoTerm c_2196)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_w_12058, IStrategoTerm x_12058)
   { 
     ITermFactory termFactory = context.getFactory();
-    TermReference b_2196 = new TermReference(ref_b_2196);
+    TermReference w_12058 = new TermReference(ref_w_12058);
     context.push("adjust_index_import_0_2");
-    Fail1915:
+    Fail4817:
     { 
-      IStrategoTerm i_2081 = null;
-      TermReference j_2081 = new TermReference();
-      IStrategoTerm l_2081 = null;
-      IStrategoTerm o_2081 = null;
-      IStrategoTerm r_2081 = null;
-      IStrategoTerm s_2081 = null;
-      IStrategoTerm w_2081 = null;
-      IStrategoTerm x_2081 = null;
-      o_2081 = term;
-      IStrategoTerm term1188 = term;
-      Success1167:
+      IStrategoTerm d_11944 = null;
+      TermReference e_11944 = new TermReference();
+      IStrategoTerm g_11944 = null;
+      IStrategoTerm j_11944 = null;
+      IStrategoTerm m_11944 = null;
+      IStrategoTerm n_11944 = null;
+      IStrategoTerm r_11944 = null;
+      IStrategoTerm s_11944 = null;
+      j_11944 = term;
+      IStrategoTerm term2744 = term;
+      Success2723:
       { 
-        Fail1916:
+        Fail4818:
         { 
-          if(b_2196.value == null)
-            break Fail1916;
-          IStrategoList list53;
-          list53 = checkListTail(c_2196);
-          if(list53 == null)
-            break Fail1916;
-          term = (IStrategoTerm)termFactory.makeListCons(b_2196.value, list53);
-          if(j_2081.value == null)
-            j_2081.value = term;
+          if(w_12058.value == null)
+            break Fail4818;
+          IStrategoList list129;
+          list129 = checkListTail(x_12058);
+          if(list129 == null)
+            break Fail4818;
+          term = (IStrategoTerm)termFactory.makeListCons(w_12058.value, list129);
+          if(e_11944.value == null)
+            e_11944.value = term;
           else
-            if(j_2081.value != term && !j_2081.value.match(term))
-              break Fail1916;
+            if(e_11944.value != term && !e_11944.value.match(term))
+              break Fail4818;
           if(true)
-            break Success1167;
+            break Success2723;
         }
-        term = term1188;
-        IStrategoTerm m_2081 = null;
-        IStrategoTerm n_2081 = null;
-        IStrategoTerm q_2081 = null;
-        m_2081 = term;
+        term = term2744;
+        IStrategoTerm h_11944 = null;
+        IStrategoTerm i_11944 = null;
+        IStrategoTerm l_11944 = null;
+        h_11944 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail1915;
-        n_2081 = term;
-        q_2081 = m_2081;
-        term = report_with_failure_0_2.instance.invoke(context, q_2081, trans.const393, n_2081);
+          break Fail4817;
+        i_11944 = term;
+        l_11944 = h_11944;
+        term = report_with_failure_0_2.instance.invoke(context, l_11944, trans.const913, i_11944);
         if(term == null)
-          break Fail1915;
+          break Fail4817;
       }
-      term = o_2081;
-      r_2081 = o_2081;
-      term = import_values_0_2.instance.invoke(context, term, b_2196.value, c_2196);
+      term = j_11944;
+      m_11944 = j_11944;
+      term = import_values_0_2.instance.invoke(context, term, w_12058.value, x_12058);
       if(term == null)
-        break Fail1915;
-      s_2081 = term;
-      term = s_2081;
-      lifted373 lifted3730 = new lifted373();
-      lifted3730.j_2081 = j_2081;
-      lifted3730.b_2196 = b_2196;
-      term = mapconcat_1_0.instance.invoke(context, term, lifted3730);
+        break Fail4817;
+      n_11944 = term;
+      term = n_11944;
+      lifted973 lifted9730 = new lifted973();
+      lifted9730.e_11944 = e_11944;
+      lifted9730.w_12058 = w_12058;
+      term = mapconcat_1_0.instance.invoke(context, term, lifted9730);
       if(term == null)
-        break Fail1915;
-      i_2081 = term;
-      term = r_2081;
-      w_2081 = r_2081;
-      term = import_currentfile_values_0_1.instance.invoke(context, term, b_2196.value);
+        break Fail4817;
+      d_11944 = term;
+      term = m_11944;
+      r_11944 = m_11944;
+      term = import_currentfile_values_0_1.instance.invoke(context, term, w_12058.value);
       if(term == null)
-        break Fail1915;
-      x_2081 = term;
-      term = x_2081;
-      lifted374 lifted3740 = new lifted374();
-      lifted3740.j_2081 = j_2081;
-      lifted3740.b_2196 = b_2196;
-      term = mapconcat_1_0.instance.invoke(context, term, lifted3740);
+        break Fail4817;
+      s_11944 = term;
+      term = s_11944;
+      lifted974 lifted9740 = new lifted974();
+      lifted9740.e_11944 = e_11944;
+      lifted9740.w_12058 = w_12058;
+      term = mapconcat_1_0.instance.invoke(context, term, lifted9740);
       if(term == null)
-        break Fail1915;
-      l_2081 = term;
-      term = w_2081;
-      if(b_2196.value == null)
-        break Fail1915;
-      IStrategoList list54;
-      list54 = checkListTail(c_2196);
-      if(list54 == null)
-        break Fail1915;
-      term = (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(b_2196.value, list54), (IStrategoList)trans.constNil1), termFactory.makeListCons(l_2081, termFactory.makeListCons(i_2081, (IStrategoList)trans.constNil1)));
+        break Fail4817;
+      g_11944 = term;
+      term = r_11944;
+      if(w_12058.value == null)
+        break Fail4817;
+      IStrategoList list130;
+      list130 = checkListTail(x_12058);
+      if(list130 == null)
+        break Fail4817;
+      term = (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(w_12058.value, list130), (IStrategoList)trans.constNil3), termFactory.makeListCons(g_11944, termFactory.makeListCons(d_11944, (IStrategoList)trans.constNil3)));
       term = concat_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1915;
+        break Fail4817;
       context.popOnSuccess();
       if(true)
         return term;

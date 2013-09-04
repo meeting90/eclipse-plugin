@@ -24,29 +24,29 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_key_eq_0_0");
-    Fail2207:
+    Fail5109:
     { 
-      IStrategoTerm z_2132 = null;
-      IStrategoTerm a_2133 = null;
-      IStrategoTerm b_2133 = null;
-      IStrategoTerm c_2133 = null;
+      IStrategoTerm u_11995 = null;
+      IStrategoTerm v_11995 = null;
+      IStrategoTerm w_11995 = null;
+      IStrategoTerm x_11995 = null;
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-        break Fail2207;
-      z_2132 = term.getSubterm(0);
-      a_2133 = term.getSubterm(1);
-      b_2133 = term;
-      term = index_key_unwrap_0_0.instance.invoke(context, z_2132);
+        break Fail5109;
+      u_11995 = term.getSubterm(0);
+      v_11995 = term.getSubterm(1);
+      w_11995 = term;
+      term = index_key_unwrap_0_0.instance.invoke(context, u_11995);
       if(term == null)
-        break Fail2207;
-      c_2133 = term;
-      term = index_key_unwrap_0_0.instance.invoke(context, a_2133);
+        break Fail5109;
+      x_11995 = term;
+      term = index_key_unwrap_0_0.instance.invoke(context, v_11995);
       if(term == null)
-        break Fail2207;
-      term = termFactory.makeTuple(c_2133, term);
+        break Fail5109;
+      term = termFactory.makeTuple(x_11995, term);
       term = eq_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2207;
-      term = b_2133;
+        break Fail5109;
+      term = w_11995;
       context.popOnSuccess();
       if(true)
         return term;

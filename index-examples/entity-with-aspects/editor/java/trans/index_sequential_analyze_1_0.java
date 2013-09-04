@@ -20,16 +20,16 @@ import java.lang.ref.WeakReference;
 { 
   public static index_sequential_analyze_1_0 instance = new index_sequential_analyze_1_0();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy y_2105)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy t_11968)
   { 
     context.push("index_sequential_analyze_1_0");
-    Fail2029:
+    Fail4931:
     { 
-      lifted420 lifted4200 = new lifted420();
-      lifted4200.y_2105 = y_2105;
-      term = index_analyze_1_0.instance.invoke(context, term, lifted4200);
+      lifted1020 lifted10200 = new lifted1020();
+      lifted10200.t_11968 = t_11968;
+      term = index_analyze_1_0.instance.invoke(context, term, lifted10200);
       if(term == null)
-        break Fail2029;
+        break Fail4931;
       context.popOnSuccess();
       if(true)
         return term;

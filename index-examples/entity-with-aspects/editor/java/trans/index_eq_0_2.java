@@ -20,27 +20,27 @@ import java.lang.ref.WeakReference;
 { 
   public static index_eq_0_2 instance = new index_eq_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm z_2120, IStrategoTerm a_2121)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm u_11983, IStrategoTerm v_11983)
   { 
     context.push("index_eq_0_2");
-    Fail2128:
+    Fail5030:
     { 
-      IStrategoTerm b_2121 = null;
-      IStrategoTerm c_2121 = null;
-      c_2121 = term;
+      IStrategoTerm w_11983 = null;
+      IStrategoTerm x_11983 = null;
+      x_11983 = term;
       if(term.getTermType() != IStrategoTerm.APPL || Main._consDef_1 != ((IStrategoAppl)term).getConstructor())
-        break Fail2128;
-      IStrategoTerm arg692 = term.getSubterm(0);
-      if(arg692.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg692).isEmpty())
-        break Fail2128;
-      IStrategoTerm arg694 = ((IStrategoList)arg692).tail();
-      if(arg694.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg694).isEmpty())
-        break Fail2128;
-      b_2121 = ((IStrategoList)arg694).head();
-      term = SRTS_EXT_eq_ignore_annos_0_1.instance.invoke(context, b_2121, a_2121);
+        break Fail5030;
+      IStrategoTerm arg1546 = term.getSubterm(0);
+      if(arg1546.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1546).isEmpty())
+        break Fail5030;
+      IStrategoTerm arg1548 = ((IStrategoList)arg1546).tail();
+      if(arg1548.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1548).isEmpty())
+        break Fail5030;
+      w_11983 = ((IStrategoList)arg1548).head();
+      term = SRTS_EXT_eq_ignore_annos_0_1.instance.invoke(context, w_11983, v_11983);
       if(term == null)
-        break Fail2128;
-      term = c_2121;
+        break Fail5030;
+      term = x_11983;
       context.popOnSuccess();
       if(true)
         return term;

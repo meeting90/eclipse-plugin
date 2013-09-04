@@ -20,24 +20,24 @@ import java.lang.ref.WeakReference;
 { 
   public static analyze_top_0_1 instance = new analyze_top_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm q_2122)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm l_11985)
   { 
     context.push("analyze_top_0_1");
-    Fail2147:
+    Fail5049:
     { 
-      IStrategoTerm r_2122 = null;
-      IStrategoTerm s_2122 = null;
-      IStrategoTerm t_2122 = null;
-      IStrategoTerm v_2122 = null;
+      IStrategoTerm m_11985 = null;
+      IStrategoTerm n_11985 = null;
+      IStrategoTerm o_11985 = null;
+      IStrategoTerm q_11985 = null;
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 3)
-        break Fail2147;
-      t_2122 = term.getSubterm(0);
-      r_2122 = term.getSubterm(1);
-      s_2122 = term.getSubterm(2);
-      v_2122 = t_2122;
-      term = analyze_top_0_4.instance.invoke(context, v_2122, trans.constEditor0, q_2122, r_2122, s_2122);
+        break Fail5049;
+      o_11985 = term.getSubterm(0);
+      m_11985 = term.getSubterm(1);
+      n_11985 = term.getSubterm(2);
+      q_11985 = o_11985;
+      term = analyze_top_0_4.instance.invoke(context, q_11985, trans.constEditor0, l_11985, m_11985, n_11985);
       if(term == null)
-        break Fail2147;
+        break Fail5049;
       context.popOnSuccess();
       if(true)
         return term;

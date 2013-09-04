@@ -20,48 +20,48 @@ import java.lang.ref.WeakReference;
 { 
   public static index_lookup_typed_0_1 instance = new index_lookup_typed_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_v_2083)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_q_11946)
   { 
-    TermReference v_2083 = new TermReference(ref_v_2083);
+    TermReference q_11946 = new TermReference(ref_q_11946);
     context.push("index_lookup_typed_0_1");
-    Fail1928:
+    Fail4830:
     { 
-      IStrategoTerm w_2083 = null;
-      IStrategoTerm x_2083 = null;
-      IStrategoTerm y_2083 = null;
-      IStrategoTerm z_2083 = null;
-      TermReference a_2084 = new TermReference();
-      z_2083 = term;
-      IStrategoList annos73 = term.getAnnotations();
-      if(annos73.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos73).isEmpty())
-        break Fail1928;
-      IStrategoTerm arg632 = ((IStrategoList)annos73).head();
-      if(arg632.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg632).isEmpty())
-        break Fail1928;
-      x_2083 = ((IStrategoList)arg632).head();
-      w_2083 = ((IStrategoList)arg632).tail();
-      IStrategoTerm arg633 = ((IStrategoList)annos73).tail();
-      if(arg633.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg633).isEmpty())
-        break Fail1928;
-      term = index_namespace_unwrap_0_0.instance.invoke(context, x_2083);
+      IStrategoTerm r_11946 = null;
+      IStrategoTerm s_11946 = null;
+      IStrategoTerm t_11946 = null;
+      IStrategoTerm u_11946 = null;
+      TermReference v_11946 = new TermReference();
+      u_11946 = term;
+      IStrategoList annos211 = term.getAnnotations();
+      if(annos211.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos211).isEmpty())
+        break Fail4830;
+      IStrategoTerm arg1486 = ((IStrategoList)annos211).head();
+      if(arg1486.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1486).isEmpty())
+        break Fail4830;
+      s_11946 = ((IStrategoList)arg1486).head();
+      r_11946 = ((IStrategoList)arg1486).tail();
+      IStrategoTerm arg1487 = ((IStrategoList)annos211).tail();
+      if(arg1487.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg1487).isEmpty())
+        break Fail4830;
+      term = index_namespace_unwrap_0_0.instance.invoke(context, s_11946);
       if(term == null)
-        break Fail1928;
-      y_2083 = term;
-      term = strip_annos_0_0.instance.invoke(context, z_2083);
+        break Fail4830;
+      t_11946 = term;
+      term = strip_annos_0_0.instance.invoke(context, u_11946);
       if(term == null)
-        break Fail1928;
-      if(a_2084.value == null)
-        a_2084.value = term;
+        break Fail4830;
+      if(v_11946.value == null)
+        v_11946.value = term;
       else
-        if(a_2084.value != term && !a_2084.value.match(term))
-          break Fail1928;
-      term = z_2083;
-      lifted379 lifted3790 = new lifted379();
-      lifted3790.a_2084 = a_2084;
-      lifted3790.v_2083 = v_2083;
-      term = index_lookup_internal_2_3.instance.invoke(context, term, index_get_defs_1_2.instance, lifted3790, y_2083, w_2083, a_2084.value);
+        if(v_11946.value != term && !v_11946.value.match(term))
+          break Fail4830;
+      term = u_11946;
+      lifted979 lifted9790 = new lifted979();
+      lifted9790.v_11946 = v_11946;
+      lifted9790.q_11946 = q_11946;
+      term = index_lookup_internal_2_3.instance.invoke(context, term, index_get_defs_1_2.instance, lifted9790, t_11946, r_11946, v_11946.value);
       if(term == null)
-        break Fail1928;
+        break Fail4830;
       context.popOnSuccess();
       if(true)
         return term;

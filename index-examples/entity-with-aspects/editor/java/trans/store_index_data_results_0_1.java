@@ -20,40 +20,40 @@ import java.lang.ref.WeakReference;
 { 
   public static store_index_data_results_0_1 instance = new store_index_data_results_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm r_2105)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm m_11968)
   { 
     context.push("store_index_data_results_0_1");
-    Fail2026:
+    Fail4928:
     { 
-      IStrategoTerm s_2105 = null;
-      IStrategoTerm u_2105 = null;
-      s_2105 = term;
-      u_2105 = term;
-      Success1234:
+      IStrategoTerm n_11968 = null;
+      IStrategoTerm p_11968 = null;
+      n_11968 = term;
+      p_11968 = term;
+      Success2790:
       { 
-        Fail2027:
+        Fail4929:
         { 
-          IStrategoTerm t_2105 = null;
-          t_2105 = term;
+          IStrategoTerm o_11968 = null;
+          o_11968 = term;
           term = is_list_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail2027;
-          term = t_2105;
+            break Fail4929;
+          term = o_11968;
           { 
-            term = iset_addlist_0_1.instance.invoke(context, r_2105, s_2105);
+            term = iset_addlist_0_1.instance.invoke(context, m_11968, n_11968);
             if(term == null)
-              break Fail2026;
+              break Fail4928;
             if(true)
-              break Success1234;
+              break Success2790;
           }
         }
-        term = iset_add_0_1.instance.invoke(context, r_2105, s_2105);
+        term = iset_add_0_1.instance.invoke(context, m_11968, n_11968);
         if(term == null)
-          break Fail2026;
+          break Fail4928;
       }
-      term = u_2105;
+      term = p_11968;
       if(true)
-        break Fail2026;
+        break Fail4928;
       context.popOnSuccess();
       if(true)
         return term;

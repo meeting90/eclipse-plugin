@@ -20,19 +20,19 @@ import java.lang.ref.WeakReference;
 { 
   public static random_apply_1_2 instance = new random_apply_1_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy t_2038, IStrategoTerm r_2038, IStrategoTerm s_2038)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy o_11901, IStrategoTerm m_11901, IStrategoTerm n_11901)
   { 
     context.push("random_apply_1_2");
-    Fail1594:
+    Fail4496:
     { 
-      IStrategoTerm v_2038 = null;
-      v_2038 = term;
-      term = random_int_0_2.instance.invoke(context, term, r_2038, s_2038);
+      IStrategoTerm q_11901 = null;
+      q_11901 = term;
+      term = random_int_0_2.instance.invoke(context, term, m_11901, n_11901);
       if(term == null)
-        break Fail1594;
-      term = testgen_apply_1_1.instance.invoke(context, v_2038, t_2038, term);
+        break Fail4496;
+      term = testgen_apply_1_1.instance.invoke(context, q_11901, o_11901, term);
       if(term == null)
-        break Fail1594;
+        break Fail4496;
       context.popOnSuccess();
       if(true)
         return term;

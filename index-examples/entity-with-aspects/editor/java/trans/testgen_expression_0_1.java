@@ -20,52 +20,52 @@ import java.lang.ref.WeakReference;
 { 
   public static testgen_expression_0_1 instance = new testgen_expression_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm x_2047)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm s_11910)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("testgen_expression_0_1");
-    Fail1617:
+    Fail4519:
     { 
-      TermReference y_2047 = new TermReference();
-      IStrategoTerm z_2047 = null;
-      IStrategoTerm b_2048 = null;
-      IStrategoTerm c_2048 = null;
-      IStrategoTerm h_2048 = null;
-      IStrategoTerm j_2048 = null;
-      IStrategoTerm k_2048 = null;
-      term = x_2047;
-      lifted354 lifted3540 = new lifted354();
-      lifted3540.y_2047 = y_2047;
-      term = filter_1_0.instance.invoke(context, term, lifted3540);
+      TermReference t_11910 = new TermReference();
+      IStrategoTerm u_11910 = null;
+      IStrategoTerm w_11910 = null;
+      IStrategoTerm x_11910 = null;
+      IStrategoTerm c_11911 = null;
+      IStrategoTerm e_11911 = null;
+      IStrategoTerm f_11911 = null;
+      term = s_11910;
+      lifted954 lifted9540 = new lifted954();
+      lifted9540.t_11910 = t_11910;
+      term = filter_1_0.instance.invoke(context, term, lifted9540);
       if(term == null)
-        break Fail1617;
+        break Fail4519;
       term = random_list_item_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1617;
+        break Fail4519;
       if(term.getTermType() != IStrategoTerm.APPL || Main._consProperty_2 != ((IStrategoAppl)term).getConstructor())
-        break Fail1617;
-      b_2048 = term.getSubterm(0);
-      z_2047 = term.getSubterm(1);
-      term = termFactory.makeAppl(Main._consDef_1, new IStrategoTerm[]{(IStrategoTerm)termFactory.makeListCons(trans.constType0, termFactory.makeListCons(z_2047, termFactory.makeListCons(trans.const299, (IStrategoList)trans.constNil1)))});
-      j_2048 = term;
-      h_2048 = trans.constProperty0;
-      k_2048 = j_2048;
-      term = index_get_children_0_2.instance.invoke(context, k_2048, h_2048, trans.const309);
+        break Fail4519;
+      w_11910 = term.getSubterm(0);
+      u_11910 = term.getSubterm(1);
+      term = termFactory.makeAppl(Main._consDef_1, new IStrategoTerm[]{(IStrategoTerm)termFactory.makeListCons(trans.constType0, termFactory.makeListCons(u_11910, termFactory.makeListCons(trans.const819, (IStrategoList)trans.constNil3)))});
+      e_11911 = term;
+      c_11911 = trans.constProperty0;
+      f_11911 = e_11911;
+      term = index_get_children_0_2.instance.invoke(context, f_11911, c_11911, trans.const829);
       if(term == null)
-        break Fail1617;
+        break Fail4519;
       term = random_list_item_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1617;
+        break Fail4519;
       if(term.getTermType() != IStrategoTerm.APPL || Main._consDef_1 != ((IStrategoAppl)term).getConstructor())
-        break Fail1617;
-      IStrategoTerm arg533 = term.getSubterm(0);
-      if(arg533.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg533).isEmpty())
-        break Fail1617;
-      IStrategoTerm arg535 = ((IStrategoList)arg533).tail();
-      if(arg535.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg535).isEmpty())
-        break Fail1617;
-      c_2048 = ((IStrategoList)arg535).head();
-      term = termFactory.makeAppl(Main._consPropAccess_2, new IStrategoTerm[]{termFactory.makeAppl(Main._consVar_1, new IStrategoTerm[]{b_2048}), c_2048});
+        break Fail4519;
+      IStrategoTerm arg1387 = term.getSubterm(0);
+      if(arg1387.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1387).isEmpty())
+        break Fail4519;
+      IStrategoTerm arg1389 = ((IStrategoList)arg1387).tail();
+      if(arg1389.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1389).isEmpty())
+        break Fail4519;
+      x_11910 = ((IStrategoList)arg1389).head();
+      term = termFactory.makeAppl(Main._consPropAccess_2, new IStrategoTerm[]{termFactory.makeAppl(Main._consVar_1, new IStrategoTerm[]{w_11910}), x_11910});
       context.popOnSuccess();
       if(true)
         return term;

@@ -20,23 +20,23 @@ import java.lang.ref.WeakReference;
 { 
   public static index_do_adjust_lookup_0_4 instance = new index_do_adjust_lookup_0_4();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_n_2115, IStrategoTerm ref_o_2115, IStrategoTerm ref_p_2115, IStrategoTerm ref_q_2115)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_i_11978, IStrategoTerm ref_j_11978, IStrategoTerm ref_k_11978, IStrategoTerm ref_l_11978)
   { 
-    TermReference n_2115 = new TermReference(ref_n_2115);
-    TermReference o_2115 = new TermReference(ref_o_2115);
-    TermReference p_2115 = new TermReference(ref_p_2115);
-    TermReference q_2115 = new TermReference(ref_q_2115);
+    TermReference i_11978 = new TermReference(ref_i_11978);
+    TermReference j_11978 = new TermReference(ref_j_11978);
+    TermReference k_11978 = new TermReference(ref_k_11978);
+    TermReference l_11978 = new TermReference(ref_l_11978);
     context.push("index_do_adjust_lookup_0_4");
-    Fail2083:
+    Fail4985:
     { 
-      lifted442 lifted4420 = new lifted442();
-      lifted4420.p_2115 = p_2115;
-      lifted4420.n_2115 = n_2115;
-      lifted4420.o_2115 = o_2115;
-      lifted4420.q_2115 = q_2115;
-      term = repeat_until_2_0.instance.invoke(context, term, lifted441.instance, lifted4420);
+      lifted1042 lifted10420 = new lifted1042();
+      lifted10420.k_11978 = k_11978;
+      lifted10420.i_11978 = i_11978;
+      lifted10420.j_11978 = j_11978;
+      lifted10420.l_11978 = l_11978;
+      term = repeat_until_2_0.instance.invoke(context, term, lifted1041.instance, lifted10420);
       if(term == null)
-        break Fail2083;
+        break Fail4985;
       context.popOnSuccess();
       if(true)
         return term;

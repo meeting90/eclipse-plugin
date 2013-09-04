@@ -23,39 +23,39 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("origin_relative_path_0_0");
-    Fail2343:
+    Fail5245:
     { 
-      IStrategoTerm u_2151 = null;
-      TermReference v_2151 = new TermReference();
-      IStrategoTerm w_2151 = null;
-      IStrategoTerm w_2297 = null;
-      u_2151 = term;
-      term = u_2151;
-      w_2297 = u_2151;
-      term = context.invokePrimitive("SSL_EXT_origin_file", w_2297, NO_STRATEGIES, new IStrategoTerm[]{term});
+      IStrategoTerm p_12014 = null;
+      TermReference q_12014 = new TermReference();
+      IStrategoTerm r_12014 = null;
+      IStrategoTerm r_12160 = null;
+      p_12014 = term;
+      term = p_12014;
+      r_12160 = p_12014;
+      term = context.invokePrimitive("SSL_EXT_origin_file", r_12160, NO_STRATEGIES, new IStrategoTerm[]{term});
       if(term == null)
-        break Fail2343;
-      w_2151 = term;
+        break Fail5245;
+      r_12014 = term;
       term = project_path_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2343;
+        break Fail5245;
       term = string_length_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2343;
+        break Fail5245;
       term = inc_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2343;
-      if(v_2151.value == null)
-        v_2151.value = term;
+        break Fail5245;
+      if(q_12014.value == null)
+        q_12014.value = term;
       else
-        if(v_2151.value != term && !v_2151.value.match(term))
-          break Fail2343;
-      term = w_2151;
-      lifted530 lifted5300 = new lifted530();
-      lifted5300.v_2151 = v_2151;
-      term = string_as_chars_1_0.instance.invoke(context, term, lifted5300);
+        if(q_12014.value != term && !q_12014.value.match(term))
+          break Fail5245;
+      term = r_12014;
+      lifted1130 lifted11300 = new lifted1130();
+      lifted11300.q_12014 = q_12014;
+      term = string_as_chars_1_0.instance.invoke(context, term, lifted11300);
       if(term == null)
-        break Fail2343;
+        break Fail5245;
       context.popOnSuccess();
       if(true)
         return term;

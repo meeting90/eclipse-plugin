@@ -22,75 +22,75 @@ import java.lang.ref.WeakReference;
 
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
-    Fail2099:
+    Fail5001:
     { 
-      IStrategoTerm term1305 = term;
-      IStrategoConstructor cons65 = term.getTermType() == IStrategoTerm.APPL ? ((IStrategoAppl)term).getConstructor() : null;
-      Success1275:
+      IStrategoTerm term2861 = term;
+      IStrategoConstructor cons137 = term.getTermType() == IStrategoTerm.APPL ? ((IStrategoAppl)term).getConstructor() : null;
+      Success2831:
       { 
-        if(cons65 == Main._consDef_1)
+        if(cons137 == Main._consDef_1)
         { 
-          Fail2100:
+          Fail5002:
           { 
-            IStrategoTerm l_2118 = null;
-            l_2118 = term.getSubterm(0);
-            term = l_2118;
+            IStrategoTerm g_11981 = null;
+            g_11981 = term.getSubterm(0);
+            term = g_11981;
             if(true)
-              break Success1275;
+              break Success2831;
           }
-          term = term1305;
+          term = term2861;
         }
-        Success1276:
+        Success2832:
         { 
-          if(cons65 == Main._consUse_1)
+          if(cons137 == Main._consUse_1)
           { 
-            Fail2101:
+            Fail5003:
             { 
-              IStrategoTerm k_2118 = null;
-              k_2118 = term.getSubterm(0);
-              term = k_2118;
+              IStrategoTerm f_11981 = null;
+              f_11981 = term.getSubterm(0);
+              term = f_11981;
               if(true)
-                break Success1276;
+                break Success2832;
             }
-            term = term1305;
+            term = term2861;
           }
-          Success1277:
+          Success2833:
           { 
-            if(cons65 == Main._consRead_1)
+            if(cons137 == Main._consRead_1)
             { 
-              Fail2102:
+              Fail5004:
               { 
-                IStrategoTerm j_2118 = null;
-                j_2118 = term.getSubterm(0);
-                term = j_2118;
+                IStrategoTerm e_11981 = null;
+                e_11981 = term.getSubterm(0);
+                term = e_11981;
                 if(true)
-                  break Success1277;
+                  break Success2833;
               }
-              term = term1305;
+              term = term2861;
             }
-            Success1278:
+            Success2834:
             { 
-              if(cons65 == Main._consReadWildcard_2)
+              if(cons137 == Main._consReadWildcard_2)
               { 
-                Fail2103:
+                Fail5005:
                 { 
-                  IStrategoTerm i_2118 = null;
-                  i_2118 = term.getSubterm(1);
-                  term = i_2118;
+                  IStrategoTerm d_11981 = null;
+                  d_11981 = term.getSubterm(1);
+                  term = d_11981;
                   if(true)
-                    break Success1278;
+                    break Success2834;
                 }
-                term = term1305;
+                term = term2861;
               }
-              if(cons65 == Main._consDefData_3)
+              if(cons137 == Main._consDefData_3)
               { 
-                IStrategoTerm h_2118 = null;
-                h_2118 = term.getSubterm(2);
-                term = h_2118;
+                IStrategoTerm c_11981 = null;
+                c_11981 = term.getSubterm(2);
+                term = c_11981;
               }
               else
               { 
-                break Fail2099;
+                break Fail5001;
               }
             }
           }

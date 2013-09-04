@@ -20,59 +20,59 @@ import java.lang.ref.WeakReference;
 { 
   public static index_compilation_file_0_1 instance = new index_compilation_file_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm j_2087)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm e_11950)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_compilation_file_0_1");
-    Fail1944:
+    Fail4846:
     { 
-      TermReference l_2087 = new TermReference();
-      TermReference m_2087 = new TermReference();
+      TermReference g_11950 = new TermReference();
+      TermReference h_11950 = new TermReference();
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-        break Fail1944;
-      if(l_2087.value == null)
-        l_2087.value = term.getSubterm(0);
+        break Fail4846;
+      if(g_11950.value == null)
+        g_11950.value = term.getSubterm(0);
       else
-        if(l_2087.value != term.getSubterm(0) && !l_2087.value.match(term.getSubterm(0)))
-          break Fail1944;
-      if(m_2087.value == null)
-        m_2087.value = term.getSubterm(1);
+        if(g_11950.value != term.getSubterm(0) && !g_11950.value.match(term.getSubterm(0)))
+          break Fail4846;
+      if(h_11950.value == null)
+        h_11950.value = term.getSubterm(1);
       else
-        if(m_2087.value != term.getSubterm(1) && !m_2087.value.match(term.getSubterm(1)))
-          break Fail1944;
-      IStrategoTerm term1202 = term;
-      Success1180:
+        if(h_11950.value != term.getSubterm(1) && !h_11950.value.match(term.getSubterm(1)))
+          break Fail4846;
+      IStrategoTerm term2758 = term;
+      Success2736:
       { 
-        Fail1945:
+        Fail4847:
         { 
-          if(l_2087.value == null)
-            break Fail1945;
-          term = termFactory.makeAppl(Main._consAST_2, new IStrategoTerm[]{termFactory.makeTuple(j_2087, l_2087.value), trans.const362});
+          if(g_11950.value == null)
+            break Fail4847;
+          term = termFactory.makeAppl(Main._consAST_2, new IStrategoTerm[]{termFactory.makeTuple(e_11950, g_11950.value), trans.const882});
           term = index_get_all_values_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1945;
-          lifted391 lifted3910 = new lifted391();
-          lifted3910.l_2087 = l_2087;
-          lifted3910.m_2087 = m_2087;
-          term = map_1_0.instance.invoke(context, term, lifted3910);
+            break Fail4847;
+          lifted991 lifted9910 = new lifted991();
+          lifted9910.g_11950 = g_11950;
+          lifted9910.h_11950 = h_11950;
+          term = map_1_0.instance.invoke(context, term, lifted9910);
           if(term == null)
-            break Fail1945;
+            break Fail4847;
           if(true)
-            break Success1180;
+            break Success2736;
         }
-        term = term1202;
-        IStrategoTerm n_2087 = null;
-        IStrategoTerm o_2087 = null;
-        IStrategoTerm r_2087 = null;
-        n_2087 = term;
+        term = term2758;
+        IStrategoTerm i_11950 = null;
+        IStrategoTerm j_11950 = null;
+        IStrategoTerm m_11950 = null;
+        i_11950 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail1944;
-        o_2087 = term;
-        r_2087 = n_2087;
-        term = report_with_failure_0_2.instance.invoke(context, r_2087, trans.const400, o_2087);
+          break Fail4846;
+        j_11950 = term;
+        m_11950 = i_11950;
+        term = report_with_failure_0_2.instance.invoke(context, m_11950, trans.const920, j_11950);
         if(term == null)
-          break Fail1944;
+          break Fail4846;
       }
       term = trans.constNone0;
       context.popOnSuccess();

@@ -1,0 +1,35 @@
+module self-application 
+
+language Spoofax-Testing
+
+test A test of a test [[[
+  
+  module testset
+  
+  language Calculang
+  
+  test Add [[
+    1 + 2
+  ]] parse succeeds
+  
+  test Multiply [[
+    1 * 2
+  ]] run calc to "2"
+  
+]]]
+
+test A test of a test [[[
+  
+  module testset
+  
+  language Calculang
+  
+  test Add [[
+    1 + 2
+  ]] parse succeeds
+  
+  test Multiply [[
+    1 * 2
+  ]] run calc to "2"
+  
+]]]

@@ -22,55 +22,55 @@ import java.lang.ref.WeakReference;
 
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
-    Fail1858:
+    Fail4760:
     { 
-      IStrategoTerm s_2075 = null;
-      IStrategoTerm t_2075 = null;
-      t_2075 = term;
-      s_2075 = term;
-      term = t_2075;
-      IStrategoTerm term1143 = term;
-      Success1122:
+      IStrategoTerm n_11938 = null;
+      IStrategoTerm o_11938 = null;
+      o_11938 = term;
+      n_11938 = term;
+      term = o_11938;
+      IStrategoTerm term2699 = term;
+      Success2678:
       { 
-        Fail1859:
+        Fail4761:
         { 
-          IStrategoTerm u_2075 = null;
-          u_2075 = term;
-          term = s_2075;
+          IStrategoTerm p_11938 = null;
+          p_11938 = term;
+          term = n_11938;
           if(term.getTermType() != IStrategoTerm.APPL || Main._consType_1 != ((IStrategoAppl)term).getConstructor())
-            break Fail1859;
-          IStrategoTerm arg607 = term.getSubterm(0);
-          if(arg607.getTermType() != IStrategoTerm.STRING || !"String".equals(((IStrategoString)arg607).stringValue()))
-            break Fail1859;
-          term = u_2075;
+            break Fail4761;
+          IStrategoTerm arg1461 = term.getSubterm(0);
+          if(arg1461.getTermType() != IStrategoTerm.STRING || !"String".equals(((IStrategoString)arg1461).stringValue()))
+            break Fail4761;
+          term = p_11938;
           { 
             term = trans.constStringType0;
             if(true)
-              break Success1122;
+              break Success2678;
           }
         }
-        term = term1143;
-        IStrategoTerm term1144 = term;
-        Success1123:
+        term = term2699;
+        IStrategoTerm term2700 = term;
+        Success2679:
         { 
-          Fail1860:
+          Fail4762:
           { 
-            IStrategoTerm v_2075 = null;
-            v_2075 = term;
-            term = s_2075;
+            IStrategoTerm q_11938 = null;
+            q_11938 = term;
+            term = n_11938;
             if(term.getTermType() != IStrategoTerm.APPL || Main._consType_1 != ((IStrategoAppl)term).getConstructor())
-              break Fail1860;
-            IStrategoTerm arg608 = term.getSubterm(0);
-            if(arg608.getTermType() != IStrategoTerm.STRING || !"Int".equals(((IStrategoString)arg608).stringValue()))
-              break Fail1860;
-            term = v_2075;
+              break Fail4762;
+            IStrategoTerm arg1462 = term.getSubterm(0);
+            if(arg1462.getTermType() != IStrategoTerm.STRING || !"Int".equals(((IStrategoString)arg1462).stringValue()))
+              break Fail4762;
+            term = q_11938;
             { 
               term = trans.constIntType0;
               if(true)
-                break Success1123;
+                break Success2679;
             }
           }
-          term = term1144;
+          term = term2700;
         }
       }
       if(true)

@@ -22,48 +22,48 @@ import java.lang.ref.WeakReference;
 
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
-    Fail1514:
+    Fail4416:
     { 
-      IStrategoTerm term834 = term;
-      IStrategoConstructor cons54 = term.getTermType() == IStrategoTerm.APPL ? ((IStrategoAppl)term).getConstructor() : null;
-      Success834:
+      IStrategoTerm term2390 = term;
+      IStrategoConstructor cons126 = term.getTermType() == IStrategoTerm.APPL ? ((IStrategoAppl)term).getConstructor() : null;
+      Success2390:
       { 
-        if(cons54 == Main._consWildcardImport_1)
+        if(cons126 == Main._consWildcardImport_1)
         { 
-          Fail1515:
+          Fail4417:
           { 
             if(true)
-              break Success834;
+              break Success2390;
           }
-          term = term834;
+          term = term2390;
         }
-        Success835:
+        Success2391:
         { 
-          if(cons54 == Main._consVarDecl_2)
+          if(cons126 == Main._consVarDecl_2)
           { 
-            Fail1516:
+            Fail4418:
             { 
               if(true)
-                break Success835;
+                break Success2391;
             }
-            term = term834;
+            term = term2390;
           }
-          Success836:
+          Success2392:
           { 
-            if(cons54 == Main._consVarDeclInit_3)
+            if(cons126 == Main._consVarDeclInit_3)
             { 
-              Fail1517:
+              Fail4419:
               { 
                 if(true)
-                  break Success836;
+                  break Success2392;
               }
-              term = term834;
+              term = term2390;
             }
-            if(cons54 == Main._consParam_2)
+            if(cons126 == Main._consParam_2)
             { }
             else
             { 
-              break Fail1514;
+              break Fail4416;
             }
           }
         }

@@ -20,38 +20,38 @@ import java.lang.ref.WeakReference;
 { 
   public static index_compare_name_substring_0_2 instance = new index_compare_name_substring_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_m_2117, IStrategoTerm n_2117)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_h_11980, IStrategoTerm i_11980)
   { 
     ITermFactory termFactory = context.getFactory();
-    TermReference m_2117 = new TermReference(ref_m_2117);
+    TermReference h_11980 = new TermReference(ref_h_11980);
     context.push("index_compare_name_substring_0_2");
-    Fail2091:
+    Fail4993:
     { 
-      IStrategoTerm o_2117 = null;
-      IStrategoTerm p_2117 = null;
-      IStrategoTerm q_2117 = null;
-      o_2117 = term;
-      q_2117 = term;
-      term = index_uri_0_0.instance.invoke(context, o_2117);
+      IStrategoTerm j_11980 = null;
+      IStrategoTerm k_11980 = null;
+      IStrategoTerm l_11980 = null;
+      j_11980 = term;
+      l_11980 = term;
+      term = index_uri_0_0.instance.invoke(context, j_11980);
       if(term == null)
-        break Fail2091;
-      p_2117 = term;
-      term = index_uri_namespace_0_0.instance.invoke(context, p_2117);
+        break Fail4993;
+      k_11980 = term;
+      term = index_uri_namespace_0_0.instance.invoke(context, k_11980);
       if(term == null)
-        break Fail2091;
-      term = termFactory.makeTuple(n_2117, term);
+        break Fail4993;
+      term = termFactory.makeTuple(i_11980, term);
       term = eq_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2091;
-      term = index_uri_name_0_0.instance.invoke(context, p_2117);
+        break Fail4993;
+      term = index_uri_name_0_0.instance.invoke(context, k_11980);
       if(term == null)
-        break Fail2091;
-      lifted448 lifted4480 = new lifted448();
-      lifted4480.m_2117 = m_2117;
-      term = is_substring_1_0.instance.invoke(context, term, lifted4480);
+        break Fail4993;
+      lifted1048 lifted10480 = new lifted1048();
+      lifted10480.h_11980 = h_11980;
+      term = is_substring_1_0.instance.invoke(context, term, lifted10480);
       if(term == null)
-        break Fail2091;
-      term = q_2117;
+        break Fail4993;
+      term = l_11980;
       context.popOnSuccess();
       if(true)
         return term;

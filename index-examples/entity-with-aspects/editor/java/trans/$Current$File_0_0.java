@@ -23,39 +23,39 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("CurrentFile_0_0");
-    Fail2478:
+    Fail5380:
     { 
-      IStrategoTerm term1524 = term;
-      Success1474:
+      IStrategoTerm term3080 = term;
+      Success3030:
       { 
-        Fail2479:
+        Fail5381:
         { 
-          TermReference w_2174 = new TermReference();
-          IStrategoTerm z_2174 = null;
-          IStrategoTerm b_2175 = null;
-          IStrategoTerm c_2175 = null;
-          if(w_2174.value == null)
-            w_2174.value = term;
+          TermReference r_12037 = new TermReference();
+          IStrategoTerm u_12037 = null;
+          IStrategoTerm w_12037 = null;
+          IStrategoTerm x_12037 = null;
+          if(r_12037.value == null)
+            r_12037.value = term;
           else
-            if(w_2174.value != term && !w_2174.value.match(term))
-              break Fail2479;
-          b_2175 = term;
-          z_2174 = trans.const479;
-          c_2175 = b_2175;
-          term = dr_lookup_rule_0_2.instance.invoke(context, c_2175, z_2174, trans.constCons118);
+            if(r_12037.value != term && !r_12037.value.match(term))
+              break Fail5381;
+          w_12037 = term;
+          u_12037 = trans.const999;
+          x_12037 = w_12037;
+          term = dr_lookup_rule_0_2.instance.invoke(context, x_12037, u_12037, trans.constCons250);
           if(term == null)
-            break Fail2479;
-          lifted564 lifted5640 = new lifted564();
-          lifted5640.w_2174 = w_2174;
-          term = fetch_elem_1_0.instance.invoke(context, term, lifted5640);
+            break Fail5381;
+          lifted1164 lifted11640 = new lifted1164();
+          lifted11640.r_12037 = r_12037;
+          term = fetch_elem_1_0.instance.invoke(context, term, lifted11640);
           if(term == null)
-            break Fail2479;
+            break Fail5381;
           if(true)
-            break Success1474;
+            break Success3030;
         }
-        term = term1524;
+        term = term3080;
         if(term.getTermType() != IStrategoTerm.APPL || Main._consCurrentFile_0 != ((IStrategoAppl)term).getConstructor())
-          break Fail2478;
+          break Fail5380;
       }
       context.popOnSuccess();
       if(true)

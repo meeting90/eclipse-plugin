@@ -20,29 +20,29 @@ import java.lang.ref.WeakReference;
 { 
   public static index_get_data_all_0_1 instance = new index_get_data_all_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm z_2125)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm u_11988)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_get_data_all_0_1");
-    Fail2169:
+    Fail5071:
     { 
-      TermReference a_2126 = new TermReference();
-      IStrategoTerm c_2126 = null;
-      IStrategoTerm d_2126 = null;
-      d_2126 = term;
-      c_2126 = trans.const452;
-      term = d_2126;
-      lifted463 lifted4630 = new lifted463();
-      lifted4630.a_2126 = a_2126;
-      term = with_1_1.instance.invoke(context, term, lifted4630, c_2126);
+      TermReference v_11988 = new TermReference();
+      IStrategoTerm x_11988 = null;
+      IStrategoTerm y_11988 = null;
+      y_11988 = term;
+      x_11988 = trans.const972;
+      term = y_11988;
+      lifted1063 lifted10630 = new lifted1063();
+      lifted10630.v_11988 = v_11988;
+      term = with_1_1.instance.invoke(context, term, lifted10630, x_11988);
       if(term == null)
-        break Fail2169;
-      if(a_2126.value == null)
-        break Fail2169;
-      term = termFactory.makeAppl(Main._consDefData_3, new IStrategoTerm[]{a_2126.value, z_2125, trans.const362});
+        break Fail5071;
+      if(v_11988.value == null)
+        break Fail5071;
+      term = termFactory.makeAppl(Main._consDefData_3, new IStrategoTerm[]{v_11988.value, u_11988, trans.const882});
       term = index_get_all_values_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2169;
+        break Fail5071;
       context.popOnSuccess();
       if(true)
         return term;

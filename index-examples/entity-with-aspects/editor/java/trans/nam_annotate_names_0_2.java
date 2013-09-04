@@ -20,270 +20,270 @@ import java.lang.ref.WeakReference;
 { 
   public static nam_annotate_names_0_2 instance = new nam_annotate_names_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_p_2195, IStrategoTerm ref_q_2195)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_k_12058, IStrategoTerm ref_l_12058)
   { 
-    TermReference p_2195 = new TermReference(ref_p_2195);
-    TermReference q_2195 = new TermReference(ref_q_2195);
+    TermReference k_12058 = new TermReference(ref_k_12058);
+    TermReference l_12058 = new TermReference(ref_l_12058);
     context.push("nam_annotate_names_0_2");
-    Fail1480:
+    Fail4382:
     { 
-      IStrategoTerm term804 = term;
-      IStrategoConstructor cons50 = term.getTermType() == IStrategoTerm.APPL ? ((IStrategoAppl)term).getConstructor() : null;
-      Success804:
+      IStrategoTerm term2360 = term;
+      IStrategoConstructor cons122 = term.getTermType() == IStrategoTerm.APPL ? ((IStrategoAppl)term).getConstructor() : null;
+      Success2360:
       { 
-        if(cons50 == Main._consModule_3)
+        if(cons122 == Main._consModule_3)
         { 
-          Fail1481:
+          Fail4383:
           { 
-            lifted300 lifted3000 = new lifted300();
-            lifted3000.q_2195 = q_2195;
-            term = $Module_3_0.instance.invoke(context, term, lifted3000, _Id.instance, _Id.instance);
+            lifted900 lifted9000 = new lifted900();
+            lifted9000.l_12058 = l_12058;
+            term = $Module_3_0.instance.invoke(context, term, lifted9000, _Id.instance, _Id.instance);
             if(term == null)
-              break Fail1481;
+              break Fail4383;
             if(true)
-              break Success804;
+              break Success2360;
           }
-          term = term804;
+          term = term2360;
         }
-        Success805:
+        Success2361:
         { 
-          if(cons50 == Main._consEntityImport_2)
+          if(cons122 == Main._consEntityImport_2)
           { 
-            Fail1482:
+            Fail4384:
             { 
-              lifted304 lifted3040 = new lifted304();
-              lifted303 lifted3030 = new lifted303();
-              lifted3040.p_2195 = p_2195;
-              lifted3030.p_2195 = p_2195;
-              term = $Entity$Import_2_0.instance.invoke(context, term, lifted3030, lifted3040);
+              lifted904 lifted9040 = new lifted904();
+              lifted903 lifted9030 = new lifted903();
+              lifted9040.k_12058 = k_12058;
+              lifted9030.k_12058 = k_12058;
+              term = $Entity$Import_2_0.instance.invoke(context, term, lifted9030, lifted9040);
               if(term == null)
-                break Fail1482;
+                break Fail4384;
               if(true)
-                break Success805;
+                break Success2361;
             }
-            term = term804;
+            term = term2360;
           }
-          Success806:
+          Success2362:
           { 
-            if(cons50 == Main._consWildcardImport_1)
+            if(cons122 == Main._consWildcardImport_1)
             { 
-              Fail1483:
+              Fail4385:
               { 
-                lifted305 lifted3050 = new lifted305();
-                lifted3050.q_2195 = q_2195;
-                term = $Wildcard$Import_1_0.instance.invoke(context, term, lifted3050);
+                lifted905 lifted9050 = new lifted905();
+                lifted9050.l_12058 = l_12058;
+                term = $Wildcard$Import_1_0.instance.invoke(context, term, lifted9050);
                 if(term == null)
-                  break Fail1483;
+                  break Fail4385;
                 if(true)
-                  break Success806;
+                  break Success2362;
               }
-              term = term804;
+              term = term2360;
             }
-            Success807:
+            Success2363:
             { 
-              if(cons50 == Main._consAspect_2)
+              if(cons122 == Main._consAspect_2)
               { 
-                Fail1484:
+                Fail4386:
                 { 
-                  lifted306 lifted3060 = new lifted306();
-                  lifted3060.q_2195 = q_2195;
-                  term = $Aspect_2_0.instance.invoke(context, term, lifted3060, _Id.instance);
+                  lifted906 lifted9060 = new lifted906();
+                  lifted9060.l_12058 = l_12058;
+                  term = $Aspect_2_0.instance.invoke(context, term, lifted9060, _Id.instance);
                   if(term == null)
-                    break Fail1484;
+                    break Fail4386;
                   if(true)
-                    break Success807;
+                    break Success2363;
                 }
-                term = term804;
+                term = term2360;
               }
-              Success808:
+              Success2364:
               { 
-                if(cons50 == Main._consPointcut_3)
+                if(cons122 == Main._consPointcut_3)
                 { 
-                  Fail1485:
+                  Fail4387:
                   { 
-                    lifted308 lifted3080 = new lifted308();
-                    lifted3080.q_2195 = q_2195;
-                    term = $Pointcut_3_0.instance.invoke(context, term, lifted3080, _Id.instance, _Id.instance);
+                    lifted908 lifted9080 = new lifted908();
+                    lifted9080.l_12058 = l_12058;
+                    term = $Pointcut_3_0.instance.invoke(context, term, lifted9080, _Id.instance, _Id.instance);
                     if(term == null)
-                      break Fail1485;
+                      break Fail4387;
                     if(true)
-                      break Success808;
+                      break Success2364;
                   }
-                  term = term804;
+                  term = term2360;
                 }
-                Success809:
+                Success2365:
                 { 
-                  if(cons50 == Main._consAdvice_6)
+                  if(cons122 == Main._consAdvice_6)
                   { 
-                    Fail1486:
+                    Fail4388:
                     { 
-                      lifted314 lifted3140 = new lifted314();
-                      lifted311 lifted3110 = new lifted311();
-                      lifted3140.p_2195 = p_2195;
-                      lifted3110.q_2195 = q_2195;
-                      term = $Advice_6_0.instance.invokeDynamic(context, term, new Strategy[]{lifted3110, _Id.instance, _Id.instance, lifted3140, _Id.instance, _Id.instance}, NO_TERMS);
+                      lifted914 lifted9140 = new lifted914();
+                      lifted911 lifted9110 = new lifted911();
+                      lifted9140.k_12058 = k_12058;
+                      lifted9110.l_12058 = l_12058;
+                      term = $Advice_6_0.instance.invokeDynamic(context, term, new Strategy[]{lifted9110, _Id.instance, _Id.instance, lifted9140, _Id.instance, _Id.instance}, NO_TERMS);
                       if(term == null)
-                        break Fail1486;
+                        break Fail4388;
                       if(true)
-                        break Success809;
+                        break Success2365;
                     }
-                    term = term804;
+                    term = term2360;
                   }
-                  Success810:
+                  Success2366:
                   { 
-                    if(cons50 == Main._consEntity_2)
+                    if(cons122 == Main._consEntity_2)
                     { 
-                      Fail1487:
+                      Fail4389:
                       { 
-                        lifted317 lifted3170 = new lifted317();
-                        lifted3170.q_2195 = q_2195;
-                        term = $Entity_2_0.instance.invoke(context, term, lifted3170, _Id.instance);
+                        lifted917 lifted9170 = new lifted917();
+                        lifted9170.l_12058 = l_12058;
+                        term = $Entity_2_0.instance.invoke(context, term, lifted9170, _Id.instance);
                         if(term == null)
-                          break Fail1487;
+                          break Fail4389;
                         if(true)
-                          break Success810;
+                          break Success2366;
                       }
-                      term = term804;
+                      term = term2360;
                     }
-                    Success811:
+                    Success2367:
                     { 
-                      if(cons50 == Main._consType_1)
+                      if(cons122 == Main._consType_1)
                       { 
-                        Fail1488:
+                        Fail4390:
                         { 
-                          lifted319 lifted3190 = new lifted319();
-                          lifted3190.p_2195 = p_2195;
-                          term = $Type_1_0.instance.invoke(context, term, lifted3190);
+                          lifted919 lifted9190 = new lifted919();
+                          lifted9190.k_12058 = k_12058;
+                          term = $Type_1_0.instance.invoke(context, term, lifted9190);
                           if(term == null)
-                            break Fail1488;
+                            break Fail4390;
                           if(true)
-                            break Success811;
+                            break Success2367;
                         }
-                        term = term804;
+                        term = term2360;
                       }
-                      Success812:
+                      Success2368:
                       { 
-                        if(cons50 == Main._consProperty_2)
+                        if(cons122 == Main._consProperty_2)
                         { 
-                          Fail1489:
+                          Fail4391:
                           { 
-                            lifted320 lifted3200 = new lifted320();
-                            lifted3200.q_2195 = q_2195;
-                            term = $Property_2_0.instance.invoke(context, term, lifted3200, _Id.instance);
+                            lifted920 lifted9200 = new lifted920();
+                            lifted9200.l_12058 = l_12058;
+                            term = $Property_2_0.instance.invoke(context, term, lifted9200, _Id.instance);
                             if(term == null)
-                              break Fail1489;
+                              break Fail4391;
                             if(true)
-                              break Success812;
+                              break Success2368;
                           }
-                          term = term804;
+                          term = term2360;
                         }
-                        Success813:
+                        Success2369:
                         { 
-                          if(cons50 == Main._consPropAccess_2)
+                          if(cons122 == Main._consPropAccess_2)
                           { 
-                            Fail1490:
+                            Fail4392:
                             { 
-                              lifted323 lifted3230 = new lifted323();
-                              lifted3230.p_2195 = p_2195;
-                              term = $Prop$Access_2_0.instance.invoke(context, term, _Id.instance, lifted3230);
+                              lifted923 lifted9230 = new lifted923();
+                              lifted9230.k_12058 = k_12058;
+                              term = $Prop$Access_2_0.instance.invoke(context, term, _Id.instance, lifted9230);
                               if(term == null)
-                                break Fail1490;
+                                break Fail4392;
                               if(true)
-                                break Success813;
+                                break Success2369;
                             }
-                            term = term804;
+                            term = term2360;
                           }
-                          Success814:
+                          Success2370:
                           { 
-                            if(cons50 == Main._consFunction_3)
+                            if(cons122 == Main._consFunction_3)
                             { 
-                              Fail1491:
+                              Fail4393:
                               { 
-                                lifted324 lifted3240 = new lifted324();
-                                lifted3240.q_2195 = q_2195;
-                                term = $Function_3_0.instance.invoke(context, term, lifted3240, _Id.instance, _Id.instance);
+                                lifted924 lifted9240 = new lifted924();
+                                lifted9240.l_12058 = l_12058;
+                                term = $Function_3_0.instance.invoke(context, term, lifted9240, _Id.instance, _Id.instance);
                                 if(term == null)
-                                  break Fail1491;
+                                  break Fail4393;
                                 if(true)
-                                  break Success814;
+                                  break Success2370;
                               }
-                              term = term804;
+                              term = term2360;
                             }
-                            Success815:
+                            Success2371:
                             { 
-                              if(cons50 == Main._consCall_2)
+                              if(cons122 == Main._consCall_2)
                               { 
-                                Fail1492:
+                                Fail4394:
                                 { 
-                                  lifted327 lifted3270 = new lifted327();
-                                  lifted3270.p_2195 = p_2195;
-                                  term = $Call_2_0.instance.invoke(context, term, lifted3270, _Id.instance);
+                                  lifted927 lifted9270 = new lifted927();
+                                  lifted9270.k_12058 = k_12058;
+                                  term = $Call_2_0.instance.invoke(context, term, lifted9270, _Id.instance);
                                   if(term == null)
-                                    break Fail1492;
+                                    break Fail4394;
                                   if(true)
-                                    break Success815;
+                                    break Success2371;
                                 }
-                                term = term804;
+                                term = term2360;
                               }
-                              Success816:
+                              Success2372:
                               { 
-                                if(cons50 == Main._consVarDecl_2)
+                                if(cons122 == Main._consVarDecl_2)
                                 { 
-                                  Fail1493:
+                                  Fail4395:
                                   { 
-                                    lifted329 lifted3290 = new lifted329();
-                                    lifted3290.q_2195 = q_2195;
-                                    term = $Var$Decl_2_0.instance.invoke(context, term, lifted3290, _Id.instance);
+                                    lifted929 lifted9290 = new lifted929();
+                                    lifted9290.l_12058 = l_12058;
+                                    term = $Var$Decl_2_0.instance.invoke(context, term, lifted9290, _Id.instance);
                                     if(term == null)
-                                      break Fail1493;
+                                      break Fail4395;
                                     if(true)
-                                      break Success816;
+                                      break Success2372;
                                   }
-                                  term = term804;
+                                  term = term2360;
                                 }
-                                Success817:
+                                Success2373:
                                 { 
-                                  if(cons50 == Main._consVarDeclInit_3)
+                                  if(cons122 == Main._consVarDeclInit_3)
                                   { 
-                                    Fail1494:
+                                    Fail4396:
                                     { 
-                                      lifted331 lifted3310 = new lifted331();
-                                      lifted3310.q_2195 = q_2195;
-                                      term = $Var$Decl$Init_3_0.instance.invoke(context, term, lifted3310, _Id.instance, _Id.instance);
+                                      lifted931 lifted9310 = new lifted931();
+                                      lifted9310.l_12058 = l_12058;
+                                      term = $Var$Decl$Init_3_0.instance.invoke(context, term, lifted9310, _Id.instance, _Id.instance);
                                       if(term == null)
-                                        break Fail1494;
+                                        break Fail4396;
                                       if(true)
-                                        break Success817;
+                                        break Success2373;
                                     }
-                                    term = term804;
+                                    term = term2360;
                                   }
-                                  Success818:
+                                  Success2374:
                                   { 
-                                    if(cons50 == Main._consParam_2)
+                                    if(cons122 == Main._consParam_2)
                                     { 
-                                      Fail1495:
+                                      Fail4397:
                                       { 
-                                        lifted334 lifted3340 = new lifted334();
-                                        lifted3340.q_2195 = q_2195;
-                                        term = $Param_2_0.instance.invoke(context, term, lifted3340, _Id.instance);
+                                        lifted934 lifted9340 = new lifted934();
+                                        lifted9340.l_12058 = l_12058;
+                                        term = $Param_2_0.instance.invoke(context, term, lifted9340, _Id.instance);
                                         if(term == null)
-                                          break Fail1495;
+                                          break Fail4397;
                                         if(true)
-                                          break Success818;
+                                          break Success2374;
                                       }
-                                      term = term804;
+                                      term = term2360;
                                     }
-                                    if(cons50 == Main._consVar_1)
+                                    if(cons122 == Main._consVar_1)
                                     { 
-                                      lifted336 lifted3360 = new lifted336();
-                                      lifted3360.p_2195 = p_2195;
-                                      term = $Var_1_0.instance.invoke(context, term, lifted3360);
+                                      lifted936 lifted9360 = new lifted936();
+                                      lifted9360.k_12058 = k_12058;
+                                      term = $Var_1_0.instance.invoke(context, term, lifted9360);
                                       if(term == null)
-                                        break Fail1480;
+                                        break Fail4382;
                                     }
                                     else
                                     { 
-                                      break Fail1480;
+                                      break Fail4382;
                                     }
                                   }
                                 }

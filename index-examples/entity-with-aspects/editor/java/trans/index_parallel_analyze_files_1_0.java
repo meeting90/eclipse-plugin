@@ -20,16 +20,16 @@ import java.lang.ref.WeakReference;
 { 
   public static index_parallel_analyze_files_1_0 instance = new index_parallel_analyze_files_1_0();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy m_2124)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy h_11987)
   { 
     context.push("index_parallel_analyze_files_1_0");
-    Fail2159:
+    Fail5061:
     { 
-      lifted454 lifted4540 = new lifted454();
-      lifted4540.m_2124 = m_2124;
-      term = index_analyze_files_1_0.instance.invoke(context, term, lifted4540);
+      lifted1054 lifted10540 = new lifted1054();
+      lifted10540.h_11987 = h_11987;
+      term = index_analyze_files_1_0.instance.invoke(context, term, lifted10540);
       if(term == null)
-        break Fail2159;
+        break Fail5061;
       context.popOnSuccess();
       if(true)
         return term;

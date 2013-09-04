@@ -20,36 +20,36 @@ import java.lang.ref.WeakReference;
 { 
   public static index_compare_nametype_substring_0_2 instance = new index_compare_nametype_substring_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_q_2084, IStrategoTerm r_2084)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_l_11947, IStrategoTerm m_11947)
   { 
-    TermReference q_2084 = new TermReference(ref_q_2084);
+    TermReference l_11947 = new TermReference(ref_l_11947);
     context.push("index_compare_nametype_substring_0_2");
-    Fail1931:
+    Fail4833:
     { 
-      IStrategoTerm s_2084 = null;
-      IStrategoTerm t_2084 = null;
-      IStrategoTerm u_2084 = null;
-      s_2084 = term;
-      u_2084 = term;
-      term = index_uri_0_0.instance.invoke(context, s_2084);
+      IStrategoTerm n_11947 = null;
+      IStrategoTerm o_11947 = null;
+      IStrategoTerm p_11947 = null;
+      n_11947 = term;
+      p_11947 = term;
+      term = index_uri_0_0.instance.invoke(context, n_11947);
       if(term == null)
-        break Fail1931;
-      t_2084 = term;
+        break Fail4833;
+      o_11947 = term;
       term = index_uri_name_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1931;
-      lifted382 lifted3820 = new lifted382();
-      lifted3820.q_2084 = q_2084;
-      term = is_substring_1_0.instance.invoke(context, term, lifted3820);
+        break Fail4833;
+      lifted982 lifted9820 = new lifted982();
+      lifted9820.l_11947 = l_11947;
+      term = is_substring_1_0.instance.invoke(context, term, lifted9820);
       if(term == null)
-        break Fail1931;
-      term = nbl_get_type_0_0.instance.invoke(context, t_2084);
+        break Fail4833;
+      term = nbl_get_type_0_0.instance.invoke(context, o_11947);
       if(term == null)
-        break Fail1931;
-      term = nbl_type_eq_0_1.instance.invoke(context, term, r_2084);
+        break Fail4833;
+      term = nbl_type_eq_0_1.instance.invoke(context, term, m_11947);
       if(term == null)
-        break Fail1931;
-      term = u_2084;
+        break Fail4833;
+      term = p_11947;
       context.popOnSuccess();
       if(true)
         return term;

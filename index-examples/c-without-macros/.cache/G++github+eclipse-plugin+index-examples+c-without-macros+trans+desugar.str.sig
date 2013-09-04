@@ -1,0 +1,1 @@
+Module("desugar",[Imports([(),(),()]),Signature([Constructors([OpDecl("Start",FunType([ConstType(SortNoArgs("Filename")),ConstType(SortNoArgs("Includes")),ConstType(SortNoArgs("Definitions"))],ConstType(SortNoArgs("Start"))))])]),Strategies([SDefT("desugar-all",[],[],[])]),Rules([SDefT("desugar",[],[],[]),SDefT("desugar",[],[],[])])])

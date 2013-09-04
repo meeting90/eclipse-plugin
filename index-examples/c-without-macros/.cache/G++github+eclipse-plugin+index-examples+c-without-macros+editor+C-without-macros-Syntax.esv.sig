@@ -1,0 +1,1 @@
+Module("C-without-macros-Syntax",Imports([Import("C-without-macros-Syntax.generated")]),[Language("",[])])

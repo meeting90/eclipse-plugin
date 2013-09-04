@@ -20,52 +20,52 @@ import java.lang.ref.WeakReference;
 { 
   public static index_get_all_in_file_0_1 instance = new index_get_all_in_file_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_y_2135)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_t_11998)
   { 
-    TermReference y_2135 = new TermReference(ref_y_2135);
+    TermReference t_11998 = new TermReference(ref_t_11998);
     context.push("index_get_all_in_file_0_1");
-    Fail2228:
+    Fail5130:
     { 
-      IStrategoTerm z_2135 = null;
-      IStrategoTerm a_2136 = null;
-      IStrategoTerm e_2136 = null;
-      z_2135 = term;
-      e_2136 = term;
-      IStrategoTerm term1359 = term;
-      Success1325:
+      IStrategoTerm u_11998 = null;
+      IStrategoTerm v_11998 = null;
+      IStrategoTerm z_11998 = null;
+      u_11998 = term;
+      z_11998 = term;
+      IStrategoTerm term2915 = term;
+      Success2881:
       { 
-        Fail2229:
+        Fail5131:
         { 
-          term = context.invokePrimitive("LANG_index_get_all_in_file", term, NO_STRATEGIES, new IStrategoTerm[]{z_2135});
+          term = context.invokePrimitive("LANG_index_get_all_in_file", term, NO_STRATEGIES, new IStrategoTerm[]{u_11998});
           if(term == null)
-            break Fail2229;
-          a_2136 = term;
-          lifted512 lifted5120 = new lifted512();
-          lifted5120.y_2135 = y_2135;
-          term = filter_1_0.instance.invoke(context, term, lifted5120);
+            break Fail5131;
+          v_11998 = term;
+          lifted1112 lifted11120 = new lifted1112();
+          lifted11120.t_11998 = t_11998;
+          term = filter_1_0.instance.invoke(context, term, lifted11120);
           if(term == null)
-            break Fail2229;
+            break Fail5131;
           if(true)
-            break Success1325;
+            break Success2881;
         }
-        term = term1359;
-        IStrategoTerm c_2136 = null;
-        IStrategoTerm d_2136 = null;
-        IStrategoTerm i_2136 = null;
-        c_2136 = term;
+        term = term2915;
+        IStrategoTerm x_11998 = null;
+        IStrategoTerm y_11998 = null;
+        IStrategoTerm d_11999 = null;
+        x_11998 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail2228;
-        d_2136 = term;
-        i_2136 = c_2136;
-        term = report_with_failure_0_2.instance.invoke(context, i_2136, trans.const459, d_2136);
+          break Fail5130;
+        y_11998 = term;
+        d_11999 = x_11998;
+        term = report_with_failure_0_2.instance.invoke(context, d_11999, trans.const979, y_11998);
         if(term == null)
-          break Fail2228;
+          break Fail5130;
       }
-      term = e_2136;
-      if(a_2136 == null)
-        break Fail2228;
-      term = a_2136;
+      term = z_11998;
+      if(v_11998 == null)
+        break Fail5130;
+      term = v_11998;
       context.popOnSuccess();
       if(true)
         return term;

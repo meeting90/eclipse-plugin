@@ -23,28 +23,28 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     ITermFactory termFactory = context.getFactory();
-    Fail2259:
+    Fail5161:
     { 
-      IStrategoTerm l_2141 = null;
-      IStrategoTerm m_2141 = null;
-      IStrategoTerm n_2141 = null;
-      IStrategoTerm o_2141 = null;
+      IStrategoTerm g_12004 = null;
+      IStrategoTerm h_12004 = null;
+      IStrategoTerm i_12004 = null;
+      IStrategoTerm j_12004 = null;
       if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-        break Fail2259;
-      l_2141 = ((IStrategoList)term).head();
-      IStrategoTerm arg768 = ((IStrategoList)term).tail();
-      if(arg768.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg768).isEmpty())
-        break Fail2259;
-      m_2141 = ((IStrategoList)arg768).tail();
-      term = m_2141;
-      o_2141 = m_2141;
-      n_2141 = term;
-      term = o_2141;
-      IStrategoList list73;
-      list73 = checkListTail(n_2141);
-      if(list73 == null)
-        break Fail2259;
-      term = (IStrategoTerm)termFactory.makeListCons(l_2141, list73);
+        break Fail5161;
+      g_12004 = ((IStrategoList)term).head();
+      IStrategoTerm arg1622 = ((IStrategoList)term).tail();
+      if(arg1622.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1622).isEmpty())
+        break Fail5161;
+      h_12004 = ((IStrategoList)arg1622).tail();
+      term = h_12004;
+      j_12004 = h_12004;
+      i_12004 = term;
+      term = j_12004;
+      IStrategoList list149;
+      list149 = checkListTail(i_12004);
+      if(list149 == null)
+        break Fail5161;
+      term = (IStrategoTerm)termFactory.makeListCons(g_12004, list149);
       if(true)
         return term;
     }

@@ -1,0 +1,11 @@
+module execution 
+
+language Calculang
+
+test 42 [[
+  42
+]] build generate-result to 42
+
+test 42, part deux [[
+  41 + 1
+]] build generate-result to 42

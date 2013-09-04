@@ -1,0 +1,12 @@
+module execution 
+
+language Calculang
+
+test Constant [[
+  1
+]] build generate-java 
+
+test Constant [[
+  1 + 2
+]] build generate-java 
+

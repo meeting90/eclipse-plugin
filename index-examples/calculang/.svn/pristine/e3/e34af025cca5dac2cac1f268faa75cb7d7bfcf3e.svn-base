@@ -1,0 +1,12 @@
+module calculate
+
+imports
+  libstratego-lib
+  include/Calculang
+  lib/editor-common.generated
+  check
+
+rules
+
+  calc:
+    Int(x) -> <string-to-int> x

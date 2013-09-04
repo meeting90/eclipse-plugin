@@ -20,39 +20,39 @@ import java.lang.ref.WeakReference;
 { 
   public static fold_$Index_$Read$Set_1_0 instance = new fold_$Index_$Read$Set_1_0();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy i_2180)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy d_12043)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("fold_Index_ReadSet_1_0");
-    Fail2566:
+    Fail5468:
     { 
-      IStrategoTerm j_2180 = null;
-      IStrategoTerm l_2180 = null;
-      l_2180 = term;
-      Success1479:
+      IStrategoTerm e_12043 = null;
+      IStrategoTerm g_12043 = null;
+      g_12043 = term;
+      Success3035:
       { 
-        Fail2567:
+        Fail5469:
         { 
-          IStrategoTerm m_2180 = null;
-          IStrategoTerm o_2180 = null;
-          IStrategoTerm p_2180 = null;
-          o_2180 = term;
-          m_2180 = trans.const402;
-          p_2180 = o_2180;
-          term = dr_lookup_rule_0_2.instance.invoke(context, p_2180, m_2180, trans.constCons118);
+          IStrategoTerm h_12043 = null;
+          IStrategoTerm j_12043 = null;
+          IStrategoTerm k_12043 = null;
+          j_12043 = term;
+          h_12043 = trans.const922;
+          k_12043 = j_12043;
+          term = dr_lookup_rule_0_2.instance.invoke(context, k_12043, h_12043, trans.constCons250);
           if(term == null)
-            break Fail2567;
+            break Fail5469;
           if(true)
-            break Success1479;
+            break Success3035;
         }
-        term = trans.constNil1;
+        term = trans.constNil3;
       }
-      j_2180 = term;
-      term = l_2180;
-      term = termFactory.makeTuple(j_2180, term);
-      term = i_2180.invoke(context, term, lifted566.instance);
+      e_12043 = term;
+      term = g_12043;
+      term = termFactory.makeTuple(e_12043, term);
+      term = d_12043.invoke(context, term, lifted1166.instance);
       if(term == null)
-        break Fail2566;
+        break Fail5468;
       context.popOnSuccess();
       if(true)
         return term;

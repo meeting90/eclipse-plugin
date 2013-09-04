@@ -24,57 +24,57 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_uri_to_string_0_0");
-    Fail2268:
+    Fail5170:
     { 
-      IStrategoTerm s_2142 = null;
-      IStrategoTerm t_2142 = null;
-      IStrategoTerm u_2142 = null;
-      IStrategoTerm v_2142 = null;
-      IStrategoTerm y_2142 = null;
+      IStrategoTerm n_12005 = null;
+      IStrategoTerm o_12005 = null;
+      IStrategoTerm p_12005 = null;
+      IStrategoTerm q_12005 = null;
+      IStrategoTerm t_12005 = null;
       if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-        break Fail2268;
-      u_2142 = ((IStrategoList)term).head();
-      s_2142 = ((IStrategoList)term).tail();
-      y_2142 = term;
-      IStrategoTerm term1374 = term;
-      Success1340:
+        break Fail5170;
+      p_12005 = ((IStrategoList)term).head();
+      n_12005 = ((IStrategoList)term).tail();
+      t_12005 = term;
+      IStrategoTerm term2930 = term;
+      Success2896:
       { 
-        Fail2269:
+        Fail5171:
         { 
-          IStrategoTerm z_2142 = null;
-          term = index_path_to_string_0_0.instance.invoke(context, s_2142);
+          IStrategoTerm u_12005 = null;
+          term = index_path_to_string_0_0.instance.invoke(context, n_12005);
           if(term == null)
-            break Fail2269;
-          t_2142 = term;
-          term = u_2142;
-          IStrategoTerm cons39 = context.invokePrimitive("SSL_get_constructor", term, NO_STRATEGIES, new IStrategoTerm[]{term});
-          z_2142 = cons39;
-          term = z_2142;
-          v_2142 = z_2142;
+            break Fail5171;
+          o_12005 = term;
+          term = p_12005;
+          IStrategoTerm cons111 = context.invokePrimitive("SSL_get_constructor", term, NO_STRATEGIES, new IStrategoTerm[]{term});
+          u_12005 = cons111;
+          term = u_12005;
+          q_12005 = u_12005;
           if(true)
-            break Success1340;
+            break Success2896;
         }
-        term = term1374;
-        IStrategoTerm w_2142 = null;
-        IStrategoTerm x_2142 = null;
-        IStrategoTerm b_2143 = null;
-        w_2142 = term;
+        term = term2930;
+        IStrategoTerm r_12005 = null;
+        IStrategoTerm s_12005 = null;
+        IStrategoTerm w_12005 = null;
+        r_12005 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail2268;
-        x_2142 = term;
-        b_2143 = w_2142;
-        term = report_with_failure_0_2.instance.invoke(context, b_2143, trans.const475, x_2142);
+          break Fail5170;
+        s_12005 = term;
+        w_12005 = r_12005;
+        term = report_with_failure_0_2.instance.invoke(context, w_12005, trans.const995, s_12005);
         if(term == null)
-          break Fail2268;
+          break Fail5170;
       }
-      term = y_2142;
-      if(v_2142 == null || t_2142 == null)
-        break Fail2268;
-      term = (IStrategoTerm)termFactory.makeListCons(v_2142, termFactory.makeListCons(trans.const476, termFactory.makeListCons(t_2142, (IStrategoList)trans.constNil1)));
+      term = t_12005;
+      if(q_12005 == null || o_12005 == null)
+        break Fail5170;
+      term = (IStrategoTerm)termFactory.makeListCons(q_12005, termFactory.makeListCons(trans.const996, termFactory.makeListCons(o_12005, (IStrategoList)trans.constNil3)));
       term = concat_strings_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2268;
+        break Fail5170;
       context.popOnSuccess();
       if(true)
         return term;

@@ -23,21 +23,21 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("origin_language_0_0");
-    Fail2338:
+    Fail5240:
     { 
-      IStrategoTerm o_2297 = null;
-      IStrategoTerm s_2297 = null;
-      o_2297 = term;
-      term = context.invokePrimitive("SSL_EXT_origin_file", o_2297, NO_STRATEGIES, new IStrategoTerm[]{term});
+      IStrategoTerm j_12160 = null;
+      IStrategoTerm n_12160 = null;
+      j_12160 = term;
+      term = context.invokePrimitive("SSL_EXT_origin_file", j_12160, NO_STRATEGIES, new IStrategoTerm[]{term});
       if(term == null)
-        break Fail2338;
-      s_2297 = term;
-      term = context.invokePrimitive("SSL_EXT_languagedescription", s_2297, NO_STRATEGIES, new IStrategoTerm[]{term});
+        break Fail5240;
+      n_12160 = term;
+      term = context.invokePrimitive("SSL_EXT_languagedescription", n_12160, NO_STRATEGIES, new IStrategoTerm[]{term});
       if(term == null)
-        break Fail2338;
+        break Fail5240;
       term = $Fst_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2338;
+        break Fail5240;
       context.popOnSuccess();
       if(true)
         return term;

@@ -22,10 +22,10 @@ import java.lang.ref.WeakReference;
 
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
-    Fail2480:
+    Fail5382:
     { 
       if(term.getTermType() != IStrategoTerm.APPL || Main._consModule_0 != ((IStrategoAppl)term).getConstructor())
-        break Fail2480;
+        break Fail5382;
       if(true)
         return term;
     }

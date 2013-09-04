@@ -1,0 +1,32 @@
+module variables-basic
+
+language Calculang
+
+test Variable [[
+  x
+]] parse
+
+test Assignment [[
+  x = 4
+]] parse
+
+test Multiple statements [[
+	x
+	x
+]] parse to Statements([Var("x"), Var("x")])
+
+test Eval constant [[
+  PI
+]] run calc to "3.14"
+
+test Eval variable [[
+  x = 4
+  y = x * 2
+  y
+]] run calc to "8"
+
+test Eval multiple variables [[
+  x = 2
+  y = x * 2 + x
+  y
+]] run calc to "6"

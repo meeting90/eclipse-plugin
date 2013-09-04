@@ -24,31 +24,31 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_key_unwrap_0_0");
-    Fail2129:
+    Fail5031:
     { 
-      IStrategoTerm term1321 = term;
-      Success1291:
+      IStrategoTerm term2877 = term;
+      Success2847:
       { 
-        Fail2130:
+        Fail5032:
         { 
-          IStrategoTerm d_2121 = null;
-          IStrategoTerm e_2121 = null;
-          d_2121 = term;
-          IStrategoList annos79 = term.getAnnotations();
-          if(annos79.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos79).isEmpty())
-            break Fail2130;
-          e_2121 = ((IStrategoList)annos79).head();
-          IStrategoTerm arg696 = ((IStrategoList)annos79).tail();
-          if(arg696.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg696).isEmpty())
-            break Fail2130;
-          term = index_uri_unwrap_0_0.instance.invoke(context, e_2121);
+          IStrategoTerm y_11983 = null;
+          IStrategoTerm z_11983 = null;
+          y_11983 = term;
+          IStrategoList annos217 = term.getAnnotations();
+          if(annos217.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos217).isEmpty())
+            break Fail5032;
+          z_11983 = ((IStrategoList)annos217).head();
+          IStrategoTerm arg1550 = ((IStrategoList)annos217).tail();
+          if(arg1550.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg1550).isEmpty())
+            break Fail5032;
+          term = index_uri_unwrap_0_0.instance.invoke(context, z_11983);
           if(term == null)
-            break Fail2130;
-          term = termFactory.annotateTerm(d_2121, checkListAnnos(termFactory, (IStrategoTerm)termFactory.makeListCons(term, (IStrategoList)trans.constNil1)));
+            break Fail5032;
+          term = termFactory.annotateTerm(y_11983, checkListAnnos(termFactory, (IStrategoTerm)termFactory.makeListCons(term, (IStrategoList)trans.constNil3)));
           if(true)
-            break Success1291;
+            break Success2847;
         }
-        term = term1321;
+        term = term2877;
       }
       context.popOnSuccess();
       if(true)

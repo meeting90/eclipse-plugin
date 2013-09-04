@@ -23,20 +23,20 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("random_identifier_0_0");
-    Fail1589:
+    Fail4491:
     { 
-      IStrategoTerm m_2037 = null;
-      IStrategoTerm o_2037 = null;
-      IStrategoTerm p_2037 = null;
+      IStrategoTerm h_11900 = null;
+      IStrategoTerm j_11900 = null;
+      IStrategoTerm k_11900 = null;
       term = new_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1589;
-      o_2037 = term;
-      m_2037 = trans.const308;
-      p_2037 = o_2037;
-      term = string_replace_0_2.instance.invoke(context, p_2037, m_2037, trans.const309);
+        break Fail4491;
+      j_11900 = term;
+      h_11900 = trans.const828;
+      k_11900 = j_11900;
+      term = string_replace_0_2.instance.invoke(context, k_11900, h_11900, trans.const829);
       if(term == null)
-        break Fail1589;
+        break Fail4491;
       context.popOnSuccess();
       if(true)
         return term;

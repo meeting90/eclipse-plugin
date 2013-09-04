@@ -22,9 +22,9 @@ import java.lang.ref.WeakReference;
 
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
-    Fail1582:
+    Fail4484:
     { 
-      term = trans.const300;
+      term = trans.const820;
       if(true)
         return term;
     }

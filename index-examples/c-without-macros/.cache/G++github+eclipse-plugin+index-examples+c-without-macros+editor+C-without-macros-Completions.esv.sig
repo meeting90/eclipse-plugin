@@ -1,0 +1,1 @@
+Module("C-without-macros-Completions",Imports([Import("C-without-macros-Completions.generated")]),[Completions("",[]),Completions("",[]),Completions("",[CompletionProposer([],Strategy("editor-complete")),CompletionTrigger(String("\"\\.\""),None),CompletionTrigger(String("\"->\""),None)])])

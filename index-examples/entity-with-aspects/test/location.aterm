@@ -1,0 +1,33 @@
+( Module(
+    "CRM"{[Module(), "CRM"]}
+  , []
+  , [ Entity(
+        "Location"{[Entity(), "Location", "CRM"]}
+      , [ Property("mCity"{[Property(), "mCity", "Location", "CRM"]}, StringType())
+        , Property("mAddress"{[Property(), "mAddress", "Location", "CRM"]}, StringType())
+        , Property("mNumber"{[Property(), "mNumber", "Location", "CRM"]}, IntType())
+        , Function(
+            "Set"{[Function(), "Set", "Location", "CRM"]}
+          , [Param("city"{[Variable(), "city", "Set", "Location", "CRM"]}, StringType()), Param("address"{[Variable(), "address", "Set", "Location", "CRM"]}, StringType()), Param("number"{[Variable(), "number", "Set", "Location", "CRM"]}, IntType())]
+          , Block(
+              [ Assign(Var("mCity"{[Unresolved(Variable()), "mCity", Anon("l_4305"), "Set", "Location", "CRM"]}), Var("city"{[Unresolved(Variable()), "city", Anon("l_4305"), "Set", "Location", "CRM"]}))
+              , Assign(Var("mAddress"{[Unresolved(Variable()), "mAddress", Anon("l_4305"), "Set", "Location", "CRM"]}), Var("address"{[Unresolved(Variable()), "address", Anon("l_4305"), "Set", "Location", "CRM"]}))
+              , Assign(Var("mNumber"{[Unresolved(Variable()), "mNumber", Anon("l_4305"), "Set", "Location", "CRM"]}), Var("number"{[Unresolved(Variable()), "number", Anon("l_4305"), "Set", "Location", "CRM"]}))
+              ]
+            )
+          )
+        ]
+      )
+    ]
+  )
+, [ ("y_4304", Def([Module(), "CRM"]))
+  , ("a_4305", Def([Entity(), "Location", "CRM"]))
+  , ("c_4305", Def([Property(), "mCity", "Location", "CRM"]))
+  , ("d_4305", Def([Property(), "mAddress", "Location", "CRM"]))
+  , ("e_4305", Def([Property(), "mNumber", "Location", "CRM"]))
+  , ("f_4305", Def([Function(), "Set", "Location", "CRM"]))
+  , ("h_4305", Def([Variable(), "city", "Set", "Location", "CRM"]))
+  , ("i_4305", Def([Variable(), "address", "Set", "Location", "CRM"]))
+  , ("j_4305", Def([Variable(), "number", "Set", "Location", "CRM"]))
+  ]
+)

@@ -1,0 +1,1 @@
+Module("analysis-manual",[Imports([(),(),(),(),(),(),()]),Rules([SDefT("adjust-index-lookup",[VarDec("target",ConstType(SortNoArgs("ATerm")))],[VarDec("namespace",ConstType(SortNoArgs("ATerm"))),VarDec("path",ConstType(SortNoArgs("ATerm"))),VarDec("prefix",ConstType(SortNoArgs("ATerm")))],[])])])

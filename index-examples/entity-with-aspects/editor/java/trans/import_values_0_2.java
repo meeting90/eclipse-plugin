@@ -20,20 +20,20 @@ import java.lang.ref.WeakReference;
 { 
   public static import_values_0_2 instance = new import_values_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm u_2080, IStrategoTerm v_2080)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm p_11943, IStrategoTerm q_11943)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("import_values_0_2");
-    Fail1913:
+    Fail4815:
     { 
-      IStrategoList list52;
-      list52 = checkListTail(v_2080);
-      if(list52 == null)
-        break Fail1913;
-      term = termFactory.makeAppl(Main._consDefData_3, new IStrategoTerm[]{(IStrategoTerm)termFactory.makeListCons(u_2080, list52), trans.constImport0, trans.const362});
+      IStrategoList list128;
+      list128 = checkListTail(q_11943);
+      if(list128 == null)
+        break Fail4815;
+      term = termFactory.makeAppl(Main._consDefData_3, new IStrategoTerm[]{(IStrategoTerm)termFactory.makeListCons(p_11943, list128), trans.constImport0, trans.const882});
       term = index_get_all_values_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1913;
+        break Fail4815;
       context.popOnSuccess();
       if(true)
         return term;

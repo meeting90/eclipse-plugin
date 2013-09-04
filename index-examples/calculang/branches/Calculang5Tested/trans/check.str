@@ -1,0 +1,30 @@
+module check
+
+imports
+  libstratego-lib
+  include/Calculang
+  lib/editor-common.generated
+  calculate
+
+rules
+  
+  analyze =
+    topdown(try(record-var))
+
+  record-var:
+    Assign(x, e) -> Assign(x, e)
+    with
+      rules(
+        GetVar :+ x -> x
+      )
+  
+  constraint-error:
+    Var(v) -> (v, $[Unassigned variable])
+    where
+      not(<GetVar> v)
+  
+  constraint-error:
+    Var(v) -> (v, $[Multiply assigned variable])
+    where
+      all-vs := <bagof-GetVar> v;
+      <gt> (<length> all-vs, 1)

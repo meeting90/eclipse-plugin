@@ -23,49 +23,49 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     ITermFactory termFactory = context.getFactory();
-    Fail2284:
+    Fail5186:
     { 
-      IStrategoTerm term1384 = term;
-      Success1350:
+      IStrategoTerm term2940 = term;
+      Success2906:
       { 
-        Fail2285:
+        Fail5187:
         { 
-          IStrategoTerm x_2143 = null;
-          IStrategoTerm y_2143 = null;
-          IStrategoTerm z_2143 = null;
-          IStrategoTerm a_2144 = null;
+          IStrategoTerm s_12006 = null;
+          IStrategoTerm t_12006 = null;
+          IStrategoTerm u_12006 = null;
+          IStrategoTerm v_12006 = null;
           if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-            break Fail2285;
-          x_2143 = ((IStrategoList)term).head();
-          y_2143 = ((IStrategoList)term).tail();
-          a_2144 = term;
-          term = x_2143;
-          IStrategoTerm term1385 = term;
-          Success1351:
+            break Fail5187;
+          s_12006 = ((IStrategoList)term).head();
+          t_12006 = ((IStrategoList)term).tail();
+          v_12006 = term;
+          term = s_12006;
+          IStrategoTerm term2941 = term;
+          Success2907:
           { 
-            Fail2286:
+            Fail5188:
             { 
-              IStrategoTerm e_2297 = null;
+              IStrategoTerm z_12159 = null;
               if(term.getTermType() != IStrategoTerm.APPL || Main._consUnresolved_1 != ((IStrategoAppl)term).getConstructor())
-                break Fail2286;
-              e_2297 = term.getSubterm(0);
-              term = e_2297;
+                break Fail5188;
+              z_12159 = term.getSubterm(0);
+              term = z_12159;
               if(true)
-                break Success1351;
+                break Success2907;
             }
-            term = term1385;
+            term = term2941;
           }
-          z_2143 = term;
-          term = a_2144;
-          IStrategoList list74;
-          list74 = checkListTail(y_2143);
-          if(list74 == null)
-            break Fail2285;
-          term = (IStrategoTerm)termFactory.makeListCons(z_2143, list74);
+          u_12006 = term;
+          term = v_12006;
+          IStrategoList list150;
+          list150 = checkListTail(t_12006);
+          if(list150 == null)
+            break Fail5187;
+          term = (IStrategoTerm)termFactory.makeListCons(u_12006, list150);
           if(true)
-            break Success1350;
+            break Success2906;
         }
-        term = term1384;
+        term = term2940;
       }
       if(true)
         return term;

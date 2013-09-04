@@ -20,19 +20,19 @@ import java.lang.ref.WeakReference;
 { 
   public static index_get_global_0_1 instance = new index_get_global_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm h_2137)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm c_12000)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_get_global_0_1");
-    Fail2240:
+    Fail5142:
     { 
-      term = index_globals_uri_0_0.instance.invoke(context, h_2137);
+      term = index_globals_uri_0_0.instance.invoke(context, c_12000);
       if(term == null)
-        break Fail2240;
-      term = termFactory.makeAppl(Main._consGlobal_2, new IStrategoTerm[]{term, trans.const362});
+        break Fail5142;
+      term = termFactory.makeAppl(Main._consGlobal_2, new IStrategoTerm[]{term, trans.const882});
       term = indexlib_get_value_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2240;
+        break Fail5142;
       context.popOnSuccess();
       if(true)
         return term;

@@ -20,30 +20,30 @@ import java.lang.ref.WeakReference;
 { 
   public static index_add_unresolved_0_2 instance = new index_add_unresolved_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm l_2120, IStrategoTerm m_2120)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm g_11983, IStrategoTerm h_11983)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_add_unresolved_0_2");
-    Fail2121:
+    Fail5023:
     { 
-      IStrategoTerm term1317 = term;
-      Success1287:
+      IStrategoTerm term2873 = term;
+      Success2843:
       { 
-        Fail2122:
+        Fail5024:
         { 
-          IStrategoTerm o_2120 = null;
+          IStrategoTerm j_11983 = null;
           term = $Index_$Unresolved$Set_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail2122;
-          o_2120 = term;
-          term = termFactory.makeTuple(l_2120, m_2120);
-          term = iset_add_0_1.instance.invoke(context, o_2120, term);
+            break Fail5024;
+          j_11983 = term;
+          term = termFactory.makeTuple(g_11983, h_11983);
+          term = iset_add_0_1.instance.invoke(context, j_11983, term);
           if(term == null)
-            break Fail2122;
+            break Fail5024;
           if(true)
-            break Success1287;
+            break Success2843;
         }
-        term = term1317;
+        term = term2873;
       }
       context.popOnSuccess();
       if(true)

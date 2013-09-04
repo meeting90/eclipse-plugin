@@ -10,4 +10,5 @@ entity Location {
 		mAddress = address
 		mNumber = number
 	}
+
 }

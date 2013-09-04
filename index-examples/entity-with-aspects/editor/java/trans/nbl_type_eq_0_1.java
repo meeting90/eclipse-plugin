@@ -20,16 +20,16 @@ import java.lang.ref.WeakReference;
 { 
   public static nbl_type_eq_0_1 instance = new nbl_type_eq_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm a_2085)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm v_11947)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("nbl_type_eq_0_1");
-    Fail1933:
+    Fail4835:
     { 
-      term = termFactory.makeTuple(term, a_2085);
+      term = termFactory.makeTuple(term, v_11947);
       term = eq_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1933;
+        break Fail4835;
       context.popOnSuccess();
       if(true)
         return term;

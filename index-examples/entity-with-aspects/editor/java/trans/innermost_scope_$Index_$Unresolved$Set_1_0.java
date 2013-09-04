@@ -20,16 +20,16 @@ import java.lang.ref.WeakReference;
 { 
   public static innermost_scope_$Index_$Unresolved$Set_1_0 instance = new innermost_scope_$Index_$Unresolved$Set_1_0();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy f_2183)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy a_12046)
   { 
     context.push("innermost_scope_Index_UnresolvedSet_1_0");
-    Fail2581:
+    Fail5483:
     { 
-      IStrategoTerm h_2183 = null;
-      h_2183 = term;
-      term = dr_get_first_scope_label_1_1.instance.invoke(context, h_2183, f_2183, trans.const415);
+      IStrategoTerm c_12046 = null;
+      c_12046 = term;
+      term = dr_get_first_scope_label_1_1.instance.invoke(context, c_12046, a_12046, trans.const935);
       if(term == null)
-        break Fail2581;
+        break Fail5483;
       context.popOnSuccess();
       if(true)
         return term;

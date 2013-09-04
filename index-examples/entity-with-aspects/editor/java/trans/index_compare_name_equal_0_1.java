@@ -20,25 +20,25 @@ import java.lang.ref.WeakReference;
 { 
   public static index_compare_name_equal_0_1 instance = new index_compare_name_equal_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm a_2117)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm v_11979)
   { 
     context.push("index_compare_name_equal_0_1");
-    Fail2089:
+    Fail4991:
     { 
-      IStrategoTerm b_2117 = null;
-      IStrategoTerm d_2117 = null;
-      b_2117 = term;
-      d_2117 = term;
-      term = index_uri_0_0.instance.invoke(context, b_2117);
+      IStrategoTerm w_11979 = null;
+      IStrategoTerm y_11979 = null;
+      w_11979 = term;
+      y_11979 = term;
+      term = index_uri_0_0.instance.invoke(context, w_11979);
       if(term == null)
-        break Fail2089;
+        break Fail4991;
       term = index_uri_name_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2089;
-      term = SRTS_EXT_eq_ignore_annos_0_1.instance.invoke(context, term, a_2117);
+        break Fail4991;
+      term = SRTS_EXT_eq_ignore_annos_0_1.instance.invoke(context, term, v_11979);
       if(term == null)
-        break Fail2089;
-      term = d_2117;
+        break Fail4991;
+      term = y_11979;
       context.popOnSuccess();
       if(true)
         return term;

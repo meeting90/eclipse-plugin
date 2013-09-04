@@ -20,15 +20,15 @@ import java.lang.ref.WeakReference;
 { 
   public static origin_equal_0_1 instance = new origin_equal_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm a_2151)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm v_12013)
   { 
-    Fail2336:
+    Fail5238:
     { 
-      IStrategoTerm c_2151 = null;
-      c_2151 = term;
-      term = context.invokePrimitive("SSL_EXT_origin_equal", c_2151, NO_STRATEGIES, new IStrategoTerm[]{term, a_2151});
+      IStrategoTerm x_12013 = null;
+      x_12013 = term;
+      term = context.invokePrimitive("SSL_EXT_origin_equal", x_12013, NO_STRATEGIES, new IStrategoTerm[]{term, v_12013});
       if(term == null)
-        break Fail2336;
+        break Fail5238;
       if(true)
         return term;
     }

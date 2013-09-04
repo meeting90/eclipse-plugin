@@ -20,104 +20,104 @@ import java.lang.ref.WeakReference;
 { 
   public static index_merge_ast_0_1 instance = new index_merge_ast_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm g_2125)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm b_11988)
   { 
     context.push("index_merge_ast_0_1");
-    Fail2164:
+    Fail5066:
     { 
-      IStrategoTerm h_2125 = null;
-      IStrategoTerm i_2125 = null;
-      IStrategoTerm j_2125 = null;
-      IStrategoTerm k_2125 = null;
-      IStrategoTerm p_2125 = null;
-      i_2125 = term;
-      p_2125 = term;
-      IStrategoTerm term1340 = term;
-      Success1308:
+      IStrategoTerm c_11988 = null;
+      IStrategoTerm d_11988 = null;
+      IStrategoTerm e_11988 = null;
+      IStrategoTerm f_11988 = null;
+      IStrategoTerm k_11988 = null;
+      d_11988 = term;
+      k_11988 = term;
+      IStrategoTerm term2896 = term;
+      Success2864:
       { 
-        Fail2165:
+        Fail5067:
         { 
-          IStrategoTerm term1341 = term;
-          Success1309:
+          IStrategoTerm term2897 = term;
+          Success2865:
           { 
-            Fail2166:
+            Fail5068:
             { 
-              IStrategoTerm l_2125 = null;
-              l_2125 = term;
-              term = is_list_0_0.instance.invoke(context, i_2125);
+              IStrategoTerm g_11988 = null;
+              g_11988 = term;
+              term = is_list_0_0.instance.invoke(context, d_11988);
               if(term == null)
-                break Fail2166;
-              term = l_2125;
+                break Fail5068;
+              term = g_11988;
               { 
-                term = i_2125;
+                term = d_11988;
                 if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-                  break Fail2165;
-                h_2125 = ((IStrategoList)term).head();
-                term = this.invoke(context, h_2125, g_2125);
+                  break Fail5067;
+                c_11988 = ((IStrategoList)term).head();
+                term = this.invoke(context, c_11988, b_11988);
                 if(term == null)
-                  break Fail2165;
-                k_2125 = term;
+                  break Fail5067;
+                f_11988 = term;
                 if(true)
-                  break Success1309;
+                  break Success2865;
               }
             }
-            term = term1341;
-            Success1310:
+            term = term2897;
+            Success2866:
             { 
-              Fail2167:
+              Fail5069:
               { 
-                IStrategoTerm m_2125 = null;
-                m_2125 = term;
-                term = i_2125;
+                IStrategoTerm h_11988 = null;
+                h_11988 = term;
+                term = d_11988;
                 if(term.getTermType() != IStrategoTerm.APPL || Main._consModule_3 != ((IStrategoAppl)term).getConstructor())
-                  break Fail2167;
-                term = m_2125;
+                  break Fail5069;
+                term = h_11988;
                 { 
-                  IStrategoTerm i_2292 = null;
-                  term = i_2125;
+                  IStrategoTerm d_12155 = null;
+                  term = d_11988;
                   if(term.getTermType() != IStrategoTerm.APPL || Main._consModule_3 != ((IStrategoAppl)term).getConstructor())
-                    break Fail2165;
-                  i_2292 = term.getSubterm(2);
-                  term = i_2292;
+                    break Fail5067;
+                  d_12155 = term.getSubterm(2);
+                  term = d_12155;
                   if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-                    break Fail2165;
-                  j_2125 = ((IStrategoList)term).head();
-                  term = this.invoke(context, j_2125, g_2125);
+                    break Fail5067;
+                  e_11988 = ((IStrategoList)term).head();
+                  term = this.invoke(context, e_11988, b_11988);
                   if(term == null)
-                    break Fail2165;
-                  term = index_create_qualifier_0_1.instance.invoke(context, term, i_2125);
+                    break Fail5067;
+                  term = index_create_qualifier_0_1.instance.invoke(context, term, d_11988);
                   if(term == null)
-                    break Fail2165;
-                  k_2125 = term;
+                    break Fail5067;
+                  f_11988 = term;
                   if(true)
-                    break Success1310;
+                    break Success2866;
                 }
               }
-              term = g_2125;
-              k_2125 = g_2125;
+              term = b_11988;
+              f_11988 = b_11988;
             }
           }
           if(true)
-            break Success1308;
+            break Success2864;
         }
-        term = term1340;
-        IStrategoTerm n_2125 = null;
-        IStrategoTerm o_2125 = null;
-        IStrategoTerm r_2125 = null;
-        n_2125 = term;
+        term = term2896;
+        IStrategoTerm i_11988 = null;
+        IStrategoTerm j_11988 = null;
+        IStrategoTerm m_11988 = null;
+        i_11988 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail2164;
-        o_2125 = term;
-        r_2125 = n_2125;
-        term = report_with_failure_0_2.instance.invoke(context, r_2125, trans.const451, o_2125);
+          break Fail5066;
+        j_11988 = term;
+        m_11988 = i_11988;
+        term = report_with_failure_0_2.instance.invoke(context, m_11988, trans.const971, j_11988);
         if(term == null)
-          break Fail2164;
+          break Fail5066;
       }
-      term = p_2125;
-      if(k_2125 == null)
-        break Fail2164;
-      term = k_2125;
+      term = k_11988;
+      if(f_11988 == null)
+        break Fail5066;
+      term = f_11988;
       context.popOnSuccess();
       if(true)
         return term;

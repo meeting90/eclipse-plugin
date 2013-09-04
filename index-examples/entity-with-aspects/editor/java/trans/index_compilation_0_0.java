@@ -24,131 +24,131 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_compilation_0_0");
-    Fail1939:
+    Fail4841:
     { 
-      IStrategoTerm s_2085 = null;
-      IStrategoTerm w_2085 = null;
-      IStrategoTerm x_2085 = null;
-      TermReference y_2085 = new TermReference();
-      IStrategoTerm d_2086 = null;
-      if(y_2085.value == null)
-        y_2085.value = term;
+      IStrategoTerm n_11948 = null;
+      IStrategoTerm r_11948 = null;
+      IStrategoTerm s_11948 = null;
+      TermReference t_11948 = new TermReference();
+      IStrategoTerm y_11948 = null;
+      if(t_11948.value == null)
+        t_11948.value = term;
       else
-        if(y_2085.value != term && !y_2085.value.match(term))
-          break Fail1939;
-      d_2086 = term;
-      IStrategoTerm term1198 = term;
-      Success1177:
+        if(t_11948.value != term && !t_11948.value.match(term))
+          break Fail4841;
+      y_11948 = term;
+      IStrategoTerm term2754 = term;
+      Success2733:
       { 
-        Fail1940:
+        Fail4842:
         { 
-          IStrategoTerm g_2086 = null;
-          IStrategoTerm i_2086 = null;
-          IStrategoTerm j_2086 = null;
+          IStrategoTerm b_11949 = null;
+          IStrategoTerm d_11949 = null;
+          IStrategoTerm e_11949 = null;
           term = project_path_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1940;
-          s_2085 = term;
-          i_2086 = term;
-          term = (IStrategoTerm)termFactory.makeListCons(s_2085, (IStrategoList)trans.constNil1);
-          g_2086 = term;
-          j_2086 = i_2086;
-          term = index_setup_0_3.instance.invoke(context, j_2086, y_2085.value, g_2086, trans.const369);
+            break Fail4842;
+          n_11948 = term;
+          d_11949 = term;
+          term = (IStrategoTerm)termFactory.makeListCons(n_11948, (IStrategoList)trans.constNil3);
+          b_11949 = term;
+          e_11949 = d_11949;
+          term = index_setup_0_3.instance.invoke(context, e_11949, t_11948.value, b_11949, trans.const889);
           if(term == null)
-            break Fail1940;
+            break Fail4842;
           if(true)
-            break Success1177;
+            break Success2733;
         }
-        term = term1198;
-        IStrategoTerm z_2085 = null;
-        IStrategoTerm a_2086 = null;
-        IStrategoTerm l_2086 = null;
-        z_2085 = term;
+        term = term2754;
+        IStrategoTerm u_11948 = null;
+        IStrategoTerm v_11948 = null;
+        IStrategoTerm g_11949 = null;
+        u_11948 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail1939;
-        a_2086 = term;
-        l_2086 = z_2085;
-        term = report_with_failure_0_2.instance.invoke(context, l_2086, trans.const398, a_2086);
+          break Fail4841;
+        v_11948 = term;
+        g_11949 = u_11948;
+        term = report_with_failure_0_2.instance.invoke(context, g_11949, trans.const918, v_11948);
         if(term == null)
-          break Fail1939;
+          break Fail4841;
       }
-      term = d_2086;
-      IStrategoTerm term1199 = term;
-      Success1178:
+      term = y_11948;
+      IStrategoTerm term2755 = term;
+      Success2734:
       { 
-        Fail1941:
+        Fail4843:
         { 
-          IStrategoTerm n_2086 = null;
-          IStrategoTerm p_2086 = null;
+          IStrategoTerm i_11949 = null;
+          IStrategoTerm k_11949 = null;
           term = analyze_get_compilediffs_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1941;
-          n_2086 = term;
-          term = map_1_0.instance.invoke(context, n_2086, index_compilation_restore_read_file_0_0.instance);
+            break Fail4843;
+          i_11949 = term;
+          term = map_1_0.instance.invoke(context, i_11949, index_compilation_restore_read_file_0_0.instance);
           if(term == null)
-            break Fail1941;
+            break Fail4843;
           term = remove_all_1_0.instance.invoke(context, term, index_compilation_filter_file_0_0.instance);
           if(term == null)
-            break Fail1941;
+            break Fail4843;
           term = make_set_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1941;
+            break Fail4843;
           term = index_split_partial_files_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1941;
+            break Fail4843;
           if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-            break Fail1941;
-          w_2085 = term.getSubterm(0);
-          x_2085 = term.getSubterm(1);
-          term = filter_1_0.instance.invoke(context, w_2085, index_compilation_clean_reads_0_0.instance);
+            break Fail4843;
+          r_11948 = term.getSubterm(0);
+          s_11948 = term.getSubterm(1);
+          term = filter_1_0.instance.invoke(context, r_11948, index_compilation_clean_reads_0_0.instance);
           if(term == null)
-            break Fail1941;
-          term = filter_1_0.instance.invoke(context, x_2085, index_compilation_clean_reads_0_0.instance);
+            break Fail4843;
+          term = filter_1_0.instance.invoke(context, s_11948, index_compilation_clean_reads_0_0.instance);
           if(term == null)
-            break Fail1941;
-          term = length_0_0.instance.invoke(context, w_2085);
+            break Fail4843;
+          term = length_0_0.instance.invoke(context, r_11948);
           if(term == null)
-            break Fail1941;
-          p_2086 = term;
-          term = length_0_0.instance.invoke(context, x_2085);
+            break Fail4843;
+          k_11949 = term;
+          term = length_0_0.instance.invoke(context, s_11948);
           if(term == null)
-            break Fail1941;
-          term = termFactory.makeTuple(p_2086, term);
+            break Fail4843;
+          term = termFactory.makeTuple(k_11949, term);
           term = add_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1941;
+            break Fail4843;
           term = set_total_work_units_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1941;
-          term = w_2085;
-          lifted387 lifted3870 = new lifted387();
-          lifted3870.y_2085 = y_2085;
-          term = filter_1_0.instance.invoke(context, term, lifted3870);
+            break Fail4843;
+          term = r_11948;
+          lifted987 lifted9870 = new lifted987();
+          lifted9870.t_11948 = t_11948;
+          term = filter_1_0.instance.invoke(context, term, lifted9870);
           if(term == null)
-            break Fail1941;
-          term = x_2085;
-          lifted388 lifted3880 = new lifted388();
-          lifted3880.y_2085 = y_2085;
-          term = filter_1_0.instance.invoke(context, term, lifted3880);
+            break Fail4843;
+          term = s_11948;
+          lifted988 lifted9880 = new lifted988();
+          lifted9880.t_11948 = t_11948;
+          term = filter_1_0.instance.invoke(context, term, lifted9880);
           if(term == null)
-            break Fail1941;
+            break Fail4843;
           if(true)
-            break Success1178;
+            break Success2734;
         }
-        term = term1199;
-        IStrategoTerm b_2086 = null;
-        IStrategoTerm c_2086 = null;
-        IStrategoTerm u_2086 = null;
-        b_2086 = term;
+        term = term2755;
+        IStrategoTerm w_11948 = null;
+        IStrategoTerm x_11948 = null;
+        IStrategoTerm p_11949 = null;
+        w_11948 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail1939;
-        c_2086 = term;
-        u_2086 = b_2086;
-        term = report_with_failure_0_2.instance.invoke(context, u_2086, trans.const398, c_2086);
+          break Fail4841;
+        x_11948 = term;
+        p_11949 = w_11948;
+        term = report_with_failure_0_2.instance.invoke(context, p_11949, trans.const918, x_11948);
         if(term == null)
-          break Fail1939;
+          break Fail4841;
       }
       term = trans.constNone0;
       context.popOnSuccess();

@@ -20,26 +20,26 @@ import java.lang.ref.WeakReference;
 { 
   public static is_test_input_0_2 instance = new is_test_input_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm b_2119, IStrategoTerm c_2119)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm w_11981, IStrategoTerm x_11981)
   { 
     context.push("is_test_input_0_2");
-    Fail2110:
+    Fail5012:
     { 
-      Success1282:
+      Success2838:
       { 
-        Fail2111:
+        Fail5013:
         { 
-          term = b_2119;
+          term = w_11981;
           if(term.getTermType() != IStrategoTerm.STRING || !"Spoofax-Testing".equals(((IStrategoString)term).stringValue()))
-            break Fail2111;
+            break Fail5013;
           if(true)
-            break Success1282;
+            break Success2838;
         }
-        IStrategoTerm z_2291 = null;
-        z_2291 = c_2119;
-        term = string_ends_with_0_1.instance.invoke(context, z_2291, trans.const443);
+        IStrategoTerm u_12154 = null;
+        u_12154 = x_11981;
+        term = string_ends_with_0_1.instance.invoke(context, u_12154, trans.const963);
         if(term == null)
-          break Fail2110;
+          break Fail5012;
       }
       context.popOnSuccess();
       if(true)

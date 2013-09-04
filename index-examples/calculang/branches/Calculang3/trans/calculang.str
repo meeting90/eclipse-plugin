@@ -1,0 +1,31 @@
+module calculang
+
+imports
+  libstratego-lib
+  include/Calculang
+  lib/editor-common.generated
+  check
+  calculate
+
+rules // Main editor interface (defined by editor/Calculang-Builders and -References.esv)
+  
+  editor-analyze:
+    (ast, path, project-path) -> (ast, errors, warnings, notes)
+    with
+      editor-init;
+      analyze;
+      errors   := <constraint-errors> ast;
+      warnings := [];
+      notes    := []
+  
+  generate-aterm:
+    (selected, position, ast, path, project-path) -> (filename, result)
+    with
+      filename := <guarantee-extension(|"aterm")> path;
+      result   := selected // we just return the input term
+  
+  generate-eval:
+    (selected, position, ast, path, project-path) -> (filename, result)
+    with
+      filename := <guarantee-extension(|"result.aterm")> path;
+      result   := <calculate> selected

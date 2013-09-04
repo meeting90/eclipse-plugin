@@ -20,15 +20,15 @@ import java.lang.ref.WeakReference;
 { 
   public static index_remove_0_1 instance = new index_remove_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm u_2134)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm p_11997)
   { 
-    Fail2215:
+    Fail5117:
     { 
-      IStrategoTerm w_2134 = null;
-      w_2134 = term;
-      term = context.invokePrimitive("LANG_index_remove", w_2134, NO_STRATEGIES, new IStrategoTerm[]{term, u_2134});
+      IStrategoTerm r_11997 = null;
+      r_11997 = term;
+      term = context.invokePrimitive("LANG_index_remove", r_11997, NO_STRATEGIES, new IStrategoTerm[]{term, p_11997});
       if(term == null)
-        break Fail2215;
+        break Fail5117;
       if(true)
         return term;
     }

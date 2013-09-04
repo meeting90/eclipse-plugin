@@ -22,40 +22,40 @@ import java.lang.ref.WeakReference;
 
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
-    Fail2204:
+    Fail5106:
     { 
-      IStrategoTerm term1354 = term;
-      Success1322:
+      IStrategoTerm term2910 = term;
+      Success2878:
       { 
-        Fail2205:
+        Fail5107:
         { 
-          IStrategoTerm x_2132 = null;
-          IStrategoList annos89 = term.getAnnotations();
-          if(annos89.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos89).isEmpty())
-            break Fail2205;
-          IStrategoTerm arg757 = ((IStrategoList)annos89).head();
-          if(arg757.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg757).isEmpty())
-            break Fail2205;
-          IStrategoTerm arg759 = ((IStrategoList)arg757).tail();
-          if(arg759.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg759).isEmpty())
-            break Fail2205;
-          x_2132 = ((IStrategoList)arg759).head();
-          IStrategoTerm arg761 = ((IStrategoList)annos89).tail();
-          if(arg761.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg761).isEmpty())
-            break Fail2205;
-          term = x_2132;
+          IStrategoTerm s_11995 = null;
+          IStrategoList annos227 = term.getAnnotations();
+          if(annos227.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos227).isEmpty())
+            break Fail5107;
+          IStrategoTerm arg1611 = ((IStrategoList)annos227).head();
+          if(arg1611.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1611).isEmpty())
+            break Fail5107;
+          IStrategoTerm arg1613 = ((IStrategoList)arg1611).tail();
+          if(arg1613.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1613).isEmpty())
+            break Fail5107;
+          s_11995 = ((IStrategoList)arg1613).head();
+          IStrategoTerm arg1615 = ((IStrategoList)annos227).tail();
+          if(arg1615.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg1615).isEmpty())
+            break Fail5107;
+          term = s_11995;
           if(true)
-            break Success1322;
+            break Success2878;
         }
-        term = term1354;
-        IStrategoTerm v_2132 = null;
+        term = term2910;
+        IStrategoTerm q_11995 = null;
         if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-          break Fail2204;
-        IStrategoTerm arg763 = ((IStrategoList)term).tail();
-        if(arg763.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg763).isEmpty())
-          break Fail2204;
-        v_2132 = ((IStrategoList)arg763).head();
-        term = v_2132;
+          break Fail5106;
+        IStrategoTerm arg1617 = ((IStrategoList)term).tail();
+        if(arg1617.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1617).isEmpty())
+          break Fail5106;
+        q_11995 = ((IStrategoList)arg1617).head();
+        term = q_11995;
       }
       if(true)
         return term;

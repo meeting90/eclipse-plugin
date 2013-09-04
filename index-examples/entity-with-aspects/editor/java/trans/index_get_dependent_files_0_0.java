@@ -23,11 +23,11 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("index_get_dependent_files_0_0");
-    Fail2187:
+    Fail5089:
     { 
       term = index_get_referenced_files_1_0.instance.invoke(context, term, index_file_dependent_construct_0_0.instance);
       if(term == null)
-        break Fail2187;
+        break Fail5089;
       context.popOnSuccess();
       if(true)
         return term;

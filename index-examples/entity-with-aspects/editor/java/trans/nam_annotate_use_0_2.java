@@ -20,37 +20,37 @@ import java.lang.ref.WeakReference;
 { 
   public static nam_annotate_use_0_2 instance = new nam_annotate_use_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm y_2121, IStrategoTerm z_2121)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm t_11984, IStrategoTerm u_11984)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("nam_annotate_use_0_2");
-    Fail2135:
+    Fail5037:
     { 
-      IStrategoTerm a_2122 = null;
-      IStrategoTerm b_2122 = null;
-      IStrategoTerm c_2122 = null;
-      a_2122 = term;
-      c_2122 = term;
-      term = termFactory.makeTuple(z_2121, y_2121);
-      Success1294:
+      IStrategoTerm v_11984 = null;
+      IStrategoTerm w_11984 = null;
+      IStrategoTerm x_11984 = null;
+      v_11984 = term;
+      x_11984 = term;
+      term = termFactory.makeTuple(u_11984, t_11984);
+      Success2850:
       { 
-        Fail2136:
+        Fail5038:
         { 
           term = lookup_p__0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail2136;
+            break Fail5038;
           if(true)
-            break Success1294;
+            break Success2850;
         }
-        term = trans.constNil1;
+        term = trans.constNil3;
       }
-      b_2122 = term;
-      term = c_2122;
-      IStrategoList list68;
-      list68 = checkListTail(b_2122);
-      if(list68 == null)
-        break Fail2135;
-      term = termFactory.annotateTerm(a_2122, checkListAnnos(termFactory, (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(termFactory.makeAppl(Main._consUnresolved_1, new IStrategoTerm[]{z_2121}), termFactory.makeListCons(a_2122, list68)), (IStrategoList)trans.constNil1)));
+      w_11984 = term;
+      term = x_11984;
+      IStrategoList list144;
+      list144 = checkListTail(w_11984);
+      if(list144 == null)
+        break Fail5037;
+      term = termFactory.annotateTerm(v_11984, checkListAnnos(termFactory, (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(termFactory.makeAppl(Main._consUnresolved_1, new IStrategoTerm[]{u_11984}), termFactory.makeListCons(v_11984, list144)), (IStrategoList)trans.constNil3)));
       context.popOnSuccess();
       if(true)
         return term;

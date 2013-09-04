@@ -20,19 +20,19 @@ import java.lang.ref.WeakReference;
 { 
   public static index_setup_0_2 instance = new index_setup_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm x_2133, IStrategoTerm y_2133)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm s_11996, IStrategoTerm t_11996)
   { 
     context.push("index_setup_0_2");
-    Fail2210:
+    Fail5112:
     { 
-      IStrategoTerm a_2134 = null;
-      term = obsolete_1_0.instance.invoke(context, term, lifted507.instance);
+      IStrategoTerm v_11996 = null;
+      term = obsolete_1_0.instance.invoke(context, term, lifted1107.instance);
       if(term == null)
-        break Fail2210;
-      a_2134 = term;
-      term = index_setup_0_3.instance.invoke(context, a_2134, x_2133, y_2133, trans.const369);
+        break Fail5112;
+      v_11996 = term;
+      term = index_setup_0_3.instance.invoke(context, v_11996, s_11996, t_11996, trans.const889);
       if(term == null)
-        break Fail2210;
+        break Fail5112;
       context.popOnSuccess();
       if(true)
         return term;

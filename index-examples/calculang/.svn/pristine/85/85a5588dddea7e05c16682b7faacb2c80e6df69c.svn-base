@@ -1,0 +1,18 @@
+module execution 
+
+language Calculang
+
+test Constant [[
+  1
+]] build generate-java 
+
+test Constant [[
+  42
+]] build generate-java to "
+      public class Output {
+        public static void main(String[] args) {
+          System.out.println(42);
+          System.exit(0);
+        }
+      }"
+

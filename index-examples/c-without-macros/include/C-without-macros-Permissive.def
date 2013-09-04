@@ -1,0 +1,133 @@
+
+definition
+
+module Common
+exports
+  sorts WATER WATERTOKEN WATERTOKENSTART WATERTOKENSEPARATOR WATERTOKENSTAR
+
+  lexical syntax
+    [A-Za-z0-9\_]                  -> WATERTOKENSTART     {recover, avoid}
+    WATERTOKENSTART [A-Za-z0-9\_]* -> WATERTOKEN          
+    ~[A-Za-z0-9\_\ \t\12\r\n\*]    -> WATERTOKENSEPARATOR {recover, avoid}
+    "*"                            -> WATERTOKENSTAR      {recover, avoid}
+    WATERTOKEN                     -> WATER               
+    WATERTOKENSEPARATOR            -> WATER               
+    WATERTOKENSTAR                 -> WATER               
+                                   -> WATEREOF            
+    "completion123"                -> COMPLETIONPREFIX    {completion}
+    "|#WATERTOKENSTAR|"            -> WATERTOKENSTAR      {completion}
+    "|#STRING|"                    -> STRING              {completion}
+    "|#StringChar|"                -> StringChar          {completion}
+    "|#BackSlashChar|"             -> BackSlashChar       {completion}
+    "|#Include|"                   -> Include             {completion}
+    "|#Definition|"                -> Definition          {completion}
+    "|#TypeDecl|"                  -> TypeDecl            {completion}
+    "|#Field|"                     -> Field               {completion}
+    "|#Stmt|"                      -> Stmt                {completion}
+    "|#Expr|"                      -> Expr                {completion}
+    "|#Type|"                      -> Type                {completion}
+
+  lexical restrictions
+    WATERTOKEN -/- [A-Za-z0-9\_]
+    WATERTOKENSTAR -/- [\/]
+
+  context-free syntax
+    WATER -> LAYOUT {cons("WATER")}
+
+  (
+
+  sorts WATEREOF
+
+  lexical restrictions
+    WATEREOF -/- ~[]
+
+  lexical syntax
+    %% Lexical insertion recovery rules                              
+    "\""                                          -> INSERTOPENQUOTE {recover}
+    INSERTOPENQUOTE StringChar* "\n"              -> STRING          {cons("INSERTEND")}
+    INSERTOPENQUOTE StringChar* WATEREOF          -> STRING          {cons("INSERTEND")}
+    "/*"                                          -> INSERTSTART     {recover}
+    INSERTSTART ( ~[\*] | CommentChar )* WATEREOF -> LAYOUT          {cons("INSERTEND")}
+                                                  -> "\""            {recover, cons("INSERTION")}
+                                                  -> ">"             {recover, cons("INSERTION")}
+                                                  -> "include"       {recover, cons("INSERTION")}
+                                                  -> "}"             {recover, cons("INSERTION")}
+                                                  -> ";"             {recover, cons("INSERTION")}
+                                                  -> "return"        {recover, cons("INSERTION")}
+                                                  -> ","             {recover, cons("INSERTION")}
+                                                  -> ")"             {recover, cons("INSERTION")}
+
+  syntax
+    %% Kernel syntax insertion recovery rules   
+
+  )
+
+  (
+
+  lexical syntax
+    [a-zA-Z] [a-zA-Z0-9\_]*            -> ID            
+    "-"? [0-9]+                        -> INT           
+    StringChar*                        -> UQSTRING      
+    "\"" StringChar* "\""              -> STRING        
+    ~[\"\n]                            -> StringChar    
+    "\\\""                             -> StringChar    
+    BackSlashChar                      -> StringChar    
+    "\\"                               -> BackSlashChar 
+    [\ \t\n\r]                         -> LAYOUT        
+    [\*]                               -> CommentChar   
+    "/*" ( ~[\*] | CommentChar )* "*/" -> LAYOUT        
+    "//" ~[\n\r]* [\n\r] | EOF         -> LAYOUT        
+                                       -> EOF           
+
+  lexical restrictions
+    CommentChar -/- [\/]
+    INT -/- [0-9]
+    ID -/- [a-zA-Z0-9\_]
+    EOF -/- ~[]
+    BackSlashChar -/- [\"]
+
+  context-free restrictions
+    LAYOUT? -/- [\ \t\n\r]
+    LAYOUT? -/- [\/] . [\/]
+    LAYOUT? -/- [\/] . [\*]
+
+  )
+
+module C-without-macros
+imports Common
+
+exports
+  context-free start-symbols
+    Start
+
+  context-free syntax
+    Include* Definition*                       -> Start      {cons("Start")}
+    "include" "\"" UQSTRING "\""               -> Include    {cons("Include")}
+    "include" "<" UQSTRING ">"                 -> Include    {cons("Include")}
+    Type ID "(" {Param ","}* ")" "{" Stmt* "}" -> Definition {cons("FunDecl")}
+    Type ID                                    -> Param      {cons("Param")}
+    TypeDecl ";"                               -> Definition {cons("TypeDecl")}
+    "typedef" Type ID                          -> TypeDecl   {cons("TypeDef")}
+    "typedef" TypeDecl ID                      -> TypeDecl   {cons("TypeDef")}
+    "struct" ID "{" Field* "}"                 -> TypeDecl   {cons("StructDecl")}
+    Type ID ";"                                -> Field      {cons("Field")}
+    Type ID ";"                                -> Stmt       {cons("VarDecl")}
+    Expr ";"                                   -> Stmt       {cons("Stmt")}
+    Expr "=" Expr ";"                          -> Stmt       {cons("Assign")}
+    "return" Expr ";"                          -> Stmt       {cons("Return"), prefer}
+    STRING                                     -> Expr       {cons("StrLit")}
+    INT                                        -> Expr       {cons("IntLit")}
+    ID "(" {Expr ","}* ")"                     -> Expr       {cons("Call"), avoid}
+    "sizeof" "(" Type ")"                      -> Expr       {cons("SizeOf")}
+    Expr "." ID                                -> Expr       {cons("Access")}
+    Expr "->" ID                               -> Expr       {cons("DerefAccess")}
+    "*" Expr                                   -> Expr       {cons("Deref")}
+    "&" Expr                                   -> Expr       {cons("Ref")}
+    ID                                         -> Expr       {cons("VarRef")}
+    "(" Type ")" Expr                          -> Expr       {cons("Cast")}
+    ID                                         -> Type       {cons("Type"), avoid}
+    "char"                                     -> Type       {cons("Char"), prefer}
+    "int"                                      -> Type       {cons("Int"), prefer}
+    "void"                                     -> Type       {cons("Void"), prefer}
+    Type "*"                                   -> Type       {cons("Pointer"), left}
+    "struct" ID                                -> Type       {cons("StructRef")}

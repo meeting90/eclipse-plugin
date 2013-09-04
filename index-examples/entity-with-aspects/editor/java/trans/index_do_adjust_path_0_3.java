@@ -20,34 +20,34 @@ import java.lang.ref.WeakReference;
 { 
   public static index_do_adjust_path_0_3 instance = new index_do_adjust_path_0_3();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm b_2104, IStrategoTerm c_2104, IStrategoTerm ref_d_2104)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm w_11966, IStrategoTerm x_11966, IStrategoTerm ref_y_11966)
   { 
     ITermFactory termFactory = context.getFactory();
-    TermReference d_2104 = new TermReference(ref_d_2104);
+    TermReference y_11966 = new TermReference(ref_y_11966);
     context.push("index_do_adjust_path_0_3");
-    Fail2016:
+    Fail4918:
     { 
-      IStrategoTerm term1255 = term;
-      Success1228:
+      IStrategoTerm term2811 = term;
+      Success2784:
       { 
-        Fail2017:
+        Fail4919:
         { 
-          lifted413 lifted4130 = new lifted413();
-          lifted4130.d_2104 = d_2104;
-          term = adjust_index_path_1_2.instance.invoke(context, term, lifted4130, b_2104, c_2104);
+          lifted1013 lifted10130 = new lifted1013();
+          lifted10130.y_11966 = y_11966;
+          term = adjust_index_path_1_2.instance.invoke(context, term, lifted10130, w_11966, x_11966);
           if(term == null)
-            break Fail2017;
+            break Fail4919;
           if(true)
-            break Success1228;
+            break Success2784;
         }
-        term = term1255;
-        if(d_2104.value == null)
-          break Fail2016;
-        IStrategoList list59;
-        list59 = checkListTail(c_2104);
-        if(list59 == null)
-          break Fail2016;
-        term = (IStrategoTerm)termFactory.makeListCons(d_2104.value, list59);
+        term = term2811;
+        if(y_11966.value == null)
+          break Fail4918;
+        IStrategoList list135;
+        list135 = checkListTail(x_11966);
+        if(list135 == null)
+          break Fail4918;
+        term = (IStrategoTerm)termFactory.makeListCons(y_11966.value, list135);
       }
       context.popOnSuccess();
       if(true)

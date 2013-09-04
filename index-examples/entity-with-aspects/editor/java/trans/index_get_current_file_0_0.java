@@ -22,11 +22,11 @@ import java.lang.ref.WeakReference;
 
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
-    Fail2224:
+    Fail5126:
     { 
       term = context.invokePrimitive("LANG_index_get_current_file", term, NO_STRATEGIES, NO_TERMS);
       if(term == null)
-        break Fail2224;
+        break Fail5126;
       if(true)
         return term;
     }

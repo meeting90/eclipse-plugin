@@ -20,12 +20,12 @@ import java.lang.ref.WeakReference;
 { 
   public static nam_annotate_scopes_0_1 instance = new nam_annotate_scopes_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm m_2122)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm h_11985)
   { 
-    Fail2145:
+    Fail5047:
     { 
       if(true)
-        break Fail2145;
+        break Fail5047;
       if(true)
         return term;
     }

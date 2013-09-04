@@ -20,26 +20,26 @@ import java.lang.ref.WeakReference;
 { 
   public static index_get_defs_1_2 instance = new index_get_defs_1_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy v_2116, IStrategoTerm r_2116, IStrategoTerm s_2116)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy q_11979, IStrategoTerm m_11979, IStrategoTerm n_11979)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_get_defs_1_2");
-    Fail2087:
+    Fail4989:
     { 
-      IStrategoTerm t_2116 = null;
-      IStrategoTerm u_2116 = null;
+      IStrategoTerm o_11979 = null;
+      IStrategoTerm p_11979 = null;
       if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-        break Fail2087;
-      t_2116 = ((IStrategoList)term).head();
-      u_2116 = ((IStrategoList)term).tail();
-      IStrategoList list63;
-      list63 = checkListTail(u_2116);
-      if(list63 == null)
-        break Fail2087;
-      term = termFactory.makeAppl(Main._consDef_1, new IStrategoTerm[]{(IStrategoTerm)termFactory.makeListCons(t_2116, termFactory.makeListCons(s_2116, list63))});
+        break Fail4989;
+      o_11979 = ((IStrategoList)term).head();
+      p_11979 = ((IStrategoList)term).tail();
+      IStrategoList list139;
+      list139 = checkListTail(p_11979);
+      if(list139 == null)
+        break Fail4989;
+      term = termFactory.makeAppl(Main._consDef_1, new IStrategoTerm[]{(IStrategoTerm)termFactory.makeListCons(o_11979, termFactory.makeListCons(n_11979, list139))});
       term = index_get_all_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2087;
+        break Fail4989;
       context.popOnSuccess();
       if(true)
         return term;

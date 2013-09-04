@@ -20,12 +20,12 @@ import java.lang.ref.WeakReference;
 { 
   public static nam_annotate_scope_0_1 instance = new nam_annotate_scope_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm k_2122)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm f_11985)
   { 
     ITermFactory termFactory = context.getFactory();
-    Fail2139:
+    Fail5041:
     { 
-      term = termFactory.annotateTerm(term, checkListAnnos(termFactory, (IStrategoTerm)termFactory.makeListCons(termFactory.makeAppl(Main._consScope_1, new IStrategoTerm[]{k_2122}), (IStrategoList)trans.constNil1)));
+      term = termFactory.annotateTerm(term, checkListAnnos(termFactory, (IStrategoTerm)termFactory.makeListCons(termFactory.makeAppl(Main._consScope_1, new IStrategoTerm[]{f_11985}), (IStrategoList)trans.constNil3)));
       if(true)
         return term;
     }

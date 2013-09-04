@@ -20,12 +20,12 @@ import java.lang.ref.WeakReference;
 { 
   public static adjust_index_path_1_2 instance = new adjust_index_path_1_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy p_2122, IStrategoTerm n_2122, IStrategoTerm o_2122)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy k_11985, IStrategoTerm i_11985, IStrategoTerm j_11985)
   { 
-    Fail2146:
+    Fail5048:
     { 
       if(true)
-        break Fail2146;
+        break Fail5048;
       if(true)
         return term;
     }

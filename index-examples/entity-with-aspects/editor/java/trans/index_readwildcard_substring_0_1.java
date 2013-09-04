@@ -20,25 +20,25 @@ import java.lang.ref.WeakReference;
 { 
   public static index_readwildcard_substring_0_1 instance = new index_readwildcard_substring_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_g_2119)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_b_11982)
   { 
-    TermReference g_2119 = new TermReference(ref_g_2119);
+    TermReference b_11982 = new TermReference(ref_b_11982);
     context.push("index_readwildcard_substring_0_1");
-    Fail2115:
+    Fail5017:
     { 
-      IStrategoTerm h_2119 = null;
-      IStrategoTerm i_2119 = null;
+      IStrategoTerm c_11982 = null;
+      IStrategoTerm d_11982 = null;
       if(term.getTermType() != IStrategoTerm.APPL || Main._consReadWildcard_2 != ((IStrategoAppl)term).getConstructor())
-        break Fail2115;
-      h_2119 = term.getSubterm(1);
-      i_2119 = term;
-      term = h_2119;
-      lifted452 lifted4520 = new lifted452();
-      lifted4520.g_2119 = g_2119;
-      term = is_substring_1_0.instance.invoke(context, term, lifted4520);
+        break Fail5017;
+      c_11982 = term.getSubterm(1);
+      d_11982 = term;
+      term = c_11982;
+      lifted1052 lifted10520 = new lifted1052();
+      lifted10520.b_11982 = b_11982;
+      term = is_substring_1_0.instance.invoke(context, term, lifted10520);
       if(term == null)
-        break Fail2115;
-      term = i_2119;
+        break Fail5017;
+      term = d_11982;
       context.popOnSuccess();
       if(true)
         return term;

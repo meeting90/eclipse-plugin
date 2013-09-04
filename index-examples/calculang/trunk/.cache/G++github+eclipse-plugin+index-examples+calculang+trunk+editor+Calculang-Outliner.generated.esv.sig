@@ -1,0 +1,1 @@
+Module("Calculang-Outliner.generated",NoImports,[Outliner(" Default outliner        ",[])])

@@ -1,0 +1,24 @@
+( Module(
+    "CRM"{[Module(), "CRM"]}
+  , []
+  , [ Entity(
+        "Location"{[Entity(), "Location", "CRM"]}
+      , [ Property("mCity"{[Property(), "mCity", "Location", "CRM"]}, StringType())
+        , Property("mAddress"{[Property(), "mAddress", "Location", "CRM"]}, StringType())
+        , Property("mNumber"{[Property(), "mNumber", "Location", "CRM"]}, IntType())
+        , Function(
+            "Set"{[Function(), "Set", "Location", "CRM"]}
+          , [Param("city"{[Variable(), "city", "Set", "Location", "CRM"]}, StringType()), Param("address"{[Variable(), "address", "Set", "Location", "CRM"]}, StringType()), Param("number"{[Variable(), "number", "Set", "Location", "CRM"]}, IntType())]
+          , Block(
+              [ Assign(Var("mCity"{[Property(), "mCity", "Location", "CRM"]}), Var("city"{[Variable(), "city", "Set", "Location", "CRM"]}))
+              , Assign(Var("mAddress"{[Property(), "mAddress", "Location", "CRM"]}), Var("address"{[Variable(), "address", "Set", "Location", "CRM"]}))
+              , Assign(Var("mNumber"{[Property(), "mNumber", "Location", "CRM"]}), Var("number"{[Variable(), "number", "Set", "Location", "CRM"]}))
+              ]
+            )
+          )
+        ]
+      )
+    ]
+  )
+, [("G:/github/eclipse-plugin/index-examples/entity-with-aspects/test/location.ewa", [])]
+)

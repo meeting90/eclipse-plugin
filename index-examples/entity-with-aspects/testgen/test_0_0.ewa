@@ -1,0 +1,306 @@
+module TestGen
+
+entity f13058 {
+  g13058 : Int
+  h13058 : Int
+  i13058 : Int
+  j13058 : String
+  k13058 : Int
+  l13058 : Int
+  m13058 : String
+  n13058 : Int
+  o13058 : Int
+  p13058 : Int
+  q13058 : Int
+  r13058 : Int
+  s13058 : Int
+  t13058 : Int
+  u13058 : String
+  v13058 : String
+  w13058 : Int
+  x13058 : Int
+  y13058 : Int
+  z13058 : h12942
+  a13059 : String
+  b13059 : String
+  c13059 : String
+  d13059 : String
+  e13059 : String
+  f13059 : String
+  g13059 : Int
+  h13059 : String
+  i13059 : String
+  j13059 : h12942
+  k13059 : Int
+  l13059 : String
+  m13059 : Int
+  n13059()
+  {
+    print "o_13059"
+    print "p_13059"
+    print "q_13059"
+    print "r_13059"
+  }
+
+}
+
+entity s13059 {
+  t13059 : String
+  u13059 : Int
+  v13059 : String
+  w13059 : Int
+  x13059 : String
+  y13059 : Int
+  z13059 : Int
+  a13060 : String
+  b13060 : String
+  c13060 : Int
+  d13060 : Int
+  e13060 : h12942
+  f13060 : String
+  g13060 : Int
+  h13060 : String
+  i13060 : String
+  j13060 : Int
+  k13060 : String
+  l13060 : String
+  m13060 : String
+  n13060 : String
+  o13060 : String
+  p13060 : Int
+  q13060 : String
+  r13060 : String
+  s13060 : Int
+  t13060 : Int
+  u13060 : String
+  v13060 : String
+  w13060 : Int
+  x13060 : Int
+  y13060 : Int
+  z13060 : String
+  a13061 : String
+  b13061 : String
+  c13061 : String
+  d13061 : String
+  e13061 : Int
+  f13061 : String
+  g13061 : String
+  h13061 : String
+  i13061 : String
+  j13061 : Int
+  k13061 : Int
+  l13061 : h12942
+  m13061 : String
+  n13061 : Int
+  o13061 : Int
+  p13061 : Int
+  q13061 : String
+  r13061 : String
+  s13061 : Int
+  t13061 : String
+  u13061 : String
+  v13061 : String
+  w13061 : String
+  x13061 : String
+  y13061()
+  {
+    print "z_13061"
+    print "a_13062"
+    print "b_13062"
+    print "c_13062"
+    print "d_13062"
+  }
+
+}
+
+entity e13062 {
+  f13062 : Int
+  g13062 : Int
+  h13062 : String
+  i13062 : Int
+  j13062 : Int
+  k13062 : String
+  l13062 : String
+  m13062 : String
+  n13062 : String
+  o13062 : h12942
+  p13062 : Int
+  q13062 : Int
+  r13062 : String
+  s13062 : Int
+  t13062 : String
+  u13062 : h12942
+  v13062 : Int
+  w13062 : Int
+  x13062 : Int
+  y13062 : String
+  z13062 : String
+  a13063 : Int
+  b13063 : Int
+  c13063 : String
+  d13063 : String
+  e13063 : Int
+  f13063 : String
+  g13063 : String
+  h13063 : Int
+  i13063 : String
+  j13063 : Int
+  k13063 : String
+  l13063 : h12942
+  m13063 : Int
+  n13063 : Int
+  o13063 : Int
+  p13063 : String
+  q13063 : Int
+  r13063 : h12942
+  s13063 : Int
+  t13063 : String
+  u13063 : String
+  v13063 : String
+  w13063 : h12942
+  x13063 : String
+  y13063 : String
+  z13063 : Int
+  a13064 : Int
+  b13064 : String
+  c13064 : String
+  d13064 : String
+  e13064 : Int
+  f13064 : String
+  g13064 : Int
+  h13064 : Int
+  i13064 : Int
+  j13064 : String
+  k13064 : Int
+  l13064 : String
+  m13064 : h12942
+  n13064 : String
+  o13064 : String
+  p13064 : String
+  q13064()
+  {
+    print "r_13064"
+    print "s_13064"
+    print "t_13064"
+    print "u_13064"
+    print "v_13064"
+    print "w_13064"
+    print "x_13064"
+    print "y_13064"
+    print "z_13064"
+  }
+  a13065()
+  {
+    print "b_13065"
+    print "c_13065"
+    print "d_13065"
+    print "e_13065"
+    print "f_13065"
+    print "g_13065"
+    print "h_13065"
+    print "i_13065"
+    print "j_13065"
+  }
+  k13065()
+  {
+    print "l_13065"
+    print "m_13065"
+    print "n_13065"
+    print "o_13065"
+    print "p_13065"
+  }
+  q13065()
+  {
+    print "r_13065"
+    print "s_13065"
+    print "t_13065"
+    print "u_13065"
+    print "v_13065"
+    print "w_13065"
+    print "x_13065"
+    print "y_13065"
+  }
+
+}
+
+entity z13065 {
+  a13066 : Int
+  b13066 : String
+  c13066 : Int
+  d13066 : h12942
+  e13066 : String
+  f13066 : String
+  g13066 : String
+  h13066 : String
+  i13066 : String
+  j13066 : h12942
+  k13066 : String
+  l13066 : Int
+  m13066 : Int
+  n13066 : Int
+  o13066 : Int
+  p13066 : String
+  q13066 : Int
+  r13066 : String
+  s13066 : String
+  t13066 : Int
+  u13066 : h12942
+  v13066 : String
+  w13066 : Int
+  x13066 : String
+  y13066 : String
+  z13066 : Int
+  a13067 : String
+  b13067 : String
+  c13067 : Int
+  d13067 : String
+  e13067 : String
+  f13067 : String
+  g13067()
+  {
+    print "h_13067"
+    print "i_13067"
+    print "j_13067"
+    print "k_13067"
+  }
+  l13067()
+  {
+    print "m_13067"
+    print "n_13067"
+    print "o_13067"
+    print "p_13067"
+    print "q_13067"
+    print "r_13067"
+    print "s_13067"
+    print "t_13067"
+    print "u_13067"
+  }
+  v13067()
+  {
+    print "w_13067"
+    print "x_13067"
+    print "y_13067"
+    print "z_13067"
+  }
+
+}
+
+aspect a13068 {
+  pointcut b13068(e13068 : String):
+    assigned (String)
+  advice c13068 after(d13068 : String): b13068(d13068)
+    print d13068
+
+}
+
+aspect f13068 {
+  pointcut g13068(j13068 : String):
+    assigned (String)
+  advice h13068 after(i13068 : String): g13068(i13068)
+    print i13068
+  pointcut k13068(n13068 : String):
+    assigned (String)
+  advice l13068 before(m13068 : String): k13068(m13068)
+    print m13068
+
+}

@@ -20,57 +20,57 @@ import java.lang.ref.WeakReference;
 { 
   public static index_clear_global_0_1 instance = new index_clear_global_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm b_2139)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm w_12001)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_clear_global_0_1");
-    Fail2247:
+    Fail5149:
     { 
-      IStrategoTerm e_2139 = null;
-      e_2139 = term;
-      IStrategoTerm term1365 = term;
-      Success1331:
+      IStrategoTerm z_12001 = null;
+      z_12001 = term;
+      IStrategoTerm term2921 = term;
+      Success2887:
       { 
-        Fail2248:
+        Fail5150:
         { 
-          IStrategoTerm h_2139 = null;
-          IStrategoTerm i_2139 = null;
-          IStrategoTerm j_2139 = null;
-          IStrategoTerm m_2296 = null;
-          IStrategoTerm r_2296 = null;
-          IStrategoTerm o_2296 = null;
-          term = index_globals_uri_0_0.instance.invoke(context, b_2139);
+          IStrategoTerm c_12002 = null;
+          IStrategoTerm d_12002 = null;
+          IStrategoTerm e_12002 = null;
+          IStrategoTerm h_12159 = null;
+          IStrategoTerm m_12159 = null;
+          IStrategoTerm j_12159 = null;
+          term = index_globals_uri_0_0.instance.invoke(context, w_12001);
           if(term == null)
-            break Fail2248;
-          term = termFactory.makeAppl(Main._consGlobal_2, new IStrategoTerm[]{term, trans.const362});
-          i_2139 = term;
-          j_2139 = trans.const460;
-          h_2139 = j_2139;
-          r_2296 = i_2139;
-          m_2296 = h_2139;
-          term = r_2296;
-          o_2296 = r_2296;
-          term = context.invokePrimitive("LANG_index_remove", o_2296, NO_STRATEGIES, new IStrategoTerm[]{term, m_2296});
+            break Fail5150;
+          term = termFactory.makeAppl(Main._consGlobal_2, new IStrategoTerm[]{term, trans.const882});
+          d_12002 = term;
+          e_12002 = trans.const980;
+          c_12002 = e_12002;
+          m_12159 = d_12002;
+          h_12159 = c_12002;
+          term = m_12159;
+          j_12159 = m_12159;
+          term = context.invokePrimitive("LANG_index_remove", j_12159, NO_STRATEGIES, new IStrategoTerm[]{term, h_12159});
           if(term == null)
-            break Fail2248;
+            break Fail5150;
           if(true)
-            break Success1331;
+            break Success2887;
         }
-        term = term1365;
-        IStrategoTerm c_2139 = null;
-        IStrategoTerm d_2139 = null;
-        IStrategoTerm m_2139 = null;
-        c_2139 = term;
+        term = term2921;
+        IStrategoTerm x_12001 = null;
+        IStrategoTerm y_12001 = null;
+        IStrategoTerm h_12002 = null;
+        x_12001 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail2247;
-        d_2139 = term;
-        m_2139 = c_2139;
-        term = report_with_failure_0_2.instance.invoke(context, m_2139, trans.const468, d_2139);
+          break Fail5149;
+        y_12001 = term;
+        h_12002 = x_12001;
+        term = report_with_failure_0_2.instance.invoke(context, h_12002, trans.const988, y_12001);
         if(term == null)
-          break Fail2247;
+          break Fail5149;
       }
-      term = e_2139;
+      term = z_12001;
       context.popOnSuccess();
       if(true)
         return term;

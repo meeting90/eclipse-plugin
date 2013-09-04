@@ -20,48 +20,48 @@ import java.lang.ref.WeakReference;
 { 
   public static analyze_top_store_ast_0_2 instance = new analyze_top_store_ast_0_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm j_2099, IStrategoTerm k_2099)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm e_11962, IStrategoTerm f_11962)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("analyze_top_store_ast_0_2");
-    Fail1998:
+    Fail4900:
     { 
-      IStrategoTerm m_2099 = null;
-      IStrategoTerm n_2099 = null;
-      IStrategoTerm p_2099 = null;
+      IStrategoTerm h_11962 = null;
+      IStrategoTerm i_11962 = null;
+      IStrategoTerm k_11962 = null;
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-        break Fail1998;
-      n_2099 = term.getSubterm(0);
-      IStrategoTerm arg646 = term.getSubterm(1);
-      if(arg646.getTermType() != IStrategoTerm.TUPLE || arg646.getSubtermCount() != 2)
-        break Fail1998;
-      m_2099 = arg646.getSubterm(1);
-      p_2099 = term;
-      Success1217:
+        break Fail4900;
+      i_11962 = term.getSubterm(0);
+      IStrategoTerm arg1500 = term.getSubterm(1);
+      if(arg1500.getTermType() != IStrategoTerm.TUPLE || arg1500.getSubtermCount() != 2)
+        break Fail4900;
+      h_11962 = arg1500.getSubterm(1);
+      k_11962 = term;
+      Success2773:
       { 
-        Fail1999:
+        Fail4901:
         { 
-          IStrategoTerm o_2099 = null;
-          o_2099 = term;
-          term = m_2099;
+          IStrategoTerm j_11962 = null;
+          j_11962 = term;
+          term = h_11962;
           if(term.getTermType() != IStrategoTerm.LIST || !((IStrategoList)term).isEmpty())
-            break Fail1999;
-          term = o_2099;
+            break Fail4901;
+          term = j_11962;
           { 
-            term = termFactory.makeAppl(Main._consAST_2, new IStrategoTerm[]{termFactory.makeTuple(j_2099, k_2099), n_2099});
-            term = index_add_0_1.instance.invoke(context, term, k_2099);
+            term = termFactory.makeAppl(Main._consAST_2, new IStrategoTerm[]{termFactory.makeTuple(e_11962, f_11962), i_11962});
+            term = index_add_0_1.instance.invoke(context, term, f_11962);
             if(term == null)
-              break Fail1998;
+              break Fail4900;
             if(true)
-              break Success1217;
+              break Success2773;
           }
         }
-        term = termFactory.makeAppl(Main._consAST_2, new IStrategoTerm[]{termFactory.makeTuple(j_2099, m_2099), n_2099});
-        term = index_add_0_1.instance.invoke(context, term, k_2099);
+        term = termFactory.makeAppl(Main._consAST_2, new IStrategoTerm[]{termFactory.makeTuple(e_11962, h_11962), i_11962});
+        term = index_add_0_1.instance.invoke(context, term, f_11962);
         if(term == null)
-          break Fail1998;
+          break Fail4900;
       }
-      term = p_2099;
+      term = k_11962;
       context.popOnSuccess();
       if(true)
         return term;

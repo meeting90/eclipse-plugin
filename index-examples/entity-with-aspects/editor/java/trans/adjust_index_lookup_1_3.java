@@ -20,122 +20,122 @@ import java.lang.ref.WeakReference;
 { 
   public static adjust_index_lookup_1_3 instance = new adjust_index_lookup_1_3();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy r_2195, IStrategoTerm s_2195, IStrategoTerm t_2195, IStrategoTerm u_2195)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy m_12058, IStrategoTerm n_12058, IStrategoTerm o_12058, IStrategoTerm p_12058)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("adjust_index_lookup_1_3");
-    Fail1510:
+    Fail4412:
     { 
-      IStrategoTerm term831 = term;
-      IStrategoConstructor cons53 = term.getTermType() == IStrategoTerm.APPL ? ((IStrategoAppl)term).getConstructor() : null;
-      Success831:
+      IStrategoTerm term2387 = term;
+      IStrategoConstructor cons125 = term.getTermType() == IStrategoTerm.APPL ? ((IStrategoAppl)term).getConstructor() : null;
+      Success2387:
       { 
-        if(cons53 == Main._consEntityImport_2)
+        if(cons125 == Main._consEntityImport_2)
         { 
-          Fail1511:
+          Fail4413:
           { 
-            IStrategoTerm l_2028 = null;
-            IStrategoTerm n_2028 = null;
-            l_2028 = term.getSubterm(0);
-            n_2028 = term;
-            term = r_2195.invoke(context, l_2028);
+            IStrategoTerm g_11891 = null;
+            IStrategoTerm i_11891 = null;
+            g_11891 = term.getSubterm(0);
+            i_11891 = term;
+            term = m_12058.invoke(context, g_11891);
             if(term == null)
-              break Fail1511;
-            term = n_2028;
-            IStrategoList list39;
-            IStrategoList list38;
-            list38 = checkListTail(t_2195);
-            if(list38 == null)
-              break Fail1511;
-            list39 = checkListTail(t_2195);
-            if(list39 == null)
-              break Fail1511;
-            term = (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constModule0, list39), termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constEntity0, list38), (IStrategoList)trans.constNil1));
+              break Fail4413;
+            term = i_11891;
+            IStrategoList list115;
+            IStrategoList list114;
+            list114 = checkListTail(o_12058);
+            if(list114 == null)
+              break Fail4413;
+            list115 = checkListTail(o_12058);
+            if(list115 == null)
+              break Fail4413;
+            term = (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constModule0, list115), termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constEntity0, list114), (IStrategoList)trans.constNil3));
             if(true)
-              break Success831;
+              break Success2387;
           }
-          term = term831;
+          term = term2387;
         }
-        Success832:
+        Success2388:
         { 
-          if(cons53 == Main._consType_1)
+          if(cons125 == Main._consType_1)
           { 
-            Fail1512:
+            Fail4414:
             { 
-              IStrategoTerm e_2028 = null;
-              IStrategoTerm g_2028 = null;
-              e_2028 = term.getSubterm(0);
-              g_2028 = term;
-              term = r_2195.invoke(context, e_2028);
+              IStrategoTerm z_11890 = null;
+              IStrategoTerm b_11891 = null;
+              z_11890 = term.getSubterm(0);
+              b_11891 = term;
+              term = m_12058.invoke(context, z_11890);
               if(term == null)
-                break Fail1512;
-              term = g_2028;
-              IStrategoList list40;
-              list40 = checkListTail(t_2195);
-              if(list40 == null)
-                break Fail1512;
-              term = (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constEntity0, list40), (IStrategoList)trans.constNil1), (IStrategoList)trans.constCons85);
+                break Fail4414;
+              term = b_11891;
+              IStrategoList list116;
+              list116 = checkListTail(o_12058);
+              if(list116 == null)
+                break Fail4414;
+              term = (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constEntity0, list116), (IStrategoList)trans.constNil3), (IStrategoList)trans.constCons217);
               term = concat_0_0.instance.invoke(context, term);
               if(term == null)
-                break Fail1512;
+                break Fail4414;
               if(true)
-                break Success832;
+                break Success2388;
             }
-            term = term831;
+            term = term2387;
           }
-          Success833:
+          Success2389:
           { 
-            if(cons53 == Main._consPropAccess_2)
+            if(cons125 == Main._consPropAccess_2)
             { 
-              Fail1513:
+              Fail4415:
               { 
-                IStrategoTerm t_2027 = null;
-                IStrategoTerm u_2027 = null;
-                IStrategoTerm v_2027 = null;
-                IStrategoTerm a_2028 = null;
-                u_2027 = term.getSubterm(0);
-                t_2027 = term.getSubterm(1);
-                term = r_2195.invoke(context, t_2027);
+                IStrategoTerm o_11890 = null;
+                IStrategoTerm p_11890 = null;
+                IStrategoTerm q_11890 = null;
+                IStrategoTerm v_11890 = null;
+                p_11890 = term.getSubterm(0);
+                o_11890 = term.getSubterm(1);
+                term = m_12058.invoke(context, o_11890);
                 if(term == null)
-                  break Fail1513;
-                term = type_of_0_0.instance.invoke(context, u_2027);
+                  break Fail4415;
+                term = type_of_0_0.instance.invoke(context, p_11890);
                 if(term == null)
-                  break Fail1513;
+                  break Fail4415;
                 if(term.getTermType() != IStrategoTerm.APPL || Main._consType_1 != ((IStrategoAppl)term).getConstructor())
-                  break Fail1513;
-                v_2027 = term.getSubterm(0);
-                a_2028 = v_2027;
-                term = index_lookup_children_0_2.instance.invoke(context, a_2028, trans.constProperty0, u_2195);
+                  break Fail4415;
+                q_11890 = term.getSubterm(0);
+                v_11890 = q_11890;
+                term = index_lookup_children_0_2.instance.invoke(context, v_11890, trans.constProperty0, p_12058);
                 if(term == null)
-                  break Fail1513;
+                  break Fail4415;
                 if(true)
-                  break Success833;
+                  break Success2389;
               }
-              term = term831;
+              term = term2387;
             }
-            if(cons53 == Main._consVar_1)
+            if(cons125 == Main._consVar_1)
             { 
-              IStrategoTerm n_2027 = null;
-              IStrategoTerm p_2027 = null;
-              n_2027 = term.getSubterm(0);
-              p_2027 = term;
-              term = r_2195.invoke(context, n_2027);
+              IStrategoTerm i_11890 = null;
+              IStrategoTerm k_11890 = null;
+              i_11890 = term.getSubterm(0);
+              k_11890 = term;
+              term = m_12058.invoke(context, i_11890);
               if(term == null)
-                break Fail1510;
-              term = p_2027;
-              IStrategoList list42;
-              IStrategoList list41;
-              list41 = checkListTail(t_2195);
-              if(list41 == null)
-                break Fail1510;
-              list42 = checkListTail(t_2195);
-              if(list42 == null)
-                break Fail1510;
-              term = (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constVariable0, list42), termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constProperty0, list41), (IStrategoList)trans.constNil1));
+                break Fail4412;
+              term = k_11890;
+              IStrategoList list118;
+              IStrategoList list117;
+              list117 = checkListTail(o_12058);
+              if(list117 == null)
+                break Fail4412;
+              list118 = checkListTail(o_12058);
+              if(list118 == null)
+                break Fail4412;
+              term = (IStrategoTerm)termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constVariable0, list118), termFactory.makeListCons((IStrategoTerm)termFactory.makeListCons(trans.constProperty0, list117), (IStrategoList)trans.constNil3));
             }
             else
             { 
-              break Fail1510;
+              break Fail4412;
             }
           }
         }

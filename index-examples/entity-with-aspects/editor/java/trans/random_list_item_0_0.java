@@ -24,29 +24,29 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("random_list_item_0_0");
-    Fail1595:
+    Fail4497:
     { 
-      IStrategoTerm y_2038 = null;
-      IStrategoTerm d_2039 = null;
-      IStrategoTerm f_2039 = null;
-      IStrategoTerm g_2039 = null;
-      y_2038 = term;
-      f_2039 = term;
-      d_2039 = trans.const301;
-      g_2039 = f_2039;
-      term = length_0_0.instance.invoke(context, y_2038);
+      IStrategoTerm t_11901 = null;
+      IStrategoTerm y_11901 = null;
+      IStrategoTerm a_11902 = null;
+      IStrategoTerm b_11902 = null;
+      t_11901 = term;
+      a_11902 = term;
+      y_11901 = trans.const821;
+      b_11902 = a_11902;
+      term = length_0_0.instance.invoke(context, t_11901);
       if(term == null)
-        break Fail1595;
+        break Fail4497;
       term = inc_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1595;
-      term = random_int_0_2.instance.invoke(context, g_2039, d_2039, term);
+        break Fail4497;
+      term = random_int_0_2.instance.invoke(context, b_11902, y_11901, term);
       if(term == null)
-        break Fail1595;
-      term = termFactory.makeTuple(term, y_2038);
+        break Fail4497;
+      term = termFactory.makeTuple(term, t_11901);
       term = index_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1595;
+        break Fail4497;
       context.popOnSuccess();
       if(true)
         return term;

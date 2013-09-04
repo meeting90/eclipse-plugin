@@ -20,20 +20,20 @@ import java.lang.ref.WeakReference;
 { 
   public static index_transaction_1_0 instance = new index_transaction_1_0();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy k_2135)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy f_11998)
   { 
     context.push("index_transaction_1_0");
-    Fail2223:
+    Fail5125:
     { 
       term = context.invokePrimitive("LANG_index_start_transaction", term, NO_STRATEGIES, NO_TERMS);
       if(term == null)
-        break Fail2223;
-      term = try_1_0.instance.invoke(context, term, k_2135);
+        break Fail5125;
+      term = try_1_0.instance.invoke(context, term, f_11998);
       if(term == null)
-        break Fail2223;
+        break Fail5125;
       term = context.invokePrimitive("LANG_index_end_transaction", term, NO_STRATEGIES, NO_TERMS);
       if(term == null)
-        break Fail2223;
+        break Fail5125;
       context.popOnSuccess();
       if(true)
         return term;

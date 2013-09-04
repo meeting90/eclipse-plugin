@@ -20,77 +20,77 @@ import java.lang.ref.WeakReference;
 { 
   public static analyze_tree_data_part_0_1 instance = new analyze_tree_data_part_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_e_2105)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_z_11967)
   { 
-    TermReference e_2105 = new TermReference(ref_e_2105);
+    TermReference z_11967 = new TermReference(ref_z_11967);
     context.push("analyze_tree_data_part_0_1");
-    Fail2023:
+    Fail4925:
     { 
-      IStrategoTerm f_2105 = null;
-      IStrategoTerm g_2105 = null;
-      IStrategoTerm h_2105 = null;
-      IStrategoTerm i_2105 = null;
-      IStrategoTerm j_2105 = null;
-      i_2105 = term;
-      IStrategoTerm term1259 = term;
-      Success1232:
+      IStrategoTerm a_11968 = null;
+      IStrategoTerm b_11968 = null;
+      IStrategoTerm c_11968 = null;
+      IStrategoTerm d_11968 = null;
+      IStrategoTerm e_11968 = null;
+      d_11968 = term;
+      IStrategoTerm term2815 = term;
+      Success2788:
       { 
-        Fail2024:
+        Fail4926:
         { 
-          IStrategoTerm k_2105 = null;
-          k_2105 = term;
+          IStrategoTerm f_11968 = null;
+          f_11968 = term;
           term = nam_get_definition_key_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail2024;
-          f_2105 = term;
-          term = k_2105;
+            break Fail4926;
+          a_11968 = term;
+          term = f_11968;
           { 
-            term = f_2105;
-            IStrategoList annos77 = term.getAnnotations();
-            if(annos77.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos77).isEmpty())
-              break Fail2023;
-            IStrategoTerm arg657 = ((IStrategoList)annos77).head();
-            if(arg657.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg657).isEmpty())
-              break Fail2023;
-            g_2105 = ((IStrategoList)arg657).head();
-            h_2105 = ((IStrategoList)arg657).tail();
-            IStrategoTerm arg658 = ((IStrategoList)annos77).tail();
-            if(arg658.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg658).isEmpty())
-              break Fail2023;
-            IStrategoTerm term1260 = term;
-            Success1233:
+            term = a_11968;
+            IStrategoList annos215 = term.getAnnotations();
+            if(annos215.getTermType() != IStrategoTerm.LIST || ((IStrategoList)annos215).isEmpty())
+              break Fail4925;
+            IStrategoTerm arg1511 = ((IStrategoList)annos215).head();
+            if(arg1511.getTermType() != IStrategoTerm.LIST || ((IStrategoList)arg1511).isEmpty())
+              break Fail4925;
+            b_11968 = ((IStrategoList)arg1511).head();
+            c_11968 = ((IStrategoList)arg1511).tail();
+            IStrategoTerm arg1512 = ((IStrategoList)annos215).tail();
+            if(arg1512.getTermType() != IStrategoTerm.LIST || !((IStrategoList)arg1512).isEmpty())
+              break Fail4925;
+            IStrategoTerm term2816 = term;
+            Success2789:
             { 
-              Fail2025:
+              Fail4927:
               { 
-                IStrategoTerm l_2105 = null;
-                l_2105 = term;
-                term = i_2105;
-                lifted416 lifted4160 = new lifted416();
-                lifted4160.e_2105 = e_2105;
-                term = adjust_index_def_data_1_2.instance.invoke(context, term, lifted4160, g_2105, h_2105);
+                IStrategoTerm g_11968 = null;
+                g_11968 = term;
+                term = d_11968;
+                lifted1016 lifted10160 = new lifted1016();
+                lifted10160.z_11967 = z_11967;
+                term = adjust_index_def_data_1_2.instance.invoke(context, term, lifted10160, b_11968, c_11968);
                 if(term == null)
-                  break Fail2025;
-                j_2105 = term;
-                term = l_2105;
+                  break Fail4927;
+                e_11968 = term;
+                term = g_11968;
                 { 
-                  IStrategoTerm q_2105 = null;
-                  q_2105 = j_2105;
-                  term = fatal_err_0_1.instance.invoke(context, q_2105, trans.const423);
+                  IStrategoTerm l_11968 = null;
+                  l_11968 = e_11968;
+                  term = fatal_err_0_1.instance.invoke(context, l_11968, trans.const943);
                   if(term == null)
-                    break Fail2023;
+                    break Fail4925;
                   if(true)
-                    break Success1233;
+                    break Success2789;
                 }
               }
-              term = term1260;
+              term = term2816;
             }
             if(true)
-              break Success1232;
+              break Success2788;
           }
         }
-        term = term1259;
+        term = term2815;
       }
-      term = i_2105;
+      term = d_11968;
       context.popOnSuccess();
       if(true)
         return term;

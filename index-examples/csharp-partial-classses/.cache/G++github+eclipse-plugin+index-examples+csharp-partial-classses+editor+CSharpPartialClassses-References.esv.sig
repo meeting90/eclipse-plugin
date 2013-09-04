@@ -1,0 +1,1 @@
+Module("CSharpPartialClassses-References",Imports([Import("CSharpPartialClassses-References.generated")]),[References("",[ReferenceRule("_",Strategy("editor-resolve")),HoverRule("_",Strategy("editor-hover"))])])

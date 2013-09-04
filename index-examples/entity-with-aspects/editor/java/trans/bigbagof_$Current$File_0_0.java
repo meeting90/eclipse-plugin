@@ -23,37 +23,37 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("bigbagof_CurrentFile_0_0");
-    Fail2624:
+    Fail5526:
     { 
-      TermReference c_2190 = new TermReference();
-      if(c_2190.value == null)
-        c_2190.value = term;
+      TermReference x_12052 = new TermReference();
+      if(x_12052.value == null)
+        x_12052.value = term;
       else
-        if(c_2190.value != term && !c_2190.value.match(term))
-          break Fail2624;
-      Success1496:
+        if(x_12052.value != term && !x_12052.value.match(term))
+          break Fail5526;
+      Success3052:
       { 
-        Fail2625:
+        Fail5527:
         { 
-          IStrategoTerm f_2190 = null;
-          IStrategoTerm h_2190 = null;
-          IStrategoTerm i_2190 = null;
-          h_2190 = term;
-          f_2190 = trans.const479;
-          i_2190 = h_2190;
-          term = dr_lookup_all_rules_0_2.instance.invoke(context, i_2190, f_2190, trans.constCons118);
+          IStrategoTerm a_12053 = null;
+          IStrategoTerm c_12053 = null;
+          IStrategoTerm d_12053 = null;
+          c_12053 = term;
+          a_12053 = trans.const999;
+          d_12053 = c_12053;
+          term = dr_lookup_all_rules_0_2.instance.invoke(context, d_12053, a_12053, trans.constCons250);
           if(term == null)
-            break Fail2625;
+            break Fail5527;
           if(true)
-            break Success1496;
+            break Success3052;
         }
-        term = trans.constNil1;
+        term = trans.constNil3;
       }
-      lifted587 lifted5870 = new lifted587();
-      lifted5870.c_2190 = c_2190;
-      term = filter_1_0.instance.invoke(context, term, lifted5870);
+      lifted1187 lifted11870 = new lifted1187();
+      lifted11870.x_12052 = x_12052;
+      term = filter_1_0.instance.invoke(context, term, lifted11870);
       if(term == null)
-        break Fail2624;
+        break Fail5526;
       context.popOnSuccess();
       if(true)
         return term;

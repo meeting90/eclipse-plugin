@@ -1,0 +1,65 @@
+module calculang
+
+imports
+  libstratego-lib
+  include/Calculang
+  lib/editor-common.generated
+  check
+  calculate
+  generate
+  refactor
+
+rules // Main editor interface (defined by editor/Calculang-Builders and -References.esv)
+  
+  generate-aterm:
+    (selected, position, ast, path, project-path) -> (filename, result)
+    with
+      filename := <guarantee-extension(|"aterm")> path;
+      result   := selected // we just return the input term
+      
+  generate-java:
+    (selected, position, ast, path, project-path) -> (filename, result)
+    with
+      filename := <guarantee-extension(|"java")> path;
+      result   := <to-java> selected
+  
+  editor-analyze:
+    (ast, path, project-path) -> (ast, errors, warnings, notes)
+    with
+      editor-init;
+      analyze;
+      errors   := <collect-all(constraint-error)> ast;
+      warnings := [];
+      notes    := []
+
+  editor-resolve:
+    (Var(x), position, ast, path, project-path) -> target
+    where
+      rules(Var: "dummy" -> "dummy");
+      target := <GetVar> x
+
+  editor-complete:
+    (Var(x), position, ast, path, project-path) -> targets
+    where
+      editor-init;
+      analyze;
+      targets := <all-keys-GetVar> x
+
+  generate-result:
+    input @ (selected, position, ast, path, project-path) -> (out-filename, result)
+    with
+      out-filename   := <guarantee-extension(|"out")> path;
+      java-filename  := "Output.java";
+      class-dir      := <dirname> path;
+      class-filename := "Output";
+      (_, java)      := <generate-java> input;
+      handle := <fopen> (java-filename, "w");
+      <fputs> (java, handle);
+      fclose;
+      <call> ("javac", [java-filename]);
+      if ?0 then
+        <call> ("java-to-result", [class-filename]);
+        result := <ReadFromFile> "result.txt"
+      else
+        result := "compilation failed"
+      end

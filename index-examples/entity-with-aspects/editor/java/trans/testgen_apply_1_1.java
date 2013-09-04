@@ -20,17 +20,17 @@ import java.lang.ref.WeakReference;
 { 
   public static testgen_apply_1_1 instance = new testgen_apply_1_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy q_2038, IStrategoTerm p_2038)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy l_11901, IStrategoTerm k_11901)
   { 
     context.push("testgen_apply_1_1");
-    Fail1593:
+    Fail4495:
     { 
-      term = range_0_0.instance.invoke(context, p_2038);
+      term = range_0_0.instance.invoke(context, k_11901);
       if(term == null)
-        break Fail1593;
-      term = map_1_0.instance.invoke(context, term, q_2038);
+        break Fail4495;
+      term = map_1_0.instance.invoke(context, term, l_11901);
       if(term == null)
-        break Fail1593;
+        break Fail4495;
       context.popOnSuccess();
       if(true)
         return term;

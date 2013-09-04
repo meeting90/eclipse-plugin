@@ -24,66 +24,66 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("analyze_top_defs_0_0");
-    Fail1992:
+    Fail4894:
     { 
-      IStrategoTerm n_2096 = null;
-      IStrategoTerm o_2096 = null;
-      IStrategoTerm p_2096 = null;
-      IStrategoTerm q_2096 = null;
-      IStrategoTerm r_2096 = null;
-      IStrategoTerm u_2096 = null;
+      IStrategoTerm i_11959 = null;
+      IStrategoTerm j_11959 = null;
+      IStrategoTerm k_11959 = null;
+      IStrategoTerm l_11959 = null;
+      IStrategoTerm m_11959 = null;
+      IStrategoTerm p_11959 = null;
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-        break Fail1992;
-      n_2096 = term.getSubterm(0);
-      r_2096 = term.getSubterm(1);
-      u_2096 = term;
-      IStrategoTerm term1237 = term;
-      Success1214:
+        break Fail4894;
+      i_11959 = term.getSubterm(0);
+      m_11959 = term.getSubterm(1);
+      p_11959 = term;
+      IStrategoTerm term2793 = term;
+      Success2770:
       { 
-        Fail1993:
+        Fail4895:
         { 
-          term = index_set_current_file_0_0.instance.invoke(context, r_2096);
+          term = index_set_current_file_0_0.instance.invoke(context, m_11959);
           if(term == null)
-            break Fail1993;
-          term = termFactory.makeAppl(Main._consSome_1, new IStrategoTerm[]{n_2096});
+            break Fail4895;
+          term = termFactory.makeAppl(Main._consSome_1, new IStrategoTerm[]{i_11959});
           term = analyze_defs_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1993;
+            break Fail4895;
           if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-            break Fail1993;
-          IStrategoTerm arg644 = term.getSubterm(0);
-          if(arg644.getTermType() != IStrategoTerm.APPL || Main._consSome_1 != ((IStrategoAppl)arg644).getConstructor())
-            break Fail1993;
-          o_2096 = arg644.getSubterm(0);
-          p_2096 = term.getSubterm(1);
-          term = map_1_0.instance.invoke(context, p_2096, $Snd_0_0.instance);
+            break Fail4895;
+          IStrategoTerm arg1498 = term.getSubterm(0);
+          if(arg1498.getTermType() != IStrategoTerm.APPL || Main._consSome_1 != ((IStrategoAppl)arg1498).getConstructor())
+            break Fail4895;
+          j_11959 = arg1498.getSubterm(0);
+          k_11959 = term.getSubterm(1);
+          term = map_1_0.instance.invoke(context, k_11959, $Snd_0_0.instance);
           if(term == null)
-            break Fail1993;
-          q_2096 = term;
-          term = index_add_all_0_1.instance.invoke(context, term, r_2096);
+            break Fail4895;
+          l_11959 = term;
+          term = index_add_all_0_1.instance.invoke(context, term, m_11959);
           if(term == null)
-            break Fail1993;
+            break Fail4895;
           if(true)
-            break Success1214;
+            break Success2770;
         }
-        term = term1237;
-        IStrategoTerm s_2096 = null;
-        IStrategoTerm t_2096 = null;
-        IStrategoTerm w_2096 = null;
-        s_2096 = term;
+        term = term2793;
+        IStrategoTerm n_11959 = null;
+        IStrategoTerm o_11959 = null;
+        IStrategoTerm r_11959 = null;
+        n_11959 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail1992;
-        t_2096 = term;
-        w_2096 = s_2096;
-        term = report_with_failure_0_2.instance.invoke(context, w_2096, trans.const418, t_2096);
+          break Fail4894;
+        o_11959 = term;
+        r_11959 = n_11959;
+        term = report_with_failure_0_2.instance.invoke(context, r_11959, trans.const938, o_11959);
         if(term == null)
-          break Fail1992;
+          break Fail4894;
       }
-      term = u_2096;
-      if(o_2096 == null || q_2096 == null)
-        break Fail1992;
-      term = termFactory.makeTuple(termFactory.makeTuple(o_2096, r_2096), q_2096);
+      term = p_11959;
+      if(j_11959 == null || l_11959 == null)
+        break Fail4894;
+      term = termFactory.makeTuple(termFactory.makeTuple(j_11959, m_11959), l_11959);
       context.popOnSuccess();
       if(true)
         return term;

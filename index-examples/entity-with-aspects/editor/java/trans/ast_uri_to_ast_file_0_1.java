@@ -20,18 +20,18 @@ import java.lang.ref.WeakReference;
 { 
   public static ast_uri_to_ast_file_0_1 instance = new ast_uri_to_ast_file_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm d_2119)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm y_11981)
   { 
     ITermFactory termFactory = context.getFactory();
-    Fail2114:
+    Fail5016:
     { 
-      IStrategoTerm e_2119 = null;
-      IStrategoTerm f_2119 = null;
+      IStrategoTerm z_11981 = null;
+      IStrategoTerm a_11982 = null;
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-        break Fail2114;
-      e_2119 = term.getSubterm(0);
-      f_2119 = term.getSubterm(1);
-      term = termFactory.makeTuple(e_2119, termFactory.makeTuple(d_2119, f_2119));
+        break Fail5016;
+      z_11981 = term.getSubterm(0);
+      a_11982 = term.getSubterm(1);
+      term = termFactory.makeTuple(z_11981, termFactory.makeTuple(y_11981, a_11982));
       if(true)
         return term;
     }

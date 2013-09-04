@@ -23,46 +23,46 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("index_filepairs_to_files_0_0");
-    Fail2208:
+    Fail5110:
     { 
-      IStrategoTerm k_2133 = null;
-      IStrategoTerm l_2133 = null;
-      IStrategoTerm o_2133 = null;
-      k_2133 = term;
-      o_2133 = term;
-      IStrategoTerm term1355 = term;
-      Success1323:
+      IStrategoTerm f_11996 = null;
+      IStrategoTerm g_11996 = null;
+      IStrategoTerm j_11996 = null;
+      f_11996 = term;
+      j_11996 = term;
+      IStrategoTerm term2911 = term;
+      Success2879:
       { 
-        Fail2209:
+        Fail5111:
         { 
-          term = map_1_0.instance.invoke(context, k_2133, lifted506.instance);
+          term = map_1_0.instance.invoke(context, f_11996, lifted1106.instance);
           if(term == null)
-            break Fail2209;
+            break Fail5111;
           term = make_set_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail2209;
-          l_2133 = term;
+            break Fail5111;
+          g_11996 = term;
           if(true)
-            break Success1323;
+            break Success2879;
         }
-        term = term1355;
-        IStrategoTerm m_2133 = null;
-        IStrategoTerm n_2133 = null;
-        IStrategoTerm w_2133 = null;
-        m_2133 = term;
+        term = term2911;
+        IStrategoTerm h_11996 = null;
+        IStrategoTerm i_11996 = null;
+        IStrategoTerm r_11996 = null;
+        h_11996 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail2208;
-        n_2133 = term;
-        w_2133 = m_2133;
-        term = report_with_failure_0_2.instance.invoke(context, w_2133, trans.const455, n_2133);
+          break Fail5110;
+        i_11996 = term;
+        r_11996 = h_11996;
+        term = report_with_failure_0_2.instance.invoke(context, r_11996, trans.const975, i_11996);
         if(term == null)
-          break Fail2208;
+          break Fail5110;
       }
-      term = o_2133;
-      if(l_2133 == null)
-        break Fail2208;
-      term = l_2133;
+      term = j_11996;
+      if(g_11996 == null)
+        break Fail5110;
+      term = g_11996;
       context.popOnSuccess();
       if(true)
         return term;

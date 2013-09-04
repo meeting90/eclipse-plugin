@@ -1,0 +1,24 @@
+module self-application 
+
+language Spoofax-Testing
+
+setup Common headers [[[
+  module testset
+  language Calculang
+]]]
+
+test A test of a test [[[
+  
+  test Add [[
+    1 + 2
+  ]] parse succeeds
+  
+]]]
+
+test A test of a test is a test [[[
+  
+  test Multiply [[
+    1 * 2
+  ]] run calc to "2"
+  
+]]]

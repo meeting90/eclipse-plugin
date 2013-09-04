@@ -1,0 +1,1 @@
+Module("CSharpPartialClassses-Completions",Imports([Import("CSharpPartialClassses-Completions.generated")]),[Completions("",[CompletionProposer([],Strategy("editor-complete")),CompletionTrigger(String("\".\""),None)])])

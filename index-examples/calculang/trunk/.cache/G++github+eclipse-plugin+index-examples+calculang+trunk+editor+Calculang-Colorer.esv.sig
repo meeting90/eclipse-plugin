@@ -1,0 +1,1 @@
+Module("Calculang-Colorer",Imports([Import("Calculang-Colorer.generated")]),[Colorer("",[ColorRule(Token(TK_IDENTIFIER),AttributeRef("blue"))])])

@@ -24,110 +24,110 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_compilation_restore_read_file_0_0");
-    Fail1966:
+    Fail4868:
     { 
-      IStrategoTerm term1216 = term;
-      Success1194:
+      IStrategoTerm term2772 = term;
+      Success2750:
       { 
-        Fail1967:
+        Fail4869:
         { 
-          IStrategoTerm p_2091 = null;
-          IStrategoTerm q_2091 = null;
-          IStrategoTerm r_2091 = null;
-          IStrategoTerm s_2091 = null;
+          IStrategoTerm k_11954 = null;
+          IStrategoTerm l_11954 = null;
+          IStrategoTerm m_11954 = null;
+          IStrategoTerm n_11954 = null;
           if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-            break Fail1967;
-          r_2091 = term.getSubterm(0);
-          p_2091 = term.getSubterm(1);
-          Success1195:
+            break Fail4869;
+          m_11954 = term.getSubterm(0);
+          k_11954 = term.getSubterm(1);
+          Success2751:
           { 
-            Fail1968:
+            Fail4870:
             { 
-              IStrategoTerm t_2091 = null;
-              IStrategoTerm v_2091 = null;
-              IStrategoTerm x_2091 = null;
-              IStrategoTerm a_2092 = null;
-              t_2091 = term;
-              term = r_2091;
-              x_2091 = r_2091;
+              IStrategoTerm o_11954 = null;
+              IStrategoTerm q_11954 = null;
+              IStrategoTerm s_11954 = null;
+              IStrategoTerm v_11954 = null;
+              o_11954 = term;
+              term = m_11954;
+              s_11954 = m_11954;
               term = index_compilation_read_path_0_0.instance.invoke(context, term);
               if(term == null)
-                break Fail1968;
-              v_2091 = term;
-              a_2092 = x_2091;
-              term = string_replace_0_2.instance.invoke(context, a_2092, v_2091, trans.const309);
+                break Fail4870;
+              q_11954 = term;
+              v_11954 = s_11954;
+              term = string_replace_0_2.instance.invoke(context, v_11954, q_11954, trans.const829);
               if(term == null)
-                break Fail1968;
-              q_2091 = term;
-              term = t_2091;
+                break Fail4870;
+              l_11954 = term;
+              term = o_11954;
               { 
-                term = q_2091;
-                s_2091 = q_2091;
+                term = l_11954;
+                n_11954 = l_11954;
                 if(true)
-                  break Success1195;
+                  break Success2751;
               }
             }
-            term = r_2091;
-            s_2091 = r_2091;
+            term = m_11954;
+            n_11954 = m_11954;
           }
-          term = termFactory.makeTuple(s_2091, p_2091);
+          term = termFactory.makeTuple(n_11954, k_11954);
           if(true)
-            break Success1194;
+            break Success2750;
         }
-        term = term1216;
-        IStrategoTerm e_2091 = null;
-        IStrategoTerm f_2091 = null;
-        IStrategoTerm g_2091 = null;
-        f_2091 = term;
-        IStrategoTerm term1218 = term;
-        Success1196:
+        term = term2772;
+        IStrategoTerm z_11953 = null;
+        IStrategoTerm a_11954 = null;
+        IStrategoTerm b_11954 = null;
+        a_11954 = term;
+        IStrategoTerm term2774 = term;
+        Success2752:
         { 
-          Fail1969:
+          Fail4871:
           { 
-            term = is_tuple_0_0.instance.invoke(context, f_2091);
+            term = is_tuple_0_0.instance.invoke(context, a_11954);
             if(term == null)
-              break Fail1969;
+              break Fail4871;
             { 
               if(true)
-                break Fail1966;
+                break Fail4868;
               if(true)
-                break Success1196;
+                break Success2752;
             }
           }
-          term = term1218;
+          term = term2774;
         }
-        Success1197:
+        Success2753:
         { 
-          Fail1970:
+          Fail4872:
           { 
-            IStrategoTerm h_2091 = null;
-            IStrategoTerm j_2091 = null;
-            IStrategoTerm l_2091 = null;
-            IStrategoTerm o_2091 = null;
-            h_2091 = term;
-            term = f_2091;
-            l_2091 = f_2091;
+            IStrategoTerm c_11954 = null;
+            IStrategoTerm e_11954 = null;
+            IStrategoTerm g_11954 = null;
+            IStrategoTerm j_11954 = null;
+            c_11954 = term;
+            term = a_11954;
+            g_11954 = a_11954;
             term = index_compilation_read_path_0_0.instance.invoke(context, term);
             if(term == null)
-              break Fail1970;
-            j_2091 = term;
-            o_2091 = l_2091;
-            term = string_replace_0_2.instance.invoke(context, o_2091, j_2091, trans.const309);
+              break Fail4872;
+            e_11954 = term;
+            j_11954 = g_11954;
+            term = string_replace_0_2.instance.invoke(context, j_11954, e_11954, trans.const829);
             if(term == null)
-              break Fail1970;
-            e_2091 = term;
-            term = h_2091;
+              break Fail4872;
+            z_11953 = term;
+            term = c_11954;
             { 
-              term = e_2091;
-              g_2091 = e_2091;
+              term = z_11953;
+              b_11954 = z_11953;
               if(true)
-                break Success1197;
+                break Success2753;
             }
           }
-          term = f_2091;
-          g_2091 = f_2091;
+          term = a_11954;
+          b_11954 = a_11954;
         }
-        term = g_2091;
+        term = b_11954;
       }
       context.popOnSuccess();
       if(true)

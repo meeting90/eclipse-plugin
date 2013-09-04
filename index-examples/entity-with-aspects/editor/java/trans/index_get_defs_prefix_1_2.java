@@ -20,14 +20,14 @@ import java.lang.ref.WeakReference;
 { 
   public static index_get_defs_prefix_1_2 instance = new index_get_defs_prefix_1_2();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy z_2116, IStrategoTerm w_2116, IStrategoTerm x_2116)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy u_11979, IStrategoTerm r_11979, IStrategoTerm s_11979)
   { 
     context.push("index_get_defs_prefix_1_2");
-    Fail2088:
+    Fail4990:
     { 
-      term = index_get_children_2_2.instance.invoke(context, term, lifted446.instance, z_2116, w_2116, x_2116);
+      term = index_get_children_2_2.instance.invoke(context, term, lifted1046.instance, u_11979, r_11979, s_11979);
       if(term == null)
-        break Fail2088;
+        break Fail4990;
       context.popOnSuccess();
       if(true)
         return term;

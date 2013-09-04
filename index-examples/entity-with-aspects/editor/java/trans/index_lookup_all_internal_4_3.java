@@ -20,49 +20,49 @@ import java.lang.ref.WeakReference;
 { 
   public static index_lookup_all_internal_4_3 instance = new index_lookup_all_internal_4_3();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy w_2112, Strategy x_2112, Strategy y_2112, Strategy z_2112, IStrategoTerm n_2112, IStrategoTerm o_2112, IStrategoTerm p_2112)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy r_11975, Strategy s_11975, Strategy t_11975, Strategy u_11975, IStrategoTerm i_11975, IStrategoTerm j_11975, IStrategoTerm k_11975)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("index_lookup_all_internal_4_3");
-    Fail2066:
+    Fail4968:
     { 
-      IStrategoTerm q_2112 = null;
-      IStrategoTerm r_2112 = null;
-      IStrategoTerm t_2112 = null;
-      IStrategoTerm u_2112 = null;
-      r_2112 = term;
-      term = index_lookup_all_scoped_internal_4_3.instance.invoke(context, r_2112, w_2112, x_2112, y_2112, z_2112, n_2112, o_2112, p_2112);
+      IStrategoTerm l_11975 = null;
+      IStrategoTerm m_11975 = null;
+      IStrategoTerm o_11975 = null;
+      IStrategoTerm p_11975 = null;
+      m_11975 = term;
+      term = index_lookup_all_scoped_internal_4_3.instance.invoke(context, m_11975, r_11975, s_11975, t_11975, u_11975, i_11975, j_11975, k_11975);
       if(term == null)
-        break Fail2066;
-      t_2112 = term;
-      Success1257:
+        break Fail4968;
+      o_11975 = term;
+      Success2813:
       { 
-        Fail2067:
+        Fail4969:
         { 
-          IStrategoTerm v_2112 = null;
-          v_2112 = term;
-          term = o_2112;
+          IStrategoTerm q_11975 = null;
+          q_11975 = term;
+          term = j_11975;
           if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-            break Fail2067;
-          q_2112 = ((IStrategoList)term).tail();
-          term = v_2112;
+            break Fail4969;
+          l_11975 = ((IStrategoList)term).tail();
+          term = q_11975;
           { 
-            term = this.invoke(context, r_2112, w_2112, x_2112, y_2112, z_2112, n_2112, q_2112, p_2112);
+            term = this.invoke(context, m_11975, r_11975, s_11975, t_11975, u_11975, i_11975, l_11975, k_11975);
             if(term == null)
-              break Fail2066;
-            term = termFactory.makeTuple(t_2112, term);
+              break Fail4968;
+            term = termFactory.makeTuple(o_11975, term);
             term = conc_0_0.instance.invoke(context, term);
             if(term == null)
-              break Fail2066;
-            u_2112 = term;
+              break Fail4968;
+            p_11975 = term;
             if(true)
-              break Success1257;
+              break Success2813;
           }
         }
-        term = t_2112;
-        u_2112 = t_2112;
+        term = o_11975;
+        p_11975 = o_11975;
       }
-      term = u_2112;
+      term = p_11975;
       context.popOnSuccess();
       if(true)
         return term;

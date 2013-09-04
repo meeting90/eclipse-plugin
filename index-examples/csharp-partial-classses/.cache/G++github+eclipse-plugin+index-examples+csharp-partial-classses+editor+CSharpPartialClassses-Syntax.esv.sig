@@ -1,0 +1,1 @@
+Module("CSharpPartialClassses-Syntax",Imports([Import("CSharpPartialClassses-Syntax.generated")]),[Language("",[])])

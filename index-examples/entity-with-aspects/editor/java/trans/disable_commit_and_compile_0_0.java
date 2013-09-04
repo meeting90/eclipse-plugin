@@ -23,13 +23,13 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("disable_commit_and_compile_0_0");
-    Fail1962:
+    Fail4864:
     { 
-      IStrategoTerm o_2090 = null;
-      o_2090 = term;
-      term = index_enable_global_0_1.instance.invoke(context, o_2090, trans.const406);
+      IStrategoTerm j_11953 = null;
+      j_11953 = term;
+      term = index_enable_global_0_1.instance.invoke(context, j_11953, trans.const926);
       if(term == null)
-        break Fail1962;
+        break Fail4864;
       context.popOnSuccess();
       if(true)
         return term;

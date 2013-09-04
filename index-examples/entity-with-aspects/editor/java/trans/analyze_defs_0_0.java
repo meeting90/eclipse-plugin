@@ -24,34 +24,34 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("analyze_defs_0_0");
-    Fail2000:
+    Fail4902:
     { 
-      IStrategoTerm s_2099 = null;
-      IStrategoTerm t_2099 = null;
-      IStrategoTerm x_2099 = null;
-      IStrategoTerm a_2100 = null;
-      IStrategoTerm b_2100 = null;
-      IStrategoTerm d_2100 = null;
-      IStrategoTerm e_2100 = null;
-      IStrategoTerm f_2100 = null;
-      s_2099 = term;
+      IStrategoTerm n_11962 = null;
+      IStrategoTerm o_11962 = null;
+      IStrategoTerm s_11962 = null;
+      IStrategoTerm v_11962 = null;
+      IStrategoTerm w_11962 = null;
+      IStrategoTerm y_11962 = null;
+      IStrategoTerm z_11962 = null;
+      IStrategoTerm a_11963 = null;
+      n_11962 = term;
       term = new_iset_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2000;
-      t_2099 = term;
-      d_2100 = s_2099;
-      a_2100 = trans.constNil1;
-      e_2100 = d_2100;
-      b_2100 = trans.constAnon0;
-      f_2100 = e_2100;
-      term = analyze_defs_0_4.instance.invoke(context, f_2100, a_2100, t_2099, b_2100, trans.constAnon0);
+        break Fail4902;
+      o_11962 = term;
+      y_11962 = n_11962;
+      v_11962 = trans.constNil3;
+      z_11962 = y_11962;
+      w_11962 = trans.constAnon0;
+      a_11963 = z_11962;
+      term = analyze_defs_0_4.instance.invoke(context, a_11963, v_11962, o_11962, w_11962, trans.constAnon0);
       if(term == null)
-        break Fail2000;
-      x_2099 = term;
-      term = iset_elements_0_0.instance.invoke(context, t_2099);
+        break Fail4902;
+      s_11962 = term;
+      term = iset_elements_0_0.instance.invoke(context, o_11962);
       if(term == null)
-        break Fail2000;
-      term = termFactory.makeTuple(x_2099, term);
+        break Fail4902;
+      term = termFactory.makeTuple(s_11962, term);
       context.popOnSuccess();
       if(true)
         return term;

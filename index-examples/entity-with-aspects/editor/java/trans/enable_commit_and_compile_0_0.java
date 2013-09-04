@@ -23,61 +23,61 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("enable_commit_and_compile_0_0");
-    Fail1963:
+    Fail4865:
     { 
-      IStrategoTerm v_2090 = null;
-      v_2090 = term;
-      IStrategoTerm term1214 = term;
-      Success1192:
+      IStrategoTerm q_11953 = null;
+      q_11953 = term;
+      IStrategoTerm term2770 = term;
+      Success2748:
       { 
-        Fail1964:
+        Fail4866:
         { 
-          IStrategoTerm z_2090 = null;
-          IStrategoTerm term1215 = term;
-          Success1193:
+          IStrategoTerm u_11953 = null;
+          IStrategoTerm term2771 = term;
+          Success2749:
           { 
-            Fail1965:
+            Fail4867:
             { 
-              IStrategoTerm s_2090 = null;
-              IStrategoTerm x_2090 = null;
-              s_2090 = term;
-              x_2090 = term;
-              term = index_is_global_enabled_0_1.instance.invoke(context, x_2090, trans.const407);
+              IStrategoTerm n_11953 = null;
+              IStrategoTerm s_11953 = null;
+              n_11953 = term;
+              s_11953 = term;
+              term = index_is_global_enabled_0_1.instance.invoke(context, s_11953, trans.const927);
               if(term == null)
-                break Fail1965;
-              term = s_2090;
+                break Fail4867;
+              term = n_11953;
               { 
                 term = commit_and_compile_0_0.instance.invoke(context, term);
                 if(term == null)
-                  break Fail1964;
+                  break Fail4866;
                 if(true)
-                  break Success1193;
+                  break Success2749;
               }
             }
-            term = term1215;
+            term = term2771;
           }
-          z_2090 = term;
-          term = index_disable_global_0_1.instance.invoke(context, z_2090, trans.const406);
+          u_11953 = term;
+          term = index_disable_global_0_1.instance.invoke(context, u_11953, trans.const926);
           if(term == null)
-            break Fail1964;
+            break Fail4866;
           if(true)
-            break Success1192;
+            break Success2748;
         }
-        term = term1214;
-        IStrategoTerm t_2090 = null;
-        IStrategoTerm u_2090 = null;
-        IStrategoTerm b_2091 = null;
-        t_2090 = term;
+        term = term2770;
+        IStrategoTerm o_11953 = null;
+        IStrategoTerm p_11953 = null;
+        IStrategoTerm w_11953 = null;
+        o_11953 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail1963;
-        u_2090 = term;
-        b_2091 = t_2090;
-        term = report_with_failure_0_2.instance.invoke(context, b_2091, trans.const409, u_2090);
+          break Fail4865;
+        p_11953 = term;
+        w_11953 = o_11953;
+        term = report_with_failure_0_2.instance.invoke(context, w_11953, trans.const929, p_11953);
         if(term == null)
-          break Fail1963;
+          break Fail4865;
       }
-      term = v_2090;
+      term = q_11953;
       context.popOnSuccess();
       if(true)
         return term;

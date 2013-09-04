@@ -23,24 +23,24 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("fake_file_0_0");
-    Fail2112:
+    Fail5014:
     { 
-      IStrategoTerm term1313 = term;
-      Success1283:
+      IStrategoTerm term2869 = term;
+      Success2839:
       { 
-        Fail2113:
+        Fail5015:
         { 
-          IStrategoTerm b_2292 = null;
-          b_2292 = term;
-          term = string_ends_with_0_1.instance.invoke(context, b_2292, trans.const443);
+          IStrategoTerm w_12154 = null;
+          w_12154 = term;
+          term = string_ends_with_0_1.instance.invoke(context, w_12154, trans.const963);
           if(term == null)
-            break Fail2113;
+            break Fail5015;
           if(true)
-            break Success1283;
+            break Success2839;
         }
-        term = index_is_fake_file_0_0.instance.invoke(context, term1313);
+        term = index_is_fake_file_0_0.instance.invoke(context, term2869);
         if(term == null)
-          break Fail2112;
+          break Fail5014;
       }
       context.popOnSuccess();
       if(true)

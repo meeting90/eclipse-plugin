@@ -1,0 +1,29 @@
+regular tree grammar
+  start Start
+  productions
+    ListStarOfStm0        -> ListPlusOfStm0
+    ListStarOfStm0        -> <nil>()
+    ListStarOfStm0        -> <conc>(ListStarOfStm0,ListStarOfStm0)
+    ListPlusOfStm0        -> <conc>(ListStarOfStm0,ListPlusOfStm0)
+    ListPlusOfStm0        -> <conc>(ListPlusOfStm0,ListStarOfStm0)
+    ListPlusOfStm0        -> <conc>(ListPlusOfStm0,ListPlusOfStm0)
+    ListPlusOfStm0        -> <cons>(Stm,ListStarOfStm0)
+    ListStarOfStringChar0 -> <string>
+    ListPlusOfStringChar0 -> <string>
+    OptLit0               -> <string>
+    Exp                   -> Var(ID)
+    Stm                   -> Assign(ID,Exp)
+    Start                 -> Stm(ListStarOfStm0)
+    Exp                   -> Minus(Exp,Exp)
+    Exp                   -> Plus(Exp,Exp)
+    Exp                   -> Div(Exp,Exp)
+    Exp                   -> Mul(Exp,Exp)
+    Exp                   -> Int(INT)
+    Start                 -> Expr(Exp)
+    EOF                   -> <string>
+    CommentChar           -> <string>
+    BackSlashChar         -> <string>
+    StringChar            -> <string>
+    STRING                -> <string>
+    INT                   -> <string>
+    ID                    -> <string>

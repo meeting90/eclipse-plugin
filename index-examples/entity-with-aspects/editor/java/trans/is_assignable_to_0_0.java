@@ -24,19 +24,19 @@ import java.lang.ref.WeakReference;
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("is_assignable_to_0_0");
-    Fail1861:
+    Fail4763:
     { 
-      IStrategoTerm w_2075 = null;
-      IStrategoTerm x_2075 = null;
+      IStrategoTerm r_11938 = null;
+      IStrategoTerm s_11938 = null;
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-        break Fail1861;
-      x_2075 = term.getSubterm(0);
-      w_2075 = term.getSubterm(1);
-      term = termFactory.makeTuple(w_2075, x_2075);
+        break Fail4763;
+      s_11938 = term.getSubterm(0);
+      r_11938 = term.getSubterm(1);
+      term = termFactory.makeTuple(r_11938, s_11938);
       term = eq_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1861;
-      term = x_2075;
+        break Fail4763;
+      term = s_11938;
       context.popOnSuccess();
       if(true)
         return term;

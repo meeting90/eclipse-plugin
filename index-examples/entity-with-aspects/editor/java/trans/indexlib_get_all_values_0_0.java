@@ -23,16 +23,16 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("indexlib_get_all_values_0_0");
-    Fail2233:
+    Fail5135:
     { 
-      IStrategoTerm x_2295 = null;
-      x_2295 = term;
-      term = context.invokePrimitive("LANG_index_get", term, NO_STRATEGIES, new IStrategoTerm[]{x_2295});
+      IStrategoTerm s_12158 = null;
+      s_12158 = term;
+      term = context.invokePrimitive("LANG_index_get", term, NO_STRATEGIES, new IStrategoTerm[]{s_12158});
       if(term == null)
-        break Fail2233;
+        break Fail5135;
       term = map_1_0.instance.invoke(context, term, index_value_0_0.instance);
       if(term == null)
-        break Fail2233;
+        break Fail5135;
       context.popOnSuccess();
       if(true)
         return term;

@@ -23,37 +23,37 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("bigbagof_Index_UnresolvedSet_0_0");
-    Fail2598:
+    Fail5500:
     { 
-      TermReference v_2185 = new TermReference();
-      if(v_2185.value == null)
-        v_2185.value = term;
+      TermReference q_12048 = new TermReference();
+      if(q_12048.value == null)
+        q_12048.value = term;
       else
-        if(v_2185.value != term && !v_2185.value.match(term))
-          break Fail2598;
-      Success1489:
+        if(q_12048.value != term && !q_12048.value.match(term))
+          break Fail5500;
+      Success3045:
       { 
-        Fail2599:
+        Fail5501:
         { 
-          IStrategoTerm y_2185 = null;
-          IStrategoTerm a_2186 = null;
-          IStrategoTerm b_2186 = null;
-          a_2186 = term;
-          y_2185 = trans.const415;
-          b_2186 = a_2186;
-          term = dr_lookup_all_rules_0_2.instance.invoke(context, b_2186, y_2185, trans.constCons118);
+          IStrategoTerm t_12048 = null;
+          IStrategoTerm v_12048 = null;
+          IStrategoTerm w_12048 = null;
+          v_12048 = term;
+          t_12048 = trans.const935;
+          w_12048 = v_12048;
+          term = dr_lookup_all_rules_0_2.instance.invoke(context, w_12048, t_12048, trans.constCons250);
           if(term == null)
-            break Fail2599;
+            break Fail5501;
           if(true)
-            break Success1489;
+            break Success3045;
         }
-        term = trans.constNil1;
+        term = trans.constNil3;
       }
-      lifted578 lifted5780 = new lifted578();
-      lifted5780.v_2185 = v_2185;
-      term = filter_1_0.instance.invoke(context, term, lifted5780);
+      lifted1178 lifted11780 = new lifted1178();
+      lifted11780.q_12048 = q_12048;
+      term = filter_1_0.instance.invoke(context, term, lifted11780);
       if(term == null)
-        break Fail2598;
+        break Fail5500;
       context.popOnSuccess();
       if(true)
         return term;

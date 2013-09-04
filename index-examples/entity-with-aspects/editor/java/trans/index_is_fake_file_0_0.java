@@ -23,13 +23,13 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("index_is_fake_file_0_0");
-    Fail2262:
+    Fail5164:
     { 
-      IStrategoTerm q_2141 = null;
-      q_2141 = term;
-      term = string_starts_with_0_1.instance.invoke(context, q_2141, trans.const473);
+      IStrategoTerm l_12004 = null;
+      l_12004 = term;
+      term = string_starts_with_0_1.instance.invoke(context, l_12004, trans.const993);
       if(term == null)
-        break Fail2262;
+        break Fail5164;
       context.popOnSuccess();
       if(true)
         return term;

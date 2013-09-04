@@ -23,51 +23,51 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("once_Index_ReadSet_0_0");
-    Fail2574:
+    Fail5476:
     { 
-      IStrategoTerm v_2181 = null;
-      TermReference w_2181 = new TermReference();
-      TermReference x_2181 = new TermReference();
-      IStrategoTerm y_2181 = null;
-      IStrategoTerm z_2181 = null;
-      IStrategoTerm b_2182 = null;
-      IStrategoTerm c_2182 = null;
-      IStrategoTerm e_2182 = null;
-      IStrategoTerm f_2182 = null;
-      if(w_2181.value == null)
-        w_2181.value = term;
+      IStrategoTerm q_12044 = null;
+      TermReference r_12044 = new TermReference();
+      TermReference s_12044 = new TermReference();
+      IStrategoTerm t_12044 = null;
+      IStrategoTerm u_12044 = null;
+      IStrategoTerm w_12044 = null;
+      IStrategoTerm x_12044 = null;
+      IStrategoTerm z_12044 = null;
+      IStrategoTerm a_12045 = null;
+      if(r_12044.value == null)
+        r_12044.value = term;
       else
-        if(w_2181.value != term && !w_2181.value.match(term))
-          break Fail2574;
-      b_2182 = term;
-      e_2182 = term;
-      c_2182 = trans.const402;
-      f_2182 = e_2182;
-      term = dr_lookup_rule_pointer_0_2.instance.invoke(context, f_2182, c_2182, trans.constCons118);
+        if(r_12044.value != term && !r_12044.value.match(term))
+          break Fail5476;
+      w_12044 = term;
+      z_12044 = term;
+      x_12044 = trans.const922;
+      a_12045 = z_12044;
+      term = dr_lookup_rule_pointer_0_2.instance.invoke(context, a_12045, x_12044, trans.constCons250);
       if(term == null)
-        break Fail2574;
+        break Fail5476;
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 3)
-        break Fail2574;
-      v_2181 = term.getSubterm(0);
-      z_2181 = term.getSubterm(1);
-      y_2181 = term.getSubterm(2);
-      term = v_2181;
-      lifted570 lifted5700 = new lifted570();
-      lifted5700.w_2181 = w_2181;
-      lifted5700.x_2181 = x_2181;
-      term = split_fetch_1_0.instance.invoke(context, term, lifted5700);
+        break Fail5476;
+      q_12044 = term.getSubterm(0);
+      u_12044 = term.getSubterm(1);
+      t_12044 = term.getSubterm(2);
+      term = q_12044;
+      lifted1170 lifted11700 = new lifted1170();
+      lifted11700.r_12044 = r_12044;
+      lifted11700.s_12044 = s_12044;
+      term = split_fetch_1_0.instance.invoke(context, term, lifted11700);
       if(term == null)
-        break Fail2574;
+        break Fail5476;
       term = conc_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail2574;
-      term = hashtable_put_0_2.instance.invoke(context, y_2181, z_2181, term);
+        break Fail5476;
+      term = hashtable_put_0_2.instance.invoke(context, t_12044, u_12044, term);
       if(term == null)
-        break Fail2574;
-      term = b_2182;
-      if(x_2181.value == null)
-        break Fail2574;
-      term = x_2181.value;
+        break Fail5476;
+      term = w_12044;
+      if(s_12044.value == null)
+        break Fail5476;
+      term = s_12044.value;
       context.popOnSuccess();
       if(true)
         return term;

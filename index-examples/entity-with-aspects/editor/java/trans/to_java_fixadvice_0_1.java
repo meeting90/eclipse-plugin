@@ -20,91 +20,91 @@ import java.lang.ref.WeakReference;
 { 
   public static to_java_fixadvice_0_1 instance = new to_java_fixadvice_0_1();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_t_2074)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm ref_o_11937)
   { 
     ITermFactory termFactory = context.getFactory();
-    TermReference t_2074 = new TermReference(ref_t_2074);
+    TermReference o_11937 = new TermReference(ref_o_11937);
     context.push("to_java_fixadvice_0_1");
-    Fail1855:
+    Fail4757:
     { 
-      IStrategoTerm u_2074 = null;
-      IStrategoTerm v_2074 = null;
-      IStrategoTerm w_2074 = null;
-      IStrategoTerm x_2074 = null;
-      IStrategoTerm y_2074 = null;
-      IStrategoTerm z_2074 = null;
-      TermReference a_2075 = new TermReference();
-      IStrategoTerm b_2075 = null;
-      IStrategoTerm c_2075 = null;
-      IStrategoTerm f_2075 = null;
+      IStrategoTerm p_11937 = null;
+      IStrategoTerm q_11937 = null;
+      IStrategoTerm r_11937 = null;
+      IStrategoTerm s_11937 = null;
+      IStrategoTerm t_11937 = null;
+      IStrategoTerm u_11937 = null;
+      TermReference v_11937 = new TermReference();
+      IStrategoTerm w_11937 = null;
+      IStrategoTerm x_11937 = null;
+      IStrategoTerm a_11938 = null;
       if(term.getTermType() != IStrategoTerm.APPL || Main._consADVICE_4 != ((IStrategoAppl)term).getConstructor())
-        break Fail1855;
-      u_2074 = term.getSubterm(0);
-      y_2074 = term.getSubterm(1);
-      v_2074 = term.getSubterm(2);
-      b_2075 = term.getSubterm(3);
-      f_2075 = term;
-      IStrategoTerm term1142 = term;
-      Success1121:
+        break Fail4757;
+      p_11937 = term.getSubterm(0);
+      t_11937 = term.getSubterm(1);
+      q_11937 = term.getSubterm(2);
+      w_11937 = term.getSubterm(3);
+      a_11938 = term;
+      IStrategoTerm term2698 = term;
+      Success2677:
       { 
-        Fail1856:
+        Fail4758:
         { 
-          term = index_uri_0_0.instance.invoke(context, v_2074);
+          term = index_uri_0_0.instance.invoke(context, q_11937);
           if(term == null)
-            break Fail1856;
-          term = termFactory.makeAppl(Main._consPointcut_2, new IStrategoTerm[]{term, trans.const362});
+            break Fail4758;
+          term = termFactory.makeAppl(Main._consPointcut_2, new IStrategoTerm[]{term, trans.const882});
           term = index_get_0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail1856;
+            break Fail4758;
           if(term.getTermType() != IStrategoTerm.APPL || Main._consPointcut_2 != ((IStrategoAppl)term).getConstructor())
-            break Fail1856;
-          w_2074 = term.getSubterm(1);
-          term = w_2074;
+            break Fail4758;
+          r_11937 = term.getSubterm(1);
+          term = r_11937;
           if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-            break Fail1856;
-          x_2074 = ((IStrategoList)term).head();
-          term = y_2074;
+            break Fail4758;
+          s_11937 = ((IStrategoList)term).head();
+          term = t_11937;
           if(term.getTermType() != IStrategoTerm.LIST || ((IStrategoList)term).isEmpty())
-            break Fail1856;
-          IStrategoTerm arg604 = ((IStrategoList)term).head();
-          if(arg604.getTermType() != IStrategoTerm.APPL || Main._consParam_2 != ((IStrategoAppl)arg604).getConstructor())
-            break Fail1856;
-          z_2074 = arg604.getSubterm(0);
-          term = termFactory.makeAppl(Main._consVar_1, new IStrategoTerm[]{z_2074});
-          if(a_2075.value == null)
-            a_2075.value = term;
+            break Fail4758;
+          IStrategoTerm arg1458 = ((IStrategoList)term).head();
+          if(arg1458.getTermType() != IStrategoTerm.APPL || Main._consParam_2 != ((IStrategoAppl)arg1458).getConstructor())
+            break Fail4758;
+          u_11937 = arg1458.getSubterm(0);
+          term = termFactory.makeAppl(Main._consVar_1, new IStrategoTerm[]{u_11937});
+          if(v_11937.value == null)
+            v_11937.value = term;
           else
-            if(a_2075.value != term && !a_2075.value.match(term))
-              break Fail1856;
-          term = b_2075;
-          lifted368 lifted3680 = new lifted368();
-          lifted3680.a_2075 = a_2075;
-          lifted3680.t_2074 = t_2074;
-          term = try_1_0.instance.invoke(context, term, lifted3680);
+            if(v_11937.value != term && !v_11937.value.match(term))
+              break Fail4758;
+          term = w_11937;
+          lifted968 lifted9680 = new lifted968();
+          lifted9680.v_11937 = v_11937;
+          lifted9680.o_11937 = o_11937;
+          term = try_1_0.instance.invoke(context, term, lifted9680);
           if(term == null)
-            break Fail1856;
-          c_2075 = term;
+            break Fail4758;
+          x_11937 = term;
           if(true)
-            break Success1121;
+            break Success2677;
         }
-        term = term1142;
-        IStrategoTerm d_2075 = null;
-        IStrategoTerm e_2075 = null;
-        IStrategoTerm j_2075 = null;
-        d_2075 = term;
+        term = term2698;
+        IStrategoTerm y_11937 = null;
+        IStrategoTerm z_11937 = null;
+        IStrategoTerm e_11938 = null;
+        y_11937 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail1855;
-        e_2075 = term;
-        j_2075 = d_2075;
-        term = report_with_failure_0_2.instance.invoke(context, j_2075, trans.const384, e_2075);
+          break Fail4757;
+        z_11937 = term;
+        e_11938 = y_11937;
+        term = report_with_failure_0_2.instance.invoke(context, e_11938, trans.const904, z_11937);
         if(term == null)
-          break Fail1855;
+          break Fail4757;
       }
-      term = f_2075;
-      if(x_2074 == null || c_2075 == null)
-        break Fail1855;
-      term = termFactory.makeTuple(u_2074, x_2074, c_2075);
+      term = a_11938;
+      if(s_11937 == null || x_11937 == null)
+        break Fail4757;
+      term = termFactory.makeTuple(p_11937, s_11937, x_11937);
       context.popOnSuccess();
       if(true)
         return term;

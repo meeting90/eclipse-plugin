@@ -23,55 +23,55 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("DYNAMIC__CALLS_0_0");
-    Fail2552:
+    Fail5454:
     { 
-      IStrategoTerm term1525 = term;
-      Success1475:
+      IStrategoTerm term3081 = term;
+      Success3031:
       { 
-        Fail2553:
+        Fail5455:
         { 
-          IStrategoTerm a_2179 = null;
-          a_2179 = term;
-          term = undefine_$Index_$Read$Set_0_1.instance.invoke(context, a_2179, trans.const309);
+          IStrategoTerm v_12041 = null;
+          v_12041 = term;
+          term = undefine_$Index_$Read$Set_0_1.instance.invoke(context, v_12041, trans.const829);
           if(term == null)
-            break Fail2553;
+            break Fail5455;
           if(true)
-            break Success1475;
+            break Success3031;
         }
-        term = term1525;
-        IStrategoTerm term1526 = term;
-        Success1476:
+        term = term3081;
+        IStrategoTerm term3082 = term;
+        Success3032:
         { 
-          Fail2554:
+          Fail5456:
           { 
-            IStrategoTerm y_2178 = null;
-            y_2178 = term;
-            term = undefine_$Index_$Unresolved$Set_0_1.instance.invoke(context, y_2178, trans.const309);
+            IStrategoTerm t_12041 = null;
+            t_12041 = term;
+            term = undefine_$Index_$Unresolved$Set_0_1.instance.invoke(context, t_12041, trans.const829);
             if(term == null)
-              break Fail2554;
+              break Fail5456;
             if(true)
-              break Success1476;
+              break Success3032;
           }
-          term = term1526;
-          IStrategoTerm term1527 = term;
-          Success1477:
+          term = term3082;
+          IStrategoTerm term3083 = term;
+          Success3033:
           { 
-            Fail2555:
+            Fail5457:
             { 
-              IStrategoTerm w_2178 = null;
-              w_2178 = term;
-              term = undefine_$Current$File_0_1.instance.invoke(context, w_2178, trans.const309);
+              IStrategoTerm r_12041 = null;
+              r_12041 = term;
+              term = undefine_$Current$File_0_1.instance.invoke(context, r_12041, trans.const829);
               if(term == null)
-                break Fail2555;
+                break Fail5457;
               if(true)
-                break Success1477;
+                break Success3033;
             }
-            term = term1527;
-            IStrategoTerm u_2178 = null;
-            u_2178 = term;
-            term = undefine_$Is$Imported_0_1.instance.invoke(context, u_2178, trans.const309);
+            term = term3083;
+            IStrategoTerm p_12041 = null;
+            p_12041 = term;
+            term = undefine_$Is$Imported_0_1.instance.invoke(context, p_12041, trans.const829);
             if(term == null)
-              break Fail2552;
+              break Fail5454;
           }
         }
       }

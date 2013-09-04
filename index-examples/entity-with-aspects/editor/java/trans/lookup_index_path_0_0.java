@@ -23,19 +23,19 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("lookup_index_path_0_0");
-    Fail2014:
+    Fail4916:
     { 
-      Success1227:
+      Success2783:
       { 
-        Fail2015:
+        Fail4917:
         { 
           term = lookup_p__0_0.instance.invoke(context, term);
           if(term == null)
-            break Fail2015;
+            break Fail4917;
           if(true)
-            break Success1227;
+            break Success2783;
         }
-        term = trans.constNil1;
+        term = trans.constNil3;
       }
       context.popOnSuccess();
       if(true)

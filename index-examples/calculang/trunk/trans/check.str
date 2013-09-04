@@ -1,0 +1,60 @@
+module check
+
+imports
+  libstratego-lib
+  include/Calculang
+  lib/editor-common.generated
+  calculate
+
+rules
+  
+  editor-analyze:
+    (ast, path, project-path) -> (ast, errors, warnings, notes)
+    with
+      editor-init;
+      analyze;
+      errors   := <constraint-errors> ast;
+      warnings := [];
+      notes    := <constraint-notes> ast
+
+  analyze =
+      topdown(try(record-var));
+      rules(
+        GetVar   :+ "PI" -> "3.14"
+        GetValue :+ "PI" -> 3.14
+      )
+
+  record-var:
+    Assign(x, e) -> Assign(x, e)
+    with
+      if <calculate> e then
+        e2 := <calculate> e
+      else
+        e2 := "ERROR!"
+      end;
+      rules(
+        GetVar   :+ x -> e
+        GetValue :+ x -> e2
+      )
+  
+  constraint-errors = collect-all(constraint-error, conc)
+    
+  constraint-error:
+    Var(x) -> (x, $[Variable [x] is not defined])
+    where
+      not(<GetVar> x)
+  
+  constraint-error:
+    Assign(x, _) -> (x, $[Duplicate variable name])
+    where
+      not(<length> (<bagof-GetVar> x) => 1)
+  
+  constraint-notes = collect-all(constraint-note, conc)
+
+  constraint-note:
+    Assign(x, e) -> (x, $[Constant expression in assignment])
+    where
+      not(<oncetd(is-var)> e)
+  
+  is-var:
+    Var(x) -> Var(x)

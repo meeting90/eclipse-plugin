@@ -23,16 +23,16 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("index_compilation_clean_reads_0_0");
-    Fail1971:
+    Fail4873:
     { 
       if(term.getTermType() != IStrategoTerm.TUPLE || term.getSubtermCount() != 2)
-        break Fail1971;
+        break Fail4873;
       term = index_compilation_file_tuple_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1971;
+        break Fail4873;
       term = index_clear_file_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1971;
+        break Fail4873;
       context.popOnSuccess();
       if(true)
         return term;

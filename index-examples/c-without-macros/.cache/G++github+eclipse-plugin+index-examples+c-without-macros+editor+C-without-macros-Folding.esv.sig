@@ -1,0 +1,1 @@
+Module("C-without-macros-Folding",Imports([Import("C-without-macros-Folding.generated")]),[Folding("",[])])

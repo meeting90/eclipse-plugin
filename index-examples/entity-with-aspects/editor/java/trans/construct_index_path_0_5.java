@@ -20,76 +20,76 @@ import java.lang.ref.WeakReference;
 { 
   public static construct_index_path_0_5 instance = new construct_index_path_0_5();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm h_2103, IStrategoTerm i_2103, IStrategoTerm j_2103, IStrategoTerm k_2103, IStrategoTerm l_2103)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, IStrategoTerm c_11966, IStrategoTerm d_11966, IStrategoTerm e_11966, IStrategoTerm f_11966, IStrategoTerm g_11966)
   { 
     ITermFactory termFactory = context.getFactory();
     context.push("construct_index_path_0_5");
-    Fail2010:
+    Fail4912:
     { 
-      IStrategoTerm m_2103 = null;
-      IStrategoTerm n_2103 = null;
-      IStrategoTerm o_2103 = null;
-      IStrategoTerm p_2103 = null;
-      n_2103 = term;
-      Success1225:
+      IStrategoTerm h_11966 = null;
+      IStrategoTerm i_11966 = null;
+      IStrategoTerm j_11966 = null;
+      IStrategoTerm k_11966 = null;
+      i_11966 = term;
+      Success2781:
       { 
-        Fail2011:
+        Fail4913:
         { 
-          IStrategoTerm q_2103 = null;
-          q_2103 = term;
-          term = j_2103;
+          IStrategoTerm l_11966 = null;
+          l_11966 = term;
+          term = e_11966;
           if(term.getTermType() != IStrategoTerm.APPL || Main._consAnon_0 != ((IStrategoAppl)term).getConstructor())
-            break Fail2011;
-          term = q_2103;
+            break Fail4913;
+          term = l_11966;
           { 
-            IStrategoTerm u_2103 = null;
-            term = termFactory.makeTuple(n_2103, h_2103);
+            IStrategoTerm p_11966 = null;
+            term = termFactory.makeTuple(i_11966, c_11966);
             term = lookup_index_path_0_0.instance.invoke(context, term);
             if(term == null)
-              break Fail2010;
-            m_2103 = term;
-            term = l_2103;
-            u_2103 = l_2103;
+              break Fail4912;
+            h_11966 = term;
+            term = g_11966;
+            p_11966 = g_11966;
             term = new_0_0.instance.invoke(context, term);
             if(term == null)
-              break Fail2010;
+              break Fail4912;
             term = termFactory.makeAppl(Main._consAnon_1, new IStrategoTerm[]{term});
-            term = index_do_adjust_path_0_3.instance.invoke(context, u_2103, n_2103, m_2103, term);
+            term = index_do_adjust_path_0_3.instance.invoke(context, p_11966, i_11966, h_11966, term);
             if(term == null)
-              break Fail2010;
-            o_2103 = term;
+              break Fail4912;
+            j_11966 = term;
             if(true)
-              break Success1225;
+              break Success2781;
           }
         }
-        term = termFactory.makeTuple(j_2103, h_2103);
+        term = termFactory.makeTuple(e_11966, c_11966);
         term = lookup_index_path_0_0.instance.invoke(context, term);
         if(term == null)
-          break Fail2010;
-        term = index_do_adjust_path_0_3.instance.invoke(context, l_2103, n_2103, term, i_2103);
+          break Fail4912;
+        term = index_do_adjust_path_0_3.instance.invoke(context, g_11966, i_11966, term, d_11966);
         if(term == null)
-          break Fail2010;
-        o_2103 = term;
+          break Fail4912;
+        j_11966 = term;
       }
-      Success1226:
+      Success2782:
       { 
-        Fail2012:
+        Fail4914:
         { 
           if(true)
-            break Fail2012;
+            break Fail4914;
           { 
-            term = index_do_adjust_path_0_3.instance.invoke(context, l_2103, n_2103, o_2103, k_2103);
+            term = index_do_adjust_path_0_3.instance.invoke(context, g_11966, i_11966, j_11966, f_11966);
             if(term == null)
-              break Fail2010;
-            p_2103 = term;
+              break Fail4912;
+            k_11966 = term;
             if(true)
-              break Success1226;
+              break Success2782;
           }
         }
-        term = o_2103;
-        p_2103 = o_2103;
+        term = j_11966;
+        k_11966 = j_11966;
       }
-      term = termFactory.makeTuple(n_2103, p_2103);
+      term = termFactory.makeTuple(i_11966, k_11966);
       context.popOnSuccess();
       if(true)
         return term;

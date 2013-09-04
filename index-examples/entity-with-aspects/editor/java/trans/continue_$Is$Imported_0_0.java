@@ -23,13 +23,13 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("continue_IsImported_0_0");
-    Fail2636:
+    Fail5538:
     { 
-      IStrategoTerm y_2191 = null;
-      y_2191 = term;
-      term = dr_continue_0_1.instance.invoke(context, y_2191, trans.const481);
+      IStrategoTerm t_12054 = null;
+      t_12054 = term;
+      term = dr_continue_0_1.instance.invoke(context, t_12054, trans.const1001);
       if(term == null)
-        break Fail2636;
+        break Fail5538;
       context.popOnSuccess();
       if(true)
         return term;

@@ -20,14 +20,14 @@ import java.lang.ref.WeakReference;
 { 
   public static index_lookup_all_scoped_internal_2_3 instance = new index_lookup_all_scoped_internal_2_3();
 
-  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy a_2114, Strategy b_2114, IStrategoTerm x_2113, IStrategoTerm y_2113, IStrategoTerm z_2113)
+  @Override public IStrategoTerm invoke(Context context, IStrategoTerm term, Strategy v_11976, Strategy w_11976, IStrategoTerm s_11976, IStrategoTerm t_11976, IStrategoTerm u_11976)
   { 
     context.push("index_lookup_all_scoped_internal_2_3");
-    Fail2073:
+    Fail4975:
     { 
-      term = index_lookup_all_scoped_internal_4_3.instance.invoke(context, term, _Id.instance, _Id.instance, a_2114, b_2114, x_2113, y_2113, z_2113);
+      term = index_lookup_all_scoped_internal_4_3.instance.invoke(context, term, _Id.instance, _Id.instance, v_11976, w_11976, s_11976, t_11976, u_11976);
       if(term == null)
-        break Fail2073;
+        break Fail4975;
       context.popOnSuccess();
       if(true)
         return term;

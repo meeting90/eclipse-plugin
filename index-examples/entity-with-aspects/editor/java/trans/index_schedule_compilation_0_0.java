@@ -23,38 +23,38 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("index_schedule_compilation_0_0");
-    Fail1937:
+    Fail4839:
     { 
-      IStrategoTerm term1197 = term;
-      Success1176:
+      IStrategoTerm term2753 = term;
+      Success2732:
       { 
-        Fail1938:
+        Fail4840:
         { 
-          IStrategoTerm i_2085 = null;
-          IStrategoTerm k_2085 = null;
-          IStrategoTerm l_2085 = null;
-          k_2085 = term;
-          i_2085 = trans.const395;
-          l_2085 = k_2085;
-          term = queue_strategy_0_2.instance.invoke(context, l_2085, i_2085, trans.const396);
+          IStrategoTerm d_11948 = null;
+          IStrategoTerm f_11948 = null;
+          IStrategoTerm g_11948 = null;
+          f_11948 = term;
+          d_11948 = trans.const915;
+          g_11948 = f_11948;
+          term = queue_strategy_0_2.instance.invoke(context, g_11948, d_11948, trans.const916);
           if(term == null)
-            break Fail1938;
+            break Fail4840;
           if(true)
-            break Success1176;
+            break Success2732;
         }
-        term = term1197;
-        IStrategoTerm f_2085 = null;
-        IStrategoTerm g_2085 = null;
-        IStrategoTerm n_2085 = null;
-        f_2085 = term;
+        term = term2753;
+        IStrategoTerm a_11948 = null;
+        IStrategoTerm b_11948 = null;
+        IStrategoTerm i_11948 = null;
+        a_11948 = term;
         term = context.invokePrimitive("SSL_stacktrace_get_all_frame_names", term, NO_STRATEGIES, NO_TERMS);
         if(term == null)
-          break Fail1937;
-        g_2085 = term;
-        n_2085 = f_2085;
-        term = report_with_failure_0_2.instance.invoke(context, n_2085, trans.const397, g_2085);
+          break Fail4839;
+        b_11948 = term;
+        i_11948 = a_11948;
+        term = report_with_failure_0_2.instance.invoke(context, i_11948, trans.const917, b_11948);
         if(term == null)
-          break Fail1937;
+          break Fail4839;
       }
       term = trans.constNone0;
       context.popOnSuccess();

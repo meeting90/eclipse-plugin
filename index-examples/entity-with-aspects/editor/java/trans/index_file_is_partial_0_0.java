@@ -23,16 +23,16 @@ import java.lang.ref.WeakReference;
   @Override public IStrategoTerm invoke(Context context, IStrategoTerm term)
   { 
     context.push("index_file_is_partial_0_0");
-    Fail1982:
+    Fail4884:
     { 
       term = $Snd_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1982;
+        break Fail4884;
       term = index_uri_0_0.instance.invoke(context, term);
       if(term == null)
-        break Fail1982;
+        break Fail4884;
       if(true)
-        break Fail1982;
+        break Fail4884;
       context.popOnSuccess();
       if(true)
         return term;
