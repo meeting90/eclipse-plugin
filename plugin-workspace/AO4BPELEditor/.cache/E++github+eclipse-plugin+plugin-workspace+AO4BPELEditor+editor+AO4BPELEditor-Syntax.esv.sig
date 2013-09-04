@@ -1,1 +1,0 @@
-Module("AO4BPELEditor-Syntax",Imports([Import("AO4BPELEditor-Syntax.generated")]),[Language("",[])])

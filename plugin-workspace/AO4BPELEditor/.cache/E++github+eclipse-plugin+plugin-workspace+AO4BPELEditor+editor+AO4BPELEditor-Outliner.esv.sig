@@ -1,1 +1,0 @@
-Module("AO4BPELEditor-Outliner",Imports([Import("AO4BPELEditor-Outliner.generated")]),[Outliner("",[])])

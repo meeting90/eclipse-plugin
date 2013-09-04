@@ -1,1 +1,0 @@
-Module("AO4BPELEditor-Folding.generated",NoImports,[Folding(" Default folding definitions",[FoldRule(SortAndConstructor(Sort("Start"),Constructor("Module")),None),FoldRule(SortAndConstructor(Sort("Definition"),Constructor("Entity")),None)])])
