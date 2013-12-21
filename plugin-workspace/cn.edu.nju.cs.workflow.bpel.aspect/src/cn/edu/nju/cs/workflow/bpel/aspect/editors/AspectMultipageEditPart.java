@@ -50,7 +50,9 @@ public class AspectMultipageEditPart extends BPELMultipageEditorPart{
 	private AspectModelReconlieAdapter aspectModelReconcileAdapter=null;
 	private ExtensionMap extensionMap;
 
-	
+	public AspectMultipageEditPart(){
+		super();
+	}
 	@Override
 	protected void createDesignPage() {
 		// TODO Auto-generated method stub

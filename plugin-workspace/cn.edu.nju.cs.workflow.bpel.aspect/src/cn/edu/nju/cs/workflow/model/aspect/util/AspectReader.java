@@ -99,10 +99,10 @@ public class AspectReader {
 			this.advice.setPartnerLinks(BPELFactory.eINSTANCE.createPartnerLinks());
 		}
 		if (this.advice.getCorrelationSets() == null) {
-			this.advice.setCorrelationSets(BPELFactory.eINSTANCE.createCorrelationSets());
+			//this.advice.setCorrelationSets(BPELFactory.eINSTANCE.createCorrelationSets());
 		}
 		if (this.advice.getMessageExchanges() == null) {
-			this.advice.setMessageExchanges(BPELFactory.eINSTANCE.createMessageExchanges());
+			//this.advice.setMessageExchanges(BPELFactory.eINSTANCE.createMessageExchanges());
 		}
 
 		// Make sure scopes have Variables.
