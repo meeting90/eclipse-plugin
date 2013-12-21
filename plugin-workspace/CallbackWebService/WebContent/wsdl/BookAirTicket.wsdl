@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://cn.edu.nju.cs.ws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://cn.edu.nju.cs.ws" xmlns:intf="http://cn.edu.nju.cs.ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://cn.edu.nju.cs.ws" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="bookAirTicket">
+    <complexType>
+     <sequence>
+      <element name="airID" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="bookAirTicketResponse">
+    <complexType>
+     <sequence>
+      <element name="bookAirTicketReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="bookAirTicketResponse">
+
+      <wsdl:part element="impl:bookAirTicketResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="bookAirTicketRequest">
+
+      <wsdl:part element="impl:bookAirTicket" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BookAirTicket">
+
+      <wsdl:operation name="bookAirTicket">
+
+         <wsdl:input message="impl:bookAirTicketRequest" name="bookAirTicketRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:bookAirTicketResponse" name="bookAirTicketResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BookAirTicketSoapBinding" type="impl:BookAirTicket">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="bookAirTicket">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="bookAirTicketRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="bookAirTicketResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BookAirTicketService">
+
+      <wsdl:port binding="impl:BookAirTicketSoapBinding" name="BookAirTicket">
+
+         <wsdlsoap:address location="http://tempuri.org/CallbackWebService/services/BookAirTicket"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

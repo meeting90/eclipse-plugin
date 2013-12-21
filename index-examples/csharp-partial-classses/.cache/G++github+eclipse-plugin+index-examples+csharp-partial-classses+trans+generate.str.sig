@@ -1,1 +1,0 @@
-Module("generate",[Imports([(),(),(),(),(),(),(),(),()]),Rules([SDefT("index-is-partial-ast",[],[],[]),SDefT("index-combine-asts",[],[],[]),SDefT("combine-classes",[],[],[])]),Rules([SDefT("index-compile-ast",[],[VarDec("file",ConstType(SortNoArgs("ATerm"))),VarDec("subfile",ConstType(SortNoArgs("ATerm")))],[])])])

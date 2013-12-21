@@ -1,5 +1,0 @@
-module CSharpPartialClassses-Outliner
-
-imports CSharpPartialClassses-Outliner.generated
-
-outliner

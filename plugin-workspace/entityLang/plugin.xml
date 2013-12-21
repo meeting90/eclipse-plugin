@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?eclipse version="3.0"?>
+
+<plugin>
+       <extension point="org.eclipse.imp.runtime.languageDescription">
+          <language extensions="ent" description="EntityLang" language="EntityLang" derivedFrom="DynamicRoot" validator="entityLang.EntityLangValidator" validatorClass="entityLang.EntityLangValidator"></language>
+       </extension>
+       <extension id="entityLang.parser" name="EntityLang Parser" point="org.eclipse.imp.runtime.parser">
+          <parser class="entityLang.EntityLangParseController" language="EntityLang">
+          </parser>
+       </extension>    
+    </plugin>

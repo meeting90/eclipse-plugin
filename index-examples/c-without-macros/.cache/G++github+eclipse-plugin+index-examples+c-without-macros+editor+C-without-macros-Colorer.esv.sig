@@ -1,1 +1,0 @@
-Module("C-without-macros-Colorer",Imports([Import("C-without-macros-Colorer.generated")]),[Colorer("",[])])

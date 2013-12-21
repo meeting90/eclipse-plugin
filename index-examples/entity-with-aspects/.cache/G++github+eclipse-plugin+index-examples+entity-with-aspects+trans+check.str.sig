@@ -1,1 +1,0 @@
-Module("check",[Imports([(),(),(),()]),Rules([SDefT("constraint-error",[],[],[]),SDefT("constraint-error",[],[],[])]),Rules([SDefT("constraint-warning",[],[],[]),SDefT("constraint-note",[],[],[])])])

@@ -1,1 +1,0 @@
-Module("desugar",[Imports([(),(),(),(),(),(),(),(),()]),Strategies([SDefT("desugar-all",[],[],[])]),Rules([SDefT("desugar",[],[],[]),SDefT("desugar-this",[],[VarDec("name",ConstType(SortNoArgs("ATerm")))],[])])])

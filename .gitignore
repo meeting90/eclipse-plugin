@@ -3,6 +3,7 @@
 *.lock
 *.log
 *.metadata
+*.svn
 
 # Package Files #
 *.jar

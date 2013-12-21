@@ -1,1 +1,0 @@
-Module("C-without-macros-Outliner",Imports([Import("C-without-macros-Outliner.generated")]),[Outliner("",[])])

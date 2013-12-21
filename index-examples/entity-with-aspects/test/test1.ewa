@@ -1,6 +1,0 @@
-module Test
-
-entity Ent1
-{
-	mValue : String
-}

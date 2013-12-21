@@ -1,1 +1,0 @@
-Module("C-without-macros-References",Imports([Import("C-without-macros-References.generated")]),[References("",[]),References("",[ReferenceRule("_",Strategy("editor-resolve"))])])

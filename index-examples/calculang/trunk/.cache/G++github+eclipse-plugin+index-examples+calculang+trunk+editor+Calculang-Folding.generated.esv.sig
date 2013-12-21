@@ -1,1 +1,0 @@
-Module("Calculang-Folding.generated",NoImports,[Folding(" Default folding definitions",[FoldRule(SortAndConstructor(Sort("Start"),Constructor("Stm")),None)])])

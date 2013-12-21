@@ -1,4 +1,0 @@
-package csharppartialclassses;
-
-public class CSharpPartialClasssesParseController extends CSharpPartialClasssesParseControllerGenerated 
-{ }

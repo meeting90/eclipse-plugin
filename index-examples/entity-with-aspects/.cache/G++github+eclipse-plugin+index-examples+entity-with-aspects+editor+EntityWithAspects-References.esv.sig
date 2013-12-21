@@ -1,1 +1,0 @@
-Module("EntityWithAspects-References",Imports([Import("EntityWithAspects-References.generated")]),[References("",[]),References("",[ReferenceRule("_",Strategy("editor-resolve")),HoverRule("_",Strategy("editor-hover"))])])

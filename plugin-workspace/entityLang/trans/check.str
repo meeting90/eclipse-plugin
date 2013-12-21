@@ -1,0 +1,31 @@
+module check
+
+imports
+  libstratego-lib
+  include/EntityLang
+  lib/editor-common.generated
+  lib/index-library.generated
+  lib/analysis-library.generated
+  lib/analysis-library-internal.generated
+  lib/nbl-library.generated
+
+rules // Other
+  // constraint-error:
+  // 	Property(x,Type(type))->(type,$[Type [type] is not defined!])
+  // 	where
+  // 		not (!type=>"String");
+  // 		not	(!type=>"Int");
+  // 		not(<GetEntity> type)
+  // 	with
+  // 		rules(
+  //  		GetEntity: type-> type
+  //   			)
+  constraint-warning:
+    Entity(x, _) -> (x, $[Entity names must start with a capital])
+    where
+      not(<string-starts-with-capital> x)
+  
+  constraint-note:
+    Module(x @ "example", _) -> (x, $[This is just an example program in the "entities" language
+                                   (this note is defined in trans/check.str) ])
+ 

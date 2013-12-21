@@ -4,7 +4,7 @@
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1 /1/@rootWorkflow"/>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="40" height="40" y="200" style="/0/@styles.0/@styles.0">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="40" height="40" x="75" y="72" style="/0/@styles.0/@styles.0">
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1">
           <points/>
           <points x="20" y="20"/>
@@ -18,7 +18,7 @@
       </anchors>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="40" height="40" x="1080" y="182" style="/0/@styles.0/@styles.0">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" width="40" height="40" x="936" y="288" style="/0/@styles.0/@styles.0">
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1">
           <points/>
           <points x="20" y="20"/>
@@ -154,7 +154,7 @@
       </children>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="317" y="75">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="307" y="36">
         <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
       </graphicsAlgorithm>
       <link businessObjects="14"/>
@@ -276,7 +276,7 @@
       </children>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="516" y="252">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="516" y="193">
         <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
       </graphicsAlgorithm>
       <link businessObjects="25"/>
@@ -398,7 +398,7 @@
       </children>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="768" y="148">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="200" height="160" x="715" y="48">
         <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="140" height="140" x="30" y="10" style="/0/@styles.0/@styles.0" cornerHeight="5" cornerWidth="5"/>
       </graphicsAlgorithm>
       <link businessObjects="36"/>

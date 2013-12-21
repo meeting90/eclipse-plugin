@@ -1,0 +1,16 @@
+module EntityLang.main
+
+imports EntityLang-Builders EntityLang-Refactorings EntityLang-Colorer EntityLang-Completions EntityLang-Folding EntityLang-Outliner EntityLang-References EntityLang-Syntax
+
+language General properties
+                  
+  name          : EntityLang
+  id            : entityLang
+  extends       : Root
+                  
+  description   : "Spoofax/IMP-generated editor for the EntityLang language"
+  url           : http://strategoxt.org
+                  
+  extensions    : ent
+  table         : include/EntityLang.tbl
+  start symbols : Start

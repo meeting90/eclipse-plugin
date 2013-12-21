@@ -1,1 +1,0 @@
-Module("CSharpPartialClassses-Colorer",Imports([Import("CSharpPartialClassses-Colorer.generated")]),[Colorer("",[])])

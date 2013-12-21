@@ -13,8 +13,10 @@
 
 7.bind callback partenerLinkType 
 
-8.choice task
+8.compound Task
 
-9.while task
+9.choice task
 
-10.advice task 
+10.while task
+
+11.advice task 

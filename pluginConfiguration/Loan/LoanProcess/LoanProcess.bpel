@@ -57,10 +57,8 @@
     </variables>
     <correlationSets>
         <correlationSet name="correlator" properties="tns:correlatorProp"/>
-    </correlationSets>
-    <sequence>
-        <receive name="ReceiveLoanRequest" createInstance="yes" partnerLink="Client" operation="laonRequest"
-                 portType="tns:LoanProcessPortType" variable="input">
+    </correlationSets>
+    <sequence><receive name="ReceiveLoanRequest" createInstance="yes" partnerLink="Client" operation="laonRequest" portType="tns:LoanProcessPortType" variable="input">
             <correlations>
                 <correlation set="correlator" initiate="yes"></correlation>
             </correlations>
@@ -96,9 +94,7 @@
                 <to>$customerInfoInput.part/ns3:CreditRating</to>
             </copy>
         </assign>
-        <invoke name="InvokeCustomerInfo" partnerLink="CustomerInfoPL" operation="getCustomerSSN"
-                portType="ns1:CustomerInfoPortType" inputVariable="customerInfoInput"
-                outputVariable="customerInfoOutput"/>
+        <invoke name="InvokeCustomerInfo" partnerLink="CustomerInfoPL" operation="getCustomerSSN" portType="ns1:CustomerInfoPortType" inputVariable="customerInfoInput" outputVariable="customerInfoOutput" />
         <assign name="Assign2">
             <copy>
                 <from>
@@ -115,9 +111,7 @@
                 <to>$creditRatingInput.part/ns3:SSN</to>
             </copy>
         </assign>
-        <invoke name="InvokeCreditRating" partnerLink="CreditRatingPL" operation="getCreditRating"
-                portType="ns0:CreditRatingPortType" inputVariable="creditRatingInput"
-                outputVariable="creditRatingOutput"/>
+        <invoke name="InvokeCreditRating" partnerLink="CreditRatingPL" operation="getCreditRating" portType="ns0:CreditRatingPortType" inputVariable="creditRatingInput" outputVariable="creditRatingOutput" />
         <assign name="Assign3">
             <copy>
                 <from>
@@ -159,15 +153,12 @@
                 <to>$diLoanServiceRequest.part/ns3:LoanInfo</to>
             </copy>
         </assign>
-        <flow name="LoanOfferFlow">
-            <sequence name="Sequence1">
+        
+        <flow name="LoanOfferFlow"><sequence name="Sequence1">
              
-                <invoke name="Invoke" partnerLink="DILoanServicePL" operation="getLoanOffer"
-                        portType="ns2:LoanServicePortType" inputVariable="diLoanServiceRequest"/>
+                <invoke name="Invoke" partnerLink="DILoanServicePL" operation="getLoanOffer" portType="ns2:LoanServicePortType" inputVariable="diLoanServiceRequest" />
                   
-                <receive name="ReceiveDILoanService" createInstance="no" partnerLink="DILoanServicePL"
-                         operation="onLoanOffer" portType="ns2:LoanServiceCallbackPortType"
-                         variable="diLoanServiceResponse">
+                <receive name="ReceiveDILoanService" createInstance="no" partnerLink="DILoanServicePL" operation="onLoanOffer" portType="ns2:LoanServiceCallbackPortType" variable="diLoanServiceResponse">
                      
                     <correlations>
                         <correlation set="correlator" initiate="no"></correlation>
@@ -176,6 +167,7 @@
                 </receive>
                  
             </sequence>
+        
         </flow>
         <assign name="PrepareOutput">
             <copy>
@@ -220,8 +212,8 @@
                 <to>$output.part/ns3:selected</to>
             </copy>
         </assign>
-        <reply name="ReplyWithOffer" partnerLink="Client" operation="laonRequest" portType="tns:LoanProcessPortType"
-               variable="output"/>
+        <reply name="ReplyWithOffer" partnerLink="Client" operation="laonRequest" portType="tns:LoanProcessPortType" variable="output" />
+    
     </sequence>
 </process>
 

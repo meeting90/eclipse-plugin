@@ -1,0 +1,9 @@
+module EntityLang-Colorer
+
+imports EntityLang-Colorer.generated
+
+colorer
+      _.Type :0 0 255                                                                
+  // This file can be used for custom colorer rules.                  
+  //                                                                  
+  // See the imported file for a brief introduction and examples.     

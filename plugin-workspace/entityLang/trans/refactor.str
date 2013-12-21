@@ -1,0 +1,29 @@
+module refactor
+
+imports
+  lib-refactoring/behavior-preservation.generated
+  check
+  lib/nbl-library.generated
+
+rules
+ 
+  rename-refactoring:
+    (newname, oldname{ref}, position, ast, path, project-path) -> 
+    (ast-changes, fatal-errors, errors, warnings)
+    where
+      ast-after := <rename-all(|newname, oldname{ref})> ast;
+      ast-changes := [(ast, ast-after)];
+      fatal-errors := [];
+      (errors, warnings) := 
+        <get-semantic-violations(constraint-error, constraint-warning, ?newname <+ ?oldname{})> ast-changes
+
+  rename-all(|newname, oldname):
+    ast -> <alltd(preserve-annos((oldname -> newname)))> ast
+  // rename:
+  // 	(newname,selected,position,ast,path,project-path)->([(ast,new-ast)],fatal-errors,errors,warnings)
+  // 	with
+  // 		new-ast:=<topdown(try(rename-type(|selected,newname)))>ast;
+  // 		(errors,warnings):=<check-semantics>(ast,new-ast);
+  // 		fatal-errors:=[]
+  // semantic-preservation-error(|newname):
+  // 		Entity(newname,props)->(Entity(newname,props),"An Entity with this name alreay exsits")

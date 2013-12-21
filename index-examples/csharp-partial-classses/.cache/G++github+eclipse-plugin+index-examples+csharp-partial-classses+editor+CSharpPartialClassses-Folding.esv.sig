@@ -1,1 +1,0 @@
-Module("CSharpPartialClassses-Folding",Imports([Import("CSharpPartialClassses-Folding.generated")]),[Folding("",[])])
