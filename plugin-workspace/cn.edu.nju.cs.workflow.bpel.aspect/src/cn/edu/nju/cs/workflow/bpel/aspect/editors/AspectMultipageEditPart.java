@@ -110,6 +110,7 @@ public class AspectMultipageEditPart extends BPELMultipageEditorPart{
 			loadOptions.put("DOMDocument", structuredDocument);
 		}
 		IFile file = null;
+		
 		BPELEditModelClient editModelClient = new BPELEditModelClient(this);
 
 		boolean keepGoing = false;
