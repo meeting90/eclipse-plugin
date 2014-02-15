@@ -1,22 +1,18 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package cn.edu.nju.cs.workflow.model.aspect.util;
 
 import cn.edu.nju.cs.workflow.model.aspect.*;
+
+import java.util.List;
 
 import javax.wsdl.extensions.AttributeExtensible;
 import javax.wsdl.extensions.ElementExtensible;
 
 import org.eclipse.bpel.model.BPELExtensibleElement;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.util.Switch;
 
 import org.eclipse.wst.wsdl.ExtensibleElement;
 import org.eclipse.wst.wsdl.WSDLElement;
@@ -34,7 +30,7 @@ import org.eclipse.wst.wsdl.WSDLElement;
  * @see cn.edu.nju.cs.workflow.model.aspect.AspectPackage
  * @generated
  */
-public class AspectSwitch<T> extends Switch<T> {
+public class AspectSwitch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -56,16 +52,14 @@ public class AspectSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Checks whether this is a switch for the given package.
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
-	 * @return whether this is a switch for the given package.
+	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	@Override
-	protected boolean isSwitchFor(EPackage ePackage) {
-		return ePackage == modelPackage;
+	public T doSwitch(EObject theEObject) {
+		return doSwitch(theEObject.eClass(), theEObject);
 	}
 
 	/**
@@ -75,9 +69,39 @@ public class AspectSwitch<T> extends Switch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	@Override
+	protected T doSwitch(EClass theEClass, EObject theEObject) {
+		if (theEClass.eContainer() == modelPackage) {
+			return doSwitch(theEClass.getClassifierID(), theEObject);
+		}
+		else {
+			List<EClass> eSuperTypes = theEClass.getESuperTypes();
+			return
+				eSuperTypes.isEmpty() ?
+					defaultCase(theEObject) :
+					doSwitch(eSuperTypes.get(0), theEObject);
+		}
+	}
+
+	/**
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @generated
+	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case AspectPackage.ASPECTS: {
+				Aspects aspects = (Aspects)theEObject;
+				T result = caseAspects(aspects);
+				if (result == null) result = caseBPELExtensibleElement(aspects);
+				if (result == null) result = caseExtensibleElement(aspects);
+				if (result == null) result = caseWSDLElement(aspects);
+				if (result == null) result = caseIElementExtensible(aspects);
+				if (result == null) result = caseIAttributeExtensible(aspects);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case AspectPackage.ASPECT: {
 				Aspect aspect = (Aspect)theEObject;
 				T result = caseAspect(aspect);
@@ -89,32 +113,31 @@ public class AspectSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AspectPackage.POINTCUTS: {
-				Pointcuts pointcuts = (Pointcuts)theEObject;
-				T result = casePointcuts(pointcuts);
-				if (result == null) result = caseBPELExtensibleElement(pointcuts);
-				if (result == null) result = caseExtensibleElement(pointcuts);
-				if (result == null) result = caseWSDLElement(pointcuts);
-				if (result == null) result = caseIElementExtensible(pointcuts);
-				if (result == null) result = caseIAttributeExtensible(pointcuts);
+			case AspectPackage.TRANSITIONS: {
+				Transitions transitions = (Transitions)theEObject;
+				T result = caseTransitions(transitions);
+				if (result == null) result = caseBPELExtensibleElement(transitions);
+				if (result == null) result = caseExtensibleElement(transitions);
+				if (result == null) result = caseWSDLElement(transitions);
+				if (result == null) result = caseIElementExtensible(transitions);
+				if (result == null) result = caseIAttributeExtensible(transitions);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AspectPackage.POINTCUT: {
-				Pointcut pointcut = (Pointcut)theEObject;
-				T result = casePointcut(pointcut);
-				if (result == null) result = caseBPELExtensibleElement(pointcut);
-				if (result == null) result = caseExtensibleElement(pointcut);
-				if (result == null) result = caseWSDLElement(pointcut);
-				if (result == null) result = caseIElementExtensible(pointcut);
-				if (result == null) result = caseIAttributeExtensible(pointcut);
+			case AspectPackage.TRANSITION: {
+				Transition transition = (Transition)theEObject;
+				T result = caseTransition(transition);
+				if (result == null) result = caseBPELExtensibleElement(transition);
+				if (result == null) result = caseExtensibleElement(transition);
+				if (result == null) result = caseWSDLElement(transition);
+				if (result == null) result = caseIElementExtensible(transition);
+				if (result == null) result = caseIAttributeExtensible(transition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AspectPackage.ADVICE: {
 				Advice advice = (Advice)theEObject;
 				T result = caseAdvice(advice);
-				if (result == null) result = caseProcess(advice);
 				if (result == null) result = caseBPELExtensibleElement(advice);
 				if (result == null) result = caseExtensibleElement(advice);
 				if (result == null) result = caseWSDLElement(advice);
@@ -125,6 +148,21 @@ public class AspectSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Aspects</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Aspects</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAspects(Aspects object) {
+		return null;
 	}
 
 	/**
@@ -143,32 +181,32 @@ public class AspectSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pointcuts</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Transitions</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pointcuts</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Transitions</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePointcuts(Pointcuts object) {
+	public T caseTransitions(Transitions object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pointcut</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pointcut</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Transition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePointcut(Pointcut object) {
+	public T caseTransition(Transition object) {
 		return null;
 	}
 
@@ -263,21 +301,6 @@ public class AspectSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Process</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProcess(org.eclipse.bpel.model.Process object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -288,7 +311,6 @@ public class AspectSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

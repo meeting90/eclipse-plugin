@@ -16,10 +16,12 @@ public class AspectUIObjectFactory extends AbstractUIObjectFactory{
 		this.modelType=modelType;
 	}
 	public static EClass[] classArray ={
-			AspectPackage.eINSTANCE.getAdvice(),
-			AspectPackage.eINSTANCE.getAspect(),
-			AspectPackage.eINSTANCE.getPointcut(),
-			AspectPackage.eINSTANCE.getPointcuts(),
+		AspectPackage.eINSTANCE.getAspects(),
+		AspectPackage.eINSTANCE.getAspect(),	
+		AspectPackage.eINSTANCE.getTransition(),
+		AspectPackage.eINSTANCE.getTransitions(),
+		AspectPackage.eINSTANCE.getAdvice()
+			
 			
 	};
 	@Override

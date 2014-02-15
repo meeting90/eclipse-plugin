@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package cn.edu.nju.cs.workflow.model.aspect.impl;
 
@@ -10,8 +6,9 @@ import cn.edu.nju.cs.workflow.model.aspect.Advice;
 import cn.edu.nju.cs.workflow.model.aspect.Aspect;
 import cn.edu.nju.cs.workflow.model.aspect.AspectFactory;
 import cn.edu.nju.cs.workflow.model.aspect.AspectPackage;
-import cn.edu.nju.cs.workflow.model.aspect.Pointcut;
-import cn.edu.nju.cs.workflow.model.aspect.Pointcuts;
+import cn.edu.nju.cs.workflow.model.aspect.Aspects;
+import cn.edu.nju.cs.workflow.model.aspect.Transition;
+import cn.edu.nju.cs.workflow.model.aspect.Transitions;
 
 import org.eclipse.bpel.model.BPELPackage;
 
@@ -39,6 +36,13 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass aspectsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass aspectEClass = null;
 
 	/**
@@ -46,14 +50,14 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pointcutsEClass = null;
+	private EClass transitionsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pointcutEClass = null;
+	private EClass transitionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +137,42 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAspects() {
+		return aspectsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAspects_Name() {
+		return (EAttribute)aspectsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAspects_Targetnamespace() {
+		return (EAttribute)aspectsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAspects_Children() {
+		return (EReference)aspectsEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAspect() {
 		return aspectEClass;
 	}
@@ -151,8 +191,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAspect_Targetnamespace() {
-		return (EAttribute)aspectEClass.getEStructuralFeatures().get(1);
+	public EReference getAspect_Transitions() {
+		return (EReference)aspectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -160,17 +200,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAspect_ExpressionLanguage() {
-		return (EAttribute)aspectEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAspect_Pointcuts() {
-		return (EReference)aspectEClass.getEStructuralFeatures().get(3);
+	public EReference getAspect_JoinTransitions() {
+		return (EReference)aspectEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -179,7 +210,7 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * @generated
 	 */
 	public EReference getAspect_Advice() {
-		return (EReference)aspectEClass.getEStructuralFeatures().get(4);
+		return (EReference)aspectEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -187,8 +218,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPointcuts() {
-		return pointcutsEClass;
+	public EClass getTransitions() {
+		return transitionsEClass;
 	}
 
 	/**
@@ -196,8 +227,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPointcuts_Children() {
-		return (EReference)pointcutsEClass.getEStructuralFeatures().get(0);
+	public EReference getTransitions_Children() {
+		return (EReference)transitionsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -205,8 +236,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPointcut() {
-		return pointcutEClass;
+	public EAttribute getTransitions_Name() {
+		return (EAttribute)transitionsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -214,8 +245,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPointcut_Name() {
-		return (EAttribute)pointcutEClass.getEStructuralFeatures().get(0);
+	public EClass getTransition() {
+		return transitionEClass;
 	}
 
 	/**
@@ -223,8 +254,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPointcut_Language() {
-		return (EAttribute)pointcutEClass.getEStructuralFeatures().get(1);
+	public EAttribute getTransition_Type() {
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -232,8 +263,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPointcut_Startpoint() {
-		return (EReference)pointcutEClass.getEStructuralFeatures().get(2);
+	public EAttribute getTransition_PointName() {
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -241,17 +272,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPointcut_Endpoint() {
-		return (EReference)pointcutEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPointcut_Point() {
-		return (EReference)pointcutEClass.getEStructuralFeatures().get(4);
+	public EAttribute getTransition_Name() {
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -268,8 +290,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAdvice_Type() {
-		return (EAttribute)adviceEClass.getEStructuralFeatures().get(0);
+	public EReference getAdvice_Activity() {
+		return (EReference)adviceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -277,8 +299,8 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAdvice_Condition() {
-		return (EReference)adviceEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAdvice_Name() {
+		return (EAttribute)adviceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -309,26 +331,29 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		aspectsEClass = createEClass(ASPECTS);
+		createEAttribute(aspectsEClass, ASPECTS__NAME);
+		createEAttribute(aspectsEClass, ASPECTS__TARGETNAMESPACE);
+		createEReference(aspectsEClass, ASPECTS__CHILDREN);
+
 		aspectEClass = createEClass(ASPECT);
 		createEAttribute(aspectEClass, ASPECT__NAME);
-		createEAttribute(aspectEClass, ASPECT__TARGETNAMESPACE);
-		createEAttribute(aspectEClass, ASPECT__EXPRESSION_LANGUAGE);
-		createEReference(aspectEClass, ASPECT__POINTCUTS);
+		createEReference(aspectEClass, ASPECT__TRANSITIONS);
+		createEReference(aspectEClass, ASPECT__JOIN_TRANSITIONS);
 		createEReference(aspectEClass, ASPECT__ADVICE);
 
-		pointcutsEClass = createEClass(POINTCUTS);
-		createEReference(pointcutsEClass, POINTCUTS__CHILDREN);
+		transitionsEClass = createEClass(TRANSITIONS);
+		createEReference(transitionsEClass, TRANSITIONS__CHILDREN);
+		createEAttribute(transitionsEClass, TRANSITIONS__NAME);
 
-		pointcutEClass = createEClass(POINTCUT);
-		createEAttribute(pointcutEClass, POINTCUT__NAME);
-		createEAttribute(pointcutEClass, POINTCUT__LANGUAGE);
-		createEReference(pointcutEClass, POINTCUT__STARTPOINT);
-		createEReference(pointcutEClass, POINTCUT__ENDPOINT);
-		createEReference(pointcutEClass, POINTCUT__POINT);
+		transitionEClass = createEClass(TRANSITION);
+		createEAttribute(transitionEClass, TRANSITION__TYPE);
+		createEAttribute(transitionEClass, TRANSITION__POINT_NAME);
+		createEAttribute(transitionEClass, TRANSITION__NAME);
 
 		adviceEClass = createEClass(ADVICE);
-		createEAttribute(adviceEClass, ADVICE__TYPE);
-		createEReference(adviceEClass, ADVICE__CONDITION);
+		createEReference(adviceEClass, ADVICE__ACTIVITY);
+		createEAttribute(adviceEClass, ADVICE__NAME);
 	}
 
 	/**
@@ -363,32 +388,36 @@ public class AspectPackageImpl extends EPackageImpl implements AspectPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		aspectsEClass.getESuperTypes().add(theBPELPackage.getBPELExtensibleElement());
 		aspectEClass.getESuperTypes().add(theBPELPackage.getBPELExtensibleElement());
-		pointcutsEClass.getESuperTypes().add(theBPELPackage.getBPELExtensibleElement());
-		pointcutEClass.getESuperTypes().add(theBPELPackage.getBPELExtensibleElement());
-		adviceEClass.getESuperTypes().add(theBPELPackage.getProcess());
+		transitionsEClass.getESuperTypes().add(theBPELPackage.getBPELExtensibleElement());
+		transitionEClass.getESuperTypes().add(theBPELPackage.getBPELExtensibleElement());
+		adviceEClass.getESuperTypes().add(theBPELPackage.getBPELExtensibleElement());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(aspectsEClass, Aspects.class, "Aspects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAspects_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Aspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAspects_Targetnamespace(), theEcorePackage.getEString(), "targetnamespace", null, 0, 1, Aspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAspects_Children(), this.getAspect(), null, "children", null, 0, -1, Aspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(aspectEClass, Aspect.class, "Aspect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAspect_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Aspect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAspect_Targetnamespace(), theEcorePackage.getEString(), "targetnamespace", null, 0, 1, Aspect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAspect_ExpressionLanguage(), theEcorePackage.getEString(), "expressionLanguage", null, 0, 1, Aspect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAspect_Pointcuts(), this.getPointcuts(), null, "pointcuts", null, 0, 1, Aspect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAspect_Transitions(), this.getTransitions(), null, "transitions", null, 0, 1, Aspect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAspect_JoinTransitions(), this.getTransitions(), null, "joinTransitions", null, 0, 1, Aspect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAspect_Advice(), this.getAdvice(), null, "advice", null, 0, 1, Aspect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(pointcutsEClass, Pointcuts.class, "Pointcuts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPointcuts_Children(), this.getPointcut(), null, "children", null, 0, -1, Pointcuts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(transitionsEClass, Transitions.class, "Transitions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTransitions_Children(), this.getTransition(), null, "children", null, 0, -1, Transitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransitions_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Transitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(pointcutEClass, Pointcut.class, "Pointcut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPointcut_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Pointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPointcut_Language(), theEcorePackage.getEString(), "language", null, 0, 1, Pointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPointcut_Startpoint(), theBPELPackage.getExpression(), null, "startpoint", null, 0, 1, Pointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPointcut_Endpoint(), theBPELPackage.getExpression(), null, "endpoint", null, 0, 1, Pointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPointcut_Point(), theBPELPackage.getExpression(), null, "point", null, 0, 1, Pointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTransition_Type(), theEcorePackage.getEString(), "type", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_PointName(), theEcorePackage.getEString(), "pointName", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(adviceEClass, Advice.class, "Advice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAdvice_Type(), theEcorePackage.getEString(), "type", null, 0, 1, Advice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAdvice_Condition(), theBPELPackage.getBooleanExpression(), null, "condition", null, 0, 1, Advice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAdvice_Activity(), theBPELPackage.getSequence(), null, "activity", null, 0, 1, Advice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAdvice_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Advice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

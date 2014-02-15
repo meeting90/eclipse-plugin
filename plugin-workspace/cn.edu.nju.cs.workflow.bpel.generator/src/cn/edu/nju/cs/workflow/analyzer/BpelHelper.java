@@ -199,7 +199,7 @@ public class BpelHelper {
 		}
 		return expression;
 	}
-private  String addNameSpacePrefix ( Variable variable, String namespace ,String prefixRoot) {
+	private  String addNameSpacePrefix ( Variable variable, String namespace ,String prefixRoot) {
 
 		
 		String nsPrefix = BPELUtils.getNamespacePrefix(variable, namespace);

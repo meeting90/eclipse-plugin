@@ -1,0 +1,41 @@
+<aspects>
+	<aspect name="test" 
+	targetNamespace="http://workflow.cs.nju.edu.cn/aspect/test" 
+	xmlns="http://workflow.cs.nju.edu.cn/aspect/1.0"
+	xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<transitions> 
+		<transition type="post_C" name="*" />
+	</transitions>
+	<joinTransitions> 
+		<transition type="pre_S" name="*" />
+	</joinTransitions>
+	<advice name="log">
+		<bpel:sequence name="main">
+		<bpel:receive
+          name="start"
+          partnerLink="helloPartnerLink"
+          portType="intf:HelloPortType"
+          operation="hello"
+          variable="myVar"
+          createInstance="yes"/>
+
+         <bpel:assign name="assignHelloMesg">
+          <bpel:copy>
+              <bpel:from variable="myVar" part="TestPart"/>
+              <bpel:to variable="mesgVar"/>
+          </bpel:copy>
+          <bpel:copy>
+              <bpel:from>concat($mesgVar,' World')</bpel:from>
+              <bpel:to variable="myVar" part="TestPart"/>
+          </bpel:copy>
+      </bpel:assign>
+       <bpel:reply name="end"  
+              partnerLink="helloPartnerLink"
+              portType="intf:HelloPortType" 
+              operation="hello"
+              variable="myVar"/>
+		</bpel:sequence>
+	</advice>
+	</aspect>
+
+</aspects>

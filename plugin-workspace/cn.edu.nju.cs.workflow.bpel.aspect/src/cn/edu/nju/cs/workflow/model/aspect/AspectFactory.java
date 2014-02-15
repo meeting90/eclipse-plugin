@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package cn.edu.nju.cs.workflow.model.aspect;
 
@@ -26,6 +22,15 @@ public interface AspectFactory extends EFactory {
 	AspectFactory eINSTANCE = cn.edu.nju.cs.workflow.model.aspect.impl.AspectFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Aspects</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Aspects</em>'.
+	 * @generated
+	 */
+	Aspects createAspects();
+
+	/**
 	 * Returns a new object of class '<em>Aspect</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -35,22 +40,22 @@ public interface AspectFactory extends EFactory {
 	Aspect createAspect();
 
 	/**
-	 * Returns a new object of class '<em>Pointcuts</em>'.
+	 * Returns a new object of class '<em>Transitions</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pointcuts</em>'.
+	 * @return a new object of class '<em>Transitions</em>'.
 	 * @generated
 	 */
-	Pointcuts createPointcuts();
+	Transitions createTransitions();
 
 	/**
-	 * Returns a new object of class '<em>Pointcut</em>'.
+	 * Returns a new object of class '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pointcut</em>'.
+	 * @return a new object of class '<em>Transition</em>'.
 	 * @generated
 	 */
-	Pointcut createPointcut();
+	Transition createTransition();
 
 	/**
 	 * Returns a new object of class '<em>Advice</em>'.

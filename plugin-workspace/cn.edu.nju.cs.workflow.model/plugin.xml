@@ -17,4 +17,12 @@
             genModel="model/workflow.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated workflow -->
+      <package
+            uri="cs.nju.edu.cn"
+            class="workflow.model.ModelPackage"
+            genModel="model/workflow.genmodel"/>
+   </extension>
+
 </plugin>

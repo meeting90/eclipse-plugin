@@ -1,9 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Aspect
+Bundle-Name: %pluginName
 Bundle-SymbolicName: cn.edu.nju.cs.workflow.bpel.aspect;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: cn.edu.nju.cs.workflow.bpel.aspect.Activator
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-Activator: cn.edu.nju.cs.workflow.bpel.aspect.AspectUIPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.jface.text,
@@ -28,3 +31,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.wst.wsdl.ui;bundle-version="1.2.403"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: cn.edu.nju.cs.workflow.model.aspect,
+ cn.edu.nju.cs.workflow.model.aspect.impl,
+ cn.edu.nju.cs.workflow.model.aspect.util
+Import-Package: cn.edu.nju.cs.workflow.model.aspect

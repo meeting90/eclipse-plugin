@@ -1,15 +1,11 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package cn.edu.nju.cs.workflow.model.aspect.impl;
 
 import cn.edu.nju.cs.workflow.model.aspect.Advice;
 import cn.edu.nju.cs.workflow.model.aspect.Aspect;
 import cn.edu.nju.cs.workflow.model.aspect.AspectPackage;
-import cn.edu.nju.cs.workflow.model.aspect.Pointcuts;
+import cn.edu.nju.cs.workflow.model.aspect.Transitions;
 
 import org.eclipse.bpel.model.impl.BPELExtensibleElementImpl;
 
@@ -29,9 +25,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectImpl#getName <em>Name</em>}</li>
- *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectImpl#getTargetnamespace <em>Targetnamespace</em>}</li>
- *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectImpl#getExpressionLanguage <em>Expression Language</em>}</li>
- *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectImpl#getPointcuts <em>Pointcuts</em>}</li>
+ *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectImpl#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectImpl#getJoinTransitions <em>Join Transitions</em>}</li>
  *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectImpl#getAdvice <em>Advice</em>}</li>
  * </ul>
  * </p>
@@ -60,54 +55,24 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTargetnamespace() <em>Targetnamespace</em>}' attribute.
+	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetnamespace()
+	 * @see #getTransitions()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TARGETNAMESPACE_EDEFAULT = null;
+	protected Transitions transitions;
 
 	/**
-	 * The cached value of the '{@link #getTargetnamespace() <em>Targetnamespace</em>}' attribute.
+	 * The cached value of the '{@link #getJoinTransitions() <em>Join Transitions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetnamespace()
+	 * @see #getJoinTransitions()
 	 * @generated
 	 * @ordered
 	 */
-	protected String targetnamespace = TARGETNAMESPACE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getExpressionLanguage() <em>Expression Language</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpressionLanguage()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EXPRESSION_LANGUAGE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExpressionLanguage() <em>Expression Language</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpressionLanguage()
-	 * @generated
-	 * @ordered
-	 */
-	protected String expressionLanguage = EXPRESSION_LANGUAGE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getPointcuts() <em>Pointcuts</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPointcuts()
-	 * @generated
-	 * @ordered
-	 */
-	protected Pointcuts pointcuts;
+	protected Transitions joinTransitions;
 
 	/**
 	 * The cached value of the '{@link #getAdvice() <em>Advice</em>}' containment reference.
@@ -164,8 +129,8 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTargetnamespace() {
-		return targetnamespace;
+	public Transitions getTransitions() {
+		return transitions;
 	}
 
 	/**
@@ -173,53 +138,11 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTargetnamespace(String newTargetnamespace) {
-		String oldTargetnamespace = targetnamespace;
-		targetnamespace = newTargetnamespace;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectPackage.ASPECT__TARGETNAMESPACE, oldTargetnamespace, targetnamespace));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getExpressionLanguage() {
-		return expressionLanguage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExpressionLanguage(String newExpressionLanguage) {
-		String oldExpressionLanguage = expressionLanguage;
-		expressionLanguage = newExpressionLanguage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectPackage.ASPECT__EXPRESSION_LANGUAGE, oldExpressionLanguage, expressionLanguage));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Pointcuts getPointcuts() {
-		return pointcuts;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPointcuts(Pointcuts newPointcuts, NotificationChain msgs) {
-		Pointcuts oldPointcuts = pointcuts;
-		pointcuts = newPointcuts;
+	public NotificationChain basicSetTransitions(Transitions newTransitions, NotificationChain msgs) {
+		Transitions oldTransitions = transitions;
+		transitions = newTransitions;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AspectPackage.ASPECT__POINTCUTS, oldPointcuts, newPointcuts);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AspectPackage.ASPECT__TRANSITIONS, oldTransitions, newTransitions);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -230,18 +153,61 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPointcuts(Pointcuts newPointcuts) {
-		if (newPointcuts != pointcuts) {
+	public void setTransitions(Transitions newTransitions) {
+		if (newTransitions != transitions) {
 			NotificationChain msgs = null;
-			if (pointcuts != null)
-				msgs = ((InternalEObject)pointcuts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ASPECT__POINTCUTS, null, msgs);
-			if (newPointcuts != null)
-				msgs = ((InternalEObject)newPointcuts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ASPECT__POINTCUTS, null, msgs);
-			msgs = basicSetPointcuts(newPointcuts, msgs);
+			if (transitions != null)
+				msgs = ((InternalEObject)transitions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ASPECT__TRANSITIONS, null, msgs);
+			if (newTransitions != null)
+				msgs = ((InternalEObject)newTransitions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ASPECT__TRANSITIONS, null, msgs);
+			msgs = basicSetTransitions(newTransitions, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectPackage.ASPECT__POINTCUTS, newPointcuts, newPointcuts));
+			eNotify(new ENotificationImpl(this, Notification.SET, AspectPackage.ASPECT__TRANSITIONS, newTransitions, newTransitions));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Transitions getJoinTransitions() {
+		return joinTransitions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetJoinTransitions(Transitions newJoinTransitions, NotificationChain msgs) {
+		Transitions oldJoinTransitions = joinTransitions;
+		joinTransitions = newJoinTransitions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AspectPackage.ASPECT__JOIN_TRANSITIONS, oldJoinTransitions, newJoinTransitions);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setJoinTransitions(Transitions newJoinTransitions) {
+		if (newJoinTransitions != joinTransitions) {
+			NotificationChain msgs = null;
+			if (joinTransitions != null)
+				msgs = ((InternalEObject)joinTransitions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ASPECT__JOIN_TRANSITIONS, null, msgs);
+			if (newJoinTransitions != null)
+				msgs = ((InternalEObject)newJoinTransitions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ASPECT__JOIN_TRANSITIONS, null, msgs);
+			msgs = basicSetJoinTransitions(newJoinTransitions, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AspectPackage.ASPECT__JOIN_TRANSITIONS, newJoinTransitions, newJoinTransitions));
 	}
 
 	/**
@@ -295,8 +261,10 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AspectPackage.ASPECT__POINTCUTS:
-				return basicSetPointcuts(null, msgs);
+			case AspectPackage.ASPECT__TRANSITIONS:
+				return basicSetTransitions(null, msgs);
+			case AspectPackage.ASPECT__JOIN_TRANSITIONS:
+				return basicSetJoinTransitions(null, msgs);
 			case AspectPackage.ASPECT__ADVICE:
 				return basicSetAdvice(null, msgs);
 		}
@@ -313,12 +281,10 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 		switch (featureID) {
 			case AspectPackage.ASPECT__NAME:
 				return getName();
-			case AspectPackage.ASPECT__TARGETNAMESPACE:
-				return getTargetnamespace();
-			case AspectPackage.ASPECT__EXPRESSION_LANGUAGE:
-				return getExpressionLanguage();
-			case AspectPackage.ASPECT__POINTCUTS:
-				return getPointcuts();
+			case AspectPackage.ASPECT__TRANSITIONS:
+				return getTransitions();
+			case AspectPackage.ASPECT__JOIN_TRANSITIONS:
+				return getJoinTransitions();
 			case AspectPackage.ASPECT__ADVICE:
 				return getAdvice();
 		}
@@ -336,14 +302,11 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 			case AspectPackage.ASPECT__NAME:
 				setName((String)newValue);
 				return;
-			case AspectPackage.ASPECT__TARGETNAMESPACE:
-				setTargetnamespace((String)newValue);
+			case AspectPackage.ASPECT__TRANSITIONS:
+				setTransitions((Transitions)newValue);
 				return;
-			case AspectPackage.ASPECT__EXPRESSION_LANGUAGE:
-				setExpressionLanguage((String)newValue);
-				return;
-			case AspectPackage.ASPECT__POINTCUTS:
-				setPointcuts((Pointcuts)newValue);
+			case AspectPackage.ASPECT__JOIN_TRANSITIONS:
+				setJoinTransitions((Transitions)newValue);
 				return;
 			case AspectPackage.ASPECT__ADVICE:
 				setAdvice((Advice)newValue);
@@ -363,14 +326,11 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 			case AspectPackage.ASPECT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case AspectPackage.ASPECT__TARGETNAMESPACE:
-				setTargetnamespace(TARGETNAMESPACE_EDEFAULT);
+			case AspectPackage.ASPECT__TRANSITIONS:
+				setTransitions((Transitions)null);
 				return;
-			case AspectPackage.ASPECT__EXPRESSION_LANGUAGE:
-				setExpressionLanguage(EXPRESSION_LANGUAGE_EDEFAULT);
-				return;
-			case AspectPackage.ASPECT__POINTCUTS:
-				setPointcuts((Pointcuts)null);
+			case AspectPackage.ASPECT__JOIN_TRANSITIONS:
+				setJoinTransitions((Transitions)null);
 				return;
 			case AspectPackage.ASPECT__ADVICE:
 				setAdvice((Advice)null);
@@ -389,12 +349,10 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 		switch (featureID) {
 			case AspectPackage.ASPECT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AspectPackage.ASPECT__TARGETNAMESPACE:
-				return TARGETNAMESPACE_EDEFAULT == null ? targetnamespace != null : !TARGETNAMESPACE_EDEFAULT.equals(targetnamespace);
-			case AspectPackage.ASPECT__EXPRESSION_LANGUAGE:
-				return EXPRESSION_LANGUAGE_EDEFAULT == null ? expressionLanguage != null : !EXPRESSION_LANGUAGE_EDEFAULT.equals(expressionLanguage);
-			case AspectPackage.ASPECT__POINTCUTS:
-				return pointcuts != null;
+			case AspectPackage.ASPECT__TRANSITIONS:
+				return transitions != null;
+			case AspectPackage.ASPECT__JOIN_TRANSITIONS:
+				return joinTransitions != null;
 			case AspectPackage.ASPECT__ADVICE:
 				return advice != null;
 		}
@@ -413,10 +371,6 @@ public class AspectImpl extends BPELExtensibleElementImpl implements Aspect {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", targetnamespace: ");
-		result.append(targetnamespace);
-		result.append(", expressionLanguage: ");
-		result.append(expressionLanguage);
 		result.append(')');
 		return result.toString();
 	}

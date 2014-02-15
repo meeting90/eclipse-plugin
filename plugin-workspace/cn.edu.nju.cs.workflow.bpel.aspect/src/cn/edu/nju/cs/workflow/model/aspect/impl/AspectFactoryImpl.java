@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package cn.edu.nju.cs.workflow.model.aspect.impl;
 
@@ -31,7 +27,7 @@ public class AspectFactoryImpl extends EFactoryImpl implements AspectFactory {
 	 */
 	public static AspectFactory init() {
 		try {
-			AspectFactory theAspectFactory = (AspectFactory)EPackage.Registry.INSTANCE.getEFactory("http://workflow.cs.nju.edu.cn/aspect/1.0"); 
+			AspectFactory theAspectFactory = (AspectFactory)EPackage.Registry.INSTANCE.getEFactory(AspectPackage.eNS_URI);
 			if (theAspectFactory != null) {
 				return theAspectFactory;
 			}
@@ -60,13 +56,24 @@ public class AspectFactoryImpl extends EFactoryImpl implements AspectFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case AspectPackage.ASPECTS: return createAspects();
 			case AspectPackage.ASPECT: return createAspect();
-			case AspectPackage.POINTCUTS: return createPointcuts();
-			case AspectPackage.POINTCUT: return createPointcut();
+			case AspectPackage.TRANSITIONS: return createTransitions();
+			case AspectPackage.TRANSITION: return createTransition();
 			case AspectPackage.ADVICE: return createAdvice();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Aspects createAspects() {
+		AspectsImpl aspects = new AspectsImpl();
+		return aspects;
 	}
 
 	/**
@@ -84,9 +91,9 @@ public class AspectFactoryImpl extends EFactoryImpl implements AspectFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pointcuts createPointcuts() {
-		PointcutsImpl pointcuts = new PointcutsImpl();
-		return pointcuts;
+	public Transitions createTransitions() {
+		TransitionsImpl transitions = new TransitionsImpl();
+		return transitions;
 	}
 
 	/**
@@ -94,9 +101,9 @@ public class AspectFactoryImpl extends EFactoryImpl implements AspectFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pointcut createPointcut() {
-		PointcutImpl pointcut = new PointcutImpl();
-		return pointcut;
+	public Transition createTransition() {
+		TransitionImpl transition = new TransitionImpl();
+		return transition;
 	}
 
 	/**

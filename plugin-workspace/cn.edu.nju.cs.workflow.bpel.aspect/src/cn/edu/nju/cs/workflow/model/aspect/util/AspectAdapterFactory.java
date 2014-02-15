@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package cn.edu.nju.cs.workflow.model.aspect.util;
 
@@ -80,16 +76,20 @@ public class AspectAdapterFactory extends AdapterFactoryImpl {
 	protected AspectSwitch<Adapter> modelSwitch =
 		new AspectSwitch<Adapter>() {
 			@Override
+			public Adapter caseAspects(Aspects object) {
+				return createAspectsAdapter();
+			}
+			@Override
 			public Adapter caseAspect(Aspect object) {
 				return createAspectAdapter();
 			}
 			@Override
-			public Adapter casePointcuts(Pointcuts object) {
-				return createPointcutsAdapter();
+			public Adapter caseTransitions(Transitions object) {
+				return createTransitionsAdapter();
 			}
 			@Override
-			public Adapter casePointcut(Pointcut object) {
-				return createPointcutAdapter();
+			public Adapter caseTransition(Transition object) {
+				return createTransitionAdapter();
 			}
 			@Override
 			public Adapter caseAdvice(Advice object) {
@@ -116,10 +116,6 @@ public class AspectAdapterFactory extends AdapterFactoryImpl {
 				return createBPELExtensibleElementAdapter();
 			}
 			@Override
-			public Adapter caseProcess(org.eclipse.bpel.model.Process object) {
-				return createProcessAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -140,6 +136,20 @@ public class AspectAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link cn.edu.nju.cs.workflow.model.aspect.Aspects <em>Aspects</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspects
+	 * @generated
+	 */
+	public Adapter createAspectsAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link cn.edu.nju.cs.workflow.model.aspect.Aspect <em>Aspect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -154,30 +164,30 @@ public class AspectAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcuts <em>Pointcuts</em>}'.
+	 * Creates a new adapter for an object of class '{@link cn.edu.nju.cs.workflow.model.aspect.Transitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcuts
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Transitions
 	 * @generated
 	 */
-	public Adapter createPointcutsAdapter() {
+	public Adapter createTransitionsAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcut <em>Pointcut</em>}'.
+	 * Creates a new adapter for an object of class '{@link cn.edu.nju.cs.workflow.model.aspect.Transition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcut
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Transition
 	 * @generated
 	 */
-	public Adapter createPointcutAdapter() {
+	public Adapter createTransitionAdapter() {
 		return null;
 	}
 
@@ -262,20 +272,6 @@ public class AspectAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBPELExtensibleElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.bpel.model.Process <em>Process</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.bpel.model.Process
-	 * @generated
-	 */
-	public Adapter createProcessAdapter() {
 		return null;
 	}
 

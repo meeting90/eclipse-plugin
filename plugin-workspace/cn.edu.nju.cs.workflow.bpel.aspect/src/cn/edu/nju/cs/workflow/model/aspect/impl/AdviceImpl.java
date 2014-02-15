@@ -1,17 +1,13 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package cn.edu.nju.cs.workflow.model.aspect.impl;
 
 import cn.edu.nju.cs.workflow.model.aspect.Advice;
 import cn.edu.nju.cs.workflow.model.aspect.AspectPackage;
 
-import org.eclipse.bpel.model.BooleanExpression;
+import org.eclipse.bpel.model.Sequence;
 
-import org.eclipse.bpel.model.impl.ProcessImpl;
+import org.eclipse.bpel.model.impl.BPELExtensibleElementImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -28,43 +24,43 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AdviceImpl#getType <em>Type</em>}</li>
- *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AdviceImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AdviceImpl#getActivity <em>Activity</em>}</li>
+ *   <li>{@link cn.edu.nju.cs.workflow.model.aspect.impl.AdviceImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AdviceImpl extends ProcessImpl implements Advice {
+public class AdviceImpl extends BPELExtensibleElementImpl implements Advice {
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * The cached value of the '{@link #getActivity() <em>Activity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getActivity()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TYPE_EDEFAULT = null;
+	protected Sequence activity;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String type = TYPE_EDEFAULT;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCondition()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected BooleanExpression condition;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,8 +86,8 @@ public class AdviceImpl extends ProcessImpl implements Advice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getType() {
-		return type;
+	public Sequence getActivity() {
+		return activity;
 	}
 
 	/**
@@ -99,32 +95,11 @@ public class AdviceImpl extends ProcessImpl implements Advice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectPackage.ADVICE__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BooleanExpression getCondition() {
-		return condition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCondition(BooleanExpression newCondition, NotificationChain msgs) {
-		BooleanExpression oldCondition = condition;
-		condition = newCondition;
+	public NotificationChain basicSetActivity(Sequence newActivity, NotificationChain msgs) {
+		Sequence oldActivity = activity;
+		activity = newActivity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AspectPackage.ADVICE__CONDITION, oldCondition, newCondition);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AspectPackage.ADVICE__ACTIVITY, oldActivity, newActivity);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -135,18 +110,39 @@ public class AdviceImpl extends ProcessImpl implements Advice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondition(BooleanExpression newCondition) {
-		if (newCondition != condition) {
+	public void setActivity(Sequence newActivity) {
+		if (newActivity != activity) {
 			NotificationChain msgs = null;
-			if (condition != null)
-				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ADVICE__CONDITION, null, msgs);
-			if (newCondition != null)
-				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ADVICE__CONDITION, null, msgs);
-			msgs = basicSetCondition(newCondition, msgs);
+			if (activity != null)
+				msgs = ((InternalEObject)activity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ADVICE__ACTIVITY, null, msgs);
+			if (newActivity != null)
+				msgs = ((InternalEObject)newActivity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AspectPackage.ADVICE__ACTIVITY, null, msgs);
+			msgs = basicSetActivity(newActivity, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectPackage.ADVICE__CONDITION, newCondition, newCondition));
+			eNotify(new ENotificationImpl(this, Notification.SET, AspectPackage.ADVICE__ACTIVITY, newActivity, newActivity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AspectPackage.ADVICE__NAME, oldName, name));
 	}
 
 	/**
@@ -157,8 +153,8 @@ public class AdviceImpl extends ProcessImpl implements Advice {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AspectPackage.ADVICE__CONDITION:
-				return basicSetCondition(null, msgs);
+			case AspectPackage.ADVICE__ACTIVITY:
+				return basicSetActivity(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -171,10 +167,10 @@ public class AdviceImpl extends ProcessImpl implements Advice {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AspectPackage.ADVICE__TYPE:
-				return getType();
-			case AspectPackage.ADVICE__CONDITION:
-				return getCondition();
+			case AspectPackage.ADVICE__ACTIVITY:
+				return getActivity();
+			case AspectPackage.ADVICE__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -187,11 +183,11 @@ public class AdviceImpl extends ProcessImpl implements Advice {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AspectPackage.ADVICE__TYPE:
-				setType((String)newValue);
+			case AspectPackage.ADVICE__ACTIVITY:
+				setActivity((Sequence)newValue);
 				return;
-			case AspectPackage.ADVICE__CONDITION:
-				setCondition((BooleanExpression)newValue);
+			case AspectPackage.ADVICE__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,11 +201,11 @@ public class AdviceImpl extends ProcessImpl implements Advice {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AspectPackage.ADVICE__TYPE:
-				setType(TYPE_EDEFAULT);
+			case AspectPackage.ADVICE__ACTIVITY:
+				setActivity((Sequence)null);
 				return;
-			case AspectPackage.ADVICE__CONDITION:
-				setCondition((BooleanExpression)null);
+			case AspectPackage.ADVICE__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -223,10 +219,10 @@ public class AdviceImpl extends ProcessImpl implements Advice {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AspectPackage.ADVICE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case AspectPackage.ADVICE__CONDITION:
-				return condition != null;
+			case AspectPackage.ADVICE__ACTIVITY:
+				return activity != null;
+			case AspectPackage.ADVICE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -241,8 +237,8 @@ public class AdviceImpl extends ProcessImpl implements Advice {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (type: ");
-		result.append(type);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

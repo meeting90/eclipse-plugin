@@ -47,19 +47,19 @@ public class WorkflowDiagramTypeProvider extends AbstractDiagramTypeProvider
 						Operation operation=(Operation)ob;
 						StartTaskCreateFeature startFeature=new StartTaskCreateFeature(getFeatureProvider(),porttype,operation);
 						EndTaskCreateFeature endFeature=new EndTaskCreateFeature(getFeatureProvider(),porttype,operation);
-						//CompoundTaskCreateFeature compoundFeature=new CompoundTaskCreateFeature(getFeatureProvider());
 						
 						CreateContext context=new CreateContext();
 						context.setTargetContainer(getDiagram());
 						context.setLocation(0, 200*i);
-					    getDiagramEditor().executeFeature(startFeature, context);
+						
+						getDiagramBehavior().executeFeature(startFeature, context);
 						
 						context.setLocation(500, 200*i);
-						getDiagramEditor().executeFeature(endFeature, context);	
-					//	getDiagramEditor().refresh();
+						getDiagramBehavior().executeFeature(endFeature, context);
+					
 						context.setLocation(300, 200*i);
-						//getDiagramEditor().executeFeature(compoundFeature, context);
-						getDiagramEditor().refresh();
+					
+						getDiagramBehavior().refresh();
 					}
 			
 					

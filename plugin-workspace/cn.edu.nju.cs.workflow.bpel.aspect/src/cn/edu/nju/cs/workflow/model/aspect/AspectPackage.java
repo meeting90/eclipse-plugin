@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package cn.edu.nju.cs.workflow.model.aspect;
 
@@ -62,6 +58,88 @@ public interface AspectPackage extends EPackage {
 	AspectPackage eINSTANCE = cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectsImpl <em>Aspects</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectsImpl
+	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getAspects()
+	 * @generated
+	 */
+	int ASPECTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Documentation Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASPECTS__DOCUMENTATION_ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASPECTS__ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>EExtensibility Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASPECTS__EEXTENSIBILITY_ELEMENTS = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__EEXTENSIBILITY_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASPECTS__DOCUMENTATION = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASPECTS__NAME = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Targetnamespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASPECTS__TARGETNAMESPACE = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASPECTS__CHILDREN = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Aspects</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASPECTS_FEATURE_COUNT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectImpl <em>Aspect</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,7 +147,7 @@ public interface AspectPackage extends EPackage {
 	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getAspect()
 	 * @generated
 	 */
-	int ASPECT = 0;
+	int ASPECT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Element</b></em>' attribute.
@@ -117,31 +195,22 @@ public interface AspectPackage extends EPackage {
 	int ASPECT__NAME = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Targetnamespace</b></em>' attribute.
+	 * The feature id for the '<em><b>Transitions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASPECT__TARGETNAMESPACE = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
+	int ASPECT__TRANSITIONS = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Expression Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Join Transitions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASPECT__EXPRESSION_LANGUAGE = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Pointcuts</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASPECT__POINTCUTS = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 3;
+	int ASPECT__JOIN_TRANSITIONS = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Advice</b></em>' containment reference.
@@ -150,7 +219,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASPECT__ADVICE = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 4;
+	int ASPECT__ADVICE = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Aspect</em>' class.
@@ -159,17 +228,17 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASPECT_FEATURE_COUNT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 5;
+	int ASPECT_FEATURE_COUNT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.PointcutsImpl <em>Pointcuts</em>}' class.
+	 * The meta object id for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.TransitionsImpl <em>Transitions</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.PointcutsImpl
-	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getPointcuts()
+	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.TransitionsImpl
+	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getTransitions()
 	 * @generated
 	 */
-	int POINTCUTS = 1;
+	int TRANSITIONS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Element</b></em>' attribute.
@@ -178,7 +247,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUTS__DOCUMENTATION_ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION_ELEMENT;
+	int TRANSITIONS__DOCUMENTATION_ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' attribute.
@@ -187,7 +256,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUTS__ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__ELEMENT;
+	int TRANSITIONS__ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>EExtensibility Elements</b></em>' containment reference list.
@@ -196,7 +265,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUTS__EEXTENSIBILITY_ELEMENTS = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__EEXTENSIBILITY_ELEMENTS;
+	int TRANSITIONS__EEXTENSIBILITY_ELEMENTS = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__EEXTENSIBILITY_ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' containment reference.
@@ -205,7 +274,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUTS__DOCUMENTATION = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION;
+	int TRANSITIONS__DOCUMENTATION = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -214,62 +283,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUTS__CHILDREN = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Pointcuts</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTCUTS_FEATURE_COUNT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.PointcutImpl <em>Pointcut</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.PointcutImpl
-	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getPointcut()
-	 * @generated
-	 */
-	int POINTCUT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Documentation Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTCUT__DOCUMENTATION_ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTCUT__ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>EExtensibility Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTCUT__EEXTENSIBILITY_ELEMENTS = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__EEXTENSIBILITY_ELEMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTCUT__DOCUMENTATION = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION;
+	int TRANSITIONS__CHILDREN = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -278,52 +292,98 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUT__NAME = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
+	int TRANSITIONS__NAME = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The number of structural features of the '<em>Transitions</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUT__LANGUAGE = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
+	int TRANSITIONS_FEATURE_COUNT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Startpoint</b></em>' containment reference.
+	 * The meta object id for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.TransitionImpl <em>Transition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.TransitionImpl
+	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getTransition()
+	 * @generated
+	 */
+	int TRANSITION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Documentation Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUT__STARTPOINT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
+	int TRANSITION__DOCUMENTATION_ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Endpoint</b></em>' containment reference.
+	 * The feature id for the '<em><b>Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUT__ENDPOINT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 3;
+	int TRANSITION__ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Point</b></em>' containment reference.
+	 * The feature id for the '<em><b>EExtensibility Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUT__POINT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 4;
+	int TRANSITION__EEXTENSIBILITY_ELEMENTS = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__EEXTENSIBILITY_ELEMENTS;
 
 	/**
-	 * The number of structural features of the '<em>Pointcut</em>' class.
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINTCUT_FEATURE_COUNT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 5;
+	int TRANSITION__DOCUMENTATION = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__TYPE = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Point Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__POINT_NAME = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__NAME = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Transition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_FEATURE_COUNT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.AdviceImpl <em>Advice</em>}' class.
@@ -333,7 +393,7 @@ public interface AspectPackage extends EPackage {
 	 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getAdvice()
 	 * @generated
 	 */
-	int ADVICE = 3;
+	int ADVICE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Element</b></em>' attribute.
@@ -342,7 +402,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADVICE__DOCUMENTATION_ELEMENT = BPELPackage.PROCESS__DOCUMENTATION_ELEMENT;
+	int ADVICE__DOCUMENTATION_ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' attribute.
@@ -351,7 +411,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADVICE__ELEMENT = BPELPackage.PROCESS__ELEMENT;
+	int ADVICE__ELEMENT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>EExtensibility Elements</b></em>' containment reference list.
@@ -360,7 +420,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADVICE__EEXTENSIBILITY_ELEMENTS = BPELPackage.PROCESS__EEXTENSIBILITY_ELEMENTS;
+	int ADVICE__EEXTENSIBILITY_ELEMENTS = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__EEXTENSIBILITY_ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' containment reference.
@@ -369,79 +429,7 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADVICE__DOCUMENTATION = BPELPackage.PROCESS__DOCUMENTATION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__NAME = BPELPackage.PROCESS__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Target Namespace</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__TARGET_NAMESPACE = BPELPackage.PROCESS__TARGET_NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Query Language</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__QUERY_LANGUAGE = BPELPackage.PROCESS__QUERY_LANGUAGE;
-
-	/**
-	 * The feature id for the '<em><b>Expression Language</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__EXPRESSION_LANGUAGE = BPELPackage.PROCESS__EXPRESSION_LANGUAGE;
-
-	/**
-	 * The feature id for the '<em><b>Suppress Join Failure</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__SUPPRESS_JOIN_FAILURE = BPELPackage.PROCESS__SUPPRESS_JOIN_FAILURE;
-
-	/**
-	 * The feature id for the '<em><b>Variable Access Serializable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__VARIABLE_ACCESS_SERIALIZABLE = BPELPackage.PROCESS__VARIABLE_ACCESS_SERIALIZABLE;
-
-	/**
-	 * The feature id for the '<em><b>Partner Links</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__PARTNER_LINKS = BPELPackage.PROCESS__PARTNER_LINKS;
-
-	/**
-	 * The feature id for the '<em><b>Variables</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__VARIABLES = BPELPackage.PROCESS__VARIABLES;
+	int ADVICE__DOCUMENTATION = BPELPackage.BPEL_EXTENSIBLE_ELEMENT__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Activity</b></em>' containment reference.
@@ -450,97 +438,16 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADVICE__ACTIVITY = BPELPackage.PROCESS__ACTIVITY;
+	int ADVICE__ACTIVITY = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Fault Handlers</b></em>' containment reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADVICE__FAULT_HANDLERS = BPELPackage.PROCESS__FAULT_HANDLERS;
-
-	/**
-	 * The feature id for the '<em><b>Event Handlers</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__EVENT_HANDLERS = BPELPackage.PROCESS__EVENT_HANDLERS;
-
-	/**
-	 * The feature id for the '<em><b>Correlation Sets</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__CORRELATION_SETS = BPELPackage.PROCESS__CORRELATION_SETS;
-
-	/**
-	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__IMPORTS = BPELPackage.PROCESS__IMPORTS;
-
-	/**
-	 * The feature id for the '<em><b>Extensions</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__EXTENSIONS = BPELPackage.PROCESS__EXTENSIONS;
-
-	/**
-	 * The feature id for the '<em><b>Exit On Standard Fault</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__EXIT_ON_STANDARD_FAULT = BPELPackage.PROCESS__EXIT_ON_STANDARD_FAULT;
-
-	/**
-	 * The feature id for the '<em><b>Message Exchanges</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__MESSAGE_EXCHANGES = BPELPackage.PROCESS__MESSAGE_EXCHANGES;
-
-	/**
-	 * The feature id for the '<em><b>Abstract Process Profile</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__ABSTRACT_PROCESS_PROFILE = BPELPackage.PROCESS__ABSTRACT_PROCESS_PROFILE;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__TYPE = BPELPackage.PROCESS_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADVICE__CONDITION = BPELPackage.PROCESS_FEATURE_COUNT + 1;
+	int ADVICE__NAME = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Advice</em>' class.
@@ -549,8 +456,51 @@ public interface AspectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADVICE_FEATURE_COUNT = BPELPackage.PROCESS_FEATURE_COUNT + 2;
+	int ADVICE_FEATURE_COUNT = BPELPackage.BPEL_EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
 
+
+	/**
+	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.aspect.Aspects <em>Aspects</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Aspects</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspects
+	 * @generated
+	 */
+	EClass getAspects();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Aspects#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspects#getName()
+	 * @see #getAspects()
+	 * @generated
+	 */
+	EAttribute getAspects_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Aspects#getTargetnamespace <em>Targetnamespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Targetnamespace</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspects#getTargetnamespace()
+	 * @see #getAspects()
+	 * @generated
+	 */
+	EAttribute getAspects_Targetnamespace();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link cn.edu.nju.cs.workflow.model.aspect.Aspects#getChildren <em>Children</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Children</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspects#getChildren()
+	 * @see #getAspects()
+	 * @generated
+	 */
+	EReference getAspects_Children();
 
 	/**
 	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.aspect.Aspect <em>Aspect</em>}'.
@@ -574,37 +524,26 @@ public interface AspectPackage extends EPackage {
 	EAttribute getAspect_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Aspect#getTargetnamespace <em>Targetnamespace</em>}'.
+	 * Returns the meta object for the containment reference '{@link cn.edu.nju.cs.workflow.model.aspect.Aspect#getTransitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Targetnamespace</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspect#getTargetnamespace()
+	 * @return the meta object for the containment reference '<em>Transitions</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspect#getTransitions()
 	 * @see #getAspect()
 	 * @generated
 	 */
-	EAttribute getAspect_Targetnamespace();
+	EReference getAspect_Transitions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Aspect#getExpressionLanguage <em>Expression Language</em>}'.
+	 * Returns the meta object for the containment reference '{@link cn.edu.nju.cs.workflow.model.aspect.Aspect#getJoinTransitions <em>Join Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expression Language</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspect#getExpressionLanguage()
+	 * @return the meta object for the containment reference '<em>Join Transitions</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspect#getJoinTransitions()
 	 * @see #getAspect()
 	 * @generated
 	 */
-	EAttribute getAspect_ExpressionLanguage();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link cn.edu.nju.cs.workflow.model.aspect.Aspect#getPointcuts <em>Pointcuts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Pointcuts</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Aspect#getPointcuts()
-	 * @see #getAspect()
-	 * @generated
-	 */
-	EReference getAspect_Pointcuts();
+	EReference getAspect_JoinTransitions();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link cn.edu.nju.cs.workflow.model.aspect.Aspect#getAdvice <em>Advice</em>}'.
@@ -618,90 +557,79 @@ public interface AspectPackage extends EPackage {
 	EReference getAspect_Advice();
 
 	/**
-	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcuts <em>Pointcuts</em>}'.
+	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.aspect.Transitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pointcuts</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcuts
+	 * @return the meta object for class '<em>Transitions</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Transitions
 	 * @generated
 	 */
-	EClass getPointcuts();
+	EClass getTransitions();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcuts#getChildren <em>Children</em>}'.
+	 * Returns the meta object for the containment reference list '{@link cn.edu.nju.cs.workflow.model.aspect.Transitions#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Children</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcuts#getChildren()
-	 * @see #getPointcuts()
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Transitions#getChildren()
+	 * @see #getTransitions()
 	 * @generated
 	 */
-	EReference getPointcuts_Children();
+	EReference getTransitions_Children();
 
 	/**
-	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcut <em>Pointcut</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pointcut</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcut
-	 * @generated
-	 */
-	EClass getPointcut();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcut#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Transitions#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcut#getName()
-	 * @see #getPointcut()
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Transitions#getName()
+	 * @see #getTransitions()
 	 * @generated
 	 */
-	EAttribute getPointcut_Name();
+	EAttribute getTransitions_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcut#getLanguage <em>Language</em>}'.
+	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.aspect.Transition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Language</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcut#getLanguage()
-	 * @see #getPointcut()
+	 * @return the meta object for class '<em>Transition</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Transition
 	 * @generated
 	 */
-	EAttribute getPointcut_Language();
+	EClass getTransition();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcut#getStartpoint <em>Startpoint</em>}'.
+	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Transition#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Startpoint</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcut#getStartpoint()
-	 * @see #getPointcut()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Transition#getType()
+	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getPointcut_Startpoint();
+	EAttribute getTransition_Type();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcut#getEndpoint <em>Endpoint</em>}'.
+	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Transition#getPointName <em>Point Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Endpoint</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcut#getEndpoint()
-	 * @see #getPointcut()
+	 * @return the meta object for the attribute '<em>Point Name</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Transition#getPointName()
+	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getPointcut_Endpoint();
+	EAttribute getTransition_PointName();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link cn.edu.nju.cs.workflow.model.aspect.Pointcut#getPoint <em>Point</em>}'.
+	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Transition#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Point</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Pointcut#getPoint()
-	 * @see #getPointcut()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Transition#getName()
+	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getPointcut_Point();
+	EAttribute getTransition_Name();
 
 	/**
 	 * Returns the meta object for class '{@link cn.edu.nju.cs.workflow.model.aspect.Advice <em>Advice</em>}'.
@@ -714,26 +642,26 @@ public interface AspectPackage extends EPackage {
 	EClass getAdvice();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Advice#getType <em>Type</em>}'.
+	 * Returns the meta object for the containment reference '{@link cn.edu.nju.cs.workflow.model.aspect.Advice#getActivity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Advice#getType()
+	 * @return the meta object for the containment reference '<em>Activity</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Advice#getActivity()
 	 * @see #getAdvice()
 	 * @generated
 	 */
-	EAttribute getAdvice_Type();
+	EReference getAdvice_Activity();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link cn.edu.nju.cs.workflow.model.aspect.Advice#getCondition <em>Condition</em>}'.
+	 * Returns the meta object for the attribute '{@link cn.edu.nju.cs.workflow.model.aspect.Advice#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Condition</em>'.
-	 * @see cn.edu.nju.cs.workflow.model.aspect.Advice#getCondition()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see cn.edu.nju.cs.workflow.model.aspect.Advice#getName()
 	 * @see #getAdvice()
 	 * @generated
 	 */
-	EReference getAdvice_Condition();
+	EAttribute getAdvice_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -758,6 +686,40 @@ public interface AspectPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectsImpl <em>Aspects</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectsImpl
+		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getAspects()
+		 * @generated
+		 */
+		EClass ASPECTS = eINSTANCE.getAspects();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASPECTS__NAME = eINSTANCE.getAspects_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Targetnamespace</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASPECTS__TARGETNAMESPACE = eINSTANCE.getAspects_Targetnamespace();
+
+		/**
+		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASPECTS__CHILDREN = eINSTANCE.getAspects_Children();
+
+		/**
 		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.AspectImpl <em>Aspect</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -776,28 +738,20 @@ public interface AspectPackage extends EPackage {
 		EAttribute ASPECT__NAME = eINSTANCE.getAspect_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Targetnamespace</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASPECT__TARGETNAMESPACE = eINSTANCE.getAspect_Targetnamespace();
+		EReference ASPECT__TRANSITIONS = eINSTANCE.getAspect_Transitions();
 
 		/**
-		 * The meta object literal for the '<em><b>Expression Language</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Join Transitions</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASPECT__EXPRESSION_LANGUAGE = eINSTANCE.getAspect_ExpressionLanguage();
-
-		/**
-		 * The meta object literal for the '<em><b>Pointcuts</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASPECT__POINTCUTS = eINSTANCE.getAspect_Pointcuts();
+		EReference ASPECT__JOIN_TRANSITIONS = eINSTANCE.getAspect_JoinTransitions();
 
 		/**
 		 * The meta object literal for the '<em><b>Advice</b></em>' containment reference feature.
@@ -808,14 +762,14 @@ public interface AspectPackage extends EPackage {
 		EReference ASPECT__ADVICE = eINSTANCE.getAspect_Advice();
 
 		/**
-		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.PointcutsImpl <em>Pointcuts</em>}' class.
+		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.TransitionsImpl <em>Transitions</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.PointcutsImpl
-		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getPointcuts()
+		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.TransitionsImpl
+		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getTransitions()
 		 * @generated
 		 */
-		EClass POINTCUTS = eINSTANCE.getPointcuts();
+		EClass TRANSITIONS = eINSTANCE.getTransitions();
 
 		/**
 		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
@@ -823,17 +777,7 @@ public interface AspectPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference POINTCUTS__CHILDREN = eINSTANCE.getPointcuts_Children();
-
-		/**
-		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.PointcutImpl <em>Pointcut</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.PointcutImpl
-		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getPointcut()
-		 * @generated
-		 */
-		EClass POINTCUT = eINSTANCE.getPointcut();
+		EReference TRANSITIONS__CHILDREN = eINSTANCE.getTransitions_Children();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -841,39 +785,41 @@ public interface AspectPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POINTCUT__NAME = eINSTANCE.getPointcut_Name();
+		EAttribute TRANSITIONS__NAME = eINSTANCE.getTransitions_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.TransitionImpl <em>Transition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.TransitionImpl
+		 * @see cn.edu.nju.cs.workflow.model.aspect.impl.AspectPackageImpl#getTransition()
+		 * @generated
+		 */
+		EClass TRANSITION = eINSTANCE.getTransition();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POINTCUT__LANGUAGE = eINSTANCE.getPointcut_Language();
+		EAttribute TRANSITION__TYPE = eINSTANCE.getTransition_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Startpoint</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Point Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference POINTCUT__STARTPOINT = eINSTANCE.getPointcut_Startpoint();
+		EAttribute TRANSITION__POINT_NAME = eINSTANCE.getTransition_PointName();
 
 		/**
-		 * The meta object literal for the '<em><b>Endpoint</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference POINTCUT__ENDPOINT = eINSTANCE.getPointcut_Endpoint();
-
-		/**
-		 * The meta object literal for the '<em><b>Point</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference POINTCUT__POINT = eINSTANCE.getPointcut_Point();
+		EAttribute TRANSITION__NAME = eINSTANCE.getTransition_Name();
 
 		/**
 		 * The meta object literal for the '{@link cn.edu.nju.cs.workflow.model.aspect.impl.AdviceImpl <em>Advice</em>}' class.
@@ -886,20 +832,20 @@ public interface AspectPackage extends EPackage {
 		EClass ADVICE = eINSTANCE.getAdvice();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Activity</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ADVICE__TYPE = eINSTANCE.getAdvice_Type();
+		EReference ADVICE__ACTIVITY = eINSTANCE.getAdvice_Activity();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ADVICE__CONDITION = eINSTANCE.getAdvice_Condition();
+		EAttribute ADVICE__NAME = eINSTANCE.getAdvice_Name();
 
 	}
 

@@ -125,17 +125,18 @@ public class WorkflowBehaviorProvider extends  DefaultToolBehaviorProvider {
 	    return super.getDoubleClickFeature(context);
 	 }
 	@Override
-	public String getToolTip(GraphicsAlgorithm ga) {
-	    PictogramElement pe = ga.getPictogramElement();
-	    Object bo = getFeatureProvider().getBusinessObjectForPictogramElement(pe);
-	    if (bo instanceof WorkflowElement) {
-	        String name = ((WorkflowElement)bo).getName();
-	        if (name != null && !name.isEmpty()) {
-	            return name;         
-	        }
-	    }
-	    return super.getToolTip(ga);
+	public Object getToolTip(GraphicsAlgorithm ga) {
+		 PictogramElement pe = ga.getPictogramElement();
+		    Object bo = getFeatureProvider().getBusinessObjectForPictogramElement(pe);
+		    if (bo instanceof WorkflowElement) {
+		        String name = ((WorkflowElement)bo).getName();
+		        if (name != null && !name.isEmpty()) {
+		            return name;         
+		        }
+		    }
+		    return super.getToolTip(ga);
 	}
+	
 	@Override
 	public IPaletteCompartmentEntry[] getPalette() {
 		// TODO Auto-generated method stub

@@ -4,11 +4,11 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="cn.edu.nju.cs.workflow.bpel.aspect.editors.AspectMultipageEditPart"
+            class="cn.edu.nju.cs.workflow.bpel.aspect.editors.AspectMultipageEditorPart"
             contributorClass="cn.edu.nju.cs.workflow.bpel.aspect.editors.AspectEditorContributor"
             extensions="aspect"
             icon="icons/sample.gif"
-            id="cn.edu.nju.cs.workflow.bpel.aspect.editors.AspectMultipageEditPart"
+            id="cn.edu.nju.cs.workflow.bpel.aspect.editors.AspectMultipageEditorPart"
             name="aspect editor">
          <contentTypeBinding
                contentTypeId="cn.edu.nju.cs.workflow.bpel.aspect.contenttype">
@@ -50,6 +50,51 @@
             genModel="src/model/aspect.genmodel"
             uri="http://cn.edu.nju.cs.workflow.bpel.aspect">
       </package>
+   </extension>
+   <extension
+         point="org.eclipse.bpel.common.ui.paletteAdditions">
+      <additions
+            importance="10"
+            provider="cn.edu.nju.cs.workflow.bpel.aspect.palette.PaletteFactory"
+            targetEditor="cn.edu.nju.cs.workflow.bpel.aspectEditor">
+      </additions>
+   </extension>
+   <extension
+         point="org.eclipse.bpel.ui.actions">
+      <category
+            id="org.eclipse.bpel.ui.actions.category.basic"
+            name="%BASIC_ACTIONS">
+      </category>
+      <action
+            categoryId="org.eclipse.bpel.ui.actions.category.basic"
+            class="org.eclipse.bpel.ui.bpelactions.SimpleAction"
+            id="org.eclipse.bpel.ui.action.empty"
+            specCompliant="false">
+      </action>
+      <action
+            categoryId="org.eclipse.bpel.ui.actions.category.basic"
+            class="org.eclipse.bpel.ui.bpelactions.InvokeAction"
+            id="org.eclipse.bpel.ui.action.invoke"
+            specCompliant="false">
+      </action>
+      <action
+            categoryId="org.eclipse.bpel.ui.actions.category.basic"
+            class="org.eclipse.bpel.ui.bpelactions.ReceiveAction"
+            id="org.eclipse.bpel.ui.action.receive"
+            specCompliant="true">
+      </action>
+      <action
+            categoryId="org.eclipse.bpel.ui.actions.category.basic"
+            class="org.eclipse.bpel.ui.bpelactions.ReplyAction"
+            id="org.eclipse.bpel.ui.action.reply"
+            specCompliant="true">
+      </action>
+      <action
+            categoryId="org.eclipse.bpel.ui.actions.category.basic"
+            class="org.eclipse.bpel.ui.bpelactions.AssignAction"
+            id="org.eclipse.bpel.ui.action.assign"
+            specCompliant="true">
+      </action>
    </extension>
 
 </plugin>
