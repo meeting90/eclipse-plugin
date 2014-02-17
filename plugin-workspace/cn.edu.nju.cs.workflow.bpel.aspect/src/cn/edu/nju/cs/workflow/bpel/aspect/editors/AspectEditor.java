@@ -12,14 +12,18 @@ import org.eclipse.bpel.common.ui.CommonUIPlugin;
 import org.eclipse.bpel.common.ui.ICommonUIConstants;
 import org.eclipse.bpel.common.ui.command.EditModelCommandFramework;
 import org.eclipse.bpel.common.ui.command.ICommandFramework;
+import org.eclipse.bpel.common.ui.tray.AdaptingSelectionProvider;
 import org.eclipse.bpel.common.ui.tray.GraphicalEditorWithPaletteAndTray;
+import org.eclipse.bpel.common.ui.tray.MultiViewerSelectionProvider;
 import org.eclipse.bpel.common.ui.tray.TrayComposite;
 import org.eclipse.bpel.model.Activity;
 import org.eclipse.bpel.model.Flow;
+import org.eclipse.bpel.ui.BPELAdaptingSelectionProvider;
 import org.eclipse.bpel.ui.BPELUIPlugin;
 import org.eclipse.bpel.ui.IBPELUIConstants;
 import org.eclipse.bpel.ui.IHelpContextIds;
 import org.eclipse.bpel.ui.Messages;
+import org.eclipse.bpel.ui.WeakMultiViewerSelectionProvider;
 import org.eclipse.bpel.ui.actions.AppendNewAction;
 import org.eclipse.bpel.ui.actions.AutoArrangeFlowsAction;
 import org.eclipse.bpel.ui.actions.BPELPrintAction;
@@ -30,6 +34,11 @@ import org.eclipse.bpel.ui.actions.ShowPaletteInPaletteViewAction;
 import org.eclipse.bpel.ui.actions.ShowPropertiesViewAction;
 import org.eclipse.bpel.ui.actions.ShowViewAction;
 import org.eclipse.bpel.ui.actions.ToggleAutoFlowLayout;
+import org.eclipse.bpel.ui.actions.ToggleLayoutOrientationAction;
+import org.eclipse.bpel.ui.actions.ToggleShowCompensationHandler;
+import org.eclipse.bpel.ui.actions.ToggleShowEventHandler;
+import org.eclipse.bpel.ui.actions.ToggleShowFaultHandler;
+import org.eclipse.bpel.ui.actions.ToggleShowTerminationHandler;
 import org.eclipse.bpel.ui.commands.util.ModelAutoUndoRecorder;
 import org.eclipse.bpel.ui.editparts.FlowEditPart;
 import org.eclipse.bpel.ui.factories.AbstractUIObjectFactory;
@@ -45,9 +54,11 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.gef.ContextMenuProvider;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.GraphicalViewer;
+import org.eclipse.gef.commands.CommandStack;
 import org.eclipse.gef.dnd.TemplateTransferDragSourceListener;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.ui.actions.ActionRegistry;
@@ -61,6 +72,10 @@ import org.eclipse.gef.ui.actions.ZoomOutAction;
 import org.eclipse.gef.ui.palette.PaletteViewer;
 import org.eclipse.gef.ui.palette.PaletteViewerProvider;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
@@ -68,12 +83,26 @@ import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.MultiPageEditorSite;
+import org.eclipse.wst.wsdl.Definition;
 
+import cn.edu.nju.cs.workflow.bpel.aspect.AspectContentMenuProvider;
 import cn.edu.nju.cs.workflow.bpel.aspect.AspectEditModelClient;
 import cn.edu.nju.cs.workflow.bpel.aspect.AspectEditPartFactory;
 import cn.edu.nju.cs.workflow.bpel.aspect.AspectRootEditPart;
 import cn.edu.nju.cs.workflow.bpel.aspect.IAspectUIConstants;
 import cn.edu.nju.cs.workflow.bpel.aspect.ScollingAspectGraphicalViewer;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.AspectRenameAction;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELAppendNewAction;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELAutoArrangeFlowsAction;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELInsertNewAction;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELMakePartner2WayAction;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELRevertAction;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELToggleAutoFlowLayout;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELToggleLayoutOrientationAction;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELToggleShowCompensationHandler;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELToggleShowEventHandler;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELToggleShowFaultHandler;
+import cn.edu.nju.cs.workflow.bpel.aspect.actions.BPELToggleShowTerminationHandler;
 import cn.edu.nju.cs.workflow.model.aspect.Aspect;
 
 public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
@@ -92,6 +121,12 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 	protected ICommandFramework commandFramework;
 	
 	private ModelAutoUndoRecorder modelAutoUndoRecorder;
+
+	private ISelectionChangedListener selectionChangeListener;
+
+	private AdaptingSelectionProvider adaptingSelectionProvider;
+
+	private WeakMultiViewerSelectionProvider weakMultiViewerSelectionProvider;
 	
 	public AspectEditor(DefaultEditDomain editDomain,
 			AspectMultipageEditorPart multipageEditor) {
@@ -193,41 +228,41 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 //		registry.registerAction(action);
 //		getSelectionActions().add(action.getId());
 //
-//		action = new RevertAction(this);
-//		registry.registerAction(action);
-//		getPropertyActions().add(action.getId());
-//
-//		action = new RenameAction(this);
-//		registry.registerAction(action);
-//		getSelectionActions().add(action.getId());
-		
-		action = new ToggleAutoFlowLayout(this);
+		action = new BPELRevertAction(this);
+		registry.registerAction(action);
+		getPropertyActions().add(action.getId());
+
+		action = new AspectRenameAction(this);
 		registry.registerAction(action);
 		getSelectionActions().add(action.getId());
 		
-//		action = new ToggleShowFaultHandler(this);
-//		registry.registerAction(action);
-//		getSelectionActions().add(action.getId());
-		
-//		action = new ToggleShowCompensationHandler(this);
-//		registry.registerAction(action);
-//		getSelectionActions().add(action.getId());
-
-//		action = new ToggleShowTerminationHandler(this);
-//		registry.registerAction(action);
-//		getSelectionActions().add(action.getId());
-
-//		action = new ToggleShowEventHandler(this);
-//		registry.registerAction(action);
-//		getSelectionActions().add(action.getId());
-		
-		action = new AutoArrangeFlowsAction(this);
+		action = new BPELToggleAutoFlowLayout(this);
 		registry.registerAction(action);
 		getSelectionActions().add(action.getId());
 		
-//		action = new ToggleLayoutOrientationAction(this);
-//		registry.registerAction(action);
-//		getSelectionActions().add(action.getId());
+		action = new BPELToggleShowFaultHandler(this);
+		registry.registerAction(action);
+		getSelectionActions().add(action.getId());
+		
+		action = new BPELToggleShowCompensationHandler(this);
+		registry.registerAction(action);
+		getSelectionActions().add(action.getId());
+
+		action = new BPELToggleShowTerminationHandler(this);
+		registry.registerAction(action);
+		getSelectionActions().add(action.getId());
+
+		action = new BPELToggleShowEventHandler(this);
+		registry.registerAction(action);
+		getSelectionActions().add(action.getId());
+		
+		action = new BPELAutoArrangeFlowsAction(this);
+		registry.registerAction(action);
+		getSelectionActions().add(action.getId());
+		
+		action = new BPELToggleLayoutOrientationAction(this);
+		registry.registerAction(action);
+		getSelectionActions().add(action.getId());
 		
 		// show properties action
 		ShowViewAction showViewAction = new ShowPropertiesViewAction();	
@@ -286,7 +321,7 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 //		registry.registerAction(action);
 //		getSelectionActions().add(action.getId());
 
-		action = new MakePartner2WayAction(this);
+		action = new BPELMakePartner2WayAction(this);
 		registry.registerAction(action);
 		getSelectionActions().add(action.getId());
 	}
@@ -311,8 +346,39 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 		BPELUIPlugin.INSTANCE.getPreferenceStore().setValue(IBPELUIConstants.PREF_SHOW_FREEFORM_FLOW, true);
 		GraphicalViewer viewer = getGraphicalViewer();
 		viewer.setContents(getAspect());
+		
+		ContextMenuProvider provider = new AspectContentMenuProvider(this, getActionRegistry());
+		viewer.setContextMenu(provider);
+		getSite().registerContextMenu("cn.edu.nju.cs.worklfow.aspect.contentmenu", //$NON-NLS-1$
+			provider, getSite().getSelectionProvider());
 
-		//arrangeEditParts(getGraphicalViewer());
+
+		this.selectionChangeListener = new ISelectionChangedListener() {
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				StructuredSelection selection = (StructuredSelection)event.getSelection();
+				if (selection.isEmpty()) {
+					return;
+				}
+				// if this is a multi-selection we should not present anything on the details area
+				if (selection.size() > 1) {
+					// TODO: This doesn't work
+//					getBPELDetailsEditor().getDetailsArea().setInput(null);
+				} else {
+					final Object o = selection.getFirstElement();
+					if (o instanceof EditPart) {
+						// CAREFUL: must setInput() on the DetailsArea *before* we remember
+						// the lastSelectedEditPart (because setInput() might execute a pending
+						// command for an IOngoingChange whose wrapper will not execute correctly
+						// unless lastSelectedEditPart has its old value).
+						lastSelectedEditPart = (EditPart)o;
+					}
+				}
+			}
+		};
+		getGraphicalViewer().addSelectionChangedListener(this.selectionChangeListener);
+		arrangeEditParts(getGraphicalViewer());
+		
 	}
 	@Override
 	protected void initializeTrayViewer() {
@@ -398,16 +464,15 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 		      @Override
 		      protected void configurePaletteViewer(PaletteViewer viewer) {
 		        super.configurePaletteViewer(viewer);
-		        // viewer.setCustomizer(new LogicPaletteCustomizer());
+		
 		        viewer.addDragSourceListener(new TemplateTransferDragSourceListener(viewer));
-		        
-		        // As the palette has no own help context, install our help context
+		
 		        PlatformUI.getWorkbench().getHelpSystem().setHelp(viewer.getControl(), IHelpContextIds.EDITOR_PALETTE);
 		      }
 		    };
 	}
 	@Override
-	protected GraphicalViewer getGraphicalViewer() {
+	public GraphicalViewer getGraphicalViewer() {
 		// TODO Auto-generated method stub
 		return super.getGraphicalViewer();
 	}
@@ -417,9 +482,19 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 		getTrayComposite().setState(TrayComposite.STATE_EXPANDED);
 		getTrayComposite().setTrayWidth(150);
 		getEditorSite().getKeyBindingService();
-		//selectModelObject(getProcess());
+		selectModelObject(getAspect());
 	}
 	
+
+	public void selectModelObject(Object modelObject) {
+		setFocus(); // give focus to the editor so that it can notify the properties view of input change
+		if (modelObject == null) {
+			adaptingSelectionProvider.setSelection(StructuredSelection.EMPTY);
+		} else {
+			adaptingSelectionProvider.setSelection(new StructuredSelection(modelObject));
+		}
+		
+	}
 
 	//make public
 	@Override
@@ -433,7 +508,7 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 	}
 
 	
-	public static AspectEditor getBPELEditor(ResourceSet resourceSet) {
+	public static AspectEditor getAspectEditor(ResourceSet resourceSet) {
 	    Iterator<Adapter> it = resourceSet.eAdapters().iterator();
 	    while (it.hasNext()) {
 	        Object next = it.next();
@@ -447,16 +522,14 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 	public Aspect getAspect() {
 		IWorkbenchPartSite editorSite = getSite();
 		if (editorSite instanceof MultiPageEditorSite) {
-			
 			Aspect aspect= (Aspect)((org.eclipse.ui.part.MultiPageEditorSite)getSite()).getMultiPageEditor().getAdapter(Aspect.class);
-			System.out.println(aspect);
 			return aspect;
 		}
 		return null;
 	}
 
 	public AspectMultipageEditorPart getMultipageEditor() {
-		// TODO Auto-generated method stub
+		
 		return this.multipageEditor;
 	}
 	
@@ -498,16 +571,16 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 			} else if (element instanceof BPELCreationToolEntry) {
 				BPELCreationToolEntry entry = (BPELCreationToolEntry) element;
 				AbstractUIObjectFactory factory = entry.getUIObjectFactory();
-
+				
 				// append
-				IAction action = new AppendNewAction(this, factory);
+				IAction action = new BPELAppendNewAction(this, factory);
 				appendNewActions.add(action);
 				registry.registerAction(action);
 				
 				getSelectionActions().add(action.getId());
 
 				// insert
-				action = new InsertNewAction(this, factory);
+				action = new BPELInsertNewAction(this, factory);
 				registry.registerAction(action);
 				insertNewActions.add(action);
 				getSelectionActions().add(action.getId());
@@ -523,8 +596,9 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 	}
 
 	private void registerViewer(GraphicalViewer viewer) {
-		// TODO Auto-generated method stub
-		
+	
+		getAdaptingSelectionProvider().addViewer(viewer);
+		getMultiViewerSelectionProvider().addViewer(viewer);
 	}
 
 	public ResourceSet getResourceSet() {
@@ -532,10 +606,89 @@ public class AspectEditor extends GraphicalEditorWithPaletteAndTray{
 		return getEditModelClient().getEditModel().getResourceSet();
 	}
 
-	public Object getAdaptingSelectionProvider() {
+	public AdaptingSelectionProvider getAdaptingSelectionProvider() {
+		if (adaptingSelectionProvider == null) {
+			adaptingSelectionProvider = new BPELAdaptingSelectionProvider();
+		}
+		return adaptingSelectionProvider;
+		
+	}
+	public ISelection getSelection() {
+		ISelection editPartSelection = getGraphicalViewer().getSelection();
+		if (editPartSelection == null || !(editPartSelection instanceof StructuredSelection) || editPartSelection.isEmpty()) {
+			return StructuredSelection.EMPTY;
+		}
+		ArrayList<Object> list = new ArrayList<Object>();
+		Iterator it = ((StructuredSelection)editPartSelection).iterator();
+		while (it.hasNext()) {
+			Object o = it.next();
+			if (o instanceof EditPart) {
+				list.add(((EditPart)o).getModel());
+			}
+		}
+		return new StructuredSelection(list);
+	}
+	
+
+	private MultiViewerSelectionProvider getMultiViewerSelectionProvider() {
+		if (weakMultiViewerSelectionProvider == null) {
+			weakMultiViewerSelectionProvider = new WeakMultiViewerSelectionProvider() {
+				protected ISelection cachedAdaptingSelection;
+				@Override
+				public ISelection getSelection() {
+					// HACK to fix selection coherency problems:
+					// If the AdaptingSelectionProvider selection has changed, assume ours
+					// has changed as well!
+					if (getAdaptingSelectionProvider().getSelection() != cachedAdaptingSelection) {
+						cachedSelection = null;  // force super to recalculate
+					}
+					return super.getSelection();
+				}
+			};
+		}
+		return weakMultiViewerSelectionProvider;
+	}
+
+	public boolean isHorizontalLayout() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public CommandStack getCommandStack() {
+		IWorkbenchPartSite editorSite = getSite();
+		if (editorSite instanceof MultiPageEditorSite) {
+			return (CommandStack)((org.eclipse.ui.part.MultiPageEditorSite)getSite()).getMultiPageEditor().getAdapter(CommandStack.class);
+		}
+		return null;
+	}
+
+	public void setHorizontalLayout(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void refreshGraphicalViewer() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean getAutoFlowLayout() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void setAutoFlowLayout(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Definition getArtifactsDefinition() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
 
 	
 }

@@ -23,6 +23,7 @@ import org.w3c.dom.Element;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 
+import cn.edu.nju.cs.workflow.model.aspect.Aspect;
 import cn.edu.nju.cs.workflow.model.aspect.Aspects;
 
 public class AspectResourceImpl extends XMLResourceImpl implements AspectResource{
@@ -196,6 +197,11 @@ public class AspectResourceImpl extends XMLResourceImpl implements AspectResourc
 	}
 	public Aspects getAspects(){
 		 return getContents().size() == 1 && getContents().get(0) instanceof Aspects ? (Aspects) getContents().get(0) : null;
+	}
+	@Override
+	public Aspect getCurAspect() {
+		//TODO 
+		return getAspects().getChildren().get(0);
 	}
 	
 

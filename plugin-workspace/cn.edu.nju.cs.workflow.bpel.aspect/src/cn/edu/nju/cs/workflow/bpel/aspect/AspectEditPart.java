@@ -17,6 +17,7 @@ import org.eclipse.bpel.ui.adapters.IEventHandlerHolder;
 import org.eclipse.bpel.ui.adapters.IFaultHandlerHolder;
 import org.eclipse.bpel.ui.adapters.delegates.ActivityContainer;
 import org.eclipse.bpel.ui.editparts.BPELEditPart;
+import org.eclipse.bpel.ui.editparts.FaultHandlerEditPart;
 import org.eclipse.bpel.ui.editparts.StartNodeEditPart;
 import org.eclipse.bpel.ui.editparts.policies.BPELContainerEditPolicy;
 import org.eclipse.bpel.ui.editparts.policies.BPELOrderedLayoutEditPolicy;
@@ -191,11 +192,9 @@ public class AspectEditPart extends BPELEditPart implements ILayoutAware{
 	}
 	
 	protected IFigure getContentPane(EditPart childEditPart) {
-//		if (childEditPart instanceof StartNodeEditPart) {
-//			return handlerHolder;
-//		} else if (childEditPart instanceof FaultHandlerEditPart) {
-//			return handlerHolder;
-//		}
+		if (childEditPart instanceof FaultHandlerEditPart) {
+			return handlerHolder;
+		}
 		return activityHolder;
 	}
 	
@@ -214,22 +213,9 @@ public class AspectEditPart extends BPELEditPart implements ILayoutAware{
 		
 		AspectEditDomain domain = (AspectEditDomain)getViewer().getEditDomain();
 		List list = new ArrayList();
-		
-		/* NOTE: The layoutEditPolicy relies on this order to identify the
-		 * area the user is mousing over. Do not change the order in which these
-		 * children are added unless you change the layoutEditPolicy too!!!!!!!!!!!!!!!!!!!!
-		 */
 
-		// TODO: this is way too magic.  can we get rid of this?
-		
-		//list.add(domain.getStartNode());
-	
-		
 		list.add(aspect.getAdvice().getActivity());
-		//list.add(domain.getEndNode());
 		
-
-
 		return list;
 	}
 	

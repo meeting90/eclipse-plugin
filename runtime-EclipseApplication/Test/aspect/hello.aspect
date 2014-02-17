@@ -18,17 +18,10 @@
           operation="hello"
           variable="myVar"
           createInstance="yes"/>
-
-         <bpel:assign name="assignHelloMesg">
-          <bpel:copy>
-              <bpel:from variable="myVar" part="TestPart"/>
-              <bpel:to variable="mesgVar"/>
-          </bpel:copy>
-          <bpel:copy>
-              <bpel:from>concat($mesgVar,' World')</bpel:from>
-              <bpel:to variable="myVar" part="TestPart"/>
-          </bpel:copy>
-      </bpel:assign>
+         <bpel:invoke 
+         	name="invoke"
+         	>
+         	</bpel:invoke>
        <bpel:reply name="end"  
               partnerLink="helloPartnerLink"
               portType="intf:HelloPortType" 

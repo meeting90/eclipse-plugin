@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated aspect -->
+      <package
+            uri="http://workflow.cs.nju.edu.cn/aspect/1.0"
+            class="cn.edu.nju.cs.workflow.aspect.model.AspectPackage"
+            genModel="src/model/aspect.genmodel"/>
+   </extension>
+
+</plugin>

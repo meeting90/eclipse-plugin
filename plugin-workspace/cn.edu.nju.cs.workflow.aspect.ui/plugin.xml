@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="cn.edu.nju.cs.workflow.aspect.ui.AspectMultipageEditorPart"
+            contributorClass="cn.edu.nju.cs.workflow.aspect.ui.AspectEditorContributor"
+            extensions="aspect"
+            icon="icons/sample.gif"
+            id="cn.edu.nju.cs.workflow.aspect.ui.AspectMultipageEditorPart"
+            name="aspect editor">
+         <contentTypeBinding
+               contentTypeId="cn.edu.nju.cs.workflow.aspect.contenttype">
+         </contentTypeBinding>
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            default-charset="UTF-8"
+            file-extensions="aspect"
+            id="cn.edu.nju.cs.workflow.aspect.contenttype"
+            name="BPEL aspect File"
+            priority="normal">
+         <describer
+               class="cn.edu.nju.cs.workflow.aspect.ui.AspectContentDescriber">
+         </describer>
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="cn.edu.nju.cs.workflow.aspect.model.resource.AspectResourceFactoryImpl"
+            type="aspect">
+      </parser>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            class="cn.edu.nju.cs.workflow.aspect.model.resource.AspectResourceFactoryImpl"
+            contentTypeIdentifier="cn.edu.nju.cs.workflow.aspect.contenttype">
+      </parser>
+   </extension>
+   
+
+</plugin>

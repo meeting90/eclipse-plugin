@@ -24,9 +24,11 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.ui.actions.ActionRegistry;
+import org.eclipse.gef.commands.CommandStack;
 
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -266,6 +268,11 @@ public class AspectMultipageEditorPart extends MultiPageEditorPart implements IA
 		if(type==Aspect.class){
 			return this.aspects.getChildren().get(0);
 		}
+		if(type==CommandStack.class){
+			
+				return getCommandStack();
+			
+		}
 	
 		if (type == ActionRegistry.class) {
 			return getActionRegistry();
@@ -273,6 +280,11 @@ public class AspectMultipageEditorPart extends MultiPageEditorPart implements IA
 
 		return super.getAdapter(type);
 	}
+	private CommandStack getCommandStack() {
+	
+		return getEditDomain().getCommandStack();
+	}
+
 	private ActionRegistry getActionRegistry() {
 		if (this.actionRegistry == null)
 			this.actionRegistry = new ActionRegistry();
@@ -323,7 +335,7 @@ public class AspectMultipageEditorPart extends MultiPageEditorPart implements IA
 	protected DefaultEditDomain getEditDomain() {
 		return this.editDomain;
 	}
-	protected ITextEditor getTextEditor() {
+	public ITextEditor getTextEditor() {
 		// TODO Auto-generated method stub
 		return this.fTextEditor;
 	}
@@ -355,7 +367,7 @@ public class AspectMultipageEditorPart extends MultiPageEditorPart implements IA
 		this.preBuildRefactoringListener = new RefactoringListener();
 		workspace.addResourceChangeListener(this.preBuildRefactoringListener, IResourceChangeEvent.PRE_BUILD);
 	}
-	protected void doRevertToSaved(Object object) {
+	public void doRevertToSaved(Object object) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -545,6 +557,11 @@ public class AspectMultipageEditorPart extends MultiPageEditorPart implements IA
 			IMarkerDelta[] markerDelta) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public AspectEditor getDesignEditor() {
+		
+		return this.fDesignViewer;
 	}
 
 

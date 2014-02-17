@@ -3,18 +3,12 @@ package cn.edu.nju.cs.workflow.bpel.aspect;
 
 
 
+import org.eclipse.bpel.model.BPELFactory;
 import org.eclipse.bpel.model.BPELPackage;
 import org.eclipse.bpel.model.adapters.AdapterRegistry;
-import org.eclipse.bpel.model.adapters.BasicBPELAdapterFactory;
-import org.eclipse.bpel.model.messageproperties.MessagepropertiesPackage;
-import org.eclipse.bpel.model.partnerlinktype.PartnerlinktypePackage;
-import org.eclipse.bpel.ui.adapters.BPELUIAdapterFactory;
-import org.eclipse.bpel.ui.adapters.BPELUIExtensionAdapterFactory;
-import org.eclipse.bpel.ui.adapters.BPELUIMessagePropertiesAdapterFactory;
-import org.eclipse.bpel.ui.adapters.BPELUIPartnerLinkTypeAdapterFactory;
-import org.eclipse.bpel.ui.adapters.BPELUIWSDLAdapterFactory;
-import org.eclipse.bpel.ui.adapters.BPELUIXSDAdapterFactory;
-import org.eclipse.bpel.ui.uiextensionmodel.UiextensionmodelPackage;
+import org.eclipse.bpel.ui.adapters.IEditPartActionContributor;
+import org.eclipse.bpel.ui.extensions.BPELUIRegistry;
+import org.eclipse.bpel.ui.util.BPELUtil;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.ISaveContext;
 import org.eclipse.core.resources.ISaveParticipant;
@@ -22,11 +16,13 @@ import org.eclipse.core.resources.ISavedState;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.gef.EditPartFactory;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.eclipse.wst.wsdl.WSDLPackage;
-import org.eclipse.xsd.XSDPackage;
 import org.osgi.framework.BundleContext;
+
+
+import cn.edu.nju.cs.workflow.bpel.aspect.factories.BPELUIAdapterFactory;
 
 
 /**
@@ -50,26 +46,8 @@ public class AspectUIPlugin extends AbstractUIPlugin {
 
 	public AspectUIPlugin() {
 		super();
-		AdapterRegistry.INSTANCE.registerAdapterFactory(
-				BPELPackage.eINSTANCE, BasicBPELAdapterFactory.INSTANCE);
-		AdapterRegistry.INSTANCE.registerAdapterFactory(
-				BPELPackage.eINSTANCE, BPELUIAdapterFactory.getInstance());
-
-		AdapterRegistry.INSTANCE.registerAdapterFactory(
-			    WSDLPackage.eINSTANCE, BPELUIWSDLAdapterFactory.getInstance());
-
-		AdapterRegistry.INSTANCE.registerAdapterFactory(
-			    PartnerlinktypePackage.eINSTANCE, BPELUIPartnerLinkTypeAdapterFactory.getInstance());
-
-		AdapterRegistry.INSTANCE.registerAdapterFactory(
-			    XSDPackage.eINSTANCE, BPELUIXSDAdapterFactory.getInstance());
-
-		AdapterRegistry.INSTANCE.registerAdapterFactory(
-			    MessagepropertiesPackage.eINSTANCE, BPELUIMessagePropertiesAdapterFactory.getInstance());
-
-		AdapterRegistry.INSTANCE.registerAdapterFactory(
-			    UiextensionmodelPackage.eINSTANCE, BPELUIExtensionAdapterFactory.getInstance());
-
+		
+		
 	}
 	
 	@Override
@@ -79,7 +57,25 @@ public class AspectUIPlugin extends AbstractUIPlugin {
 		initializePreferences();
 		initializeResourceChangeListener();
 		initFunctions ();
+		changeBPELAdapterFactory();
 	}
+	private void changeBPELAdapterFactory() {
+		// TODO Auto-generated method stub
+		BPELUtil util;
+		BPELUIRegistry.getInstance();
+		AdapterRegistry.INSTANCE.unregisterAdapterFactory(BPELPackage.eINSTANCE, org.eclipse.bpel.ui.adapters.BPELUIAdapterFactory.getInstance());
+		
+		
+		AdapterRegistry.INSTANCE.unregisterAdapterFactory(BPELPackage.eINSTANCE.getAssign(), org.eclipse.bpel.ui.adapters.BPELUIAdapterFactory.getInstance());
+		AdapterRegistry.INSTANCE.unregisterAdapterFactory(BPELPackage.eINSTANCE.getInvoke(), org.eclipse.bpel.ui.adapters.BPELUIAdapterFactory.getInstance());
+		AdapterRegistry.INSTANCE.unregisterAdapterFactory(BPELPackage.eINSTANCE.getReceive(), org.eclipse.bpel.ui.adapters.BPELUIAdapterFactory.getInstance());
+		AdapterRegistry.INSTANCE.unregisterAdapterFactory(BPELPackage.eINSTANCE.getReply(), org.eclipse.bpel.ui.adapters.BPELUIAdapterFactory.getInstance());
+		
+		AdapterRegistry.INSTANCE.unregisterAdapterFactory(BPELPackage.eINSTANCE.getEmpty(), org.eclipse.bpel.ui.adapters.BPELUIAdapterFactory.getInstance());
+		AdapterRegistry.INSTANCE.registerAdapterFactory(BPELPackage.eINSTANCE, BPELUIAdapterFactory.getInstance());
+		System.out.println(BPELUtil.adapt(BPELFactory.eINSTANCE.createInvoke(), IEditPartActionContributor.class));
+	}
+
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		super.stop(context);

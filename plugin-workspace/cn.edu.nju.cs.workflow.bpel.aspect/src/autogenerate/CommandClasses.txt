@@ -1,0 +1,15 @@
+SetPortTypeCommand
+SetPropertyAliasPartCommand
+SetPropertyTypeCommand
+SetRoleCommand
+SetSelectionCommand
+SetSpecCompliantProcessCommand
+SetSuppressJoinFailureCommand
+SetUniqueNameCommand
+SetVariableCommand
+SetVariableKindCommand
+SetVariableTypeCommand
+SetWSDLFaultCommand
+SwapCopyCommand
+SetConstraintCommand
+SetExtensibilityElementCommand
